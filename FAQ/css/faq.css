@@ -56,11 +56,3 @@
     overflow-y:auto ;
   }
   }
-  @media (max-width:768px) {
-    .platform-word {
-      letter-spacing: 4px;
-      font-size: 18px;
-      left: 10px;;
-      
-  }
-  }
