@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Freehand&display=swap');
 .landing {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +19,7 @@
 }
 
 .qoute span {
-    font-family: FreeStyle Script;
+    font-family: 'Freehand', cursive;;
     width: 100%;
     text-align: right;
 }
@@ -204,7 +205,7 @@ footer {
     .platform-word {
         letter-spacing: 4px;
         font-size: 18px;
-        left: 6px;;
+        left: 12px;;
         
     }
 }
@@ -216,5 +217,8 @@ footer {
 
     .navbar-brand {
         left: 20px
+    }
+    .qoute span {
+        font-size: 14px;
     }
 }
