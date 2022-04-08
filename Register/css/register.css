@@ -107,7 +107,7 @@ font-weight: bold;
   }
   @media (max-width: 1024px) {
     .section-one {
-      flex-wrap: wrap-reverse;
+      flex-wrap: wrap;
       justify-content: center;
     }
     .section-one div {
