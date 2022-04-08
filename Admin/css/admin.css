@@ -1,0 +1,148 @@
+div {
+    text-align: center;
+  }
+  nav {
+    justify-content: center;
+    display: flex;
+  }
+  .divs-container{
+      width:280px;
+      margin-left: 20px;
+  }
+.content{
+    width: 85%;
+}
+
+  a.router-link-active {
+    color: #bbb;
+  }
+  .navbar-brand{
+    left:0
+  }
+  .navbar-brand {
+    font-size: 28px;
+  }
+  .platform-word {
+    letter-spacing: 4px;
+    font-size: 24px;
+  }
+  .elements {
+    align-items: flex-start;
+    border: 5px solid #efefef;
+    border-radius: 30px;
+    position: relative;
+    top: 30px;
+  }
+  .elements li {
+    padding: 15px;
+    padding-left: 30px;
+  }
+
+  .table-content {
+    border: 5px solid #efefef;
+    border-radius: 30px;
+  }
+  .fa-trash-can {
+    color: rgb(250, 54, 54);
+  }
+  .fa-eye {
+    color: rgb(48, 168, 228);
+  }
+  
+  @media (max-width: 600px) {
+    .main {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .divs-container{
+        width:280px;
+        margin: 0 10px 20px 10px;
+    }
+    .navbar-brand  {
+        font-size: 24px;
+    }
+
+    .platform-word {
+        letter-spacing: 4px;
+        font-size: 18px;
+        left: 6px;;
+        
+    }
+    .elements li {
+        padding: 5px 15px;
+        padding-left: 50px;}
+  }
+  .title {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 15px;
+    margin-bottom: 27px;
+    font-size: 26px;
+    border: 5px solid #d7f9ff;
+    border-radius: 30px;
+  }
+
+  .dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .dashboard-cards .card {
+    width: 275px;
+    border: 5px solid #efefef;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  .dashboard-cards .card-body {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+  .category {
+    font-size: 22px;
+  }
+  .number {
+    float: left;
+    font-size: 20px;
+    color: #5c5c5c;
+  }
+  .icon {
+    font-size: 28px;
+  }
+  .dashboard-img {
+    float: right;
+  }
+  .container{
+      padding: 0 45px;
+  }
+  @media (max-width:768px) {
+      .container {
+          padding: 15px;
+      }
+      .dashboard-cards {
+    justify-content: space-evenly;
+  }
+  }
+  @media (max-width:1035px) {
+    .dashboard-cards {
+    justify-content: space-evenly;
+  }   
+  }
+  .fa-x {
+    color: rgb(250, 54, 54);
+  }
+  .fa-check {
+    color: rgb(48, 168, 228);
+  }
+  .table-content{
+    border: 5px solid #efefef;
+    border-radius: 30px;  
+    overflow: scroll;
+    height: 451px;
+}
+.container{
+    overflow-x: auto;
+}
+.fa-pen-to-square{
+  color:rgb(48, 168, 228);
+}
