@@ -122,4 +122,10 @@
   fieldset input {
     font-size: 12px;
   }
+  .platform-word {
+    letter-spacing: 4px;
+    font-size: 18px;
+    left: 6px;;
+    
+}
   }

@@ -124,6 +124,12 @@ font-weight: bold;
     form {
       width: auto;
     }
+    .platform-word {
+      letter-spacing: 4px;
+      font-size: 18px;
+      left: 6px;;
+      
+  }
   }
   @media (max-width: 440px) {
     .section-one {

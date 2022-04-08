@@ -201,6 +201,12 @@ footer {
     .section-four {
         text-align: center;
     }
+    .platform-word {
+        letter-spacing: 4px;
+        font-size: 18px;
+        left: 6px;;
+        
+    }
 }
 
 @media (max-width: 510px) {
