@@ -31,17 +31,17 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="../Register/register.html">
+                            <a class="nav-link" href="register.html">
                                 Register
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Login/login.html">
+                            <a class="nav-link" href="login.html">
                                 Login
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link" href="../FAQ/fqa.html">
+                            <a class="nav-link" href="fqa.html">
                                 FAQ
                             </a>
                         </li>

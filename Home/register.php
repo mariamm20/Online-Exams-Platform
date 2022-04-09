@@ -18,7 +18,7 @@
     <div id="app">
         <header class="container" >
             <nav class="navbar navbar-expand-lg">
-                <span class="fs-4 title"><a class="navbar-brand" href="../Home/home.html">
+                <span class="fs-4 title"><a class="navbar-brand" href="home.html">
                                     Online Exams <br />
                             <span class="platform-word">Platform </a>
     </span>
@@ -36,17 +36,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Login/login.html">
+                            <a class="nav-link" href="login.html">
                                 Login
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link" href="../FAQ/fqa.html">
+                            <a class="nav-link" href="fqa.html">
                                 FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Contact/contact.html">
+                            <a class="nav-link" href="contact.html">
                                 Contact Us
                             </a>
                         </li>
@@ -59,40 +59,40 @@
                 <img src="img/4.png" alt="img" />
             </div>
             <div class="form-section">
-                <form action="" method="Post">
+                <form action="../includes/Register.inc.php" method="Post">
                     <h4>Registration</h4>
                     <fieldset class="inputs">
-                        <input type="text"  placeholder="Your Name"  />
+                        <input type="text"  placeholder="Your Name" name="user_name" />
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Email error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <input type="text" placeholder="Acadimic ID"  />
+                        <input type="text" placeholder="Acadimic ID" name="academic_id" />
                         <lable data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Acadimic ID error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <input type="text" placeholder="Password in Acadimic ID"  />
+                        <input type="text" placeholder="Password in Acadimic ID" name="id_password" />
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Password Error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <input type="email" placeholder="Email" />
+                        <input type="email" placeholder="Email" name="email" />
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Email error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <input type="password" placeholder="Password"  />
+                        <input type="password" placeholder="Password" name="password" />
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Password error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <input type="password" v-model="user.repeated" placeholder="Repeat Password" />
+                        <input type="password"  placeholder="Repeat Password" name="repeated_pass"/>
                         <lable data-bs-toggle="tooltip" data-bs-placement="top" title="Not the same password">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <select>
-                            <option selected>Choose Role</option>
+                        <select name="role">
+                            <option value="" disabled selected>Choose Role</option>
                             <option value="doctor">Doctor</option>
                             <option value="student">Student</option>
                         </select>
@@ -100,9 +100,9 @@
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
                         <div id="btn-div">
-                            <button>Register</button>
+                            <button name="register">Register</button>
                         </div>
-                        <p>All ready have an account?<a href="../Login/login.html"> Log In</a></p>
+                        <p>All ready have an account?<a href="login.html"> Log In</a></p>
                     </fieldset>
                 </form>
             </div>

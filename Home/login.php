@@ -18,7 +18,7 @@
     <div id="app">
         <header class="container" >
             <nav class="navbar navbar-expand-lg">
-                <span class="fs-4 title"><a class="navbar-brand" href="../Home/home.html">
+                <span class="fs-4 title"><a class="navbar-brand" href="home.html">
                                       Online Exams <br />
                             <span class="platform-word">Platform </a>
     </span>
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="../Register/register.html">
+                            <a class="nav-link" href="register.html">
                                 Register
                             </a>
                         </li>
@@ -41,12 +41,12 @@
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link" href="../FAQ/fqa.html">
+                            <a class="nav-link" href="fqa.html">
                                 FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Contact/contact.html">
+                            <a class="nav-link" href="contact.html">
                                 Contact Us
                             </a>
                         </li>
