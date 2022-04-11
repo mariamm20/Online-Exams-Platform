@@ -25,6 +25,7 @@ lable {
     border-radius: 30px;
     width: 65%;
     padding: 30px 50px 0 50px;
+    position: relative;
   }
   .form-section {
     display: flex;
@@ -97,8 +98,20 @@ font-weight: bold;
 .form-section a:hover{
   color: #0E1C36;
 }
+.view-password{
+  right: 55px;
+  width: auto;
+  top: 258px;
+  position: absolute;
+  /* border-radius: 30px; */
+  border: none;
+  background-color: transparent;
+  outline: none;
 
-
+}
+.view-password:hover{
+  background: none;
+}
 
   @media (max-width:1300px) {
       form{

@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="register.html">
+                            <a class="nav-link" href="../Pre-register/pre-register.html">
                                 Register
                             </a>
                         </li>
@@ -82,12 +82,14 @@
                             title="Email error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
+                        
                         <input type="password" placeholder="Password"  />
+                        <button class="view-password"><i class="fa-solid fa-eye"></i></button>
+                    
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Password error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <input type="password" v-model="user.repeated" placeholder="Repeat Password" />
                         <lable data-bs-toggle="tooltip" data-bs-placement="top" title="Not the same password">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
