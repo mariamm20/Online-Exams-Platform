@@ -155,4 +155,8 @@ font-weight: bold;
     fieldset input {
       font-size: 12px;
     }
+    .view-password{
+      top:245px;
+      right: 28px;
+    }
   }
