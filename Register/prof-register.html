@@ -60,7 +60,7 @@
             </div>
             <div class="form-section">
                 <form action="" method="Post">
-                    <h4>Registration</h4>
+                    <h4 id="role"><i class="fa-solid fa-user-tie"></i> Registation</h4>
                     <fieldset class="inputs">
                         <input type="text"  placeholder="Your Name"  />
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
@@ -72,35 +72,20 @@
                             title="Acadimic ID error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <input type="text" placeholder="Password in Acadimic ID"  />
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Password Error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
                         <input type="email" placeholder="Email" />
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Email error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
                         
-                        <input type="password" placeholder="Password"  />
-                        <button class="view-password"><i class="fa-solid fa-eye"></i></button>
+                        <input type="password" placeholder="Password" id="eye" />
+                        <button onclick="event.preventDefault(),myFunction()"  class="view-password"><i class="fa-solid fa-eye"></i></button>
                     
                         <lable  data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Password error">
                             <i class="fa-solid fa-circle-info"></i>
                         </lable>
-                        <lable data-bs-toggle="tooltip" data-bs-placement="top" title="Not the same password">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
-                        <select>
-                            <option selected>Choose Role</option>
-                            <option value="doctor">Doctor</option>
-                            <option value="student">Student</option>
-                        </select>
-                        <lable data-bs-toggle="tooltip" data-bs-placement="top" title="Must select a role">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                        
                         <div id="btn-div">
                             <button>Register</button>
                         </div>
@@ -112,6 +97,7 @@
     </div>
 
     <!--Scripts part-->
+    <script src="js/register.js"></script>
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>

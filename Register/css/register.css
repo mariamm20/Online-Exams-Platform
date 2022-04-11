@@ -24,12 +24,13 @@ lable {
     background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
     border-radius: 30px;
     width: 65%;
-    padding: 30px 50px 0 50px;
+    padding: 30px 50px 30px 50px;
     position: relative;
   }
   .form-section {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   form h4 {
     text-align: left;
@@ -101,7 +102,7 @@ font-weight: bold;
 .view-password{
   right: 55px;
   width: auto;
-  top: 258px;
+  top: 210px;
   position: absolute;
   /* border-radius: 30px; */
   border: none;
@@ -112,6 +113,11 @@ font-weight: bold;
 .view-password:hover{
   background: none;
 }
+.view-password:active{
+  color: #0e1c36;
+}
+
+
 
   @media (max-width:1300px) {
       form{
@@ -156,7 +162,7 @@ font-weight: bold;
       font-size: 12px;
     }
     .view-password{
-      top:245px;
+      top:200px;
       right: 28px;
     }
   }
