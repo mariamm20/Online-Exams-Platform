@@ -83,6 +83,12 @@ class RegisterView extends RegisterCont
                 header("location: ../Home/Register.php?error=InvalidEmail");
                 exit();
             }  
+            // if($this->verifyID() == false)  
+            // {
+            //     //echo "Invalid Phone Number";
+            //     header("location: ../Home/Register.php?error=incorrectID");
+            //     exit();
+            // }  
             
             
             
@@ -200,6 +206,19 @@ class RegisterView extends RegisterCont
         return $result;
     }
 
+    private function verifyID()
+    {
+        $result = false;
+        if(!strpos($this->academic_id, "1618")== true)
+        {
+            $result = false;
+
+        }
+        else{
+            $result = true;
+        }
+        return $result;
+    }
 
 
 }

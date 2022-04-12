@@ -31,22 +31,22 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="register.html">
+                            <a class="nav-link" href="register.php">
                                 Register
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">
+                            <a class="nav-link" href="login.php">
                                 Login
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link" href="fqa.html">
+                            <a class="nav-link" href="fqa.php">
                                 FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">
+                            <a class="nav-link" href="contact.php">
                                 Contact Us
                             </a>
                         </li>
@@ -59,16 +59,16 @@
                 <img src="img/5.png" alt="img" />
             </div>
             <div class="form-section">
-                <form action="" method="POST">
-                    <h4>Log In</h4>
+                <form action="../includes/Login.inc.php" method="POST">
+                    <h4>Log In <?php include('../includes/LoginHandeling.inc.php') ?> </h4>
                     <fieldset class="inputs">
-                        <input type="text" placeholder="Acadimic ID" required />
-                        <input type="email" placeholder="Email" required />
-                        <input type="password" placeholder="Password" required />
+                        
+                        <input type="email" placeholder="Email"  name="email" />
+                        <input type="password" placeholder="Password"  name="password" />
                         <div id="btn-div">
-                            <button>Log In</button>
+                            <button name="login">Log In</button>
                         </div>
-                        <p>Don't have an account?<a href="../Register/register.html"> Register</a></p>
+                        <p>Don't have an account?<a href="register.php"> Register</a></p>
                     </fieldset>
                 </form>
             </div>

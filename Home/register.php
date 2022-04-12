@@ -31,22 +31,22 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="register.html">
+                            <a class="nav-link" href="register.php">
                                 Register
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">
+                            <a class="nav-link" href="login.php">
                                 Login
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link" href="fqa.html">
+                            <a class="nav-link" href="fqa.php">
                                 FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">
+                            <a class="nav-link" href="contact.php">
                                 Contact Us
                             </a>
                         </li>
@@ -60,49 +60,31 @@
             </div>
             <div class="form-section">
                 <form action="../includes/Register.inc.php" method="Post">
-                    <h4>Registration</h4>
+                    <h4>Registration <?php include('../includes/RegisterHandling.inc.php') ?> </h4> 
                     <fieldset class="inputs">
                         <input type="text"  placeholder="Your Name" name="user_name" />
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Email error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                        
                         <input type="text" placeholder="Acadimic ID" name="academic_id" />
-                        <lable data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Acadimic ID error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                       
                         <input type="text" placeholder="Password in Acadimic ID" name="id_password" />
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Password Error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                       
                         <input type="email" placeholder="Email" name="email" />
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Email error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                        
                         <input type="password" placeholder="Password" name="password" />
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Password error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                        
                         <input type="password"  placeholder="Repeat Password" name="repeated_pass"/>
-                        <lable data-bs-toggle="tooltip" data-bs-placement="top" title="Not the same password">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                      
                         <select name="role">
                             <option value="" disabled selected>Choose Role</option>
                             <option value="doctor">Doctor</option>
                             <option value="student">Student</option>
                         </select>
-                        <lable data-bs-toggle="tooltip" data-bs-placement="top" title="Must select a role">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                        
+                        
                         <div id="btn-div">
                             <button name="register">Register</button>
                         </div>
-                        <p>All ready have an account?<a href="login.html"> Log In</a></p>
+                        <p>All ready have an account?<a href="login.php"> Log In</a></p>
                     </fieldset>
                 </form>
             </div>
