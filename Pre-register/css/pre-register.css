@@ -76,3 +76,8 @@
         padding:20px 43px;
     }
 }
+@media (max-width:768px) {
+    .navbar-brand {
+        left: 18px
+    }
+}

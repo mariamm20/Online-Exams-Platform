@@ -143,6 +143,9 @@ font-weight: bold;
     form {
       width: auto;
     }
+    .navbar-brand {
+      left: 18px
+  }
 
   }
   @media (max-width: 440px) {
