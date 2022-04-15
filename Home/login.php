@@ -18,7 +18,7 @@
     <div id="app">
         <header class="container" >
             <nav class="navbar navbar-expand-lg">
-                <span class="fs-4 title"><a class="navbar-brand" href="home.html">
+                <span class="fs-4 title"><a class="navbar-brand" href="home.php">
                                       Online Exams <br />
                             <span class="platform-word">Platform </a>
     </span>

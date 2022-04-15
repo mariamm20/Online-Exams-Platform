@@ -36,17 +36,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">
+                            <a class="nav-link" href="login.php">
                                 Login
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link" href="fqa.html">
+                            <a class="nav-link" href="fqa.php">
                                 FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">
+                            <a class="nav-link" href="contact.php">
                                 Contact Us
                             </a>
                         </li>

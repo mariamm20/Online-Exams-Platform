@@ -1,0 +1,168 @@
+lable {
+    width: fit-content;
+    position: relative;
+    left: 103%;
+    /* top: -40px; */
+    bottom: 40px;
+    height: 0;
+    display: none;
+  }
+  .happening-now {
+    background-color: #efefef;
+    border-radius: 15px;
+  }
+  .section-one {
+    display: flex;
+  }
+  .section-one div {
+    width: 50%;
+  }
+  .section-one img {
+    width: 100%;
+  }
+  form {
+    background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
+    border-radius: 30px;
+    width: 65%;
+    padding: 30px 50px 30px 50px;
+    position: relative;
+  }
+  .form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form h4 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  fieldset {
+    display: flex;
+    flex-direction: column;
+  }
+  fieldset input {
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 3px solid #efefef;
+    font-size: 14px;
+    outline: none;
+  }
+  ::-webkit-input-placeholder {
+    color: #b4b4b4;
+  }
+  fieldset select {
+    border-radius: 20px;
+    border: 3px solid #efefef;
+    padding: 5px 10px;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  select option {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    color: #0e1c36;
+  }
+  form button {
+    border: 3px solid #efefef;
+    padding: 8px 6px;
+    background-color: #fff;
+    width: 120px;
+    border-radius: 22px;
+    font-size: 14px;
+    color: #1eaaf1;
+  }
+  form button:hover {
+    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    color: #0e1c36;
+    font-weight: bold;
+  }
+  #btn-div {
+    width: 100%;
+    text-align: center;
+  }
+  form p {
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  form span {
+    color: #1eaaf1;
+    font-weight: 600;
+  }
+.form-section a{
+color: #1eaaf1;
+font-weight: bold;
+}
+.form-section a:hover{
+  color: #0E1C36;
+}
+.view-password{
+  right: 55px;
+  width: auto;
+  top: 210px;
+  position: absolute;
+  /* border-radius: 30px; */
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+}
+.view-password:hover{
+  background: none;
+}
+.view-password:active{
+  color: #0e1c36;
+}
+
+
+
+  @media (max-width:1300px) {
+      form{
+          width: auto;
+      }
+  }
+  @media (max-width: 1024px) {
+    .section-one {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .section-one div {
+      width: 100%;
+    }
+    .image-section img {
+      width: 55%;
+    }
+    form {
+      width: 60%;
+    }
+  }
+  @media (max-width: 768px) {
+    form {
+      width: auto;
+    }
+
+  }
+  @media (max-width: 440px) {
+    .section-one {
+      padding: 15px;
+    }
+    form {
+      padding: 30px 20px 0 20px;
+    }
+    .image-section img {
+      width: 100%;
+    }
+    ::-webkit-input-placeholder {
+      font-size: 12px;
+    }
+    fieldset input {
+      font-size: 12px;
+    }
+    .view-password{
+      top:200px;
+      right: 28px;
+    }
+  }

@@ -18,7 +18,7 @@
     <div id="app">
         <header class="container" >
             <nav class="navbar navbar-expand-lg">
-                <span class="fs-4 title"><a class="navbar-brand" href="../Home/home.html">
+                <span class="fs-4 title"><a class="navbar-brand" href="home.php">
                                        Online Exams <br />
                             <span class="platform-word">Platform </a>
     </span>
@@ -36,17 +36,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">
+                            <a class="nav-link" href="login.php">
                                 Login
                             </a>
                         </li>
                         <li class="nav-item" >
-                            <a class="nav-link" href="fqa.html">
+                            <a class="nav-link" href="fqa.php">
                                 FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">
+                            <a class="nav-link" href="contact.php">
                                 Contact Us
                             </a>
                         </li>
