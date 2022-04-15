@@ -32,22 +32,22 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="../Register/register.html">
+                            <a class="nav-link" href="pre-register.php">
                                 Register
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Login/login.html">
+                            <a class="nav-link" href="../Login/login.php">
                                 Login
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../FAQ/fqa.html">
+                            <a class="nav-link" href="../FAQ/fqa.php">
                                 FAQ
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Contact/contact.html">
+                            <a class="nav-link" href="contact.php">
                                 Contact Us
                             </a>
                         </li>

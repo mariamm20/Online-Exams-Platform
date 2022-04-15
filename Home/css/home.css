@@ -198,9 +198,13 @@ footer {
     .section-four {
         padding: 33px 23px;
     }
+    
 
     .section-four {
         text-align: center;
+    }
+    .navbar-brand {
+        left: 18px;
     }
 
 }
@@ -210,9 +214,6 @@ footer {
         width: 245px;
     }
 
-    .navbar-brand {
-        left: 20px
-    }
     .qoute span {
         font-size: 14px;
     }

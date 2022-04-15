@@ -99,9 +99,12 @@
     width:55%
   }
   }
+  
   @media (max-width:768px) {
     form{width:auto}
-
+    .navbar-brand {
+      left: 18px
+  }
   }
   @media (max-width:440px) {
     .section-one{
