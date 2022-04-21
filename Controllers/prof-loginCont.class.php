@@ -13,13 +13,13 @@ class LoginCont extends Db
         if (!$stmt->execute([$email]))
         {
             $stmt = null;  // if it faild the statement will be closed
-            header("location: ../Home/login.php?error=stmtfailed");
+            header("location: ../Home/prof-login.php?error=stmtfailed");
             exit();
         }
 
         if($stmt->rowCount()== 0)
         {            
-            header("location: ../Home/login.php?error=usernotfound" ); 
+            header("location: ../Home/prof-login.php?error=usernotfound" ); 
             exit();
         }
 
@@ -32,7 +32,7 @@ class LoginCont extends Db
         {
             echo "wrong password";
             $stmt = null;
-            header("location: ../Home/login.php?error=wrongpassword");
+            header("location: ../Home/prof-login.php?error=wrongpassword");
             exit();
         }
         elseif($checkpass == true)
@@ -44,14 +44,14 @@ class LoginCont extends Db
             if (!  $stmt->execute(array($email,$password)))
             {
                 $stmt = null;  // if it faild the statement will be closed
-                header("location: ../Home/login.php?error=stmt2failed");
+                header("location: ../Home/prof-login.php?error=stmt2failed");
                 exit();
             }
 
             if($stmt->rowCount()== 0)
             {
                 $stmt = null;
-                header("location: ../Home/login.php?error=usernotfound2");
+                header("location: ../Home/prof-login.php?error=usernotfound2");
                 exit();
             }
         

@@ -11,7 +11,7 @@
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assests/global.css" />
-    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/login.css" />
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <header class="container" >
             <nav class="navbar navbar-expand-lg">
                 <span class="fs-4 title"><a class="navbar-brand" href="home.php">
-                                    Online Exams <br />
+                                      Online Exams <br />
                             <span class="platform-word">Platform </a>
     </span>
                         
@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="pre-register.php">
+                            <a class="nav-link" href="register.php">
                                 Register
                             </a>
                         </li>
@@ -55,37 +55,30 @@
             </nav>
         </header>
         <section class="section-one">
-            <div class="image-section" data-aos="fade-right">
-                <img src="img/4.png" alt="img" />
+            <div class="image-section" data-aos="fade-left" >
+                <img src="img/5.png" alt="img" />
             </div>
             <div class="form-section">
-                <form action="../includes/prof-register.inc.php" method="Post">
-                    <h4 id="role">Registration <?php include('../includes/RegisterHandling.inc.php') ?></h4>
+                <form action="../includes/stud-login.inc.php" method="POST">
+                    <h4>Log In <?php include('../includes/LoginHandeling.inc.php') ?> </h4>
                     <fieldset class="inputs">
-                        <input type="text"  placeholder="Your Name" name="name" />
                         
-                        <input type="text" placeholder="Acadimic ID" name="academic_id" />
-                        
-                        <input type="email" placeholder="Email" name="email" />
-                       
-                        
-                        <input type="password" placeholder="Password" id="eye"  name="password"/>
-                        <button onclick="event.preventDefault(),myFunction()"  class="view-password"><i class="fa-solid fa-eye"></i></button>
-                    
-                        
-                        
+                        <input type="email" placeholder="Email"  name="email" />
+                        <input type="password" placeholder="Password"  name="password" />
                         <div id="btn-div">
-                            <button name="register">Register</button>
+                            <button name="login">Log In</button>
                         </div>
-                        <p>All ready have an account?<a href="../Login/login.html"> Log In</a></p>
+                        <p>Don't have an account?<a href="register.php"> Register</a></p>
                     </fieldset>
                 </form>
             </div>
         </section>
-    </div>
 
+
+
+
+    </div>
     <!--Scripts part-->
-    <script src="js/register.js"></script>
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>

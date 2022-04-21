@@ -1,17 +1,17 @@
 <?php
 class RegisterCont extends DB
 {
-    protected function userSetUP($user_name, $email, $password, $role,$academic_id , $id_password)
+    protected function userSetUP($user_name, $email, $password,$academic_id)
     {
-        $query = "INSERT into users (user_name, email, password, role, academic_id, id_password, created_at) values (?, ?, ?, ?, ?,?, now())";
+        $query = "INSERT into users (user_name, email, password, role, academic_id, created_at) values (?, ?, ?, 'professor', ?, now())";
         $stmt = $this->Connection()->prepare($query);
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
          
-        if (!  $stmt->execute(array($user_name, $email, $hashedPassword, $role, $academic_id,$id_password)))
+        if (!  $stmt->execute(array($user_name, $email, $hashedPassword,$academic_id)))
         {
             $stmt = null;  // if it faild the statement will be closed
-            header("location: ../home/sign-up.php?error=registrationFailed");
+            header("location: ../home/prof-register.php?error=registrationFailed");
             exit();
         }
 
@@ -33,7 +33,7 @@ class RegisterCont extends DB
         // check if it failed 
         if (!  $stmt->execute(array($email))){
             $stmt = null;  // if it faild the statement will be closed
-            header("location: ../Home/Register.php?error=stmt1failed");
+            header("location: ../Home/prof-register.php?error=stmt1failed");
             exit();
         }
         // check if we got any results back in the database
@@ -60,7 +60,7 @@ class RegisterCont extends DB
         // check if it failed 
         if (!  $stmt->execute(array($academic_id))){
             $stmt = null;  // if it faild the statement will be closed
-            header("location: ../Home/Register.php?error=stmt2failed");
+            header("location: ../Home/prof-register.php?error=stmt2failed");
             exit();
         }
         // check if we got any results back in the database

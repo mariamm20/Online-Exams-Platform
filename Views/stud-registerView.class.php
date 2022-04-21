@@ -1,25 +1,23 @@
 <?php
 
-class RegisterView extends RegisterCont
+class StudRegisterView extends StudRegisterCont
 {
     private $user_name;  
     private $email;
     private $password;
-    private $repeated_pass;
-    private $role;
     private $academic_id;
-    private $id_password;
+    private $level;
+    private $department;
+   
 
-    public function __construct($user_name, $email, $password, $repeated_pass, $role, $academic_id, $id_password)
+    public function __construct($user_name, $email, $password, $academic_id, $level, $department)
     {
         $this->user_name= $user_name;
-        
         $this->email = $email;
         $this->password = $password;
-        $this->repeated_pass = $repeated_pass;
-        $this->role = $role;
         $this->academic_id= $academic_id;
-        $this->id_password = $id_password;
+        $this->level= $level;
+        $this->department= $department;
     }
 
     public function userRegisteration()
@@ -28,7 +26,7 @@ class RegisterView extends RegisterCont
             if($this->emptyInput() == false)  
             {
                 //echo "Empty Input!";
-                header("location: ../Home/Register.php?error=emptyinput");
+                header("location: ../Home/stud-register.php?error=emptyinput");
                 exit();
             }
 
@@ -36,57 +34,44 @@ class RegisterView extends RegisterCont
             {
             
                 //echo "Invalid First Name!";
-                header("location: ../Home/Register.php?error=invalidUserName");
+                header("location: ../Home/stud-register.php?error=invalidUserName");
                 exit();
             }  
 
             if($this->validateAcademicId() == false)  
             {
                 //echo "Invalid Last Name!";
-                header("location: ../Home/Register.php?error=invalidAcademicId");
+                header("location: ../Home/stud-register.php?error=invalidAcademicId");
                 exit();
             }  
 
-            if($this->validateIdPassword() == false)  
-            {
-                
-                //echo "Invalid Email!";
-                header("location: ../Home/Register.php?error=invalidIdPassword");
-                exit();
-            }  
-            if($this->passwordMatch() == false)  
-            {
-                
-                //echo "password and repeat password are not the same";
-                header("location: ../Home/Register.php?error=passwordDoesntMatch");
-                exit();
-            }  
-
+            
+            
             if($this->checkUserEmeil() == false)  
             {
                
                 echo "This Email Is Already Taken!";
-                header("location: ../Home/Register.php?error=takenEmail");
+                header("location: ../Home/stud-register.php?error=takenEmail");
                 exit();
             }  
             if($this->checkUserID() == false)  
             {
                
                 echo "This Email Is Already Taken!";
-                header("location: ../Home/Register.php?error=takenID");
+                header("location: ../Home/stud-register.php?error=takenID");
                 exit();
             }  
 
             if($this->validateEmail() == false)  
             {
                 //echo "Invalid Phone Number";
-                header("location: ../Home/Register.php?error=InvalidEmail");
+                header("location: ../Home/stud-register.php?error=InvalidEmail");
                 exit();
             }  
             // if($this->verifyID() == false)  
             // {
             //     //echo "Invalid Phone Number";
-            //     header("location: ../Home/Register.php?error=incorrectID");
+            //     header("location: ../Home/stud-register.php?error=incorrectID");
             //     exit();
             // }  
             
@@ -95,7 +80,7 @@ class RegisterView extends RegisterCont
                 
 
 
-            $this->userSetUP($this->user_name,$this->email,$this->password, $this->role, $this->academic_id, $this->id_password);
+            $this->userSetUP($this->user_name,$this->email,$this->password, $this->academic_id,$this->level, $this->department);
 
         }
 
@@ -104,7 +89,7 @@ class RegisterView extends RegisterCont
     private function EmptyInput()
     {
         $result = false;
-        if(empty($this->user_name) || empty($this->academic_id) || empty($this->id_password) || empty($this->email) ||empty($this->password) ||empty($this->repeated_pass) || empty($this->role))
+        if(empty($this->user_name) || empty($this->academic_id)  || empty($this->email) ||empty($this->password) ||empty($this->level) ||empty($this->department) )
         {
             $result = false;
         }
@@ -140,18 +125,7 @@ class RegisterView extends RegisterCont
         return $result;
 
     }
-    private function validateIdPassword()
-    {
-        $result = false;
-        if (strlen($this->id_password) != 6) {
-            $result = false;
-        }
-        else{
-            $result = true;
-        }
-        return $result;
-
-    }
+   
     private function validateEmail()
     {
         $result = false;
@@ -167,18 +141,7 @@ class RegisterView extends RegisterCont
         return $result;
     }
 
-    private function passwordMatch()
-    {
-        $result = false;
-        if ($this->password != $this->repeated_pass)
-        {
-            $result = false;
-        }
-        else {
-            $result = true;
-        }
-        return $result;
-    }
+    
 
     private function checkUserEmeil(){
         $result = false;

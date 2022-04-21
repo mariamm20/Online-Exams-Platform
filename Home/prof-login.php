@@ -59,7 +59,7 @@
                 <img src="img/5.png" alt="img" />
             </div>
             <div class="form-section">
-                <form action="../includes/Login.inc.php" method="POST">
+                <form action="../includes/prof-login.inc.php" method="POST">
                     <h4>Log In <?php include('../includes/LoginHandeling.inc.php') ?> </h4>
                     <fieldset class="inputs">
                         

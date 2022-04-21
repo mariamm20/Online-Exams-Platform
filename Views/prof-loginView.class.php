@@ -32,7 +32,7 @@
             if($this->emptyInput() == false)  
             {
                 //echo "Empty Input!";
-                header("location: ../Home/login.php?error=emptyinput");
+                header("location: ../Home/prof-login.php?error=emptyinput");
                 exit();
             }  
 

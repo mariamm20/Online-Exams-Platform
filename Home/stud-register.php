@@ -59,40 +59,27 @@
                 <img src="img/4.png" alt="img" />
             </div>
             <div class="form-section">
-                <form action="" method="Post">
-                    <h4 id="role">Registration</h4>
+                <form action="../includes/stud-register.inc.php" method="Post">
+                    <h4 id="role">Registration  <?php include('../includes/RegisterHandling.inc.php') ?></h4>
                     <fieldset class="inputs">
-                        <input type="text"  placeholder="Your Name"  />
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Email error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
-                        <input type="text" placeholder="Acadimic ID"  />
-                        <lable data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Acadimic ID error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
-                        <input type="email" placeholder="Email" />
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Email error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
+                        <input type="text"  placeholder="Your Name" name="name"; />
                         
-                        <input type="password" placeholder="Password" id="eye" />
+                        <input type="text" placeholder="Acadimic ID" name="academic_id" />
+                       
+                        <input type="email" placeholder="Email" name="email"/>
+                        
+                        <input type="password" placeholder="Password" id="eye" name="password"/>
                         <button onclick="event.preventDefault(),myFunction()"  class="view-password"><i class="fa-solid fa-eye"></i></button>
                     
-                        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
-                            title="Password error">
-                            <i class="fa-solid fa-circle-info"></i>
-                        </lable>
-                        <select>
+                        
+                        <select name="level">
                             <option selected disabled>Choose Level</option>
                             <option>Level One</option>
                             <option>Level Two</option>
                             <option>Level Three</option>
                             <option>Level Four</option>
                         </select>
-                        <select>
+                        <select name="dept">
                             <option selected disabled>Choose Department</option>
                             <option>Private</option>
                             <option>General</option>
@@ -100,7 +87,7 @@
                         </select>
                         
                         <div id="btn-div">
-                            <button>Register</button>
+                            <button name="register">Register</button>
                         </div>
                         <p>All ready have an account?<a href="../Login/login.html"> Log In</a></p>
                     </fieldset>
