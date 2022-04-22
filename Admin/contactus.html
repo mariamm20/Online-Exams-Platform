@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <title>Online Exams Platform </title>
     <link rel="icon" href="../assests/cartoon.ico" />
     <link rel="stylesheet" href="../assests/node_modules/aos/dist/aos.css" />
@@ -18,43 +18,48 @@
 
 <body>
     <div id="app">
-        <div class="d-flex main"  data-aos="zoom-in">
+        <div class="d-flex main" data-aos="zoom-in">
 
             <div class=" divs-container">
-                <a class="d-flex col align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <svg class="bi" width="40" height="32">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                    <span class="fs-4"><a class="navbar-brand" href="../Home/home.html">
-                            Online Exams <br />
-                            <span class="platform-word">Platform </span>
-
-                        </a></span>
+              <a class="d-flex col align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <svg class="bi" width="40" height="32">
+                  <use xlink:href="#bootstrap"></use>
+                </svg>
                 </a>
-                <ul class="navbar-nav nav-pills flex-column mb-auto elements">
+                  <div class="d-flex justify-content-evenly">
+                    <a class="navbar-brand" href="../Home/home.html">
+                      Online Exams <br />
+                      <span class="platform-word">Platform </span>
+      
+                    </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                  </button>
+                </div>
+                
+              
+              <ul class="navbar-nav nav-pills flex-column mb-auto elements" id="navbarSupportedContent">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="../Admin/dashboard.html">
-
                             <font-awesome-icon icon="fa-solid fa-gauge" /><i class="fa-solid fa-palette"></i>
                             Dashboard
-
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../Admin/allusers.html">
-                            <i class="fa-solid fa-users"></i> All Users
+                        <a class="nav-link" aria-current="page" href="../Admin/requests.html">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i> Requests
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../Admin/examsrequests.html">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i> Exams
-                            Requests
+                        <a class="nav-link" aria-current="page" href="../Admin/professors.html">
+                            <i class="fa-solid fa-users"></i> Professors
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" aria-current="page" href="../Admin/allexams.html">
-                            <i class="fa-solid fa-border-all"></i> All Exams
-
+                        <a class="nav-link" aria-current="page" href="../Admin/levels.html">
+                            <i class="fa-solid fa-border-all"></i> Levels
                         </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -78,20 +83,19 @@
 
                 <div class="title">Contact Us</div>
                 <div class="table-content">
-                    <table class="table table-striped table-hover table-responsive ">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Preview</th>
-                                <th scope="col">Delete</th>
-                            </tr>
-                        </thead>
+                    <table class="table table-responsive ">
+                        
                         <tbody>
+                            <tr class="table-head">
+                                <td scope="col">#</td>
+                                <td scope="col">Username</td>
+                                <td scope="col">Email</td>
+                                <td scope="col">Status</td>
+                                <td scope="col">Preview</td>
+                                <td scope="col">Delete</td>
+                            </tr>
                             <tr>
-                                <th scope="row">1001</th>
+                                <td scope="row">1001</td>
                                 <td>Physics 101</td>
                                 <td>John Ebraham</td>
                                 <td>50</td>
@@ -99,7 +103,7 @@
                                 <td><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
-                                <th scope="row">1001</th>
+                                <td scope="row">1001</td>
                                 <td>Physics 101</td>
                                 <td>John Ebraham</td>
                                 <td>50</td>
@@ -107,7 +111,7 @@
                                 <td><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
-                                <th scope="row">1001</th>
+                                <td scope="row">1001</td>
                                 <td>Physics 101</td>
                                 <td>John Ebraham</td>
                                 <td>50</td>
@@ -115,7 +119,7 @@
                                 <td><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
-                                <th scope="row">1001</th>
+                                <td scope="row">1001</td>
                                 <td>Physics 101</td>
                                 <td>John Ebraham</td>
                                 <td>50</td>
@@ -123,7 +127,7 @@
                                 <td><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
-                                <th scope="row">1001</th>
+                                <td scope="row">1001</td>
                                 <td>Physics 101</td>
                                 <td>John Ebraham</td>
                                 <td>50</td>
@@ -131,7 +135,7 @@
                                 <td><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
-                                <th scope="row">1001</th>
+                                <td scope="row">1001</td>
                                 <td>Physics 101</td>
                                 <td>John Ebraham</td>
                                 <td>50</td>
