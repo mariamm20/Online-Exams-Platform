@@ -91,8 +91,8 @@
                             </tr>
                             <tr class="lvl">
                                 <td colspan="2" class="lvl-name">Level One </td>
-                                <td colspan="2" class="second-row" data-bs-toggle="modal"
-                                data-bs-target="#add-dept"><button type="button">Add Dept</button></td>
+                                <td colspan="2" class="second-row" ><button type="button" data-bs-toggle="modal"
+                                data-bs-target="#add-dept">Add Dept</button></td>
                             </tr>
                             <tr class="lvl-head">
                                 <td>Dept&nbsp;Name</td>
@@ -105,15 +105,18 @@
                                 <td style="width:478.56px">
                                     <div class="d-flex justify-content-between subject">
                                         <p>Software constraction </p>
-                                        <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                                        <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                                     </div>
                                     <div class="d-flex justify-content-between subject">
                                         <p>Software constraction </p>
-                                        <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                                        <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                                     </div>
                                     <div class="d-flex justify-content-between subject">
                                         <p>Software constraction </p>
-                                        <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                                        <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                                     </div>
 
                                 </td>
@@ -121,7 +124,8 @@
                                     <a href="#" data-bs-toggle="modal"
                                     data-bs-target="#add-subject"><i class="fa-solid fa-square-plus"></i></a>
                                 </td>
-                                <td class="del"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="del"><a href="#" data-bs-toggle="modal"
+                                  data-bs-target="#remove-dept"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             
 
@@ -184,6 +188,47 @@
                           </div>
                         </div>
                       </div>
+                      <div class="modal" id="remove-dept" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Department</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p class="text-start fw-bolder">Are you sure to delete this Department? </p>
+                              
+                              
+                            </div>
+                            <div class="modal-footer">
+                              
+                              <button type="button" class="">Yes</button>
+                              <button type="button">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal" id="remove-subj" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Subject</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p class="text-start fw-bolder">Are you sure to delete this subject? </p>
+                              
+                              
+                            </div>
+                            <div class="modal-footer">
+                              
+                              <button type="button" class="">Yes</button>
+                              <button type="button">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              
                 </div>
 
             </section>

@@ -103,22 +103,26 @@
                 <td style="width:478.56px">
                   <div class="d-flex justify-content-between subject">
                     <p>Software constraction </p>
-                    <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                    <a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                   </div>
                   <div class="d-flex justify-content-between subject">
                     <p>Requirements analysis</p>
-                    <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                    <a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                   </div>
                   <div class="d-flex justify-content-between subject">
                     <p>Software development</p>
-                    <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                    <a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                   </div>
 
                 </td>
                 <td class="prof-add-subj"><i title="Add Subject" class="fa-solid fa-square-plus " data-bs-toggle="modal"
                     data-bs-target="#exampleModal"></i>
                   </td>
-                <td class="text-center"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                <td class="text-center"><a href="#" data-bs-toggle="modal"
+                  data-bs-target="#remove-prof"><i class="fa-solid fa-trash-can"></i></a></td>
               </tr>
               <tr>
                 <td>2</td>
@@ -126,18 +130,21 @@
                 <td style="width:478.56px">
                   <div class="d-flex justify-content-between subject">
                     <p>Database </p>
-                    <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                    <a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                   </div>
                   <div class="d-flex justify-content-between subject">
                     <p>Open Source </p>
-                    <a href="#"><i class="fa-solid fa-x del-subj"></i></a>
+                    <a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                   </div>
 
                 </td>
                 <td class="prof-add-subj"><i title="Add Subject" class="fa-solid fa-square-plus " data-bs-toggle="modal"
                   data-bs-target="#exampleModal"></i>
                 </td>
-                <td class="text-center"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                <td class="text-center"><a href="#" data-bs-toggle="modal"
+                  data-bs-target="#remove-prof"><i class="fa-solid fa-trash-can"></i></a></td>
               </tr>
 
             </tbody>
@@ -157,6 +164,46 @@
                   
                   <button type="button" class="">Save changes</button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="remove-prof" tabindex="-1" data-bs-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Professor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-start fw-bolder">Are you sure to delete professor? </p>
+                
+                
+              </div>
+              <div class="modal-footer">
+                
+                <button type="button" class="">Yes</button>
+                <button type="button">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal" id="remove-subj" tabindex="-1" data-bs-backdrop="static">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Subject</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-start fw-bolder">Are you sure to delete this subject? </p>
+                
+                
+              </div>
+              <div class="modal-footer">
+                
+                <button type="button" class="">Yes</button>
+                <button type="button">Cancel</button>
               </div>
             </div>
           </div>

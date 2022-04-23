@@ -91,9 +91,9 @@ a.router-link-active {
 
 .del-subj  {
   font-size: 12px;
-  position: absolute;
+  /* position: absolute;
   right: 12px;
-  top: 11px;
+  top: 11px; */
   opacity: 0.7;
 }
   
@@ -348,10 +348,10 @@ border: none;
   position: relative;
   left:20px
 }
-.fa-x{
+/* .fa-x{
   position: relative;
   left: 20px;
-}
+} */
 
 
 
