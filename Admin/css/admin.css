@@ -156,10 +156,10 @@ select option {
   text-align: left;
 
 }
-.magictime {
+/* .magictime {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-}
+} */
 .modal-content{
   background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
 }

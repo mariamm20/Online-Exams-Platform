@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <title>Online Exams Platform </title>
+    <link href="../assests/magic-master/dist/magic.min.css" rel="stylesheet"/>
     <link rel="icon" href="../assests/cartoon.ico" />
     <link rel="stylesheet" href="../assests/node_modules/aos/dist/aos.css" />
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
@@ -100,7 +101,8 @@
                                 <td>John Ebraham</td>
                                 <td>50</td>
                                 <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                                <td class="del"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="del"><a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
                                 <td scope="row">1001</td>
@@ -108,7 +110,8 @@
                                 <td>John Ebraham</td>
                                 <td>50</td>
                                 <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                                <td class="del"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="del"><a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
                                 <td scope="row">1001</td>
@@ -116,7 +119,8 @@
                                 <td>John Ebraham</td>
                                 <td>50</td>
                                 <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                                <td class="del"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="del"><a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
                                 <td scope="row">1001</td>
@@ -124,7 +128,8 @@
                                 <td>John Ebraham</td>
                                 <td>50</td>
                                 <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                                <td class="del"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="del"><a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
                                 <td scope="row">1001</td>
@@ -132,7 +137,8 @@
                                 <td>John Ebraham</td>
                                 <td>50</td>
                                 <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                                <td class="del"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="del"><a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                             <tr>
                                 <td scope="row">1001</td>
@@ -140,10 +146,30 @@
                                 <td>John Ebraham</td>
                                 <td>50</td>
                                 <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                                <td class="del"><a href="#"><i class="fa-solid fa-trash-can"></i></a></td>
+                                <td class="del"><a href="#" data-bs-toggle="modal"
+                                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="modal magictime vanishIn" id="remove-mess" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p class="text-start fw-bolder">Are you sure to delete this? </p>
+                              
+                              
+                            </div>
+                            <div class="modal-footer">
+                              
+                              <button type="button" class="">Yes</button>
+                              <button type="button">Cancel</button>
+                            </div>
+                          </div>
+                        </div>
                 </div>
 
 
