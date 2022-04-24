@@ -370,7 +370,7 @@ html, body {
     position: fixed;
   }
   .modal-content{
-    top: 175px;
+    top: 145px;
   }
   .modal-footer{
     flex-wrap: nowrap;
