@@ -1,11 +1,9 @@
 let btn = document.querySelector('.navbar-toggler');
 let ul = document.querySelector('.elements');
 console.log(window.innerWidth)
-
-    if (screen.width < 700) {
+    if (window.innerWidth < 700) {
         ul.classList.add('collapse')
     } 
-
 window.onresize = function (){    
     if (screen.width < 700) {
         ul.classList.add('collapse')
