@@ -352,7 +352,15 @@ border: none;
   position: relative;
   left: 20px;
 } */
-
+.hide{
+  overflow-x: hidden;
+}
+html, body { 
+  scroll-behavior: smooth
+}
+.model-title{
+  text-align: left;
+}
 
 
 
@@ -360,6 +368,12 @@ border: none;
 @media (max-width:580px) {
   .modal{
     position: fixed;
+  }
+  .modal-content{
+    top: 175px;
+  }
+  .modal-footer{
+    flex-wrap: nowrap;
   }
 }
 
@@ -403,6 +417,7 @@ border: none;
   .navbar-toggler:focus{
     box-shadow: none;
   }
+
 }
 
 
