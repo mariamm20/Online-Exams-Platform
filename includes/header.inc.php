@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
                     <li class="nav-item register-color">
-                        <a class="nav-link" href="../includes/logout.inc.php">
+                        <a class="nav-link" href="../includes/logout.inc.php?<?= $_SESSION['role']; ?>">
                             Log Out
                         </a>
                     </li>

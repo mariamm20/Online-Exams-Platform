@@ -4,7 +4,7 @@ class DB {
     private $host ="localhost";
     private $db_user = "root" ;
     private $db_pass ="";
-    private $dbname ="e-exam" ;
+    private $dbname ="exam" ;
 
     protected function  Connection(){
         $dns = 'mysql:host='.$this->host.';dbname='.$this->dbname;

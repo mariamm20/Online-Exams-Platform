@@ -74,10 +74,10 @@
                         
                         <select name="level">
                             <option selected disabled>Choose Level</option>
-                            <option>Level One</option>
-                            <option>Level Two</option>
-                            <option>Level Three</option>
-                            <option>Level Four</option>
+                            <option>One</option>
+                            <option>Two</option>
+                            <option>Three</option>
+                            <option>Four</option>
                         </select>
                         <select name="dept">
                             <option selected disabled>Choose Department</option>

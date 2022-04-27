@@ -10,12 +10,12 @@ if(isset($_POST['register']))
 
 
     include('../Controllers/dbconnection.class.php');
-    include('../Controllers/prof-registerCont.class.php');
-    include('../Views/prof-registerView.class.php');
+    include('../Controllers/registerCont.class.php');
+    include('../Views/registerView.class.php');
 
-    $register = new RegisterView($user_name,$email,$password,$academic_id);
+    $register = new ProfRegisterView($user_name,$email,$password,$academic_id);
     $register->userRegisteration();
 
-    header('location: ../Home/ProfLogin.php?error=none');
+    header('location: ../Home/prof-login.php?error=none');
 
 }

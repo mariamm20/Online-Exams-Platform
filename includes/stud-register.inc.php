@@ -12,12 +12,12 @@ if(isset($_POST['register']))
 
 
     include('../Controllers/dbconnection.class.php');
-    include('../Controllers/stud-registerCont.class.php');
-    include('../Views/stud-registerView.class.php');
+    include('../Controllers/registerCont.class.php');
+    include('../Views/registerView.class.php');
 
     $register = new StudRegisterView($user_name,$email,$password,$academic_id,$level,$department);
     $register->userRegisteration();
-
+    header('location: ../Home/stud-login.php?error=none');
 
 
 
