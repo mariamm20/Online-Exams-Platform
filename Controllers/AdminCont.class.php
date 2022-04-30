@@ -14,10 +14,14 @@ class AdminCont extends DB
         $prof= $this->getProfessors();
         foreach($prof as $professer)
         {
-           echo $id = $professer['id'];
-           $stmt = $this->Connection()->query("select s.subject_name, s.prof_id , p.id from subjects as s join professors as p on s.prof_id = p.id  where prof_id = ". $id);
-           $s_data = $stmt->fetchAll();
-           return $s_data;
+            $id = $professer['id'];
+          
+            $stmt = $this->Connection()->query("select subject_name, prof_id, id FROM subjects WHERE prof_id =". $id);
+            $s_data = $stmt->fetchAll();
+            return $s_data;
+          
+           
+           
         }
         
         
@@ -55,4 +59,32 @@ class AdminCont extends DB
         $count = $stmt->fetchColumn();
         echo $count;
     }    
+
+    protected function deleteProf($id)
+    {
+        
+        $sql = "delete from professors where id =? ";
+        $stmt = $this->Connection()->prepare($sql);
+        $stmt->execute(array($id));
+    }
+
+    protected function addSubjectCont($id, $subject_name)
+    {
+        $stmt = $this->Connection()->prepare("update subjects set prof_id = ? where subject_name = ?");
+        $stmt->execute(array($id, $subject_name));
+    }
+
+    protected function getAllSubjects()
+    {
+        $stmt = $this->Connection()->query("select * from subjects ");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+    protected function deleteSubjectCont($id)
+    {
+        $sql = "delete from subjects where id =? ";
+        $stmt = $this->Connection()->prepare($sql);
+        $stmt->execute(array($id));
+
+    }
 }
