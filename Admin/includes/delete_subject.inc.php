@@ -1,14 +1,16 @@
 <?php
 if(isset($_POST['delete']))
 {
-    $id = $_POST['id'];
+    $sub_id = $_POST['id'];
+    $prof_id = $_POST['prof_id'];
     
-    echo $id;
+    echo $sub_id;
+    echo $prof_id;
     include('../../Controllers/dbconnection.class.php');
     include('../../Controllers/AdminCont.class.php');
     include('../../Views/AdminView.class.php');
     $adminview = new AdminView();
-    $adminview->deleteSubject($id);
-    header('location: ../professors.php?subject_deleted');
+    $adminview->deleteSubject($sub_id, $prof_id);
+   header('location: ../professors.php?subject_deleted');
 
 }

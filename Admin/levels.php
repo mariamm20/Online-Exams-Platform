@@ -88,7 +88,7 @@
                         <tbody>
                             <tr class="first-rows">
                                 <td colspan="4"><button type="button" data-bs-toggle="modal"
-                                    data-bs-target="#add-level">Add Level</button></td>
+                                    data-bs-target="#add-level" >Add Level</button></td>
                             </tr>
                             <tr class="lvl">
                                 <td colspan="2" class="lvl-name">Level One </td>
@@ -132,6 +132,8 @@
 
                         </tbody>
                     </table>
+
+                    <!-- add level modal ------------------------------- --> 
                     <div class="modal magictime vanishIn" id="add-level" tabindex="-1" data-bs-backdrop="static">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
@@ -139,15 +141,17 @@
                               <h5 class="modal-title"><i class="fa-solid fa-layer-group"></i> Add Level</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
+                            <form action="includes/addlevel.inc.php" method="post">
                             <div class="modal-body">
-                              <input type="text" placeholder="Level Name">
+                              <input type="text" name= "level_name" id = "level" placeholder="Level Name">
                               
                               
                             </div>
                             <div class="modal-footer">
                               
-                              <button type="button" class="">Save changes</button>
+                              <button type="submit" class="" name = "save">Save changes</button>
                             </div>
+                            </form>
                           </div>
                         </div>
                       </div>

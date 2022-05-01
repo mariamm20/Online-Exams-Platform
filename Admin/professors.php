@@ -128,7 +128,7 @@ $adminview = new AdminView();
                 <div class="modal-body">
                   <input type="text" name = "prof_id" id = "added-subject"> 
                  
-                  <select name="subject" >choose subject
+                  <select name="subject_id" >choose subject
                     <?php $adminview->showAllSubjects(); ?>
                   </select>
                  
@@ -190,7 +190,8 @@ $adminview = new AdminView();
                   
                 </div>
                 <div class="modal-footer">
-                <input type="" name="id" id="sub_id_to_delete" >
+                <input type="" name="id" id="sub_id_to_delete" placeholder="subject-id">
+                <input type="" name="prof_id" id="prof_id_to_delete" placeholder="professor-id">
                   <button type="submit" class="" name="delete">Yes</button>
                   <button type="button">Cancel</button>
                 </div>
@@ -238,6 +239,13 @@ $(document).on('click', '.add-subject', function(){
 
 $(document).on('click', '.delete_subject', function(){
     $("#sub_id_to_delete").val($(this).data('fid'));
+});
+
+</script>
+<script>
+
+$(document).on('click', '.delete_subject', function(){
+    $("#prof_id_to_delete").val($(this).data('pid'));
 });
 
 </script>

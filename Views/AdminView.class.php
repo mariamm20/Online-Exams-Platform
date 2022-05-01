@@ -19,7 +19,7 @@ class AdminView extends AdminCont
             <?php  foreach($s_data as $subjects){?> 
                   <div class="d-flex justify-content-between subject">
                     <p><?= $subjects['subject_name']; ?> </p>
-                    <a href="#" data-bs-toggle="modal" data-fid="<?= $subjects['id']; ?>" class="delete_subject"
+                    <a href="#" data-bs-toggle="modal" data-fid="<?= $subjects['id']; ?>" data-pid = "<?= $professors['id']; ?>" class="delete_subject"
                     data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
                   </div>
             <?php }?>
@@ -84,18 +84,27 @@ class AdminView extends AdminCont
     {
       $this->addSubjectCont($id, $subject_name);
     }
+    // show them when adding a subject to the professor
     public function showAllSubjects()
     {
       $data = $this->getAllSubjects();
       foreach($data as $subject )
       {?>
-        <option value="<?= $subject['subject_name'] ?>"> <?= $subject['subject_name'] ?></option>
+        <option value="<?= $subject['id'] ?>"> <?= $subject['subject_name'] ?></option>
         <?php
       }
     }
-    public function deleteSubject($id)
+    public function deleteSubject($sub_id, $prof_id)
     {
-      $this->deleteSubjectCont($id);
+      $this->deleteSubjectCont($sub_id, $prof_id);
     }
    
+
+    //  the part of levels and departments view 
+
+    public function addLevel($level_name)
+    {
+      
+      $this->addLevel($level_name);
+    }
 }

@@ -9,20 +9,29 @@ class AdminCont extends DB
         return $prof_data;
      
     }
+    // بجيب هنا الماد بتاعت كل بروفيسور
     protected function getSubjects()
     {
         $prof= $this->getProfessors();
         foreach($prof as $professer)
         {
-            $id = $professer['id'];
-          
-            $stmt = $this->Connection()->query("select subject_name, prof_id, id FROM subjects WHERE prof_id =". $id);
+           $id =  $professer['id'];
+
+           $ids = array($id);
+           print_r($ids);
+           foreach($ids as $p_subsjects)
+           {
+            $stmt = $this->Connection()->query("
+            SELECT DISTINCT subjects.* from subjects
+            join professor_subjects on subjects.id = professor_subjects.subject_id 
+            join professors on professor_subjects.prof_id = " . $p_subsjects);
             $s_data = $stmt->fetchAll();
             return $s_data;
-          
-           
+           }
            
         }
+        
+          
         
         
 
@@ -35,11 +44,11 @@ class AdminCont extends DB
         return $data;
     }
     protected function acceptRequest()
-        {
-            $state = $_GET["state"];
-            $id = $_GET["id"];
-            $this->Connection()->query("UPDATE professors SET state = $state WHERE id = $id ");
-        }
+    {
+        $state = $_GET["state"];
+        $id = $_GET["id"];
+        $this->Connection()->query("UPDATE professors SET state = $state WHERE id = $id ");
+    }
     
     protected function getRequestsNumber() {
         $sql = "SELECT COUNT(*) FROM professors where state is Null";
@@ -68,10 +77,10 @@ class AdminCont extends DB
         $stmt->execute(array($id));
     }
 
-    protected function addSubjectCont($id, $subject_name)
+    protected function addSubjectCont($prof_id, $subject_id)
     {
-        $stmt = $this->Connection()->prepare("update subjects set prof_id = ? where subject_name = ?");
-        $stmt->execute(array($id, $subject_name));
+        $stmt = $this->Connection()->prepare("insert into professor_subjects(prof_id, subject_id) values (?, ?)");
+        $stmt->execute(array($prof_id, $subject_id));
     }
 
     protected function getAllSubjects()
@@ -80,11 +89,21 @@ class AdminCont extends DB
         $data = $stmt->fetchAll();
         return $data;
     }
-    protected function deleteSubjectCont($id)
+    protected function deleteSubjectCont($sub_id, $prof_id)
     {
-        $sql = "delete from subjects where id =? ";
+        $sql = "delete from professor_subjects where subject_id =? and prof_id = ?";
         $stmt = $this->Connection()->prepare($sql);
-        $stmt->execute(array($id));
+        $stmt->execute(array($sub_id, $prof_id));
 
     }
+
+    // the part of levels and departments------------
+    protected function addLevelContr($level_name)
+    {
+        
+        $stmt = $this->Connection()->prepare("insert into levels(level_name) values (?)");
+        $stmt->execute(array($level_name));
+    }
+
+
 }
