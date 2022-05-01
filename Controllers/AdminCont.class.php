@@ -10,32 +10,28 @@ class AdminCont extends DB
      
     }
     // بجيب هنا الماد بتاعت كل بروفيسور
-    protected function getSubjects()
+    protected function getSubjects($id)
     {
-        $prof= $this->getProfessors();
-        foreach($prof as $professer)
-        {
-           $id =  $professer['id'];
-
-           $ids = array($id);
-           print_r($ids);
-           foreach($ids as $p_subsjects)
-           {
+        
+        
             $stmt = $this->Connection()->query("
             SELECT DISTINCT subjects.* from subjects
             join professor_subjects on subjects.id = professor_subjects.subject_id 
-            join professors on professor_subjects.prof_id = " . $p_subsjects);
+            join professors on professor_subjects.prof_id = " . $id);
             $s_data = $stmt->fetchAll();
             return $s_data;
-           }
            
         }
+        
+        
         
           
         
         
 
-    }
+   
+
+    
     
     protected function getProfessorRequests()
     {
@@ -106,4 +102,5 @@ class AdminCont extends DB
     }
 
 
+    //SELECT p.id , p.user_name , s.subject_name from professors as p join professor_subjects on p.id = professor_subjects.prof_id join subjects as s on s.id = professor_subjects.subject_id;
 }

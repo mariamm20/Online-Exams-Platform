@@ -4,11 +4,12 @@ class AdminView extends AdminCont
     public function showProfessors()
     {
         $Prof_data = $this->getProfessors();
-        $s_data = $this->getSubjects();
+        
         
         foreach($Prof_data as $professors)
-        {?>
-            
+        {
+            $s_data = $this->getSubjects($professors['id']);
+            ?>
             <tr>
                 <td><?= $professors['id']; ?>
                 <input type="hidden" name="id" id="one" value="<?php echo $professors['id']?>">
