@@ -50,7 +50,7 @@ class AdminView extends AdminCont
                 <td>
                 <a href="../Admin/requests.php?state=1&id=<?php echo $request['id'] ?>" \><i class="fa-solid fa-check"></i></a></td>
                 <td class="del">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#remove-request"><i class="fa-solid fa-x">
+                <a href="#" data-bs-toggle="modal" class="reject_prof" data-fid="<?php echo $request['id'] ?>" data-bs-target="#remove-request"><i class="fa-solid fa-x">
                 </i></a></td>
               </tr>
 
@@ -65,6 +65,10 @@ class AdminView extends AdminCont
       }
     }
 
+    public function rejectRequest($id)
+    {
+      $this->rejectRequestCont($id);
+    }
     public function showRequestsNumber()
     {
       $this->getRequestsNumber();
@@ -106,6 +110,7 @@ class AdminView extends AdminCont
     public function addLevel($level_name)
     {
       
-      $this->addLevel($level_name);
+     $this->addLevelContr($level_name);
+      echo memory_get_usage();
     }
 }

@@ -4,7 +4,7 @@ class AdminCont extends DB
 {
     protected function getProfessors()
     {
-        $stmt = $this->Connection()->query("select * from professors ");
+        $stmt = $this->Connection()->query("select * from professors where state = 1 ");
         $prof_data = $stmt->fetchAll();
         return $prof_data;
      
@@ -44,6 +44,11 @@ class AdminCont extends DB
         $state = $_GET["state"];
         $id = $_GET["id"];
         $this->Connection()->query("UPDATE professors SET state = $state WHERE id = $id ");
+    }
+
+    protected function rejectRequestCont($id)
+    {
+        $this->Connection()->query("UPDATE professors SET state = 0 WHERE id = $id ");
     }
     
     protected function getRequestsNumber() {
@@ -94,13 +99,12 @@ class AdminCont extends DB
     }
 
     // the part of levels and departments------------
-    protected function addLevelContr($level_name)
-    {
+    protected function addLevelContr($name)
+    { 
         
         $stmt = $this->Connection()->prepare("insert into levels(level_name) values (?)");
-        $stmt->execute(array($level_name));
+        $stmt->execute(array($name));
     }
 
 
-    //SELECT p.id , p.user_name , s.subject_name from professors as p join professor_subjects on p.id = professor_subjects.prof_id join subjects as s on s.id = professor_subjects.subject_id;
 }

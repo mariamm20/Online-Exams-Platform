@@ -27,63 +27,9 @@ $adminview = new AdminView();
   <div id="app">
     <div class="d-flex main" data-aos="zoom-in">
 
-      <div class=" divs-container">
-        <a class="d-flex col align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <svg class="bi" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-          </svg>
-          </a>
-            <div class="d-flex justify-content-around">
-              <a class="navbar-brand" href="../Home/home.html">
-                Online Exams <br />
-                <span class="platform-word">Platform </span>
-
-              </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-          
-        
-        <ul class="navbar-nav nav-pills flex-column mb-auto elements" id="navbarSupportedContent">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../Admin/dashboard.html">
-              <font-awesome-icon icon="fa-solid fa-gauge" /><i class="fa-solid fa-palette"></i>
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../Admin/requests.html">
-              <i class="fa fa-info-circle" aria-hidden="true"></i> Requests
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../Admin/professors.html">
-              <i class="fa-solid fa-users"></i> Professors
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" aria-current="page" href="../Admin/levels.html">
-              <i class="fa-solid fa-border-all"></i> Levels
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" aria-current="page" href="../Admin/contactus.html">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-              Contact Us
-
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" aria-current="page" href="../Home/home.html">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign
-              out
-            </a>
-          </li>
-        </ul>
-      </div>
+    <?php
+        include('includes/adminheader.inc.php');
+      ?>
 
 
       <section class="container content">
@@ -109,7 +55,7 @@ $adminview = new AdminView();
               
             </tbody>
           </table>
-          <form action="includes/rejectRequest.inc.php" method="POST">
+          
           <div class="modal magictime swashIn" id="remove-request" tabindex="-1" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -117,20 +63,22 @@ $adminview = new AdminView();
                   <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Request</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="includes/rejectRequest.inc.php" method="post">
                 <div class="modal-body">
                   <p class="text-start fw-bolder">Are you sure to delete this request? </p>
                   
                   
                 </div>
                 <div class="modal-footer">
-                <input type="hidden" id = "product_id_input" name="id" value="<?php //echo $_GET["id"];?>"/>
-                  <button type="button" class="" name="delete">Yes</button>
-                  <button type="button" name="cancel">Cancel</button>
+                <input type="hidden" id = "prof_id" name="id"/>
+                  <button type="submit" class="" name="reject">Yes</button>
+                  <button type="submit" name="cancel">Cancel</button>
                 </div>
               </div>
+              </form>
             </div>
           </div>
-          </form>
+        
         </div>
 
 
@@ -140,10 +88,21 @@ $adminview = new AdminView();
   </div>
   </div>
   <!--Scripts part-->
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
   <script src="js/admin.js"></script>
   <script src="../assests/node_modules/aos/dist/aos.js"></script>
   <script src="../assests/global.js"></script>
   <script src="../assests/bootstrap.bundle.min.js"></script>
+  <script>
+
+    $(document).on('click', '.reject_prof', function(){
+        $("#prof_id").val($(this).data('fid'));
+    });
+
+</script>
 </body>
 
 </html>
