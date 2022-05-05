@@ -33,7 +33,7 @@ $adminview = new AdminView();
                 </svg>
                 </a>
                   <div class="d-flex justify-content-around">
-                    <a class="navbar-brand" href="../Home/home.html">
+                    <a class="navbar-brand" href="../Home/home.php">
                       Online Exams <br />
                       <span class="platform-word">Platform </span>
       
@@ -48,35 +48,35 @@ $adminview = new AdminView();
               
               <ul class="navbar-nav nav-pills flex-column mb-auto elements" id="navbarSupportedContent">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../Admin/dashboard.html">
+                        <a class="nav-link" aria-current="page" href="../Admin/dashboard.php">
                             <font-awesome-icon icon="fa-solid fa-gauge" /><i class="fa-solid fa-palette"></i>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../Admin/requests.html">
+                        <a class="nav-link" aria-current="page" href="../Admin/requests.php">
                             <i class="fa fa-info-circle" aria-hidden="true"></i> Requests
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../Admin/professors.html">
+                        <a class="nav-link" aria-current="page" href="../Admin/professors.php">
                             <i class="fa-solid fa-users"></i> Professors
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" aria-current="page" href="../Admin/levels.html">
+                        <a class="nav-link" aria-current="page" href="../Admin/levels.php">
                             <i class="fa-solid fa-border-all"></i> Levels
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" aria-current="page" href="../Admin/contactus.html">
+                        <a class="nav-link" aria-current="page" href="../Admin/contactus.php">
                             <i class="fa fa-paper-plane" aria-hidden="true"></i>
                             Contact Us
 
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" aria-current="page" href="../Home/home.html">
+                        <a class="nav-link" aria-current="page" href="../Home/home.php">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign
                             out
                         </a>

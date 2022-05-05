@@ -18,7 +18,7 @@
     <div id="app">
         <header class="container" >
             <nav class="navbar navbar-expand-lg">
-                <span class="fs-4 title"><a class="navbar-brand" href="../Home/home.html">
+                <span class="fs-4 title"><a class="navbar-brand" href="../Home/home.php">
                                     Online Exams <br />
                             <span class="platform-word">Platform </a>
     </span>
@@ -89,7 +89,7 @@
                         <div id="btn-div">
                             <button name="register">Register</button>
                         </div>
-                        <p>All ready have an account?<a href="../Login/login.html"> Log In</a></p>
+                        <p>All ready have an account?<a href="../Login/login.php"> Log In</a></p>
                     </fieldset>
                 </form>
             </div>

@@ -1,3 +1,7 @@
+<?php
+include('../Controllers/dbconnection.class.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +35,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="register.html">
+                            <a class="nav-link" href="register.php">
                                 Register
                             </a>
                         </li>
@@ -59,18 +63,22 @@
                 <img src="img/7.jpg" alt="img" />
             </div>
             <div class="form-section">
-                <form>
+                
+            
+            <form action="../includes/contact.php" method="post">
                     <h4>Contact Us</h4>
                     <fieldset class="inputs">
-                        <input type="text" placeholder="Your Name" required />
-                        <input type="email" placeholder="Email" required />
-                        <textarea placeholder="What is your problem?" required></textarea>
+                        <input type="text" name="name" placeholder="Your Name" required />
+                        <input type="email" name="email" placeholder="Email" required />
+                        <textarea name="msg" placeholder="What is your problem?" required></textarea>
                         <div id="btn-div">
-                            <button>Send </button>
+                            <button name="send">Send</button>
                         </div>
 
                     </fieldset>
                 </form>
+
+
             </div>
         </section>
 
