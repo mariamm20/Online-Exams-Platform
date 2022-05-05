@@ -4,7 +4,7 @@ class AdminCont extends DB
 {
     protected function getProfessors()
     {
-        $stmt = $this->Connection()->query("select * from professors ");
+        $stmt = $this->Connection()->query("select * from professors where state = 1 ");
         $prof_data = $stmt->fetchAll();
         return $prof_data;
     }
@@ -108,22 +108,19 @@ class AdminCont extends DB
         $stmt->execute(array($dept_name, $level_id));
     }*/
 
-    protected function getAllLevels()
-    {
-        $stmt = $this->Connection()->query("select * from levels ");
-        $data = $stmt->fetchAll();
-        return $data;
-    }
 
     protected function getDepts()
     {
-        $id=$_POST['id'];
-        $stmt = $this->Connection()->query("
-        SELECT DISTINCT departments.* from departments
-        join dept_lvl on level.id = dept_lvl.level_id 
-        join levels on dept_lvl.lvl_id = " . $id);
+        $stmt = $this->Connection()->query("select * from departments");
         $dept_lvl_data = $stmt->fetchAll();
         return $dept_lvl_data;
+
+        /*$stmt = $this->Connection()->query("
+        SELECT DISTINCT departments.* from departments
+        join dept_lvl on level.id = dept_lvl.level_id 
+        join levels on dept_lvl.lvl_id =null ");
+        $dept_lvl_data = $stmt->fetchAll();
+        return $dept_lvl_data;*/
     }
 
     protected function addDeptLvlCont($level_id, $dept_id)

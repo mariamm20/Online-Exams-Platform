@@ -107,7 +107,6 @@ class AdminView extends AdminCont
 
   public function showLevels()
   {
-    
     $level_data = $this->getLevels();
     foreach ($level_data as $levels) {
     ?>
@@ -129,7 +128,7 @@ class AdminView extends AdminCont
 
   public function showAllLevels()
   {
-    $data = $this->getAllLevels();
+    $data = $this->getLevels();
 
     foreach ($data as $levels) {
     ?>
@@ -152,7 +151,6 @@ class AdminView extends AdminCont
         <td>Delete</td>
       </tr>
       <tr>
-        
         <td style="width: 220px;"><?= $depts['dept_name']; ?> </td>
         <td style="width:478.56px">
           <?php foreach ($sub_data as $subjects) { ?>

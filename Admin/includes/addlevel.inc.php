@@ -1,14 +1,14 @@
 <?php
 if(isset($_POST['save']))
 {
-    $level_name = $_POST['level_name'];
-    echo $level_name;
+    $name = $_POST['level_name'];
+    echo $name;
     include('../../Controllers/dbconnection.class.php');
     include('../../Controllers/AdminCont.class.php');
     include('../../Views/AdminView.class.php');
 
     $adminvview = new AdminView();
-    $adminvview->addLevel($level_name);
+    $adminvview->addLevel($name);
     header('location: ../levels.php?leveladded');
 
 

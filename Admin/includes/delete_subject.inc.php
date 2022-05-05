@@ -14,3 +14,7 @@ if(isset($_POST['delete']))
    header('location: ../professors.php?subject_deleted');
 
 }
+if(isset($_POST['cancel']))
+{
+    header('location: ../professors.php');
+}
