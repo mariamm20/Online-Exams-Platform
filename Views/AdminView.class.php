@@ -111,6 +111,76 @@ class AdminView extends AdminCont
     {
       
      $this->addLevelContr($level_name);
-      echo memory_get_usage();
+      
+    }
+
+    public function showLevels()
+    {
+      $l_data = $this->getLevels();
+      foreach($l_data as $level)
+      { $d_data = $this->getDepartments($level['id']);
+        ?>
+        
+             
+              <tr class="lvl">
+                  <td colspan="2" class="lvl-name"><?= "Level " . $level['level_name'] ?> </td>
+                  <td colspan="2" class="second-row" ><button type="button" data-bs-toggle="modal"
+                  data-bs-target="#add-dept" class="add_department" data-lid = "<?= $level['id'] ?>">Add Dept</button></td>
+              </tr>
+              <tr class="lvl-head">
+                  <td>Dept&nbsp;Name</td>
+                  <td>Subjects</td>
+                  <td>Add&nbsp;Subjects</td>
+                  <td>Delete</td>
+              </tr>
+              <?php
+              foreach($d_data as $department)
+              { $sub_data = $this->getDepartmentSubjects($level['id'], $department['id']);
+                ?>
+              <tr >
+                  <td style="width: 220px;"><?= $department['dept_name'] ?> </td>
+                  <td style="width:478.56px">
+                  <?php
+                    foreach($sub_data as $subject){
+                   ?>
+                      <div class="d-flex justify-content-between subject">
+                          <p><?= $subject['subject_name'] ?> </p>
+                          <a href="#" data-bs-toggle="modal" class="remove_subject" data-sid = "<?=$subject['id'] ?>"
+                          data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
+                      </div>
+                  <?php } ?>   
+                  </td>
+                  <td class="edit">
+                      <a href="#" data-bs-toggle="modal" class="add_subject"  data-did="<?=$department['id']; ?>" data-lid="<?= $level['id'] ;?>"
+                      data-bs-target="#add-subject"><i class="fa-solid fa-square-plus"></i></a>
+                  </td>
+                  <td class="del"><a href="#" data-bs-toggle="modal" class="remove_dept" data-fid="<?=$department['id'] ;?>"
+                    data-bs-target="#remove-dept"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            
+
+       <?php 
+      }
+              
+      }
+    }
+
+    public function addDepartment($name, $level_id)
+    {
+      $this->addDepartmentCont($name, $level_id);
+    }
+
+    public function addDeptSubject($name, $level_id, $dept_id)
+    {
+      $this->addDeptSubjectCont($name, $level_id, $dept_id);
+    }
+
+    public function deleteTheSubject($id)
+    {
+      $this->deleteSub($id);
+    }
+    public function deleteDepartment($id)
+    {
+      $this->deleteDepartmentCont($id);
     }
 }

@@ -3,7 +3,7 @@ class RegisterCont extends DB
 {
     protected function userSetUP($user_name, $email, $password,$academic_id)
     {
-        $query = "INSERT into professors (user_name, email, password, role, academic_id, created_at) values (?, ?, ?, 'professor', ?, now())";
+        $query = "INSERT into professors (user_name, email, password, role, academic_id, created_at, state) values (?, ?, ?, 'professor', ?, now(), null)";
         $stmt = $this->Connection()->prepare($query);
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -86,7 +86,7 @@ class StudRegisterCont extends DB
 {
     protected function userSetUP($user_name, $email, $password,$academic_id, $level, $department)
     {
-        $query = "INSERT into students (user_name, email, password, role, academic_id,level, department, created_at) values (?, ?, ?, 'student', ?,?,?, now())";
+        $query = "INSERT into students (user_name, email, password,academic_id,level, department,role, created_at, level_id, dept_id) values (?, ?, ?, ?,?,?, now(), 'student', (SELECT id from levels where level_name = '$level'), (SELECT id from departments where dept_name = '$department' ))";
         $stmt = $this->Connection()->prepare($query);
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -162,5 +162,7 @@ class StudRegisterCont extends DB
         return $resultCheck;
         
     }
+
+    
 
 }

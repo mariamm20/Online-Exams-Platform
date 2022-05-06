@@ -22,14 +22,6 @@ class AdminCont extends DB
             return $s_data;
            
         }
-        
-        
-        
-          
-        
-        
-
-   
 
     
     
@@ -106,5 +98,51 @@ class AdminCont extends DB
         $stmt->execute(array($name));
     }
 
+    protected function getLevels()
+    {
+        $stmt = $this->Connection()->query("select * from levels ");
+        $data = $stmt->fetchAll();
+        return $data;
+
+    }
+    protected function getDepartments($level_id)
+    {
+        $stmt = $this->Connection()->query("select * from departments where level_id = $level_id ");
+        $data = $stmt->fetchAll();
+        return $data;
+
+    }
+    protected function getDepartmentSubjects($level_id, $dept_id)
+    {
+        $stmt = $this->Connection()->query("select * from subjects where level_id = $level_id and dept_id = $dept_id ");
+        $data = $stmt->fetchAll();
+        return $data;
+
+    }
+
+    protected function addDepartmentCont($name, $level_id)
+    {
+        $stmt =$this->Connection()->prepare("INSERT into departments (dept_name, level_id) values (?,?)");
+        $stmt->execute(array($name, $level_id));
+    }
+    protected function addDeptSubjectCont($name, $level_id, $dept_id)
+    {
+        
+        $stmt = $this->Connection()->prepare("INSERT into subjects (subject_name, level_id,dept_id) values (?,?,?)");
+        $stmt->execute(array($name, $level_id, $dept_id));
+    }
+    
+    protected function deleteSub($id)
+    {
+        $sql = "delete from subjects where id = ?";
+        $stmt = $this->Connection()->prepare($sql);
+        $stmt->execute(array($id));
+    }
+    protected function deleteDepartmentCont($id)
+    {
+        $sql = "delete from departments where id = ?";
+        $stmt = $this->Connection()->prepare($sql);
+        $stmt->execute(array($id));
+    }
 
 }

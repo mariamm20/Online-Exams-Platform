@@ -1,3 +1,9 @@
+<?php
+include("../Controllers/dbconnection.class.php");
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
+$student = new studentView();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,15 +80,21 @@
                         
                         <select name="level">
                             <option selected disabled>Choose Level</option>
-                            <option>One</option>
-                            <option>Two</option>
-                            <option>Three</option>
-                            <option>Four</option>
+                            <?php
+                                $student->showLevels();
+                            ?>
                         </select>
                         <select name="dept">
                             <option selected disabled>Choose Department</option>
-                            <option>Private</option>
+                            <?php
+                                $level_name = $_POST['level'];
+                            ?>
                             <option>General</option>
+                            <option>se</option>
+                            <option><?=  $_POST['level'];?></option>
+                            <option>cs</option>
+                            <option>is</option>
+                            <option>it</option>
                             
                         </select>
                         

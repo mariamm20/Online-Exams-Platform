@@ -5,7 +5,7 @@ class ProfLoginCont extends DB
     protected function getProfessor($email, $password)
     {
         
-        $stmt = $this->Connection()->prepare('SELECT password FROM professors WHERE email =?');
+        $stmt = $this->Connection()->prepare('SELECT password FROM professors WHERE email =? and state = 1');
         
 
          
