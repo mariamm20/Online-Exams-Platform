@@ -12,7 +12,7 @@ $adminview = new AdminView();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Exams Platform </title>
-    <link href="../assests/magic-master/dist/magic.min.css" rel="stylesheet"/>
+    <link href="../assests/magic-master/dist/magic.min.css" rel="stylesheet" />
     <link rel="icon" href="../assests/cartoon.ico" />
     <link rel="stylesheet" href="../assests/node_modules/aos/dist/aos.css" />
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
@@ -26,9 +26,9 @@ $adminview = new AdminView();
     <div id="app">
         <div class="d-flex main" data-aos="zoom-in">
 
-        <?php
-        include('includes/adminheader.inc.php');
-      ?>
+            <?php
+            include('includes/adminheader.inc.php');
+            ?>
 
 
 

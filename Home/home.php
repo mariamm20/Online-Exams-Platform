@@ -29,7 +29,7 @@
                 online exams for your<br />
                 students
             </p>
-            <button onclick="location.href='../Pre-register/pre-register.html'">Get Started</button>
+            <button onclick="location.href='../Pre-register/pre-register.php'">Get Started</button>
         </div>
     </section>
     <section class="landing section-two">

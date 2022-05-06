@@ -10,16 +10,8 @@
         // make constructor to equal the properties with the parameters inside the constructor
         public function __construct($email, $password)
         {
-        
-            
             $this->password = $password;
             $this->email = $email;
-
-            
-            
-            
-            
-
         }
 
         //  don't return error لو الكل الفانكشنز اللي تحت دي مشsignup for user  المفروض هعمل فانكشن تعملي 
