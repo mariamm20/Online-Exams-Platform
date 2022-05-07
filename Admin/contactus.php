@@ -35,85 +35,109 @@ $adminview = new AdminView();
       ?>
 
 
-      <section class="container content">
+<section class="container content" >
 
-        <div class="title">Contact Us</div>
-        <div class="table-content">
-          <table class="table table-responsive ">
-
-            <tbody>
-              <tr class="table-head">
+<div class="title">Contact Us</div>
+<div class="table-content">
+    <table class="table table-responsive ">
+        
+        <tbody>
+            <tr class="table-head">
                 <td scope="col">#</td>
                 <td scope="col">Username</td>
                 <td scope="col">Email</td>
-                <td scope="col">Message</td>
                 <td scope="col">Status</td>
                 <td scope="col">Preview</td>
                 <td scope="col">Delete</td>
-              </tr>
-
-              <?php
-              $adminview->showContact();
-              ?>
-            </tbody>
-          </table>
-
-          <!-- preview msg -->
-          <div class="modal magictime swashIn" id="preview-msg" tabindex="-1" data-bs-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title"><i class="fa-solid fa-eye"></i> Preview</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p class="text-start fw-bolder">Message </p>
-                  <p> Preview page </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" data-bs-dismiss="modal">OK</button>
-                </div>
-              </div>
+            </tr>
+            <tr>
+                <td scope="row">1001</td>
+                <td>Physics 101</td>
+                <td>John Ebraham</td>
+                <td>50</td>
+                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+                <td class="del"><a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            <tr>
+                <td scope="row">1001</td>
+                <td>Physics 101</td>
+                <td>John Ebraham</td>
+                <td>50</td>
+                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+                <td class="del"><a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            <tr>
+                <td scope="row">1001</td>
+                <td>Physics 101</td>
+                <td>John Ebraham</td>
+                <td>50</td>
+                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+                <td class="del"><a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            <tr>
+                <td scope="row">1001</td>
+                <td>Physics 101</td>
+                <td>John Ebraham</td>
+                <td>50</td>
+                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+                <td class="del"><a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            <tr>
+                <td scope="row">1001</td>
+                <td>Physics 101</td>
+                <td>John Ebraham</td>
+                <td>50</td>
+                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+                <td class="del"><a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+            <tr>
+                <td scope="row">1001</td>
+                <td>Physics 101</td>
+                <td>John Ebraham</td>
+                <td>50</td>
+                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+                <td class="del"><a href="#" data-bs-toggle="modal"
+                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modal magictime swashIn" id="remove-mess" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-start fw-bolder">Are you sure to delete this? </p>
+              
+              
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" class="">Yes</button>
+              <button type="button">Cancel</button>
             </div>
           </div>
-
-
-          <!-- delete contact -->
-          <div class="modal magictime swashIn" id="remove-msg" tabindex="-1" data-bs-backdrop="static">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Contact</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <form action="includes/deleteContact.inc.php" method="POST">
-                  <div class="modal-body">
-                    <p class="text-start fw-bolder">Are you sure to delete contact? </p>
-                  </div>
-                  <div class="modal-footer">
-                    <input type="hidden" name="contact_id" id="contact_id_to_delete">
-                    <button type="submit" class="" name="delete">Yes</button>
-                    <button type="button" name="cancel" data-bs-dismiss="modal">Cancel</button>
-                  </div>
-              </div>
-
-              <?php //x$adminview->deleteContact($id) 
-              ?>
-
-              </form>
-
-            </div>
-          </div>
+        </div>
+</div>
 
 
 
-
-      </section>
+</section>
     </div>
   </div>
   </div>
+
+
+
   <!--Scripts part-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="js/admin.js"></script>
   <script src="../assests/node_modules/aos/dist/aos.js"></script>
   <script src="../assests/global.js"></script>
@@ -121,10 +145,13 @@ $adminview = new AdminView();
 
 
   <script>
-    $(document).on('click', '.delete-contact-btn', function() {
-      $("#contact_id_to_delete").val($(this).data('fid'));
+    $(document).on('click', '.reject-contact-btn', function() {
+      $("#contact_rejected_id").val($(this).data('fid'));
     });
   </script>
+
+
+
 </body>
 
 </html>

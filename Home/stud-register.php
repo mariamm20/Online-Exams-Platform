@@ -78,23 +78,20 @@ $student = new studentView();
                         <button onclick="event.preventDefault(),myFunction()"  class="view-password"><i class="fa-solid fa-eye"></i></button>
                     
                         
-                        <select name="level">
+                        <select name="level" class="level_name" id="nameoflevel"   >
                             <option selected disabled>Choose Level</option>
                             <?php
                                 $student->showLevels();
                             ?>
                         </select>
-                        <select name="dept">
+                       
+                        <select name="dept" id="department">
                             <option selected disabled>Choose Department</option>
                             <?php
-                                $level_name = $_POST['level'];
+                            
+                            include('../includes/getDepartmenr.inc.php');
+                              
                             ?>
-                            <option>General</option>
-                            <option>se</option>
-                            <option><?=  $_POST['level'];?></option>
-                            <option>cs</option>
-                            <option>is</option>
-                            <option>it</option>
                             
                         </select>
                         
@@ -109,10 +106,34 @@ $student = new studentView();
     </div>
 
     <!--Scripts part-->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
     <script src="js/register.js"></script>
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
+
+    <script>
+        
+    // Country dependent ajax
+    $("#nameoflevel").on("change",function(){
+      var levelId = $(this).val();
+      console.log(levelId)
+      $.ajax({
+        url :"../includes/getDepartmenr.inc.php",
+        type:"POST",
+        cache:false,
+        data:{levelId:levelId},
+        success:function(data){
+          $("#department").html(data);
+          
+        }
+      });
+    })
+
+    </script>
 </body>
 
 </html>

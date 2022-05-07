@@ -36,16 +36,7 @@ $adminview = new AdminView();
 
       <section class="container content">
 
-        <div class="title border-gradient-rounded">Levels And Departments</div>
-        <div class="table-content">
-          <table class="table table-responsive levels ">
-            <tbody>
-              <tr class="first-rows">
-                <td colspan="4"><button type="button" data-bs-toggle="modal" data-bs-target="#add-level">Add Level</button></td>
-              </tr>
-              <?php $adminview->showLevels(); ?>
-            </tbody>
-          </table>
+      
 
                 <div class="title border-gradient-rounded">Levels And Departments</div>
                 <div class="table-content">
@@ -123,8 +114,9 @@ $adminview = new AdminView();
                               
                               <button type="submit" class="" name = "save">Save changes</button>
                             </div>
-                            </form>
+                            
                           </div>
+                          </form>
                         </div>
                       </div>
 <!--                        add department      -->
@@ -222,14 +214,7 @@ $adminview = new AdminView();
                       </div>
               
                 </div>
-                <form action="includes/addlevel.inc.php" method="post">
-                  <div class="modal-body">
-                    <input type="text" name="level_name" id="level" placeholder="Level Name">
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="" name="save">Save changes</button>
-                  </div>
-                </form>
+              
               </div>
             </div>
           </div>
@@ -246,9 +231,7 @@ $adminview = new AdminView();
                 <form action="includes/addDept.inc.php" method="post">
                   <div class="modal-body">
                     <!-- <input type="text" name="level_id" id="added-dept" placeholder="Level ID/Name"> -->
-                    <select name="level_id">Choose Level
-                      <?php $adminview->showAllLevels(); ?>
-                    </select>
+                   
                     <input type="text" name="dept_name" id="dept" placeholder="Department Name">
                   </div>
                   <div class="modal-footer">

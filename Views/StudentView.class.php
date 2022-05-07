@@ -10,4 +10,13 @@ class studentView extends studentCont
         <?php    
         }
     }
+    public function showDept($level_name)
+    {
+        $data = $this->getDept($level_name);
+        foreach($data as $department)
+        {?>
+            <option value="<?= $department['dept_name'] ?>"><?= $department['dept_name'] ?> </option>
+        <?php    
+        }
+    }
 }
