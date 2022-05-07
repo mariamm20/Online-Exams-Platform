@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2022 at 06:47 AM
+-- Generation Time: May 07, 2022 at 08:10 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `msg` text NOT NULL,
+  `state` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `msg`, `state`) VALUES
+(1, 'mai', 'mai@gmail.com', 'message 1', NULL),
+(2, 'reda', 'reda@gmail.com', 'message2', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `departments`
 --
 
@@ -38,8 +60,7 @@ CREATE TABLE `departments` (
 --
 
 INSERT INTO `departments` (`id`, `dept_name`, `level_id`) VALUES
-(1, 'SE', 1),
-(2, 'CS', 2);
+(7, 'General', 8);
 
 -- --------------------------------------------------------
 
@@ -49,7 +70,7 @@ INSERT INTO `departments` (`id`, `dept_name`, `level_id`) VALUES
 
 CREATE TABLE `levels` (
   `id` int(11) NOT NULL,
-  `level_name` varchar(50) NOT NULL
+  `level_name` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -57,8 +78,9 @@ CREATE TABLE `levels` (
 --
 
 INSERT INTO `levels` (`id`, `level_name`) VALUES
-(1, 'one'),
-(2, 'two');
+(8, 'one'),
+(11, 'two'),
+(12, 'three');
 
 -- --------------------------------------------------------
 
@@ -83,8 +105,9 @@ CREATE TABLE `professors` (
 --
 
 INSERT INTO `professors` (`id`, `user_name`, `academic_id`, `email`, `password`, `role`, `state`, `created_at`, `login_at`) VALUES
-(1, 'amr', '16181201010007', 'amr@gmail.com', '12345', 'prof', 1, '2022-05-01 02:06:26', '2022-05-01 02:06:26'),
-(2, 'reda', '161815456872', 'reda@gmail.com', '12345', 'prof', 1, '2022-05-01 02:06:26', '2022-05-01 02:06:26');
+(5, 'amr abohany', '1618120190100013', 'amr@gmail.com', '$2y$10$D7z4mi.2PCqiFfRXN50Qm.to3/tGPZzu1s5mA9J3gcnwPeLD0Sz3e', 'professor', 1, '2022-05-05 21:29:18', '2022-05-05 21:29:42'),
+(6, 'reda mabrouk', '1618120190100041', 'reda@gnail.com', '$2y$10$gRFVPR7y0Qae6oe1kbKojOnJWTXwFOZuzfdlFoam6K4e3sOJ4AVHC', 'professor', 1, '2022-05-05 21:31:49', '2022-05-05 21:34:55'),
+(8, 'amna mahmoad', '1618120190100099', 'amna@gmail.com', '$2y$10$ZTX/OYCC1HqcCGAmbsAp4eJqKag4HyNTNMO2HLnGdAldcTE8JkpXi', 'professor', 1, '2022-05-07 00:55:37', '2022-05-07 00:56:39');
 
 -- --------------------------------------------------------
 
@@ -102,8 +125,9 @@ CREATE TABLE `professor_subjects` (
 --
 
 INSERT INTO `professor_subjects` (`prof_id`, `subject_id`) VALUES
-(1, 1),
-(2, 2);
+(5, 7),
+(6, 8),
+(8, 5);
 
 -- --------------------------------------------------------
 
@@ -144,12 +168,19 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `subject_name`, `level_id`, `dept_id`) VALUES
-(1, 'software', 1, 1),
-(2, 'dat', 1, 1);
+(5, 'information technology', 8, 7),
+(7, 'privacy', 8, 7),
+(8, 'data base', 8, 7);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `departments`
@@ -198,34 +229,40 @@ ALTER TABLE `subjects`
 --
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `levels`
 --
 ALTER TABLE `levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `professors`
 --
 ALTER TABLE `professors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
