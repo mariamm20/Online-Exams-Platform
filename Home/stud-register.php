@@ -42,7 +42,7 @@ $student = new studentView();
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">
+                            <a class="nav-link" href="stud-login.php">
                                 Login
                             </a>
                         </li>

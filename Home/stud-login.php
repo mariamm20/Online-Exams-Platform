@@ -31,12 +31,12 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="register.php">
+                            <a class="nav-link" href="pre-register.php">
                                 Register
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">
+                            <a class="nav-link" href="stud-login.php">
                                 Login
                             </a>
                         </li>

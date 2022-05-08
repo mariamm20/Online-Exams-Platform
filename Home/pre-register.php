@@ -36,11 +36,11 @@
                                 Register
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="../Login/login.php">
                                 Login
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="../FAQ/fqa.php">
                                 FAQ
@@ -64,10 +64,10 @@
             <div class="student" data-aos="fade-left">
                 <p>Register As </p>
                 <div class="cat w-100">
-                <button onclick="location.href='prof-register.php'; /*sessionStorage.setItem('role','Prof');*/" class="btn-professor">
+                <button onclick="location.href='prof-register.php?role=prof'; /*sessionStorage.setItem('role','Prof');*/" class="btn-professor">
                     Professor
                 </button>
-                <button onclick="location.href='stud-register.php';/* sessionStorage.setItem('role','Student');*/" class="btn-student">
+                <button onclick="location.href='stud-register.php?role=stud';/* sessionStorage.setItem('role','Student');*/" class="btn-student">
                     Student
                 </button>
             </div>

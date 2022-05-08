@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../Controllers/dbconnection.class.php');
 ?>
 
@@ -20,44 +21,8 @@ include('../Controllers/dbconnection.class.php');
 
 <body>
     <div id="app">
-        <header class="container" >
-            <nav class="navbar navbar-expand-lg">
-                <span class="fs-4 title"><a class="navbar-brand" href="home.php">
-                                       Online Exams <br />
-                            <span class="platform-word">Platform </a>
-    </span>
-                        
-                    </a></span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="nav">
-                        <li class="nav-item register-color">
-                            <a class="nav-link" href="register.php">
-                                Register
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">
-                                Login
-                            </a>
-                        </li>
-                        <li class="nav-item" >
-                            <a class="nav-link" href="fqa.php">
-                                FAQ
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.php">
-                                Contact Us
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <?php include('../includes/header.inc.php') ?>
+
         <section class="section-one">
             <div class="image-section" data-aos="fade-left">
                 <img src="img/7.jpg" alt="img" />
