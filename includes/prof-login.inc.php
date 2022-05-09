@@ -13,7 +13,7 @@ if(isset($_POST['login']))
     $login = new ProfLoginView($email, $password);
     $login->ProfLogin();
     if($_SESSION['role'] == 'professor'){
-        header("location: ../Home/home.php?error=none0");
+        header("location: ../Home/professor.php?error=none0");
 
     }
 
