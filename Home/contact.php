@@ -10,7 +10,7 @@ include('../Controllers/dbconnection.class.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Exams Platform </title>
-    <link rel="icon" href="../assests/cartoon.ico"/>
+    <link rel="icon" href="../assests/cartoon.ico" />
     <link rel="stylesheet" href="../assests/node_modules/aos/dist/aos.css" />
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
@@ -20,16 +20,15 @@ include('../Controllers/dbconnection.class.php');
 
 <body>
     <div id="app">
-        <header class="container" >
+        <header class="container">
             <nav class="navbar navbar-expand-lg">
                 <span class="fs-4 title"><a class="navbar-brand" href="home.php">
-                                       Online Exams <br />
-                            <span class="platform-word">Platform </a>
-    </span>
-                        
-                    </a></span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        Online Exams <br />
+                        <span class="platform-word">Platform </a>
+                </span>
+
+                </a></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -44,7 +43,7 @@ include('../Controllers/dbconnection.class.php');
                                 Login
                             </a>
                         </li>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a class="nav-link" href="fqa.php">
                                 FAQ
                             </a>
@@ -58,14 +57,15 @@ include('../Controllers/dbconnection.class.php');
                 </div>
             </nav>
         </header>
+
         <section class="section-one">
             <div class="image-section" data-aos="fade-left">
                 <img src="img/7.jpg" alt="img" />
             </div>
             <div class="form-section">
-                
-            
-            <form action="../includes/contact.php" method="post">
+
+
+                <form action="../includes/contact.inc.php" method="post">
                     <h4>Contact Us</h4>
                     <fieldset class="inputs">
                         <input type="text" name="name" placeholder="Your Name" required />
@@ -74,7 +74,6 @@ include('../Controllers/dbconnection.class.php');
                         <div id="btn-div">
                             <button name="send">Send</button>
                         </div>
-
                     </fieldset>
                 </form>
 

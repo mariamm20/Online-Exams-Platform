@@ -7,7 +7,7 @@ if(isset($_POST['reject']))
     include('../../Controllers/AdminCont.class.php');
     include('../../Views/AdminView.class.php');
     $adminview = new AdminView();
-    $adminview->rejectRequest($id);
+    //$adminview->rejectRequest($id);
     header('location: ../requests.php');
 }
 

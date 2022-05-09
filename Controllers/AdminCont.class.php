@@ -93,8 +93,6 @@ class AdminCont extends DB
         $stmt->execute(array($level_name));
     }
 
-  
-
     protected function getLevels()
     {
         $stmt = $this->Connection()->query("select * from levels ");
@@ -102,19 +100,19 @@ class AdminCont extends DB
         return $data;
 
     }
+
     protected function getDepartments($level_id)
     {
         $stmt = $this->Connection()->query("select * from departments where level_id = $level_id ");
         $data = $stmt->fetchAll();
         return $data;
-
     }
+
     protected function getDepartmentSubjects($level_id, $dept_id)
     {
         $stmt = $this->Connection()->query("select * from subjects where level_id = $level_id and dept_id = $dept_id ");
         $data = $stmt->fetchAll();
         return $data;
-
     }
 
     protected function addDepartmentCont($name, $level_id)
@@ -122,6 +120,7 @@ class AdminCont extends DB
         $stmt =$this->Connection()->prepare("INSERT into departments (dept_name, level_id) values (?,?)");
         $stmt->execute(array($name, $level_id));
     }
+
     protected function addDeptSubjectCont($name, $level_id, $dept_id)
     {
         
@@ -135,6 +134,7 @@ class AdminCont extends DB
         $stmt = $this->Connection()->prepare($sql);
         $stmt->execute(array($id));
     }
+
     protected function deleteDepartmentCont($id)
     {
         $sql = "delete from departments where id = ?";
@@ -143,7 +143,32 @@ class AdminCont extends DB
     }
 
 
+    // the part of contact us
+    protected function getContact()
+    {
+        $stmt = $this->Connection()->query("select * from contact");
+        $contact_data = $stmt->fetchAll();
+        return $contact_data;
+    }
 
+    protected function acceptContactContr($state, $id)
+    {
+        // $state = $_GET["state"];
+        // $id = $_GET["id"];
+        // $this->Connection()->query("UPDATE contact SET state = $state WHERE id = $id ");
+        $stmt = $this->Connection()->prepare("UPDATE contact SET state = ? WHERE id = ? ");
+        $stmt->execute(array($state, $id));
+    }
+
+    protected function rejectContactContr($state, $id)
+    {
+        /* $stmt = $this->Connection()->prepare("delete from contact where id =? ");
+        $stmt->execute(array($id)); */
+        /* $state = $_GET["state"];
+        $id = $_GET["id"]; */
+        $stmt = $this->Connection()->prepare("UPDATE contact SET state = ? WHERE id = ? ");
+        $stmt->execute(array($state, $id));
+    }
 
     
 }

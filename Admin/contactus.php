@@ -35,101 +35,78 @@ $adminview = new AdminView();
       ?>
 
 
-<section class="container content" >
+      <section class="container content">
 
-<div class="title">Contact Us</div>
-<div class="table-content">
-    <table class="table table-responsive ">
-        
-        <tbody>
-            <tr class="table-head">
+        <div class="title">Contact Us</div>
+        <div class="table-content">
+          <table class="table table-responsive ">
+
+            <tbody>
+              <tr class="table-head">
                 <td scope="col">#</td>
                 <td scope="col">Username</td>
                 <td scope="col">Email</td>
                 <td scope="col">Status</td>
                 <td scope="col">Preview</td>
-                <td scope="col">Delete</td>
-            </tr>
-            <tr>
-                <td scope="row">1001</td>
-                <td>Physics 101</td>
-                <td>John Ebraham</td>
-                <td>50</td>
-                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                <td class="del"><a href="#" data-bs-toggle="modal"
-                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
-            </tr>
-            <tr>
-                <td scope="row">1001</td>
-                <td>Physics 101</td>
-                <td>John Ebraham</td>
-                <td>50</td>
-                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                <td class="del"><a href="#" data-bs-toggle="modal"
-                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
-            </tr>
-            <tr>
-                <td scope="row">1001</td>
-                <td>Physics 101</td>
-                <td>John Ebraham</td>
-                <td>50</td>
-                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                <td class="del"><a href="#" data-bs-toggle="modal"
-                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
-            </tr>
-            <tr>
-                <td scope="row">1001</td>
-                <td>Physics 101</td>
-                <td>John Ebraham</td>
-                <td>50</td>
-                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                <td class="del"><a href="#" data-bs-toggle="modal"
-                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
-            </tr>
-            <tr>
-                <td scope="row">1001</td>
-                <td>Physics 101</td>
-                <td>John Ebraham</td>
-                <td>50</td>
-                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                <td class="del"><a href="#" data-bs-toggle="modal"
-                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
-            </tr>
-            <tr>
-                <td scope="row">1001</td>
-                <td>Physics 101</td>
-                <td>John Ebraham</td>
-                <td>50</td>
-                <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-                <td class="del"><a href="#" data-bs-toggle="modal"
-                    data-bs-target="#remove-mess"><i class="fa-solid fa-trash-can"></i></a></td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="modal magictime swashIn" id="remove-mess" tabindex="-1" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p class="text-start fw-bolder">Are you sure to delete this? </p>
-              
-              
-            </div>
-            <div class="modal-footer">
-              
-              <button type="button" class="">Yes</button>
-              <button type="button">Cancel</button>
+              </tr>
+
+              <?php $adminview->showContact(); ?>
+
+
+            </tbody>
+          </table>
+
+          <!-- before preview contact -->
+          <div class="modal magictime swashIn" id="preview_contact" tabindex="-1" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"><i class="fa-solid fa-eye" style="color: black;left: 0px;"></i> Preview Contact</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form action="includes/accept_rejectContact.inc.php" method="POST">
+                  <div class="modal-body">
+                    <p class="text-center fw-bolder">Contact Message</p>
+                    <input type="text" name="msg" id="msg_to_show" class="msg_input" readonly>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input type="hidden" name="id" id="contact_selected_id">
+                    <button type="submit" class="accept_contact" name="accept">Accept</button>
+                    <button type="submit" class="reject_contact" name="reject">Reject</button>
+                  </div>
+
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-</div>
+
+          <!-- after preview contact -->
+          <div class="modal magictime swashIn" id="previewed_contact" tabindex="-1" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"><i class="fa-solid fa-eye" style="color: black;left: 0px;"></i> Preview Contact</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                  <p class="text-center fw-bolder">Contact Message</p>
+                  <input type="text" name="msg" id="msg_previewed_to_show" class="msg_input" readonly>
+                </div>
+
+                <div class="modal-footer">
+                  <input type="hidden" name="id" id="contact_previewed_selected_id">
+                  <button type="submit" class="" name="close" data-bs-dismiss="modal">OK</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
 
 
-
-</section>
+      </section>
     </div>
   </div>
   </div>
@@ -144,9 +121,31 @@ $adminview = new AdminView();
   <script src="../assests/bootstrap.bundle.min.js"></script>
 
 
+
+  <!-- before message preview -->
   <script>
-    $(document).on('click', '.reject-contact-btn', function() {
-      $("#contact_rejected_id").val($(this).data('fid'));
+    $(document).on('click', '.preview-contact-btn', function() {
+      $("#contact_selected_id").val($(this).data('fid'));
+    });
+  </script>
+
+  <script>
+    $(document).on('click', '.preview-contact-btn', function() {
+      $("#msg_to_show").val($(this).data('rid'));
+    });
+  </script>
+
+
+  <!-- after message preview -->
+  <script>
+    $(document).on('click', '.previewed-contact-btn', function() {
+      $("#contact_previewed_selected_id").val($(this).data('fid'));
+    });
+  </script>
+
+  <script>
+    $(document).on('click', '.previewed-contact-btn', function() {
+      $("#msg_previewed_to_show").val($(this).data('rid'));
     });
   </script>
 
