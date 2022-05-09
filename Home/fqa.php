@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +19,9 @@
 
 <body>
     <div id="app">
-        <header class="container" >
+    <?php include('../includes/header.inc.php') ?>
+
+        <!-- <header class="container" >
             <nav class="navbar navbar-expand-lg">
                 <span class="fs-4 title"><a class="navbar-brand" href="home.php">
                                       Online Exams <br />
@@ -31,7 +36,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="register.php">
+                            <a class="nav-link" href="pre-register.php">
                                 Register
                             </a>
                         </li>
@@ -53,7 +58,7 @@
                     </ul>
                 </div>
             </nav>
-        </header>
+        </header> -->
         <section class="faq-section">
             <article>
                 <div class="img-section" data-aos="fade-right">
