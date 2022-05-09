@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,10 +69,10 @@
                     </div>
                     <div>
                         <ol class="list-group list-group-numbered">
-                            <li class="list-group-item"  onclick="show()" >Physics</li>
-                            <li class="list-group-item">Software Design and Archeticture</li>
-                            <li class="list-group-item">Software Development</li>
-                            <li class="list-group-item">Requirement Engineering</li>
+                           <li class="list-group-item"   > <a href="#">Physics </a> </li>
+                           <li class="list-group-item" onclick="show()" ><a href="#">  Software Design and Archeticture</a></li> 
+                          <li class="list-group-item"> <a href="#">Software Development</a></li>
+                           <li class="list-group-item"> <a href="#">Requirement Engineering</a></li> 
                         </ol>
                     </div>
                 
@@ -90,7 +94,7 @@
                             <li class="list-group-item">Acceleration</li>
                             <li class="list-group-item">Newton's first low</li>
                             <li class="list-group-item">Light beams</li>
-                            <li class="list-group-item">Electricity/li>
+                            <li class="list-group-item">Electricity </li>
                                 <!-- <li class="list-group-item" >Motion</li>
                             <li class="list-group-item">Acceleration</li>
                             <li class="list-group-item">Newton's first low</li>
