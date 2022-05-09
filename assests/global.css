@@ -35,7 +35,9 @@ body a {
 body a:hover {
     color: #ccc
 }
-
+.nav{
+    align-items: center;
+}
 .navbar-brand {
     font-size: 26px;
 }
@@ -59,7 +61,7 @@ header {
 
 .navbar-brand {
     position: relative;
-    left: 55px;
+    /* left: 55px; */
     cursor: pointer;
 }
 
