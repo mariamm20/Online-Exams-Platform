@@ -49,48 +49,7 @@ $adminview = new AdminView();
                           <?php
                             $adminview->showLevels();
                           ?>
-                            <!-- <tr class="first-rows">
-                                <td colspan="4"><button type="button" data-bs-toggle="modal"
-                                    data-bs-target="#add-level" >Add Level</button></td>
-                            </tr>
-                            <tr class="lvl">
-                                <td colspan="2" class="lvl-name">Level One </td>
-                                <td colspan="2" class="second-row" ><button type="button" data-bs-toggle="modal"
-                                data-bs-target="#add-dept">Add Dept</button></td>
-                            </tr>
-                            <tr class="lvl-head">
-                                <td>Dept&nbsp;Name</td>
-                                <td>Subjects</td>
-                                <td>Add&nbsp;Subjects</td>
-                                <td>Delete</td>
-                            </tr>
-                            <tr >
-                                <td style="width: 220px;">General </td>
-                                <td style="width:478.56px">
-                                    <div class="d-flex justify-content-between subject">
-                                        <p>Software constraction </p>
-                                        <a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
-                                    </div>
-                                    <div class="d-flex justify-content-between subject">
-                                        <p>Software constraction </p>
-                                        <a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
-                                    </div>
-                                    <div class="d-flex justify-content-between subject">
-                                        <p>Software constraction </p>
-                                        <a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
-                                    </div>
-
-                                </td>
-                                <td class="edit">
-                                    <a href="#" data-bs-toggle="modal"
-                                    data-bs-target="#add-subject"><i class="fa-solid fa-square-plus"></i></a>
-                                </td>
-                                <td class="del"><a href="#" data-bs-toggle="modal"
-                                  data-bs-target="#remove-dept"><i class="fa-solid fa-trash-can"></i></a></td>
-                            </tr> -->
+                            
                             
 
                         </tbody>

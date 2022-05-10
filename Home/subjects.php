@@ -1,6 +1,13 @@
 <?php
 session_start();
-
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
+if(isset($_GET['id']))
+{
+   echo $sub_id =$_GET['id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,42 +76,43 @@ session_start();
                     </div>
                     <div>
                         <ol class="list-group list-group-numbered">
-                           <li class="list-group-item"   > <a href="#">Physics </a> </li>
-                           <li class="list-group-item" onclick="show()" ><a href="#">  Software Design and Archeticture</a></li> 
-                          <li class="list-group-item"> <a href="#">Software Development</a></li>
-                           <li class="list-group-item"> <a href="#">Requirement Engineering</a></li> 
+                         
+                         <?php
+                            $professor->showSubjects();
+                         ?>
+                         
                         </ol>
                     </div>
                 
             </div>
+
+
             <div class="right">
                 <div class="img-right">
                     <p>No Chapters To Show Yet!</p>
                     <img src="img/10.png"/>
                 </div>
-                    
-                    <div class="heading-notify chapters d-none">
-                        <p><i class="fa fa-bookmark" aria-hidden="true"></i> <span>Physics</span> Chapters</p>
-                        <button data-bs-toggle="modal"
+                        <div class="heading-notify chapters d-none" >
+                        <p><i class="fa fa-bookmark" aria-hidden="true"></i> <span>
+                             <?php  ?>
+                            </span> Chapters</p>
+                        <button data-bs-toggle="modal" class="add_chapter" 
                         data-bs-target="#add-chapter">Add Chapter</button>
-                    </div>
-                    <div class="names-chapters d-none">
+               </div>
+               <div class="names-chapters d-none" id = "chapters">
                         <ol  class="list-group list-group-numbered">
-                            <li class="list-group-item" >Motion</li>
-                            <li class="list-group-item">Acceleration</li>
-                            <li class="list-group-item">Newton's first low</li>
-                            <li class="list-group-item">Light beams</li>
-                            <li class="list-group-item">Electricity </li>
-                                <!-- <li class="list-group-item" >Motion</li>
-                            <li class="list-group-item">Acceleration</li>
-                            <li class="list-group-item">Newton's first low</li>
-                            <li class="list-group-item">Light beams</li>
-                            <li class="list-group-item">Electricity</li> -->
+                    <?php
+                    
+                       include('../includes/subject.inc.php');
+                        
+                        
+                    ?>
                         </ol>
                     </div>
-                
+                 
 
             </div>
+            <!-- add chapter -->
             <div class="modal magictime vanishIn" id="add-chapter" tabindex="-1" data-bs-backdrop="static">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
@@ -112,16 +120,21 @@ session_start();
                       <h5 class="modal-title"><i class="fa fa-bookmark" aria-hidden="true"></i> Add Chapter</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                <form action="../includes/add_chpter.inc.php" method="post">
                     <div class="modal-body">
-                      <input type="text" placeholder="Chapter Name">
+                    <input type="hidden" id="id_of_subject"  name="sub_id">
+                      <input type="text" placeholder="Chapter Name" name="name">
                     </div>
                     <div class="modal-footer">
                       
-                      <button type="button" class="">Save changes</button>
+                      <button type="submit" class="" name="save">Save changes</button>
                     </div>
                   </div>
+                </form>
                 </div>
               </div>
+
+              
 
         </section>
 
@@ -131,11 +144,38 @@ session_start();
 
     </div>
     <!--Scripts part-->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/subjects.js"></script>
+
+    <script>
+        
+        $('.list-group-item').click(function(){
+        var subject_id = $(this).val();
+        
+        $.ajax({
+            url: '../includes/subject.inc.php',
+        method: 'POST',
+        data: {subject_id:subject_id},
+        success: function(data){
+            $('#chapters').html(data); 
+            console.log(subject_id)
+        }
+        });
+        });
+
+    </script>
+
+    <script>
+        $(document).on('click', '.list-group-item', function() {
+        $("#id_of_subject").val($(this).data('sid'));
+        });
+    </script>
+    
+
 </body>
 
 </html>

@@ -117,7 +117,7 @@ $student = new studentView();
 
     <script>
         
-    // Country dependent ajax
+   
     $("#nameoflevel").on("change",function(){
       var levelId = $(this).val();
       console.log(levelId)
