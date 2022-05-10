@@ -139,7 +139,7 @@
                                 
                                 <input type="text" class="quest-edit" value="In a uniform cicular motion:" placeholder="Question Head">
                                 <ol type="a">
-                                <li><input type="text" value="Velocity is constant" placeholder="Answer 1" > </li>
+                                    <li><input type="text" value="Velocity is constant" placeholder="Answer 1" > </li>
                                     <li><input type="text" value="Distance is constant" placeholder="Answer 2" >  </li>
                                     <li><input type="text" value="Displacement is constant"  placeholder="Answer 3"  > </li>
                                     <li><input type="text" value="Speed is constant"  placeholder="Answer 4"> </li>
@@ -152,8 +152,6 @@
                                         <option>d</option>
                                     </select>
                                 </p>
-                                </ol>
-
                                 <p class="question-difficutly">Difficulty: 
                                     <select>
                                         <option>Easy</option>
