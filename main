@@ -1,0 +1,462 @@
+
+// used divs 
+let question = document.querySelector('.quest')
+let arr = {};
+let array = [];
+
+
+
+function createQuestion() {
+
+    headOfQuestion();
+    chooseAnswers();
+    arr = {}
+    
+    difficulty();
+    addQuestion();
+}
+
+function headOfQuestion() {
+    let questHeading = document.createElement('div');
+    questHeading.className = 'quest-heading  ';
+
+    let answer = document.createElement('div');
+    answer.className = 'answers';
+    let dropdown = document.createElement('div');
+    dropdown.className = 'dropdown';
+    let head = document.createElement('input');
+    head.type = 'text';
+    head.value = '';
+    head.setAttribute('required', 'required');
+    head.placeholder = 'Write Question';
+    head.className = 'quest-input magictime swashIn ';
+    head.onchange = function () {
+        head.value = this.value;
+        head.setAttribute('disabled', '');
+        arr['question'] = this.value
+    }
+    let menu = document.createElement('i');
+    let ul = document.createElement('ul');
+    let tf = document.createElement('li');
+    let choose = document.createElement('li');
+    let multi = document.createElement('li')
+    //icon
+    menu.className = 'fa fa-ellipsis-v';
+    menu.id = 'dropdownMenuLink';
+    menu.setAttribute('data-bs-toggle', 'dropdown')
+    menu.setAttribute('role', 'button');
+    //ul
+    ul.className = 'dropdown-menu';
+    ul.setAttribute('aria-labelledby', 'dropdownMenuLink');
+    tf.id = 'trueFalse';
+    choose.id = 'choose';
+    multi.id = 'multi';
+    tf.textContent = 'True & False';
+    tf.onclick = function () {
+        // arr['questionType'] = 'true&false';
+        let a = tfAnswers();
+        answer.replaceChildren();
+        answer.appendChild(a);
+    };
+    choose.textContent = 'Choose';
+    choose.onclick = function () {
+        // arr['questionType'] = 'choose';
+        let a = chooseAnswers();
+        answer.replaceChildren();
+        answer.appendChild(a);
+    };
+    // multi.textContent = 'Multichoices';
+    // multi.onclick = function () {
+    //     let a = Multichoices();
+    //     answer.replaceChildren();
+    //     answer.appendChild(a);
+    // };
+    ul.appendChild(tf)
+    ul.appendChild(choose)
+    ul.appendChild(multi)
+
+
+    let main = chooseAnswers();
+    answer.replaceChildren();
+    answer.appendChild(main);
+    questHeading.appendChild(head)
+    questHeading.appendChild(menu)
+    questHeading.appendChild(ul)
+    question.appendChild(questHeading);
+    question.appendChild(answer);
+    question.appendChild(dropdown);
+
+}
+
+function tfAnswers() {
+
+    let ol = document.createElement('ol');
+    let t = document.createElement('li');
+    let f = document.createElement('li');
+    let textInput1 = document.createElement('input');
+    let radioInput1 = document.createElement('input');
+    let textInput2 = document.createElement('input');
+    let radioInput2 = document.createElement('input');
+    ol.type = 'a';
+    textInput1.type = 'text';
+    textInput1.value = 'True';
+    textInput1.placeholder = 'True';
+    radioInput1.className = 'form-check-input';
+    radioInput1.type = 'radio';
+    radioInput1.name = 'radioNoLabel';
+    radioInput1.id = 'radioNoLabel'
+    radioInput1.value = 'True';
+    arr['answer1'] = textInput1.value
+    textInput2.type = 'text';
+    textInput2.value = 'False';
+    textInput2.placeholder = 'False';
+    radioInput2.className = 'form-check-input';
+    radioInput2.type = 'radio';
+    radioInput2.name = 'radioNoLabel';
+    radioInput2.id = 'radioNoLabel'
+    radioInput2.value = 'False';
+    textInput1.setAttribute('disabled', 'true')
+    textInput2.setAttribute('disabled', 'true')
+
+    arr['answer2'] = textInput2.value
+    t.appendChild(textInput1);
+    t.appendChild(radioInput1);
+    f.appendChild(textInput2);
+    f.appendChild(radioInput2);
+    ol.appendChild(t)
+    ol.appendChild(f)
+    // arr['questionType'] = 'truefalse';
+    let ansinputs = document.querySelectorAll('input[type="radio"]');
+    // console.log(ansinputs.value)
+    for (let i = 0; i < ansinputs.length; ++i) {
+        if (ansinputs[i].checked ) {
+            arr['correct'] = ansinputs[i].value;
+            
+        }
+        //     }
+    }
+   
+    return ol;
+}
+function chooseAnswers() {
+
+
+    let ol = document.createElement('ol');
+    let ans1 = document.createElement('li');
+    let ans2 = document.createElement('li');
+    let ans3 = document.createElement('li');
+    let ans4 = document.createElement('li');
+    let textInput1 = document.createElement('input');
+    let radioInput1 = document.createElement('input');
+    let textInput2 = document.createElement('input');
+    let radioInput2 = document.createElement('input');
+    let textInput3 = document.createElement('input');
+    let radioInput3 = document.createElement('input');
+    let textInput4 = document.createElement('input');
+    let radioInput4 = document.createElement('input');
+    ol.type = 'a';
+    textInput1.type = 'text';
+    textInput1.value = '';
+    textInput1.placeholder = 'Answer1';
+    textInput1.setAttribute('required', '')
+    radioInput1.className = 'form-check-input';
+    radioInput1.type = 'radio';
+    radioInput1.name = 'radioNoLabel';
+    radioInput1.id = 'radioNoLabel'
+    radioInput1.value = '';
+    textInput1.onchange = function () {
+        textInput1.value = this.value;
+        radioInput1.value = this.value;
+        textInput1.setAttribute('disabled', '');
+        arr['answer1'] = textInput1.value
+        // console.log(radioInput1.value)
+    }
+    textInput2.type = 'text';
+    textInput2.value = '';
+    textInput2.placeholder = 'Answer2';
+    textInput2.setAttribute('required', '');
+    radioInput2.className = 'form-check-input';
+    radioInput2.type = 'radio';
+    radioInput2.name = 'radioNoLabel';
+    radioInput2.id = 'radioNoLabel'
+    radioInput2.value = '';
+    textInput2.onchange = function () {
+        textInput2.value = this.value;
+        radioInput2.value = this.value;
+        textInput2.setAttribute('disabled', '');
+
+        arr['answer2'] = textInput2.value
+
+    }
+    textInput3.type = 'text';
+    textInput3.value = '';
+    textInput3.placeholder = 'Answer3';
+    radioInput3.className = 'form-check-input';
+    radioInput3.type = 'radio';
+    radioInput3.name = 'radioNoLabel';
+    radioInput3.id = 'radioNoLabel'
+    radioInput3.value = '';
+    textInput3.onchange = function () {
+        textInput3.value = this.value;
+        radioInput3.value = this.value;
+        textInput3.setAttribute('disabled', '');
+        arr['answer3'] = textInput3.value
+    }
+    textInput4.type = 'text';
+    textInput4.value = '';
+    textInput4.placeholder = 'Answer4';
+    radioInput4.className = 'form-check-input';
+    radioInput4.type = 'radio';
+    radioInput4.name = 'radioNoLabel';
+    radioInput4.id = 'radioNoLabel'
+    radioInput4.value = '';
+    textInput4.onchange = function () {
+        textInput4.value = this.value;
+        radioInput4.value = this.value;
+        textInput4.setAttribute('disabled', '');
+        arr['answer4'] = textInput4.value
+    }
+    ans1.appendChild(textInput1);
+    ans1.appendChild(radioInput1);
+    ans2.appendChild(textInput2);
+    ans2.appendChild(radioInput2);
+    ans3.appendChild(textInput3);
+    ans3.appendChild(radioInput3);
+    ans4.appendChild(textInput4);
+    ans4.appendChild(radioInput4);
+    ol.appendChild(ans1)
+    ol.appendChild(ans2)
+    ol.appendChild(ans3)
+    ol.appendChild(ans4)
+
+    let ansinputs = document.querySelectorAll('input[type="radio"]');
+    for (let i = 0; i < ansinputs.length; ++i) {
+        if (ansinputs[i].checked) {
+            arr['correct'] = ansinputs[i].value;
+        }
+        
+    } 
+
+    return ol;
+}
+// function Multichoices() {
+
+//     let ol = document.createElement('ol');
+//     let ans1 = document.createElement('li');
+//     let ans2 = document.createElement('li');
+//     let ans3 = document.createElement('li');
+//     let ans4 = document.createElement('li');
+//     let textInput1 = document.createElement('input');
+//     let radioInput1 = document.createElement('input');
+//     let textInput2 = document.createElement('input');
+//     let radioInput2 = document.createElement('input');
+//     let textInput3 = document.createElement('input');
+//     let radioInput3 = document.createElement('input');
+//     let textInput4 = document.createElement('input');
+//     let radioInput4 = document.createElement('input');
+//     ol.type = 'a';
+//     textInput1.type = 'text';
+//     textInput1.value = '';
+//     textInput1.placeholder = 'Answer1';
+//     radioInput1.className = 'form-check-input';
+//     radioInput1.type = 'checkbox';
+//     radioInput1.id = '1';
+//     radioInput1.value = '';
+//     textInput1.onchange = function () {
+//         textInput1.value = this.value;
+//         radioInput1.value = this.value;
+//         textInput1.setAttribute('disabled', '');
+//         arr['answer1'] = textInput1.value;
+
+//         // console.log(radioInput1.value)
+//     }
+//     radioInput1.onchange = function(){
+
+//         arr[`correct ${radioInput1.id}`] = radioInput1.value;
+//     }
+//     textInput2.type = 'text';
+//     textInput2.value = '';
+//     textInput2.placeholder = 'Answer2';
+//     radioInput2.className = 'form-check-input';
+//     radioInput2.type = 'checkbox';
+
+//     radioInput2.id = '2';
+//     radioInput2.value = '';
+//     textInput2.onchange = function () {
+//         textInput2.value = this.value;
+//         radioInput2.value = this.value;
+//         textInput2.setAttribute('disabled', '');
+//         arr['answer2'] = textInput2.value
+//         // console.log(radioInput1.value)
+//     }
+//     radioInput2.onchange = function(){
+
+//         arr[`correct ${radioInput2.id}`] = radioInput2.value;
+//     }
+//     textInput3.type = 'text';
+//     textInput3.value = '';
+//     textInput3.placeholder = 'Answer3';
+//     radioInput3.className = 'form-check-input';
+//     radioInput3.type = 'checkbox';
+//     radioInput3.id = '3';
+//     radioInput3.value = '';
+//     textInput3.onchange = function () {
+//         textInput3.value = this.value;
+//         radioInput3.value = this.value;
+//         textInput3.setAttribute('disabled', '');
+//         arr['answer3'] = textInput3.value
+//         // console.log(radioInput1.value)
+//     }
+//     radioInput3.onchange = function(){
+
+//         arr[`correct ${radioInput3.id}`] = radioInput3.value;
+//     }
+
+//     textInput4.type = 'text';
+//     textInput4.value = '';
+//     textInput4.placeholder = 'Answer4';
+//     radioInput4.className = 'form-check-input';
+//     radioInput4.type = 'checkbox';
+
+//     radioInput4.id = '4';
+//     radioInput4.value = '';
+//     textInput4.onchange = function () {
+//         textInput4.value = this.value;
+//         radioInput4.value = this.value;
+//         textInput4.setAttribute('disabled', '');
+//         arr['answer4'] = textInput4.value
+//         // console.log(radioInput1.value)
+//     }
+//     radioInput4.onchange = function(){
+
+//         arr[`correct ${radioInput4.id}`] = radioInput4.value;
+//     }
+
+
+//     ans1.appendChild(textInput1);
+//     ans1.appendChild(radioInput1);
+//     ans2.appendChild(textInput2);
+//     ans2.appendChild(radioInput2);
+//     ans3.appendChild(textInput3);
+//     ans3.appendChild(radioInput3);
+//     ans4.appendChild(textInput4);
+//     ans4.appendChild(radioInput4);
+//     ol.appendChild(ans1)
+//     ol.appendChild(ans2)
+//     ol.appendChild(ans3)
+//     ol.appendChild(ans4)
+
+
+//     // let ansinputs = document.querySelectorAll('.form-check-input');
+
+//     // for(let i= 0 ; i< ansinputs.length ;i++){
+//     //     if(radioInput1.checked){
+//     //     arr['correct'] = radioInput1.value;
+//     // }
+//     // //     if(ansinputs[i].checked == true){
+//     // //             console.log(ansinputs[i].value);
+
+//     // // }
+
+//     //     }
+//     arr['questionType'] = 'multichoices'
+//     return ol;
+// }
+function difficulty() {
+    let difficult = document.createElement('div');
+    difficult.className = 'difficulty'
+    let p = document.createElement('p');
+    let select = document.createElement('select');
+    let first = document.createElement('option');
+    let easy = document.createElement('option');
+    let medium = document.createElement('option');
+    let hard = document.createElement('option');
+    p.textContent = 'Difficulty: ';
+    first.innerHTML = 'Select difficulty';
+    first.setAttribute('disabled', '')
+    first.selected = true;
+    p.className = 'question-difficutly';
+    easy.innerHTML = 'Easy';
+    easy.value = 'easy';
+
+    medium.innerHTML = 'Medium';
+    medium.value = 'medium'
+    hard.innerHTML = 'Hard';
+    hard.value = 'hard';
+    select.appendChild(first);
+    select.appendChild(easy);
+    select.appendChild(medium);
+    select.appendChild(hard);
+    p.appendChild(select);
+    select.onchange = function () {
+        arr['difficulty'] = this.value;
+        select.setAttribute('disabled','')
+    }
+
+
+    difficult.appendChild(p);
+    question.appendChild(difficult);
+}
+function addQuestion() {
+    let add = document.createElement('div');
+    add.className = 'line';
+    let line = document.createElement('i');
+    line.className = 'fa fa-plus-circle fa-2x';
+    let btn = document.createElement('div')
+    let button = document.createElement('button');
+    button.type = 'submit';
+    btn.id = 'btn-div';
+    button.textContent = 'Save Changes';
+    btn.appendChild(button);
+
+    line.onclick = function () {
+        console.log()
+        if (Object.keys(arr).includes('answer4') && Object.keys(arr).includes('answer3') ) {
+            
+            array.push(arr);
+            console.log(array)
+            line.remove()
+            btn.remove()
+            createQuestion();
+        }
+        // }else if ( Object.keys(arr).length===5 ){
+        //     // arr['questionType'] = 'true&false';
+        //     array.push(arr);
+        //     console.log(array)
+        //     line.remove()
+        //     btn.remove()
+        //     createQuestion();
+        // }
+        else{
+            swal("Some Fields Empty!", "Please Fill all Fields, \n Choose the correct answer, \n Select difficulty of question. ", "error");
+        }
+
+
+    }
+    // button.onclick = function () {console.log(Object.keys(arr).length)
+    //     if (Object.keys(arr).length == 6 ) {
+    //         arr['questionType'] = 'choose';
+    //         array.push(arr);
+    //         console.log(array)
+            
+    //     }else if ( Object.keys(arr).length===5 ){
+    //         arr['questionType'] = 'true&false';
+    //         array.push(arr);
+    //         console.log(array)
+    //     }
+    //     else{
+    //         swal("Some Fields Empty!", "Please Fill all Fields, \n Choose the correct answer, \n Select difficulty of question. ", "error");
+    //     }
+        
+    //     // window.location.href = '/Question-Bank/question-bank.html';
+    // }
+    add.appendChild(line);
+    question.appendChild(add);
+    question.appendChild(btn)
+}
+
+(function load() {
+    createQuestion();
+})();
+// console.log(array)
+
