@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "@popperjs/core": "^2.11.4",
+<<<<<<< HEAD
     "aos": "^3.0.0-beta.6",
     "sweetalert": "^2.1.2"
+=======
+    "aos": "^3.0.0-beta.6"
+>>>>>>> 30384367b26f037c58597bf27215ecfac1cf25d9
   }
 }
