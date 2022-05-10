@@ -139,13 +139,19 @@
                                 
                                 <input type="text" class="quest-edit" value="In a uniform cicular motion:" placeholder="Question Head">
                                 <ol type="a">
-                                    <li><input type="text" value="Velocity is constant" placeholder="Answer 1" >  <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" ></li>
-                                    <li><input type="text" value="Distance is constant" placeholder="Answer 2" >  <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2" value="" ></li>
-                                    <li><input type="text" value="Displacement is constant"  placeholder="Answer 3"  > <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3" value="" ></li>
-                                    <li><input type="text" value="Speed is constant"  placeholder="Answer 4" > <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel4" value="" >
-                                    </li>
+                                    <li><input type="text" value="Velocity is constant" placeholder="Answer 1" > </li>
+                                    <li><input type="text" value="Distance is constant" placeholder="Answer 2" >  </li>
+                                    <li><input type="text" value="Displacement is constant"  placeholder="Answer 3"  > </li>
+                                    <li><input type="text" value="Speed is constant"  placeholder="Answer 4"> </li>
                                 </ol>
-
+                                <p class="question-difficutly">Answer: 
+                                    <select>
+                                        <option>a</option>
+                                        <option>b</option>
+                                        <option>c</option>
+                                        <option>d</option>
+                                    </select>
+                                </p>
                                 <p class="question-difficutly">Difficulty: 
                                     <select>
                                         <option>Easy</option>
