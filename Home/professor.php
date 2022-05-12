@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +64,7 @@
             <div class="top">
                 <div class="top-left">
                     <div class="buttons">
-                        <button onclick="location.href='../Subjects/subjects.html'"><i class="fa-solid fa-book"></i> Questions Bank</button>
+                        <button onclick="location.href='subjects.php'"><i class="fa-solid fa-book"></i> Questions Bank</button>
                         <button><i class="fa-solid fa-history"></i> Results History</button>
                     </div>
                 </div>

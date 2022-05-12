@@ -62,7 +62,7 @@
                 <div class="heading-notify chapters">
                     <p><i class="fa fa-question-circle" aria-hidden="true"></i> <span> Motion</span>
                         Questions&nbsp;<span>(1)</span></p>
-                    <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button>
+                    <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php?ch_id=<?= $_GET['chapter_id'] ;?>'">Add Questions</button>
                 </div>
                 <div class="question">
                     <p class="question-body">
