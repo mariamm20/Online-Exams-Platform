@@ -378,8 +378,19 @@ function addQuestion() {
         method: "POST",
         data: { action: action, array: arr },
         success: function (data) {
-          console.log("ana hena");
-          window.location.href = "/online-exams-platform/Home/subjects.php";
+          console.log(data)
+          swal({
+            title: 'Data Added Successfully',
+            text: 'Redirecting...',
+            icon: 'success',
+            timer: 5000,
+            buttons: false,
+        })
+        .then(() => {
+          window.location.href = "../Home/question-bank.php?chapter_id=" + id ;
+            // dispatch(redirect('/'));
+        })
+         
         },
         error: function (error) {
           console.log("error");
@@ -397,8 +408,19 @@ function addQuestion() {
         url: "../includes/add_question.inc.php?ch_id=" + id,
         method: "POST",
         data: { action: action, array: arr },
-        success: function () {
-          // window.location.href = `"../Home/question-bank.php?chapter_id="${+ id}` ;
+        success: function (data) {
+          console.log(data)
+          swal({
+            title: 'Data Added Successfully',
+            text: 'Redirecting...',
+            icon: 'success',
+            timer: 5000,
+            buttons: false,
+        })
+        .then(() => {
+          window.location.href = "../Home/question-bank.php?chapter_id=" + id ;
+            // dispatch(redirect('/'));
+        })
         },
         error: function (error) {
           console.log("error");
