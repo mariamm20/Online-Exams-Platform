@@ -323,7 +323,8 @@ function addQuestion() {
         if (arr['questionType'] === 'choose' && Object.keys(arr).length == 8) {
             
             array.push(arr);
-            console.log(array)
+            let mydata = JSON.stringify(array)
+            console.log(mydata)
             line.remove()
             btn.remove()
             createQuestion();
@@ -346,17 +347,19 @@ function addQuestion() {
             
             array.push(arr);
             console.log(array)
+window.location.href = '/Question-Bank/question-bank.html';
             
         }else if (arr['questionType'] === 'true&false' && Object.keys(arr).length == 6) {
             array.push(arr);
             console.log(array)
-            
+            window.location.href = '/Question-Bank/question-bank.html';
+
         } 
                
         else{
             swal("Some Fields Empty!", "Please Fill all Fields, \n Choose the correct answer, \n Select difficulty of question. ", "error");
         }
-       // window.location.href = '/Question-Bank/question-bank.html';
+       
      }
     add.appendChild(line);
     question.appendChild(add);

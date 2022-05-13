@@ -119,19 +119,12 @@ ol  li{
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
     margin-top: 20px;
-=======
-    
->>>>>>> 30384367b26f037c58597bf27215ecfac1cf25d9
     width: 100%
 }
 .quest-input{
     width: 75%;
-<<<<<<< HEAD
     background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
-=======
->>>>>>> 30384367b26f037c58597bf27215ecfac1cf25d9
 }
 .quest-heading i{
     top: -3px;
@@ -160,23 +153,12 @@ ol li{
     padding: 0;
     width: 100%;
 }
-<<<<<<< HEAD
 
 ol{
     width: 75%;
     margin-bottom: 0;
     left: 13%;
     position: relative;
-=======
-.answers{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-ol{
-    width: 75%;
-    margin-bottom: 0;
->>>>>>> 30384367b26f037c58597bf27215ecfac1cf25d9
 }
 li input{
     width: 90%;
@@ -184,16 +166,12 @@ li input{
 .form-check-input[type='radio']{
     position: relative;
     top: 10px;
-<<<<<<< HEAD
     left: 5px;
 }
 .form-check-input[type='checkbox']{
     position: relative;
     top: 10px;
     left: 5px;
-=======
-    left: 38.5px;
->>>>>>> 30384367b26f037c58597bf27215ecfac1cf25d9
 }
 select {
     border-radius: 20px;
@@ -222,14 +200,9 @@ select {
 .line i{
     position: absolute;
     right: 0;
-<<<<<<< HEAD
     top: -9px;
     color: #A5B7E9;
     font-size: 20px;
-=======
-    top: -5px;
-    color: #A5B7E9;
->>>>>>> 30384367b26f037c58597bf27215ecfac1cf25d9
 }
 .line{
     border-bottom: 3px solid #efefef;
@@ -251,7 +224,6 @@ select {
     color: #0E1C36;
 }
 ul{
-<<<<<<< HEAD
     padding: 0 !important;
 }
 
@@ -323,16 +295,4 @@ ul{
         margin-top: 10px;
     }
 }
-=======
-    padding: 0;
-}
-
-
-
-
-
-
-
-
->>>>>>> 30384367b26f037c58597bf27215ecfac1cf25d9
 

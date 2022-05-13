@@ -12,7 +12,7 @@
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assests/global.css" />
-    <link rel="stylesheet" href="css/add-questions.css" />
+    <link rel="stylesheet" href="css/creation-form.css" />
 </head>
 
 <body>
@@ -57,22 +57,43 @@
                 </div>
             </nav>
         </header>
-        <section class="container question-bank-section" data-aos="fade-up">
-            <div class="main">
-                <div class="heading-notify add-quest">
-                    <p>Add Questions</p>
-                </div>
-                <div class="subj-name">
-                    <p>
-                        <span>Physics</span>: <span>Motion</span>
-                    </p>
-                </div>
-                <div class="quest">
+        <section class="section-one">
+            
+                <img src="img/1.png" alt="img" />
+            
+            <div class="form-section">
+                <form action="" method="Post">
+                    <div class="header-bg">
+                        <h4 id="role">Creation Exam Form</h4>
+                    </div>
+                    <fieldset class="inputs">
+                        <input type="text" placeholder="Exam  Name" />
 
-                </div>
+                        <select>
+                            <option selected disabled>Choose Subject</option>
+                            <option>Physics</option>
+                            <option>Software and archticture</option>
+                            <option>Design Patterns</option>
+                        </select>
+                        <input type="text" placeholder="Exam Date" onfocus="(this.type='date')"
+                            onblur="(this.type='text') ;" id="date">
+                        <input type="number" placeholder="Duration" />
 
+
+                        <input type="text" placeholder="Exam Start Time" onfocus="(this.type='time')"
+                            onblur="(this.type='text')" id="eye" />
+                            <input type="number" placeholder="Total Marks" />
+
+
+
+                        <div id="btn-div">
+                            <button onclick="event.preventDefault() 
+                            ;window.location.href = './second-creation-form.html'">Next</button>
+                        </div>
+                        <p>How to create exam >> <a href="../Login/login.html"> Tutorial</a></p>
+                    </fieldset>
+                </form>
             </div>
-
         </section>
 
 
@@ -83,11 +104,9 @@
     <!--Scripts part-->
 
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
-    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
-    <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
-    <script src="js/add-questions.js"></script>
+    <script src="js/creation-form.js"></script>
 </body>
 
 </html>
