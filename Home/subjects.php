@@ -44,7 +44,7 @@ if(isset($_GET['id']))
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="first-creation-form.php">
                                 Create Exam
                             </a>
                         </li>

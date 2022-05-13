@@ -5,7 +5,7 @@ class questionCont extends DB
     {
        
 
-        $stmt = $this->Connection()->prepare("insert into questions(chapter_id, question_text, difficulty, type) values (?, ?, ?, ?)");
+        $stmt = $this->Connection()->prepare("insert into questions(chapter_id, question_text, difficulty, type, created_at) values (?, ?, ?, ?, now())");
         $stmt->execute(array( $chapter_id,$question, $difficulty, $type ));
     }
     protected function addAnswersCont($ques_name, $answer)
