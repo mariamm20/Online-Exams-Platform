@@ -19,4 +19,24 @@ class studentView extends studentCont
         <?php    
         }
     }
+  // show student's exams 
+    public function showExams()
+    {
+        $data = $this->getExams();
+        foreach($data as $exam)
+        {?>
+            <tr>
+                <th scope="row"><?= $exam['id'] ?></th>
+                <td><?= $exam['exam_name'] ?></td>
+                <td><?= $exam['exam_date'] ?></td>
+                <td><?= $exam['start_time'] ?></td>
+                <td><?= $exam['duration'] . " min" ?></td>
+                <td><?= $exam['total_mark'] ?></td>
+                <td>
+                    <button> <a href="#"> Start </a> </button>
+                </td>
+            </tr>
+        <?php
+        }
+    }
 }

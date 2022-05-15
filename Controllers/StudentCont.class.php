@@ -15,4 +15,14 @@ class studentCont extends DB
         $data = $stmt->fetchAll();
         return $data;
     }
+
+    protected function getExams()
+    {
+        $query = "select * from exams join subjects 
+        on exams.subject_id = subjects.id where subjects.level_id =" . $_SESSION['level_id'] .
+        " and subjects.dept_id =" . $_SESSION['dept_id'];
+        $stmt = $this->Connection()->query($query);
+        $data = $stmt->fetchAll();
+        return $data;
+    }
 }

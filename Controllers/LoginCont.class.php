@@ -143,6 +143,10 @@ class StudLoginCont extends DB{
             $_SESSION['user_name'] =$user[0]['user_name'];
             $_SESSION["email"] = $user[0]["email"];
             $_SESSION['role'] =$user[0]['role'];
+            $_SESSION['level_id'] =$user[0]['level_id'];
+            $_SESSION['dept_id'] =$user[0]['dept_id'];
+            $_SESSION['level'] =$user[0]['level'];
+            $_SESSION['department'] =$user[0]['department'];
             $stmt = null;
                 
             

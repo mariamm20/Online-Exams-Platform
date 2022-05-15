@@ -13,7 +13,7 @@ if(isset($_POST['login']))
     $login = new StudLoginView($email, $password);
     $login->StudLogin();
     if($_SESSION['role'] == 'student'){
-        header("location: ../Home/home.php?error=none1");
+        header("location: ../Home/student.php?error=none1");
 
     }
 

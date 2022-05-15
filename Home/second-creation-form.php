@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    include('../Controllers/dbconnection.class.php');
+    include('../Controllers/examCont.class.php');
+    include('../Views/examView.class.php');
+    $exam = new examView();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,16 +70,18 @@
             <img src="img/1.png" alt="img" />
 
             <div class="form-section" data-aos="fade-left" >
-                <form action="" method="Post">
+                <form action="../includes/exam_structure.inc.php" method="Post">
                     <div class="header-bg">
                         <h4 id="role" >Creation Exam Form</h4>
                     </div>
                     <fieldset class="inputs chap">
-                        <select>
+                    <input type="hidden" value="<?=$_GET['subject_id'] ?>" name="subject_id">
+                    <input type="hidden" value="<?=$_GET['exam_name'] ?>" name="exam_name">
+                        <select name = "chapter_id">
                             <option selected disabled>Choose Chapter</option>
-                            <option>Chapter 1</option>
-                            <option>Chapter 2</option>
-                            <option>Chapter 3</option>
+                            <?php
+                                $exam->showChapters($_GET['subject_id']);
+                            ?>
                         </select>
                         <div class="header-bg quest-type">
                             <h4 id="role">Question Type </h4>
@@ -79,28 +89,28 @@
                         <div class="question-type-setting">
                             <div class=" type mcq">
                                 <div class="type-heading">
-                                    <input class="form-check-input" type="checkbox" value="" id="mcq" onclick="mcquestion()">
+                                    <input class="form-check-input" type="checkbox" value="" id="mcq" onclick="mcquestion()" name="mcq_check">
                                     <label class="form-check-label" for="mcq">
                                         MCQ
                                     </label>
                                 </div>
                                 <div class="type-input-fields quest-mcq">
-                                    <input type="number" disabled placeholder="Number of Easy Questions" />
-                                    <input type="number" disabled placeholder="Number of Medium Questions" />
-                                    <input type="number" disabled placeholder="Number of Hard Questions" />
+                                    <input type="number" disabled placeholder="Number of Easy Questions" name="num_of_easy_questions" />
+                                    <input type="number" disabled placeholder="Number of Medium Questions" name="num_of_medium_questions"/>
+                                    <input type="number" disabled placeholder="Number of Hard Questions" name="num_of_hard_questions"/>
                                 </div>
                             </div>
                             <div class="type true-false">
                                 <div class="type-heading">
-                                <input class="form-check-input" type="checkbox" value="" id="tf" onclick="tfquestion()">
+                                <input class="form-check-input" type="checkbox" value="" id="tf" onclick="tfquestion()" name="TF_check">
                                 <label class="form-check-label" for="tf">
                                     True and False
                                 </label>
                             </div>
                                 <div class="type-input-fields quest-tf">
-                                    <input type="number" disabled placeholder="Number of Easy Questions" />
-                                    <input type="number" disabled placeholder="Number of Medium Questions" />
-                                    <input type="number" disabled placeholder="Number of Hard Questions" />
+                                    <input type="number" disabled placeholder="Number of Easy Questions"  name="easy_questions"/>
+                                    <input type="number" disabled placeholder="Number of Medium Questions" name="medium_questions" />
+                                    <input type="number" disabled placeholder="Number of Hard Questions" name="hard_questions"/>
                                 </div>
                             </div>
                         </div>
@@ -110,9 +120,9 @@
 
 
                         <div id="btn-div" class="create-btn">
-                            <button>Add More Chapter</button>
-                            <button class="create"
-                                onclick="event.preventDefault() ;window.location.href = '../After-Creation/after-creation.html'">Create Exam</button>
+                            <button type="submit" name = "add">Add More Chapter</button>
+                            <button class="create" type="submit" name="create"
+                                >Create Exam</button>
                         </div>
 
                     </fieldset>
