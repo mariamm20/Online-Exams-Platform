@@ -1,6 +1,6 @@
 <header class="container" data-aos="fade-down">
             <nav class="navbar navbar-expand-lg vertical">
-                <span class="fs-4 title"><a class="navbar-brand" href="professor.html">
+                <span class="fs-4 title"><a class="navbar-brand" href="home.php">
                         Online Exams <br />
                         <span class="platform-word">Platform </a>
                 </span>

@@ -1,0 +1,245 @@
+.profile-text {
+    display: none;
+}
+
+.profile-img {
+    width: 55px;
+    border-radius: 50%;
+}
+
+.heading-notify {
+    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    border-radius: 23px 23px 0 0;
+    padding: 15px 33px;
+}
+
+.heading-notify p {
+    margin: 0;
+}
+.chapters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.chapters button {
+    border: 3px solid rgb(239, 239, 239);
+    padding: 8px 6px;
+    background-color: #fff;
+    width: 120px;
+    border-radius: 22px;
+    font-size: 14px;
+    color: #1eaaf1;
+}
+.chapters button:hover {
+    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    color: #0E1C36;
+    font-weight: bold;
+}
+
+.list-group-item {
+    padding: 15px 33px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.question li{
+    border-bottom: 1px solid #efefef !important;
+}
+.question-bank-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.main{
+    width: 75%;
+    
+    text-align: left;
+}
+.question{
+    border: 5px solid #efefef;
+    border-radius: 30px;
+    margin: 15px 33px ;
+    margin-top: 15px;
+}
+.question-body{
+    background-color: #efefef;
+    padding: 15px 33px ;
+    border-radius: 23px 23px 0 0 ;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+ol{
+    padding: 0;
+    margin: 0;
+}
+ol  li{
+    list-style: none;
+    
+    padding: 15px 33px;
+}
+
+
+  
+  input {
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 3px solid #efefef;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+  
+  }
+  .main button {
+    border: 3px solid #efefef;
+    padding: 8px 6px;
+    background-color: #fff;
+    width: 120px;
+    border-radius: 22px;
+    font-size: 14px;
+    color: #1eaaf1;
+  }
+  .main button:hover {
+    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    color: #0e1c36;
+    font-weight: bold;
+  }
+.timer{
+    margin-top: 15px;
+    padding: 5px 33px;
+    text-align: right;
+}
+.timer {
+    color: #1eaaf1;
+    font-weight: bold;
+}
+.timer span{
+    color: #0E1C36;
+    
+}
+/* .form-check-input:checked {
+    background-color: rgb(54, 156, 44) !important;
+    border-color: rgb(79, 195, 69) !important;
+}
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgb(201, 255, 198);
+} */
+select {
+    border-radius: 20px;
+    border: 3px solid #efefef;
+    padding: 5px 10px;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  select option {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    color: #0e1c36;
+  }
+
+.modal .question-difficutly{
+    padding-bottom: 0;
+}
+.modal-body{
+    padding-bottom: 0;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:15px 33px ;
+    background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
+    border-radius: 30px;
+  }
+  .middle p{
+    font-size: 48px;
+    color: #fff;
+    -webkit-text-stroke: 1px #b0b0b0;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+  }
+  .question li:last-child{
+      border-bottom: none !important;
+  }
+li input{
+    padding: 0;
+    position: relative;
+    top: 1px;
+}
+#btn-div{
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+#btn-div button{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+
+
+
+@media (max-width:992px) {
+    .profile-text {
+        display: inline-block;
+    }
+    .profile-img {
+        width: 30px;
+    }
+}
+
+@media (max-width:768px) {
+    .heading-notify {
+        padding: 15px 15px;
+    }
+    .question-body{
+        padding: 15px 15px ;
+    }
+    .main{
+        width: 100%;
+        height: auto;
+        text-align: left;
+    }
+    .question {
+        margin: 15px 15px;
+    }
+    ol li{
+        padding: 15px 15px;
+    }
+    .question-difficutly{
+        padding: 0 15px 15px;
+        margin-bottom: 0;
+    }
+}
+@media (max-width:425px) {
+    .heading-notify {
+        padding: 15px 5px;
+    }
+    .question-body{
+        padding: 15px 5px ;
+    }
+    .main{
+        width: 100%;
+        height: auto;
+        text-align: left;
+    }
+    .question {
+        margin: 15px 5px;
+    }
+    .correct {
+        float: right;
+        color: rgb(54, 156, 44);
+        
+    }
+    .modal input{
+        width: 80%;
+    }
+}
