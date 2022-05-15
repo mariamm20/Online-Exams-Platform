@@ -212,7 +212,9 @@ thead th{
     width: 100%;
   }
 
-
+.bottom a:hover{
+    color: #0e1c36;
+}
 
 
 
