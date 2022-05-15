@@ -64,7 +64,7 @@ lable {
     background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px #979797;
   }
   fieldset {
     display: flex;
