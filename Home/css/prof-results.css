@@ -147,6 +147,7 @@
     float: right;
     position: relative;
     top: 3px;
+    cursor: pointer;
 }
 
 .accordion-body {

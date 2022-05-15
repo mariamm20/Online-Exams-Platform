@@ -1,3 +1,13 @@
+<?php
+session_start();
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,116 +26,33 @@
 
 <body>
     <div id="app">
-        <header class="container" data-aos="fade-down">
-            <nav class="navbar navbar-expand-lg vertical">
-                <span class="fs-4 title"><a class="navbar-brand" href="professor.html">
-                        Online Exams <br />
-                        <span class="platform-word">Platform </a>
-                </span>
-
-                </a></span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="nav">
-                        <li class="nav-item register-color">
-                            <a class="nav-link" href="../Creation-Form/first-creation-form.html">
-                                Create Exam
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../FAQ/fqa.html">
-                                FAQ
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Contact/contact.html">
-                                Contact Us
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Professor/professor.html">
-                                <img src="img/prof.png" class="profile-img">
-                                <span class="profile-text">Profile</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        <?php include('../includes/header_prof.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
-        <div class="table-content">
-          
-            <table class="table  table-responsive ">
-             
-              <tbody>
-                <tr class="table-head">
-                  <td scope="col">#</td>
-                  <td scope="col">Student Name</td>
-                  <td scope="col">Acadimic&nbsp;ID</td>
-                  <td scope="col">Result</td>
-                  
-                </tr>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Mark</td>
-                  <td>157892218855</td>
-                  <td>mark@gmail.com</td>
-                  
-                </tr>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Mark</td>
-                  <td>157892218855</td>
-                  <td>mark@gmail.com</td>
-                  
-                </tr>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Mark</td>
-                  <td>157892218855</td>
-                  <td>mark@gmail.com</td>
-                  
-                </tr>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Mark</td>
-                  <td>157892218855</td>
-                  <td>mark@gmail.com</td>
-                  
-                </tr>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Mark</td>
-                  <td>157892218855</td>
-                  <td>mark@gmail.com</td>
-                  
-                </tr>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Mark</td>
-                  <td>157892218855</td>
-                  <td>mark@gmail.com</td>
-                  
-                </tr>
-                
-              </tbody>
-            </table>
-          
-          
+            <div class="table-content">
+
+                <table class="table  table-responsive ">
+
+                    <tbody>
+                        <tr class="table-head">
+                            <td scope="col">#</td>
+                            <td scope="col">Student Name</td>
+                            <td scope="col">Acadimic&nbsp;ID</td>
+                            <td scope="col">Level</td>
+                            <td scope="col">Department</td>
+                            <td scope="col">Student Result</td>
+                            <td scope="col">Total Marks</td>
+                        </tr>
+
+                        <?php $professor->showResultSheet($_GET['exam_id']); ?>
+
+                    </tbody>
+                </table>
 
 
 
-        </div>
-        
-      
-
-
-      </section>
+            </div>
+        </section>
 
 
 

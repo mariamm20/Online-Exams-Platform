@@ -1,14 +1,3 @@
-<?php
-session_start();
-include('../Controllers/dbconnection.class.php');
-include('../Controllers/professorCont.class.php');
-include('../Views/professorView.class.php');
-$professor = new professorView();
-if (isset($_GET['id'])) {
-    echo $sub_id = $_GET['id'];
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,14 +12,12 @@ if (isset($_GET['id'])) {
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assests/global.css" />
-    <link rel="stylesheet" href="css/prof-results.css" />
+    <link rel="stylesheet" href="css/stud-subjects.css" />
 </head>
 
 <body>
     <div id="app">
-
-        <?php include('../includes/header_prof.inc.php'); ?>
-
+        <?php include('../includes/header_stud.inc.php') ?>
         <section class="container subjects-chapters-section" data-aos="fade-up">
             <div class="left">
 
@@ -39,36 +26,39 @@ if (isset($_GET['id'])) {
                 </div>
                 <div>
                     <ol class="list-group list-group-numbered">
-
-                        <?php $professor->showSubjects(); ?>
-
+                        <li class="list-group-item" onclick="show()">Physics</li>
+                        <li class="list-group-item">Software Design and Archeticture</li>
+                        <li class="list-group-item">Software Development</li>
+                        <li class="list-group-item">Requirement Engineering</li>
                     </ol>
                 </div>
 
             </div>
             <div class="right">
                 <div class="img-right">
-                    <p>No Subject Selected Yet!</p>
+                    <p>No Chapters To Show Yet!</p>
                     <img src="img/10.png" />
                 </div>
 
                 <div class="heading-notify chapters d-none">
-                    <p><i class="fa fa-history" aria-hidden="true"></i>
-                        <span></span> Exams History
-                    </p>
+                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> <span>Physics</span> Chapters</p>
 
                 </div>
-
-                <div class="names-chapters d-none" id="exams">
+                <div class="names-chapters d-none">
                     <ol class="list-group list-group-numbered">
-
-                        <?php include('../includes/result_history.inc.php'); ?>
+                        <li class="list-group-item" onclick="window.location.href='../Home/stud-question-bank.php'">Motion</li>
+                        <li class="list-group-item">Acceleration</li>
+                        <li class="list-group-item">Newton's first low</li>
+                        <li class="list-group-item">Light beams</li>
+                        <li class="list-group-item">Electricity/li>
 
                     </ol>
                 </div>
 
 
             </div>
+
+
         </section>
 
 
@@ -77,32 +67,11 @@ if (isset($_GET['id'])) {
 
     </div>
     <!--Scripts part-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
-    <script src="js/prof-results.js"></script>
-
-
-
-    <script>
-        $('.list-group-item').click(function() {
-            var subject_id = $(this).val();
-            $.ajax({
-                url: '../includes/result_history.inc.php',
-                method: 'POST',
-                data: {
-                    subject_id: subject_id
-                },
-                success: function(data) {
-                    $('#exams').html(data);
-                    console.log(subject_id)
-                }
-            });
-        });
-    </script>
-
-
+    <script src="js/stud-subjects.js"></script>
 </body>
 
 </html>

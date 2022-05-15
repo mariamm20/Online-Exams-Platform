@@ -3,6 +3,10 @@
     display: flex;
     flex-wrap: wrap;
 }
+.profile-img{
+    width: 55px;
+    border-radius: 50%;
+}
 
 .landing div {
     width: 50%;
@@ -206,6 +210,8 @@ footer {
     .navbar-brand {
         left: 18px;
     }
+
+    
 
 }
 
