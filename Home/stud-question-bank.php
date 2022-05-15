@@ -1,3 +1,17 @@
+<?php
+session_start();
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
+
+if (isset($_GET['chapter_id'])) {
+    $chapter_id = $_GET['chapter_id'];
+    //echo $chapter_id;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,50 +52,7 @@
 
                     <p class="question-difficutly">Difficulty: <span class="easy">Easy</span></p>
                 </div>
-                <div class="question">
-                    <p class="question-body">
-                        1- In a uniform cicular motion:
-                    </p>
-                    <ol type="a">
-                        <li>Velocity is constant</li>
-                        <li>Distance is constant</li>
-                        <li>Displacement is constant</li>
-                        <li>Speed is constant <i class="fa fa-check-square correct" aria-hidden="true"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Correct Answer"></i></li>
-                    </ol>
-
-                    <p class="question-difficutly">Difficulty: <span class="easy">Easy</span></p>
-                </div>
-                <div class="question">
-                    <p class="question-body">
-                        1- In a uniform cicular motion:
-                    </p>
-                    <ol type="a">
-                        <li>Velocity is constant</li>
-                        <li>Distance is constant</li>
-                        <li>Displacement is constant</li>
-                        <li>Speed is constant <i class="fa fa-check-square correct" aria-hidden="true"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Correct Answer"></i></li>
-                    </ol>
-
-                    <p class="question-difficutly">Difficulty: <span class="easy">Easy</span></p>
-                </div>
-                <div class="question">
-                    <p class="question-body">
-                        1- In a uniform cicular motion:
-                    </p>
-                    <ol type="a">
-                        <li>Velocity is constant</li>
-                        <li>Distance is constant</li>
-                        <li>Displacement is constant</li>
-                        <li>Speed is constant <i class="fa fa-check-square correct" aria-hidden="true"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Correct Answer"></i></li>
-                    </ol>
-
-                    <p class="question-difficutly">Difficulty: <span class="easy">Easy</span></p>
-                </div>
-
-
+                
             </div>
             
         </section>

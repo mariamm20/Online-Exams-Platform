@@ -9,9 +9,6 @@ if (isset($_GET['chapter_id'])) {
     $chapter_id = $_GET['chapter_id'];
     //echo $chapter_id;
 }
-/*  if (isset($_GET['qts_id'])) {
-    echo $qts_id = $_GET['qts_id'];
-}  */
 
 
 ?>

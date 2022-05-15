@@ -1,3 +1,14 @@
+<?php
+session_start();
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$student = new studentView();
+if (isset($_GET['id'])) {
+    echo $sub_id = $_GET['id'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,10 +37,9 @@
                 </div>
                 <div>
                     <ol class="list-group list-group-numbered">
-                        <li class="list-group-item" onclick="show()">Physics</li>
-                        <li class="list-group-item">Software Design and Archeticture</li>
-                        <li class="list-group-item">Software Development</li>
-                        <li class="list-group-item">Requirement Engineering</li>
+                    
+                    <?php $student->showStudSubjects(); ?>
+
                     </ol>
                 </div>
 
@@ -67,11 +77,37 @@
 
     </div>
     <!--Scripts part-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/stud-subjects.js"></script>
+
+    <script>
+        $('.list-group-item').click(function() {
+            var subject_id = $(this).val();
+
+            $.ajax({
+                url: '../includes/subject.inc.php',
+                method: 'POST',
+                data: {
+                    subject_id: subject_id
+                },
+                success: function(data) {
+                    $('#chapters').html(data);
+                    console.log(subject_id)
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).on('click', '.list-group-item', function() {
+            $("#id_of_subject").val($(this).data('sid'));
+        });
+    </script>
+
 </body>
 
 </html>

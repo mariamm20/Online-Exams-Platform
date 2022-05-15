@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include('../Controllers/dbconnection.class.php');
+    include('../Controllers/StudentCont.class.php');
+    include('../Views/StudentView.class.php');
+    $student = new studentView();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,68 +45,12 @@
               <td scope="col">Start Time</td>
               <td scope="col">Duration</td>
               <td scope="col">Total Marks</td>
-
               <td scope="col">Result</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Physics: Motion</td>
-              <td>12-10-2022</td>
-              <td>20:00</td>
-              <td>30 min</td>
-              <td>15</td>
-              <td>15</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Physics: Motion</td>
-              <td>12-10-2022</td>
-              <td>20:00</td>
-              <td>30 min</td>
-              <td>15</td>
-              <td>15</td>
+
+              <?php $student->showStudResultSheet(); ?>
 
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Physics: Motion</td>
-              <td>12-10-2022</td>
-              <td>20:00</td>
-              <td>30 min</td>
-              <td>15</td>
-              <td>15</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Physics: Motion</td>
-              <td>12-10-2022</td>
-              <td>20:00</td>
-              <td>30 min</td>
-              <td>15</td>
-              <td>15</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Physics: Motion</td>
-              <td>12-10-2022</td>
-              <td>20:00</td>
-              <td>30 min</td>
-              <td>15</td>
-              <td>15</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Physics: Motion</td>
-              <td>12-10-2022</td>
-              <td>20:00</td>
-              <td>30 min</td>
-              <td>15</td>
-              <td>15</td>
-
-            </tr>
+            
 
           </tbody>
         </table>
