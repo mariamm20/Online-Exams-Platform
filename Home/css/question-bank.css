@@ -206,6 +206,33 @@ select {
 }
 
 
+.edit-question-body{
+    background-color: white;
+    padding: 15px 33px;
+    border-radius: 23px 23px 0 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.edit-question-input{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 25px;
+    background-color: #efefef;
+    font-weight: bold;
+
+}
+.edit-answer{
+    width: 95%;
+}
+.edit-list{
+        padding: 3px 50px;
+}
+.question-select{
+    margin-bottom: 0;
+    padding: 0px 50px 3px;
+}
 
 
 

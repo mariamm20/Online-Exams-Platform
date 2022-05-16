@@ -3,11 +3,12 @@ session_start();
 include('../Controllers/dbconnection.class.php');
 include('../Controllers/professorCont.class.php');
 include('../Views/professorView.class.php');
-$professor = new professorView();
+$student = new studentView();
 if (isset($_GET['id'])) {
     echo $sub_id = $_GET['id'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,12 +23,12 @@ if (isset($_GET['id'])) {
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assests/global.css" />
-    <link rel="stylesheet" href="css/subjects.css" />
+    <link rel="stylesheet" href="css/stud-subjects.css" />
 </head>
 
 <body>
     <div id="app">
-        <?php include('../includes/header_prof.inc.php'); ?>
+        <?php include('../includes/header_stud.inc.php') ?>
         <section class="container subjects-chapters-section" data-aos="fade-up">
             <div class="left">
 
@@ -36,63 +37,36 @@ if (isset($_GET['id'])) {
                 </div>
                 <div>
                     <ol class="list-group list-group-numbered">
-
-                        <?php
-                        $professor->showSubjects();
-                        ?>
+                    
+                    <?php $student->showStudSubjects(); ?>
 
                     </ol>
                 </div>
 
             </div>
-
-
             <div class="right">
                 <div class="img-right">
                     <p>No Chapters To Show Yet!</p>
                     <img src="img/10.png" />
                 </div>
+
                 <div class="heading-notify chapters d-none">
-                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> <span>
-                            <?php  ?>
-                        </span> Chapters</p>
-                    <button data-bs-toggle="modal" class="add_chapter" data-bs-target="#add-chapter">Add Chapter</button>
+                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> <span>Physics</span> Chapters</p>
+
                 </div>
-                <div class="names-chapters d-none" id="chapters">
+                <div class="names-chapters d-none">
                     <ol class="list-group list-group-numbered">
-                        <?php
+                        <li class="list-group-item" onclick="window.location.href='../Home/stud-question-bank.php'">Motion</li>
+                        <li class="list-group-item">Acceleration</li>
+                        <li class="list-group-item">Newton's first low</li>
+                        <li class="list-group-item">Light beams</li>
+                        <li class="list-group-item">Electricity/li>
 
-                        include('../includes/subject.inc.php');
-
-
-                        ?>
                     </ol>
                 </div>
 
 
             </div>
-            <!-- add chapter -->
-            <div class="modal magictime vanishIn" id="add-chapter" tabindex="-1" data-bs-backdrop="static">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title"><i class="fa fa-bookmark" aria-hidden="true"></i> Add Chapter</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form action="../includes/add_chpter.inc.php" method="post">
-                            <div class="modal-body">
-                                <input type="hidden" id="id_of_subject" name="sub_id">
-                                <input type="text" placeholder="Chapter Name" name="name">
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="submit" class="" name="save">Save changes</button>
-                            </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-
 
 
         </section>
@@ -108,7 +82,7 @@ if (isset($_GET['id'])) {
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
-    <script src="js/subjects.js"></script>
+    <script src="js/stud-subjects.js"></script>
 
     <script>
         $('.list-group-item').click(function() {
@@ -133,7 +107,6 @@ if (isset($_GET['id'])) {
             $("#id_of_subject").val($(this).data('sid'));
         });
     </script>
-
 
 </body>
 

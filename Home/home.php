@@ -17,7 +17,9 @@
 
 <body>
     <div id="app">
+
         <?php include('../includes/header.inc.php') ?>
+        
         <section class="landing">
             <div class="qoute">
                 <p id="type">
@@ -31,7 +33,18 @@
                     online exams for your<br />
                     students
                 </p>
-                <button onclick="location.href='../Pre-register/pre-register.php'">Get Started</button>
+
+                <button
+                <?php 
+                if(isset($_SESSION['role']) == "professor"){
+                    ?> onclick="location.href='../Home/first-creation-form.php'"<?php
+                } ?>
+                <?php
+                if(isset($_SESSION['role']) == "student"){
+                    ?> onclick="location.href='../Home/pre-register.php'"<?php
+                } ?>
+                >Get Started</button>
+
             </div>
         </section>
         <section class="landing section-two">

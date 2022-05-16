@@ -5,10 +5,10 @@ include('../Controllers/professorCont.class.php');
 include('../Views/professorView.class.php');
 $professor = new professorView();
 
-if (isset($_GET['chapter_id'])) {
-    $chapter_id = $_GET['chapter_id'];
-    //echo $chapter_id;
-}
+if (isset($_GET['question_id'])) {
+    $question_id = $_GET['question_id'];
+    //echo $question_id = $_GET['question_id'];
+}  
 
 
 ?>
@@ -41,26 +41,31 @@ if (isset($_GET['chapter_id'])) {
                 <div class="heading-notify chapters" id="chapters">
                     <p>
                         <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        <span style="font-weight: bold;"> <?php $professor->showChapterName($chapter_id); ?> Questions</span>
-                        <span>(<?php $professor->showQuestionsNumber($chapter_id); ?>)</span>
+                        <span style="font-weight: bold;"> Edit Question </span>
+                        <span>(<?php echo $question_id;?>)</span>
                     </p>
-                    <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button>
+                    <!-- <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button> -->
                 </div>
-                <?php $professor->showQuestions($chapter_id); ?>
+
+                <form action="../includes/editQts.inc.php" method="POST">
+                    <?php $professor->showQuestionToEdit($question_id); ?>
+                </form>
+
             </div>
+
+
         </section>
     </div>
 
 
 
     <!--Scripts part-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/question-bank.js"></script>
 
-   
+    
 
 </body>
 

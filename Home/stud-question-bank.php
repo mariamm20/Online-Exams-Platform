@@ -10,7 +10,6 @@ if (isset($_GET['chapter_id'])) {
     //echo $chapter_id;
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -27,41 +26,48 @@ if (isset($_GET['chapter_id'])) {
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assests/global.css" />
-    <link rel="stylesheet" href="css/question-bank.css" />
+    <link rel="stylesheet" href="css/stud-question-bank.css" />
 </head>
 
 <body>
     <div id="app">
-
-    <?php include('../includes/header_prof.inc.php'); ?>
-
+    <?php include('../includes/header_stud.inc.php') ?>
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
-
-                <div class="heading-notify chapters" id="chapters">
-                    <p>
-                        <i class="fa fa-question-circle" aria-hidden="true"></i>
-                        <span style="font-weight: bold;"> <?php $professor->showChapterName($chapter_id); ?> Questions</span>
-                        <span>(<?php $professor->showQuestionsNumber($chapter_id); ?>)</span>
-                    </p>
-                    <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button>
+                <div class="heading-notify chapters">
+                    <p><i class="fa fa-question-circle" aria-hidden="true"></i> <span> Motion</span>
+                        Questions&nbsp;<span>(1)</span></p>
                 </div>
-                <?php $professor->showQuestions($chapter_id); ?>
+                <div class="question">
+                    <p class="question-body">
+                        1- In a uniform cicular motion:
+                    </p>
+                    <ol type="a">
+                        <li>Velocity is constant</li>
+                        <li>Distance is constant</li>
+                        <li>Displacement is constant</li>
+                        <li>Speed is constant <i class="fa fa-check-square correct" aria-hidden="true"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Correct Answer"></i></li>
+                    </ol>
+
+                    <p class="question-difficutly">Difficulty: <span class="easy">Easy</span></p>
+                </div>
+                
             </div>
+            
         </section>
+
+
+
+
+
     </div>
-
-
-
     <!--Scripts part-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
-    <script src="js/question-bank.js"></script>
-
-   
-
+    <script src="js/stud-question-bank.js"></script>
 </body>
 
 </html>

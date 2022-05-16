@@ -1,6 +1,10 @@
 <?php
 session_start();
+//echo $_SESSION['id'];
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,67 +23,29 @@ session_start();
 
 <body>
     <div id="app">
-        <header class="container" data-aos="fade-down">
-            <nav class="navbar navbar-expand-lg vertical">
-                <span class="fs-4 title"><a class="navbar-brand" href="professor.html">
-                        Online Exams <br />
-                        <span class="platform-word">Platform </a>
-                </span>
-
-                </a></span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="nav">
-                        <li class="nav-item register-color">
-                            <a class="nav-link" href="#">
-                                Create Exam
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../FAQ/fqa.html">
-                                FAQ
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Contact/contact.html">
-                                Contact Us
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Professor/professor.html">
-                                <img src="img/prof.png" class="profile-img">
-                                <span class="profile-text">Profile</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+        
+        <?php include('../includes/header_prof.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
             <div class="top">
                 <div class="top-left">
                     <div class="buttons">
                         <button onclick="location.href='subjects.php'"><i class="fa-solid fa-book"></i> Questions Bank</button>
-                        <button><i class="fa-solid fa-history"></i> Results History</button>
+                        <button onclick="location.href='prof-results.php'"><i class="fa-solid fa-history"></i> Results History</button>
                     </div>
                 </div>
                 <div class="top-right">
                     <div class="details">
                         <div class="data">
                         <p class="name">
-                            Ali Mohamed Ibrahim
+                            <?php echo $_SESSION['user_name'] ?>
                             <a href="#"><i class="fa fa-cog " aria-hidden="true"></i></a>
                         </p>
                         <p class="email">
-                            ali_ibrahim@gmail.com
+                            <?php echo $_SESSION['email'] ?>
                         </p>
                         <p class="role">
-                            Professor
+                        <?php echo $_SESSION['role'] ?>
                         </p>
                         </div>
                         <img src="img/prof.png" class="prof-img" />
@@ -90,8 +56,6 @@ session_start();
                                 <label for="img">Change profile picture</label>
                         </p>
                         </div>
-
-                        
 
                     </div>
                 </div>
@@ -107,22 +71,7 @@ session_start();
                             <i class="fa-solid fa-info"></i>
                             Physics Exam is accepted by the admin. You can follow the results in Results history, Thanks for your efforts.
                         </p>
-                        <p>
-                            <i class="fa-solid fa-info"></i>
-                            Physics Exam is accepted by the admin. You can follow the results in Results history, Thanks for your efforts.
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-info"></i>
-                            Physics Exam is accepted by the admin. You can follow the results in Results history, Thanks for your efforts.
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-info"></i>
-                            Physics Exam is accepted by the admin. You can follow the results in Results history, Thanks for your efforts.
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-info"></i>
-                            Physics Exam is accepted by the admin. You can follow the results in Results history, Thanks for your efforts.
-                        </p>
+                       
                         
                     </div>
                 </div>
