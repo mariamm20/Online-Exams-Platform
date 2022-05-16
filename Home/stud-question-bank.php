@@ -1,9 +1,9 @@
 <?php
 session_start();
 include('../Controllers/dbconnection.class.php');
-include('../Controllers/professorCont.class.php');
-include('../Views/professorView.class.php');
-$professor = new professorView();
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
+$student = new studentView();
 
 if (isset($_GET['chapter_id'])) {
     $chapter_id = $_GET['chapter_id'];
@@ -31,30 +31,22 @@ if (isset($_GET['chapter_id'])) {
 
 <body>
     <div id="app">
-    <?php include('../includes/header_stud.inc.php') ?>
+
+        <?php include('../includes/header_stud.inc.php') ?>
+
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
                 <div class="heading-notify chapters">
-                    <p><i class="fa fa-question-circle" aria-hidden="true"></i> <span> Motion</span>
-                        Questions&nbsp;<span>(1)</span></p>
-                </div>
-                <div class="question">
-                    <p class="question-body">
-                        1- In a uniform cicular motion:
-                    </p>
-                    <ol type="a">
-                        <li>Velocity is constant</li>
-                        <li>Distance is constant</li>
-                        <li>Displacement is constant</li>
-                        <li>Speed is constant <i class="fa fa-check-square correct" aria-hidden="true"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Correct Answer"></i></li>
-                    </ol>
-
-                    <p class="question-difficutly">Difficulty: <span class="easy">Easy</span></p>
+                    <p>
+                        <i class="fa fa-question-circle" aria-hidden="true"></i> 
+                        <span style="font-weight: bold;"> <?php $student->showChapterName($chapter_id); ?> Questions</span> 
+                        <span>(<?php $student->showQuestionsNumber($chapter_id); ?>)</span></p>
                 </div>
                 
+                <?php $student->showStudQuestions($chapter_id); ?>
+
             </div>
-            
+
         </section>
 
 
@@ -63,7 +55,7 @@ if (isset($_GET['chapter_id'])) {
 
     </div>
     <!--Scripts part-->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>

@@ -1,8 +1,8 @@
 <?php
 session_start();
 include('../Controllers/dbconnection.class.php');
-include('../Controllers/professorCont.class.php');
-include('../Views/professorView.class.php');
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
 $student = new studentView();
 if (isset($_GET['id'])) {
     echo $sub_id = $_GET['id'];
@@ -37,35 +37,26 @@ if (isset($_GET['id'])) {
                 </div>
                 <div>
                     <ol class="list-group list-group-numbered">
-                    
-                    <?php $student->showStudSubjects(); ?>
-
+                        <?php $student->showStudSubjects(); ?>
                     </ol>
                 </div>
-
             </div>
+
+
             <div class="right">
                 <div class="img-right">
                     <p>No Chapters To Show Yet!</p>
                     <img src="img/10.png" />
                 </div>
-
-                <div class="heading-notify chapters d-none">
-                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> <span>Physics</span> Chapters</p>
-
+                <div class="heading-notify chapters d-none" >
+                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> 
+                    <span> <?php //echo $_GET['subject_name'] ?> </span> Chapters</p>
                 </div>
-                <div class="names-chapters d-none">
+                <div class="names-chapters d-none" id="chapters">
                     <ol class="list-group list-group-numbered">
-                        <li class="list-group-item" onclick="window.location.href='../Home/stud-question-bank.php'">Motion</li>
-                        <li class="list-group-item">Acceleration</li>
-                        <li class="list-group-item">Newton's first low</li>
-                        <li class="list-group-item">Light beams</li>
-                        <li class="list-group-item">Electricity/li>
-
+                        <?php include('../includes/stud-subject.inc.php'); ?>
                     </ol>
                 </div>
-
-
             </div>
 
 
@@ -78,7 +69,6 @@ if (isset($_GET['id'])) {
     </div>
     <!--Scripts part-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
@@ -87,9 +77,8 @@ if (isset($_GET['id'])) {
     <script>
         $('.list-group-item').click(function() {
             var subject_id = $(this).val();
-
             $.ajax({
-                url: '../includes/subject.inc.php',
+                url: '../includes/stud-subject.inc.php',
                 method: 'POST',
                 data: {
                     subject_id: subject_id
@@ -99,12 +88,6 @@ if (isset($_GET['id'])) {
                     console.log(subject_id)
                 }
             });
-        });
-    </script>
-
-    <script>
-        $(document).on('click', '.list-group-item', function() {
-            $("#id_of_subject").val($(this).data('sid'));
         });
     </script>
 
