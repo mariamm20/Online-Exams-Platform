@@ -34,13 +34,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../Home/professor.php">
                             <img class="profile-img" 
+                            <?php 
+                            if ($_SESSION['role'] == "professor") {
+                            ?> src="img/prof.png" <?php 
+                            } ?>
+                            
                             <?php
-                                if (isset($_SESSION['role']) == "professor") {
-                                ?> src="img/prof.png" <?php
-                                    } ?> <?php
-                                if (isset($_SESSION['role']) == "student") {
+                                if ($_SESSION['role'] == "student") {
                                 ?> src="img/student.png" <?php
-                                    } ?> >
+                            } ?> >
                             <!-- <span class="profile-text">Profile</span> -->
                         </a>
                     </li>

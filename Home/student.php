@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    include('../Controllers/dbconnection.class.php');
-    include('../Controllers/StudentCont.class.php');
-    include('../Views/StudentView.class.php');
-    $student = new studentView();
+session_start();
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
+$student = new studentView();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +23,7 @@
 
 <body>
     <div id="app">
-        <?php
-            include('../includes/header_stud.inc.php')
-        ?>
+        <?php include('../includes/header_prof_stud.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
             <div class="top">
@@ -38,61 +36,59 @@
                 <div class="top-right">
                     <div class="details">
                         <div class="data">
-                        <p class="name">
-                            <?= $_SESSION['user_name'] ?>
-                            <a href="#"><i class="fa fa-cog " aria-hidden="true"></i></a>
-                        </p>
-                        <p class="email">
-                        <?= $_SESSION['email'] ?>
-                        </p>
-                        <p class="role">
-                        <?=  "Level: " . $_SESSION['level'] ?>
-                        </p>
+                            <p class="name">
+                                <?= $_SESSION['user_name'] ?>
+                                <a href="../Home/setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
+                            </p>
+                            <p class="email">
+                                <?= $_SESSION['email'] ?>
+                            </p>
+                            <p class="role">
+                                <?= "Level: " . $_SESSION['level'] ?>
+                            </p>
                         </div>
                         <img src="img/student.png" class="prof-img" />
-                        <div class="change-pic">
+                        <!-- <div class="change-pic">
                             <p>
                                 <i class="fa fa-camera" aria-hidden="true"></i>
                                 <input type="file" accept=".png,.jpg,.jpeg,.gif" name="uploadfile" id="img" style="display:none;"/>
                                 <label for="img">Change profile picture</label>
                         </p>
-                        </div>
-
-                        
+                        </div> -->
 
                     </div>
                 </div>
             </div>
             <div class="middle">
                 <p>
-                    Avialable Exams  
+                    Avialable Exams
                 </p>
             </div>
 
             <div class="bottom" id="bottom">
                 <div class="table-content">
-          
+
                     <table class="table  table-responsive ">
-                     
-                    <thead class="heading-notify">
-                      <tr>
-                        <th scope="col" class="first-col">#</th>
-                        <th scope="col">Exam Name</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Start Time</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Total Marks</th>
-                        <th scope="col" class="last-col">Go To Exam</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                                <?php
-                                    $student->showExams();
-                                ?>
-                    
-                    </tbody>
-                  </table>
-            </div>
+
+                        <thead class="heading-notify">
+                            <tr>
+                                <th scope="col" class="first-col">#</th>
+                                <th scope="col">Exam Name</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Start Time</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col">Total Marks</th>
+                                <th scope="col" class="last-col">Go To Exam</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $student->showExams();
+                            ?>
+
+                        </tbody>
+                    </table>
+                </div>
         </section>
 
 

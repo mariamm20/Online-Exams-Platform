@@ -1,5 +1,10 @@
 <?php
 session_start();
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
+
 //echo $_SESSION['id'];
 
 ?>
@@ -23,8 +28,8 @@ session_start();
 
 <body>
     <div id="app">
-        
-        <?php include('../includes/header_prof.inc.php'); ?>
+
+        <?php include('../includes/header_prof_stud.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
             <div class="top">
@@ -37,25 +42,25 @@ session_start();
                 <div class="top-right">
                     <div class="details">
                         <div class="data">
-                        <p class="name">
-                            <?php echo $_SESSION['user_name'] ?>
-                            <a href="#"><i class="fa fa-cog " aria-hidden="true"></i></a>
-                        </p>
-                        <p class="email">
-                            <?php echo $_SESSION['email'] ?>
-                        </p>
-                        <p class="role">
-                        <?php echo $_SESSION['role'] ?>
-                        </p>
+                            <p class="name">
+                                <?= $_SESSION['user_name'] ?>
+                                <a href="../Home/setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
+                            </p>
+                            <p class="email">
+                                <?= $_SESSION['email'] ?>
+                            </p>
+                            <p class="role">
+                                <?= $_SESSION['role'] ?>
+                            </p>
                         </div>
                         <img src="img/prof.png" class="prof-img" />
-                        <div class="change-pic">
+                        <!-- <div class="change-pic">
                             <p>
                                 <i class="fa fa-camera" aria-hidden="true"></i>
                                 <input type="file" accept=".png,.jpg,.jpeg,.gif" name="uploadfile" id="img" style="display:none;"/>
                                 <label for="img">Change profile picture</label>
                         </p>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -64,15 +69,15 @@ session_start();
             <div class="bottom">
                 <div class="bottom-left">
                     <div class="heading-notify notify">
-                        <p> <i class="fa-solid fa-bell"></i> Notifications  <span>(1)</span> </p>
+                        <p> <i class="fa-solid fa-bell"></i> Notifications <span>(1)</span> </p>
                     </div>
                     <div class="notify-body">
                         <p>
                             <i class="fa-solid fa-info"></i>
                             Physics Exam is accepted by the admin. You can follow the results in Results history, Thanks for your efforts.
                         </p>
-                       
-                        
+
+
                     </div>
                 </div>
                 <div class="bottom-right">
