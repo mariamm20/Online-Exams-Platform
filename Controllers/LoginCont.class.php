@@ -60,6 +60,7 @@ class ProfLoginCont extends DB
 
 
             $_SESSION["id"] = $user[0]["id"];
+            $_SESSION["image"] = $user[0]["image"];
             $_SESSION['user_name'] =$user[0]['user_name'];
             $_SESSION["email"] = $user[0]["email"];
             $_SESSION['role'] =$user[0]['role'];
@@ -140,6 +141,7 @@ class StudLoginCont extends DB{
 
 
             $_SESSION["id"] = $user[0]["id"];
+            $_SESSION["image"] = $user[0]["image"];
             $_SESSION['user_name'] =$user[0]['user_name'];
             $_SESSION["email"] = $user[0]["email"];
             $_SESSION['role'] =$user[0]['role'];

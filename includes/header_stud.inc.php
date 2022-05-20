@@ -29,12 +29,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="../Home/student.php">
-                            <img class="profile-img" 
-                        
-                                src="img/student.png" />
-                             
-                            <!-- <span class="profile-text">Profile</span> -->
+                        <a class="nav-link" href="../includes/logout.inc.php">
+                            Logout
                         </a>
                             
                         </li>
