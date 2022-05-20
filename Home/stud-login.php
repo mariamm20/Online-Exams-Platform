@@ -63,7 +63,8 @@
                     <fieldset class="inputs">
 
                         <input type="email" placeholder="Email" name="email" />
-                        <input type="password" placeholder="Password" name="password" />
+                        <input type="password" placeholder="Password" name="password" id="eye" />
+                        <button onclick="event.preventDefault(),myFunction()"  class="view-password"><i class="fa-solid fa-eye"></i></button>
                         <div id="btn-div">
                             <button name="login">Log In</button>
                         </div>
@@ -81,6 +82,7 @@
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
