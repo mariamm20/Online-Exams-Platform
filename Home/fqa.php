@@ -1,5 +1,13 @@
 <?php
     session_start();
+include('../Controllers/dbconnection.class.php');    
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
+
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
+$student = new studentView();
 ?>
 <!DOCTYPE html>
 <html lang="en">

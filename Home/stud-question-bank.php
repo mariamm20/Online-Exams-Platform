@@ -32,7 +32,7 @@ if (isset($_GET['chapter_id'])) {
 <body>
     <div id="app">
 
-        <?php include('../includes/header_stud.inc.php'); ?>
+        <?php include('../includes/header.inc.php'); ?>
 
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">

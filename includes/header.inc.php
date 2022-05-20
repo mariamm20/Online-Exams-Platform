@@ -1,6 +1,13 @@
+<?php
+
+
+
+
+?>
+
 <header class="container" data-aos="fade-down">
     <nav class="navbar navbar-expand-lg vertical">
-        <span class="fs-4 title"><a class="navbar-brand" href="home.php">
+        <span class="fs-4 title"><a class="navbar-brand" href="#">
                 Online Exams <br />
                 <span class="platform-word">Platform </a>
         </span>
@@ -13,11 +20,26 @@
         ?>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="nav">
-                    <li class="nav-item register-color">
+                    <!-- <li class="nav-item register-color">
                         <a class="nav-link" href="../includes/logout.inc.php?<?= $_SESSION['role']; ?>">
                             Log Out
                         </a>
+                    </li> -->
+                    <?php if($_SESSION['role'] == "professor" ){ ?>
+                    <li class="nav-item">
+                    <a class="nav-link" href="first-creation-form.php"  style="color:rgb(48, 168, 228)">
+                        Create Exam
+                    </a>
                     </li>
+                    <?php } ?>
+
+                    <?php if($_SESSION['role'] == "student" ){ ?>
+                    <li class="nav-item">
+                    <a class="nav-link" href="student.php"  style="color:rgb(48, 168, 228)">
+                        Available Exams
+                    </a>
+                    </li>
+                    <?php } ?>
 
                     <li class="nav-item">
                         <a class="nav-link" href="fqa.php">
@@ -36,21 +58,34 @@
                         if($_SESSION['role'] == "professor"){
                         ?>
                         <a class="nav-link" href="../Home/professor.php">
-                            <img class="profile-img" 
-                            src="img/prof.png" >
-                            <!-- <span class="profile-text">Profile</span> -->
+                        <?php if(isset($_SESSION['image']))
+                            { 
+                               $professor->uploadImageView();  
+                        
+                        }
+                        else { ?>
+                           <img class="profile-img" alt="professor"
+                            src="../profile-images/professors/prof.png" >
+                            <?php } ?>
                         </a>
+                            
+                       
                         <?php }
                         if($_SESSION['role'] == "student"){ ?>
                         <a class="nav-link" href="../Home/student.php">
-                            <img class="profile-img" 
-                            src="img/student.png" >
-                            <!-- <span class="profile-text">Profile</span> -->
+                        <?php if(isset($_SESSION['image']))
+                            { 
+                               $student->uploadImageView();  
+                        
+                        }
+                        else { ?>
+                           <img class="profile-img" alt="professor"
+                            src="../profile-images/professors/student.png" >
+                            <?php } ?>
                         </a>
                         <?php } ?>
                     </li>
-
-
+                
                 </ul>
             </div>
         <?php } else { ?>

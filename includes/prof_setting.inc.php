@@ -14,7 +14,7 @@ if(isset($_POST['prof_edit']))
     $professor = new professorView();
     
     $professor->editProfDetails($user_name, $academic_id, $email, $hashedPassword, $prof_id);
-    header('location:../Home/prof_setting.php?EditedSuccessfullyid='.$prof_id );
+    header('location:../Home/professor.php?EditedSuccessfullyid='.$prof_id );
 }
 
 if(isset($_POST['upload']))
@@ -32,5 +32,5 @@ if(isset($_POST['upload']))
     $professor = new professorView();
     $professor->uploadImage($image, $prof_id);
     
-    header('location:../Home/prof_setting.php?ImageUploaded_id='.$prof_id );
+    header('location:../Home/professor.php?ImageUploaded_id='.$prof_id );
 }

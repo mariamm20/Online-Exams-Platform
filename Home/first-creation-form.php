@@ -1,6 +1,10 @@
 <?php
 session_start();
 include('../Controllers/dbconnection.class.php');
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
+
 include('../Controllers/examCont.class.php');
 include('../Views/examView.class.php');
 $exam = new examView();
@@ -24,7 +28,7 @@ $exam = new examView();
 
 <body>
     <div id="app">
-        <?php include('../includes/header_prof_stud.inc.php'); ?>
+        <?php include('../includes/header.inc.php'); ?>
         <section class="section-one">
 
             <img src="img/1.png" alt="img" />

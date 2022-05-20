@@ -1,6 +1,13 @@
 <?php
 session_start();
+
 include('../Controllers/dbconnection.class.php');
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
+$student = new studentView();
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +41,8 @@ include('../Controllers/dbconnection.class.php');
                 <form action="../includes/contact.inc.php" method="post">
                     <h4>Contact Us</h4>
                     <fieldset class="inputs">
-                        <input type="text" name="name" placeholder="Your Name" required value="<?= $_SESSION['user_name'] ?>"/>
-                        <input type="email" name="email" placeholder="Email" required value="<?= $_SESSION['email'] ?>" />
+                        <input type="text" name="name" placeholder="Your Name" required value="<?php if(isset($_SESSION['id'])){ echo $_SESSION['user_name'];} ?>"/>
+                        <input type="email" name="email" placeholder="Email" required value="<?php if(isset($_SESSION['id'])){ echo $_SESSION['email'];} ?>" />
                         <textarea name="msg" placeholder="What is your problem?" required></textarea>
                         <div id="btn-div">
                             <button name="send">Send</button>

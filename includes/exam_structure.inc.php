@@ -183,6 +183,6 @@ if(isset($_POST['create']))
         }
 
     }
-    header('location: ../Home/subjects.php?created');
+    header('location: ../Home/after-creation.php');
 
 }

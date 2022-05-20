@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
 
 <body>
     <div id="app">
-        <?php include('../includes/header_prof_stud.inc.php'); ?>
+        <?php include('../includes/header.inc.php'); ?>
         <section class="container subjects-chapters-section" data-aos="fade-up">
 
             <div class="left">

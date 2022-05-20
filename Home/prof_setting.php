@@ -30,7 +30,7 @@ $professor = new professorView();
 <body>
     <div id="app">
 
-    <?php include('../includes/header_prof_stud.inc.php'); ?>
+    <?php include('../includes/header-prof.inc.php'); ?>
 
         <section class="container section-two" data-aos="fade-up">
 

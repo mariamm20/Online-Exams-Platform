@@ -1,9 +1,12 @@
 <?php
-    session_start();
-    include('../Controllers/dbconnection.class.php');
-    include('../Controllers/StudentCont.class.php');
-    include('../Views/StudentView.class.php');
-    $student = new studentView();
+session_start();
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/professorCont.class.php');
+include('../Views/professorView.class.php');
+$professor = new professorView();
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
+$student = new studentView();
 
 if (isset($_GET['ch_id'])) {
     $chapter_id = $_GET['ch_id'];
@@ -28,7 +31,7 @@ if (isset($_GET['ch_id'])) {
 
 <body>
     <div id="app">
-        <?php include('../includes/header_prof_stud.inc.php'); ?>
+        <?php include('../includes/header.inc.php'); ?>
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
                 <div class="heading-notify add-quest">
