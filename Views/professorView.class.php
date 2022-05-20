@@ -37,8 +37,7 @@ class professorView extends professorCont
                 <i class="fa-solid fa-info" data-bs-toggle="collapse" data-bs-target="#collaps<?= $exams['id'] ?>">
                     <span aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top" title="See Details" class="details">&nbsp;</span>
                 </i>
-        </li>
-        <div class="collapse" id="collaps<?= $exams['id'] ?>">
+                <div class="collapse" id="collaps<?= $exams['id'] ?>">
             <div class="card card-body">
                 <div class="accordion-body numbers-body">
                     <p>Exam Date <span><?= $exams['exam_date'] ?></span></p>
@@ -47,6 +46,8 @@ class professorView extends professorCont
                 </div>
             </div>
         </div>
+        </li>
+        
         <?php
        }
     }

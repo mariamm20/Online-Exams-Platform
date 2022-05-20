@@ -45,9 +45,9 @@ $student = new studentView();
                                 <?= $_SESSION['email'] ?>
                             </p>
                             <p class="role">
-                                <?= "Level: " . $_SESSION['level'] ?> &nbsp &nbsp &nbsp 
-                                <?= "Department: " . $_SESSION['department'] ?>
+                                <?= "Level " . $_SESSION['level'] ?> <?=  $_SESSION['department'] . " Department " ?>
                             </p>
+                            
                             
                         </div>
                         <?php $student->uploadImageView();?>
@@ -116,8 +116,6 @@ $student = new studentView();
             title: 'You have already entered this exam before',
             text: 'You can go to your results sheet',
             icon: 'info',
-            timer: 3000,
-            buttons: false,
             })
             .then(() => {
             window.location.href = '../Home/student.php' ;
@@ -135,8 +133,6 @@ $student = new studentView();
             title: 'This exam has not started yet!',
             text: 'Wait...',
             icon: 'info',
-            timer: 3000,
-            buttons: false,
             })
             .then(() => {
             window.location.href = '../Home/student.php' ;

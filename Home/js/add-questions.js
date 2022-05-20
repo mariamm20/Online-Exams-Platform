@@ -447,8 +447,8 @@ subQuest.style.pointerEvents ='none';
     // window.location.href = '/Question-Bank/question-bank.html';
   };
   add.appendChild(line);
-  question.appendChild(add);
-  question.appendChild(btn);
+  subQuest.appendChild(add);
+  subQuest.appendChild(btn);
 }
 
 (function load() {

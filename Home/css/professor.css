@@ -2,6 +2,9 @@
     width: 55px;
     border-radius: 50%;
 }
+.nav{
+    align-items: center;
+}
 .top{
     display: flex;
     margin-top: 20px;

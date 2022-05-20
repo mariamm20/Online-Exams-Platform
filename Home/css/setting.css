@@ -74,7 +74,7 @@
   }
   form p {
     font-size: 14px;
-    margin: 10px 0;
+    
     text-align: center;
   }
   form span {
@@ -196,7 +196,7 @@ font-weight: bold;
     justify-content: space-between;
 }
 .add-image p{
-    width: 100%;
+    
     padding: 0;
 }
 .add-image label{
