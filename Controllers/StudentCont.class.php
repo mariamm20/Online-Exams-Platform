@@ -19,7 +19,7 @@ class studentCont extends DB
 
     protected function getExams()
     {
-        $query = "select * from exams join subjects 
+        $query = "select exams.id, exams.exam_name, exams.duration, exams.start_time, exams.exam_date, exams.total_mark from exams join subjects 
         on exams.subject_id = subjects.id where subjects.level_id =" . $_SESSION['level_id'] .
         " and subjects.dept_id =" . $_SESSION['dept_id'];
         $stmt = $this->Connection()->query($query);
@@ -58,4 +58,90 @@ class studentCont extends DB
         $s_data = $stmt->fetchAll();
         return $s_data;
     }
+
+    // the part of showing exams
+
+    /// first/ get exam structure 
+    protected function getExamName($exam_id)
+    {
+        $stmt = $this->Connection()->query("select exam_name from exams where id = $exam_id ");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+    protected function getExamMark($exam_id)
+    {
+        $stmt = $this->Connection()->query("select total_mark from exams where id = $exam_id ");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+    protected function getExamStructure($exam_id)
+    {
+        $stmt = $this->Connection()->query("select * from exam_structure where exam_id = $exam_id");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    /// second get questions by using the strucure
+
+    protected function getQuestions($type, $difficulty, $limit, $chapter_id)
+    {
+        $stmt = $this->Connection()->query("SELECT distinct questions.question_text , questions.id from questions inner join exam_structure
+         on exam_structure.chapter_id = questions.chapter_id  where exam_structure.chapter_id = $chapter_id and questions.type = '$type'
+         and questions.difficulty = '$difficulty' ORDER BY RAND() limit $limit ");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+    // third: get question answers
+    protected function getAnswers($question_id)
+    {
+        $stmt = $this->Connection()->query("select * from answers where question_id = $question_id ORDER BY RAND()");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    protected function addstudentAnswers($student_id, $exam_id, $question_id, $answer_id)
+    {
+        
+        $stmt = $this->Connection()->prepare("INSERT into student_answers(student_id, exam_id, question_id, answer_id) values (?,?,?,?)");
+      
+        $stmt->execute(array($student_id, $exam_id, $question_id, $answer_id));
+    }
+    protected function addResultCont($student_id,$exam_id)
+    {
+        $query = "SELECT * from student_answers join answers on 
+        student_answers.answer_id = answers.id where student_answers.exam_id = $exam_id and student_answers.student_id = $student_id and answers.is_correct =1 ";
+        $stmt = $this->Connection()->query($query);
+        $result =  $stmt->rowCount();
+        $total = 2* $result;
+        $stmt2 = $this->Connection()->prepare("INSERT into results(student_id, exam_id, result) values (?,?,?)");
+        $stmt2->execute(array($student_id , $exam_id , $total));
+    }
+
+    protected function checktakenExams($exam_id, $student_id)
+    {
+        $stmt = $this->Connection()->query("select * from results where exam_id = $exam_id and student_id = $student_id");
+        
+        
+        $resultCheck = false;
+        if($stmt->rowCount() > 0) // number of errors  
+        {
+           
+            $resultCheck = false;
+        }
+        else{
+            $resultCheck = true;
+        }
+        return $resultCheck;
+    }
+
+    // student result 
+    protected function getResult($exam_id, $student_id)
+    {
+        $stmt = $this->Connection()->query("select result from results where exam_id = $exam_id  and student_id = $student_id");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+
+
 }

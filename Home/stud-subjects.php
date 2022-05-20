@@ -1,8 +1,8 @@
 <?php
 session_start();
 include('../Controllers/dbconnection.class.php');
-include('../Controllers/professorCont.class.php');
-include('../Views/professorView.class.php');
+include('../Controllers/studentCont.class.php');
+include('../Views/studentView.class.php');
 $student = new studentView();
 if (isset($_GET['id'])) {
     echo $sub_id = $_GET['id'];

@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    include('../Controllers/dbconnection.class.php');
+    include('../Controllers/StudentCont.class.php');
+    include('../Views/StudentView.class.php');
+    $student = new studentView();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,47 +28,21 @@
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
                 <div class="heading-notify chapters middle">
-                    <p><span>Motion</span> Exam</p>
+                    <p><span><?php $student->showExamName($_GET['exam_id']); ?></span> Exam</p>
                 </div>
                 <div class="timer">
                     Timer : <span>1:44</span>
                 </div>
-                <div class="question">
-                    <p class="question-body">
-                        1- In a uniform cicular motion:
-                    </p>
-                    <ol type="a">
-                        <li>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="a">
-                            <label class="form-check-label" for="a">
-                                Velocity is constant
-                            </label>
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="b">
-                            <label class="form-check-label" for="b">
-                                Distance is constant
-                            </label>
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="c">
-                            <label class="form-check-label" for="c">
-                                Displacement is constant
-                            </label>
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="d">
-                            <label class="form-check-label" for="d">
-                                Speed is constant
-                            </label>
-                        </li>
-                    </ol>
-
-
-                </div>
+                <form action="../includes/stud-answers.inc.php?exam_id=<?= $_GET['exam_id'] ?>" method="post">
+               
+                    <?php
+                        $student->showQuestions($_GET['exam_id']);
+                    ?>
+               
                 <div id="btn-div" >
-                <button onclick="window.location.href='../Home/after-submition.php'">Submit</button>
+                <button type="submit" name="submit">Submit</button>
             </div>
+            </form>
     </div>
 
     </section>

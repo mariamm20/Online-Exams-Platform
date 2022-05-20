@@ -36,7 +36,7 @@ class studentView extends studentCont
                 <td><?= $exam['duration'] . " min" ?></td>
                 <td><?= $exam['total_mark'] ?></td>
                 <td>
-                    <button> <a href="#"> Start </a> </button>
+                    <button> <a href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>" > Start </a> </button>
                 </td>
             </tr>
         <?php
@@ -75,5 +75,92 @@ class studentView extends studentCont
             
         }
         
+    }
+
+    public function showExamName($exam_id)
+    {
+      $data =$this-> getExamName($exam_id);
+      foreach($data as $exam)
+      {
+          echo $exam['exam_name'];
+      }
+    }
+
+    public function ExamMark($exam_id)
+    {
+        $data =$this-> getExamMark($exam_id);
+        foreach($data as $exam)
+        {
+            echo $exam['total_mark'];
+        }
+    }
+
+    // the part of show questions
+    public function showQuestions($exam_id)
+    {
+        $s_data =$this->getExamStructure($exam_id);
+        foreach($s_data as $structures)
+        {
+            $q_data = $this->getQuestions($structures['type'], $structures['difficulty'],$structures['num_of_questions'], $structures['chapter_id']);
+            foreach($q_data as $question)
+            { $a_data = $this->getAnswers($question['id']);
+                ?>
+             <div class="question" >
+                
+                <p class="question-body">
+                        <?= $question['question_text'] ?>
+                    </p>
+                    <ol type="a">
+                   
+                        <?php
+                        foreach($a_data as $answer)
+                        {?>
+                         
+                        <li>
+                           
+                            <input class="form-check-input" type="radio"  name="<?=$question['id'] ?>"  id="<?=$answer['id']?>" value="<?=$answer['id'] ?>" >
+                            <label class="form-check-label" for="<?=$answer['id'] ?>" >
+                                <?=$answer['answer'] ?>
+                            </label>
+                        </li>
+                        <?php } ?>
+                    </ol>
+                    </div>
+            <?php
+            }
+        }
+    }
+
+    public function addAnswers($student_id, $exam_id, $question_id, $answer_id)
+    {
+        $this->addstudentAnswers($student_id, $exam_id, $question_id, $answer_id);
+    }
+
+    public function addResult($student_id, $exam_id)
+    {
+        $this->addResultCont($student_id, $exam_id);
+    }
+
+    public function takenExams($exam_id, $student_id)
+    {
+        $result = false;
+       if(!$this->checktakenExams($exam_id, $student_id)) 
+       {
+           $result = false;
+       }
+       else
+       {
+           $result = true;
+       }
+       return $result;
+    }
+
+    public function showResult($exam_id, $student_id)
+    {
+        $r_data = $this->getResult($exam_id, $student_id);
+        foreach($r_data as $result)
+        {
+            echo $result['result'];
+        }
     }
 }

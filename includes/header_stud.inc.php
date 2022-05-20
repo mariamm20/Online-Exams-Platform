@@ -29,10 +29,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="img/student.png" class="profile-img">
-                                <span class="profile-text">Profile</span>
-                            </a>
+                        <a class="nav-link" href="../Home/student.php">
+                            <img class="profile-img" 
+                        
+                                src="img/student.png" />
+                             
+                            <!-- <span class="profile-text">Profile</span> -->
+                        </a>
+                            
                         </li>
                     </ul>
                 </div>

@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    include('../Controllers/dbconnection.class.php');
+    include('../Controllers/StudentCont.class.php');
+    include('../Views/StudentView.class.php');
+    $student = new studentView();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +55,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Student/student.html">
+                            <a class="nav-link" href="student.php">
                                 <img src="img/student.png" class="profile-img">
                                 <span class="profile-text">Profile</span>
                             </a>
@@ -69,7 +76,7 @@
                 <button onclick="show()">View Result</button>
                 <div class="result magictime swashIn">
                     <p>
-                        Your Result: <span>15</span> / <span>15</span>
+                        Your Result: <span><?php $student->showResult($_GET['exam_id'], $_SESSION['id'])?></span> / <span><?php $student->ExamMark($_GET['exam_id']) ?></span>
                     </p>
                 </div>
             </div>

@@ -44,7 +44,7 @@ if (isset($_GET['chapter_id'])) {
                         <span style="font-weight: bold;"> <?php $professor->showChapterName($chapter_id); ?> Questions</span>
                         <span>(<?php $professor->showQuestionsNumber($chapter_id); ?>)</span>
                     </p>
-                    <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button>
+                    <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php?ch_id=<?= $chapter_id ?>'">Add Questions</button>
                 </div>
                 <?php $professor->showQuestions($chapter_id); ?>
             </div>

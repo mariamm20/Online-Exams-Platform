@@ -32,17 +32,22 @@
 
 
                     <li class="nav-item">
+                        <?php 
+                        if($_SESSION['role'] == "professor"){
+                        ?>
                         <a class="nav-link" href="../Home/professor.php">
                             <img class="profile-img" 
-                            <?php
-                                if (isset($_SESSION['role']) == "professor") {
-                                ?> src="img/prof.png" <?php
-                                    } ?> <?php
-                                if (isset($_SESSION['role']) == "student") {
-                                ?> src="img/student.png" <?php
-                                    } ?> >
+                            src="img/prof.png" >
                             <!-- <span class="profile-text">Profile</span> -->
                         </a>
+                        <?php }
+                        if($_SESSION['role'] == "student"){ ?>
+                        <a class="nav-link" href="../Home/student.php">
+                            <img class="profile-img" 
+                            src="img/student.png" >
+                            <!-- <span class="profile-text">Profile</span> -->
+                        </a>
+                        <?php } ?>
                     </li>
 
 
