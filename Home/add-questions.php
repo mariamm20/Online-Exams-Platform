@@ -1,7 +1,12 @@
 <?php
-session_start();
+    session_start();
+    include('../Controllers/dbconnection.class.php');
+    include('../Controllers/StudentCont.class.php');
+    include('../Views/StudentView.class.php');
+    $student = new studentView();
+
 if (isset($_GET['ch_id'])) {
-    //echo $_GET['ch_id'];
+    $chapter_id = $_GET['ch_id'];
 }
 ?>
 <!DOCTYPE html>
@@ -31,7 +36,7 @@ if (isset($_GET['ch_id'])) {
                 </div>
                 <div class="subj-name">
                     <p>
-                        <span>Physics</span>: <span>Motion</span>
+                        <span><?php $student->showChapterName($chapter_id) ?></span>
                     </p>
                 </div>
                 <div class="quest">

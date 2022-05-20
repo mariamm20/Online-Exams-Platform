@@ -59,7 +59,6 @@ class studentCont extends DB
         return $s_data;
     }
 
-<<<<<<< HEAD
     // the part of showing exams
 
     /// first/ get exam structure 
@@ -78,12 +77,14 @@ class studentCont extends DB
     protected function getExamStructure($exam_id)
     {
         $stmt = $this->Connection()->query("select * from exam_structure where exam_id = $exam_id");
-=======
+        $data = $stmt->fetchAll();
+        return $data;
+    }
     protected function chaptersStudCont($sub_id)
     {
         $stmt = $this->Connection()->query(
             "SELECT chapters.id, chapters.subject_id, chapters.chapter_name,
-                    subjects.id, subjects.subject_name
+                     subjects.subject_name
             FROM chapters
             INNER JOIN subjects ON chapters.subject_id = subjects.id
             WHERE chapters.subject_id = ".$sub_id
@@ -96,12 +97,10 @@ class studentCont extends DB
     protected function getChaptersContr($chapter_id)
     {
         $stmt = $this->Connection()->query("select * from chapters where id = " .$chapter_id);
->>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
         $data = $stmt->fetchAll();
         return $data;
     }
 
-<<<<<<< HEAD
     /// second get questions by using the strucure
 
     protected function getQuestions($type, $difficulty, $limit, $chapter_id)
@@ -116,7 +115,9 @@ class studentCont extends DB
     protected function getAnswers($question_id)
     {
         $stmt = $this->Connection()->query("select * from answers where question_id = $question_id ORDER BY RAND()");
-=======
+        $data = $stmt->fetchAll();
+        return $data;
+    }
     protected function getQuestionsNumbers($chapter_id)
     {
         $sql = "SELECT COUNT(*) FROM questions where chapter_id = ".$chapter_id;
@@ -128,12 +129,10 @@ class studentCont extends DB
     protected function getQuestionsContr($chapter_id)
     {
         $stmt = $this->Connection()->query("select * from questions where chapter_id =" .$chapter_id);
->>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
         $data = $stmt->fetchAll();
         return $data;
     }
 
-<<<<<<< HEAD
     protected function addstudentAnswers($student_id, $exam_id, $question_id, $answer_id)
     {
         
@@ -173,7 +172,9 @@ class studentCont extends DB
     protected function getResult($exam_id, $student_id)
     {
         $stmt = $this->Connection()->query("select result from results where exam_id = $exam_id  and student_id = $student_id");
-=======
+        $data = $stmt->fetchAll();
+        return $data;
+    }
     protected function getEditedQuestionsContr($question_id)
     {
         $stmt = $this->Connection()->query(
@@ -183,14 +184,10 @@ class studentCont extends DB
             INNER JOIN questions ON answers.question_id = questions.id
             WHERE questions.id =" .$question_id
         );
->>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
         $data = $stmt->fetchAll();
         return $data;
     }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
 }

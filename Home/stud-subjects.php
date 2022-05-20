@@ -1,13 +1,8 @@
 <?php
 session_start();
 include('../Controllers/dbconnection.class.php');
-<<<<<<< HEAD
 include('../Controllers/studentCont.class.php');
 include('../Views/studentView.class.php');
-=======
-include('../Controllers/StudentCont.class.php');
-include('../Views/StudentView.class.php');
->>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
 $student = new studentView();
 if (isset($_GET['id'])) {
     echo $sub_id = $_GET['id'];
@@ -33,7 +28,7 @@ if (isset($_GET['id'])) {
 
 <body>
     <div id="app">
-        <?php include('../includes/header_prof_stud.inc.php'); ?>
+        <?php include('../includes/header_stud.inc.php'); ?>
         <section class="container subjects-chapters-section" data-aos="fade-up">
             <div class="left">
 

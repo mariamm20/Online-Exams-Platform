@@ -77,7 +77,7 @@
                         <div id="btn-div">
                             <button name="register">Register</button>
                         </div>
-                        <p>All ready have an account?<a href="../Login/login.php"> Log In</a></p>
+                        <p>All ready have an account?<a href="prof-login.php"> Log In</a></p>
                     </fieldset>
                 </form>
             </div>

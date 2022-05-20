@@ -1,24 +1,12 @@
 <?php
-<<<<<<< HEAD
+
     session_start();
     include('../Controllers/dbconnection.class.php');
     include('../Controllers/StudentCont.class.php');
     include('../Views/StudentView.class.php');
     $student = new studentView();
 
-    if(isset($_GET['alreadypassed']))
-    {
-        echo '<script>alert("you are allowed to enter the exam one time!")</script>';
-        //header('location:../Home/student.php');
-    }
-=======
-session_start();
-include('../Controllers/dbconnection.class.php');
-include('../Controllers/StudentCont.class.php');
-include('../Views/StudentView.class.php');
-$student = new studentView();
->>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +25,7 @@ $student = new studentView();
 
 <body>
     <div id="app">
-        <?php include('../includes/header_prof_stud.inc.php'); ?>
+        <?php include('../includes/header_stud.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
             <div class="top">
@@ -111,10 +99,55 @@ $student = new studentView();
 
     </div>
     <!--Scripts part-->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
+    <script src="../assests/sweetalert/dist/sweetalert.min.js"></script>
+    <?php
+    
+        if(isset($_GET['alreadypassed']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'You have already entered this exam before',
+            text: 'You can go to your results sheet',
+            icon: 'info',
+            timer: 3000,
+            buttons: false,
+            })
+            .then(() => {
+            window.location.href = '../Home/student.php' ;
+            
+            })
+            </script>
+        <?php  
+        }
+
+        if(isset($_GET['notStarted']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'This exam has not started yet!',
+            text: 'Wait...',
+            icon: 'info',
+            timer: 3000,
+            buttons: false,
+            })
+            .then(() => {
+            window.location.href = '../Home/student.php' ;
+        
+        })
+
+        </script>
+        <?php  
+        }
+
+
+
+        ?>
 </body>
 
 </html>

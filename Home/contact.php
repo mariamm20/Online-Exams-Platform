@@ -34,8 +34,8 @@ include('../Controllers/dbconnection.class.php');
                 <form action="../includes/contact.inc.php" method="post">
                     <h4>Contact Us</h4>
                     <fieldset class="inputs">
-                        <input type="text" name="name" placeholder="Your Name" required />
-                        <input type="email" name="email" placeholder="Email" required />
+                        <input type="text" name="name" placeholder="Your Name" required value="<?= $_SESSION['user_name'] ?>"/>
+                        <input type="email" name="email" placeholder="Email" required value="<?= $_SESSION['email'] ?>" />
                         <textarea name="msg" placeholder="What is your problem?" required></textarea>
                         <div id="btn-div">
                             <button name="send">Send</button>
@@ -49,9 +49,54 @@ include('../Controllers/dbconnection.class.php');
 
     </div>
     <!--Scripts part-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
+    <script src="../assests/sweetalert/dist/sweetalert.min.js"></script>
+    <?php
+    if(isset($_GET['sent']) and isset($_GET['professor']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'the message has been sent',
+            text: 'Thanks...',
+            icon: 'success',
+            timer: 3000,
+            buttons: false,
+            })
+            .then(() => {
+            window.location.href = '../Home/professor.php' ;
+            
+            })
+            </script>
+        <?php  
+        }
+
+        if(isset($_GET['sent']) and isset($_GET['student']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'your message has been set',
+            text: 'Thanks...',
+            icon: 'success',
+            timer: 3000,
+            buttons: false,
+        })
+        .then(() => {
+        window.location.href = '../Home/student.php' ;
+        
+        })
+        </script>
+        <?php  
+        }
+
+
+
+        ?>
 </body>
 
 </html>

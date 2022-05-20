@@ -35,9 +35,11 @@ class studentView extends studentCont
                 <td><?= $exam['start_time'] ?></td>
                 <td><?= $exam['duration'] . " min" ?></td>
                 <td><?= $exam['total_mark'] ?></td>
+               
                 <td>
-                    <button> <a href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>" > Start </a> </button>
+                    <button > <a class="start" href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>&exam_date=<?= $exam['exam_date'] ?>" > Start </a> </button>
                 </td>
+              
             </tr>
         <?php
         }
@@ -75,7 +77,6 @@ class studentView extends studentCont
         }
     }
 
-<<<<<<< HEAD
     public function showExamName($exam_id)
     {
       $data =$this-> getExamName($exam_id);
@@ -162,7 +163,6 @@ class studentView extends studentCont
             echo $result['result'];
         }
     }
-=======
     public function showStudChapters($sub_id)
     {
         $data = $this->chaptersStudCont($sub_id);
@@ -186,7 +186,7 @@ class studentView extends studentCont
     {
         $this->getQuestionsNumbers($chapter_id);
     }
-
+    // questions in student question bank 
     public function showStudQuestions($chapter_id)
     {
         $data = $this->getQuestionsContr($chapter_id);
@@ -209,30 +209,13 @@ class studentView extends studentCont
                 </ol>
 
                 <p class="question-difficutly">Difficulty:
-                <?php
-                $difficulty = $qts['difficulty'];
-                if($difficulty == "Easy")
-                {?>
-                <span class="easy"><?= $qts['difficulty']?></span>
-                <?php }
-                
-                else if($difficulty=="Medium")
-                {?>
-                    <span class="medium"><?= $qts['difficulty']?></span>
-                <?php }
-
-                else if($difficulty=="Hard")
-                {?>
-                    <span class="hard"><?= $qts['difficulty']?></span>
-                    <?php }
-                ?>
-                </p>
-
+                    <span class="easy"><?= $qts['difficulty'] ?></span>
+                </p> 
+              
 
             </div>
             <?php
         }
     }
 
->>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
 }

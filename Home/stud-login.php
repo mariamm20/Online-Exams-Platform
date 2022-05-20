@@ -68,7 +68,7 @@
                         <div id="btn-div">
                             <button name="login">Log In</button>
                         </div>
-                        <p>Don't have an account?<a href="register.php"> Register</a></p>
+                        <p>Don't have an account?<a href="stud-register.php"> Register</a></p>
                     </fieldset>
                 </form>
             </div>

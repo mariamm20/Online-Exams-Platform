@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST['send'])) {
    $name = $_POST['name'];
    $email = $_POST['email'];
@@ -11,5 +12,12 @@ if (isset($_POST['send'])) {
    $homeview = new HomeView();
    $homeview->sendContact($id, $name, $email, $msg);
 
-   header('location: ../Home/contact.php?sent');
+   if($_SESSION['role'] == "professor")
+   {
+      header('location: ../Home/contact.php?sent&professor');
+   }
+   else{
+      header('location: ../Home/contact.php?sent&student');
+   }
+   
 }

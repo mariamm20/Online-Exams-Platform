@@ -293,7 +293,7 @@ function difficulty() {
   };
 
   difficult.appendChild(p);
-  question.appendChild(difficult);
+  subQuest.appendChild(difficult);
 }
 // ajax request is here
 function addQuestion() {
