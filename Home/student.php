@@ -45,7 +45,8 @@ $student = new studentView();
                                 <?= $_SESSION['email'] ?>
                             </p>
                             <p class="role">
-                                <?= "Level: " . $_SESSION['level'] ?> ----> <?= "Department: " . $_SESSION['department'] ?>
+                                <?= "Level: " . $_SESSION['level'] ?> &nbsp &nbsp &nbsp 
+                                <?= "Department: " . $_SESSION['department'] ?>
                             </p>
                             
                         </div>

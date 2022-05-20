@@ -22,9 +22,9 @@ if(isset($_POST['upload']))
     $prof_id = $_POST['prof_id'];
     $image =  $_FILES['image']['name'];
     $tmp = $_FILES["image"]["tmp_name"];
-    $img = "../Home/img/" .$image;
+    $img = "../profile-images/professors/" .$image;
 
-    move_uploaded_file($tmp, "../Home/img/".$image);
+    move_uploaded_file($tmp, "../profile-images/professors/" .$image);
 
     include('../Controllers/dbconnection.class.php');
     include('../Controllers/professorCont.class.php');

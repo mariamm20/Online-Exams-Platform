@@ -30,9 +30,9 @@ if(isset($_POST['upload']))
     $stud_id = $_POST['stud_id'];
     $image =  $_FILES['image']['name'];
     $tmp = $_FILES["image"]["tmp_name"];
-    $img = "../Home/img/" .$image;
+    $img = "../profile-images/students/" .$image;
 
-    move_uploaded_file($tmp, "../Home/img/".$image);
+    move_uploaded_file($tmp, "../profile-images/students/" .$image);
 
     include('../Controllers/dbconnection.class.php');
     include('../Controllers/StudentCont.class.php');

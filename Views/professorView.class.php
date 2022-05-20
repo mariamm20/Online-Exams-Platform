@@ -223,11 +223,11 @@ class professorView extends professorCont
         foreach ($data as $details) { 
             if(!empty($details['image'])){
                 ?>
-                <img class="profile-picture prof-img" src="../Home/img/<?= $details['image'] ?>">
+                <img class="profile-picture prof-img" src="../profile-images/professors/<?= $details['image'] ?>">
                 <?php }
             else{
                 ?>
-                <img class="profile-picture prof-img" src="../Home/img/<?= "prof.png"?>">
+                <img class="profile-picture prof-img" src="../profile-images/professors/<?= "prof.png"?>">
                 <?php }
             
             }
