@@ -308,7 +308,9 @@ function addQuestion() {
   button.textContent = "Save Changes";
   button.id = "save";
   btn.appendChild(button);
-
+  line.setAttribute('data-bs-toggle','tooltip');
+    line.setAttribute('data-bs-placement','top');
+    line.setAttribute('title','Add Question')
   line.onclick = function () {
     //  console.log(Object.keys(arr))
     if (arr["questionType"] === "choose" && Object.keys(arr).length == 8) {
