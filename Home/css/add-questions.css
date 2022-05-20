@@ -138,6 +138,7 @@ input {
     border: 3px solid #efefef;
     font-size: 14px;
     outline: none;
+    background-color: transparent;
   }
 .form-check-input{
     padding: 0;
