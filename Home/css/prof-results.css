@@ -35,6 +35,7 @@
     border: 5px solid #efefef;
     border-radius: 30px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .right {
@@ -42,6 +43,7 @@
     border: 5px solid #efefef;
     border-radius: 30px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .img-right{
     display: flex;
@@ -73,6 +75,11 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+.list-group-item:hover{
+    transform: scaleX(1.01);
+    box-shadow: 2px 2px 5px #ccc;
+    color: #1eaaf1;
 }
 .names-chapters .list-group-item{
     cursor: auto;
