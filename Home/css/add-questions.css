@@ -204,6 +204,10 @@ select {
     top: -9px;
     color: #A5B7E9;
     font-size: 20px;
+    cursor: pointer;
+}
+.line i:hover{
+    transform: rotateZ(120deg);
 }
 .line{
     border-bottom: 3px solid #efefef;
