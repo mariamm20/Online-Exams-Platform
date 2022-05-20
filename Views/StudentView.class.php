@@ -14,6 +14,7 @@ class studentView extends studentCont
     public function showDept($level_name)
     {
         $data = $this->getDept($level_name);
+        ?><option selected disabled>Choose Department</option><?php
         foreach($data as $department)
         {?>
             <option value="<?= $department['dept_name'] ?>"><?= $department['dept_name'] ?> </option>
@@ -216,6 +217,72 @@ class studentView extends studentCont
             </div>
             <?php
         }
+    }
+
+    
+    // the part of setting  --->  student
+    public function showStudDetails()
+    {
+        $data = $this->getStudDetails();
+        foreach ($data as $details) {
+            $ldata = $this->getLevels(); ?>
+            <fieldset class="inputs">
+
+                <input type="hidden" name="stud_id" value="<?= $details['id'] ?>" placeholder="User ID" />
+                <input type="text" name="user_name" value="<?= $details['user_name'] ?>" placeholder="Change Your Name" />
+                <input type="text" name="academic_id" value="<?= $details['academic_id'] ?>" placeholder="Change Acadimic ID" />
+                <input type="email" name="email" value="<?= $details['email'] ?>" placeholder="Change Email" />
+
+                <input type="password" name="password" placeholder="Change Password" id="eye" />
+                <button onclick="event.preventDefault(),myFunction()" aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top" title="Show Password" class="view-password"><i class="fa-solid fa-eye"></i></button>
+
+                <select name="level" class="level_name" id="nameoflevel">
+                    <option selected disabled>Choose Level</option>
+                    <?php $this->showLevels(); ?>
+                </select>
+
+                <select name="department" id="department">
+                    <option selected disabled>Choose Department</option>
+                    <?php include('../includes/getDepartmenr.inc.php'); ?>
+
+                </select>
+
+                <input type="hidden" value="<?= $details['level_id'] ?>" placeholder="Level ID" />
+                <input type="hidden" value="<?= $details['dept_id'] ?>" placeholder="Department ID" />
+
+
+            </fieldset>
+
+            <div id="btn-div">
+                <button type="sumbit" name="stud_edit">Save Changes</button>
+            </div>
+
+            <?php
+        }
+    }
+
+    public function uploadImageView()
+    {
+        $data = $this->getStudDetails();
+        foreach ($data as $details) {
+            if (!empty($details['image'])) {
+            ?>
+                <img class="profile-picture prof-img" src="../Home/img/<?= $details['image'] ?>">
+            <?php } else {
+            ?>
+                <img class="profile-picture prof-img" src="../Home/img/<?= "student.png" ?>">
+        <?php }
+        }
+    }
+
+    public function editStudDetails($user_name, $academic_id, $email, $password, $level, $department, $stud_id)
+    {
+        $this->editStudDetailsCont($user_name, $academic_id, $email, $password, $level, $department, $stud_id);
+    }
+
+    public function uploadImage($image, $stud_id)
+    {
+        $this->uploadImageCont($image, $stud_id);
     }
 
 }

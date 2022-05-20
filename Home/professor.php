@@ -44,7 +44,7 @@ $professor = new professorView();
                         <div class="data">
                             <p class="name">
                                 <?= $_SESSION['user_name'] ?>
-                                <a href="../Home/setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
+                                <a href="../Home/prof_setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
                             </p>
                             <p class="email">
                                 <?= $_SESSION['email'] ?>
@@ -53,7 +53,8 @@ $professor = new professorView();
                                 <?= $_SESSION['role'] ?>
                             </p>
                         </div>
-                        <img src="img/prof.png" class="prof-img" />
+                        <?php $professor->uploadImageView();?>   
+                        <!--<img src="img/prof.png" class="prof-img" />-->
                         <!-- <div class="change-pic">
                             <p>
                                 <i class="fa fa-camera" aria-hidden="true"></i>

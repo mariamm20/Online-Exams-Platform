@@ -1,12 +1,11 @@
 <?php
+session_start();
+include('../Controllers/dbconnection.class.php');
+include('../Controllers/StudentCont.class.php');
+include('../Views/StudentView.class.php');
+$student = new studentView();
 
-    session_start();
-    include('../Controllers/dbconnection.class.php');
-    include('../Controllers/StudentCont.class.php');
-    include('../Views/StudentView.class.php');
-    $student = new studentView();
-
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,16 +39,18 @@
                         <div class="data">
                             <p class="name">
                                 <?= $_SESSION['user_name'] ?>
-                                <a href="../Home/setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
+                                <a href="../Home/stud_setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
                             </p>
                             <p class="email">
                                 <?= $_SESSION['email'] ?>
                             </p>
                             <p class="role">
-                                <?= "Level: " . $_SESSION['level'] ?>
+                                <?= "Level: " . $_SESSION['level'] ?> ----> <?= "Department: " . $_SESSION['department'] ?>
                             </p>
+                            
                         </div>
-                        <img src="img/student.png" class="prof-img" />
+                        <?php $student->uploadImageView();?>
+                        <!--<img src="img/student.png" class="prof-img" />-->
                         <!-- <div class="change-pic">
                             <p>
                                 <i class="fa fa-camera" aria-hidden="true"></i>

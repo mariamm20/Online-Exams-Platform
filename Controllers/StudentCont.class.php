@@ -175,6 +175,7 @@ class studentCont extends DB
         $data = $stmt->fetchAll();
         return $data;
     }
+
     protected function getEditedQuestionsContr($question_id)
     {
         $stmt = $this->Connection()->query(
@@ -186,6 +187,27 @@ class studentCont extends DB
         );
         $data = $stmt->fetchAll();
         return $data;
+    }
+
+
+    // the part of setting  --->  student
+    protected function getStudDetails()
+    {
+        $stmt = $this->Connection()->query("select * from students where id = " .$_SESSION['id']);
+        $data = $stmt->fetchAll();
+        return $data;
+    } 
+
+    protected function editStudDetailsCont($user_name, $academic_id, $email, $password, $level, $department, $stud_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE students SET user_name = ?, academic_id = ?, email = ?, password = ?, level = ?, department = ?, level_id = (SELECT id from levels where level_name = '$level'), dept_id =  (SELECT id from departments where dept_name = '$department' ) WHERE id = ? ");
+        $stmt->execute(array($user_name, $academic_id, $email, $password, $level, $department, $stud_id));
+    }
+
+    protected function uploadImageCont($image, $stud_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE students SET image = ? WHERE id = ?");
+        $stmt->execute(array($image, $stud_id));
     }
 
 

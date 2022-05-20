@@ -213,6 +213,7 @@ thead th{
     position: relative;
     overflow: scroll;
     width: 100%;
+    text-transform: capitalize;
   }
 
 
