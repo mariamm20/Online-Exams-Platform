@@ -27,8 +27,9 @@ if (isset($_GET['id'])) {
 
 <body>
     <div id="app">
-        <?php include('../includes/header_prof.inc.php'); ?>
+        <?php include('../includes/header_prof_stud.inc.php'); ?>
         <section class="container subjects-chapters-section" data-aos="fade-up">
+
             <div class="left">
 
                 <div class="heading-notify">
@@ -36,14 +37,9 @@ if (isset($_GET['id'])) {
                 </div>
                 <div>
                     <ol class="list-group list-group-numbered">
-
-                        <?php
-                        $professor->showSubjects();
-                        ?>
-
+                        <?php $professor->showSubjects(); ?>
                     </ol>
                 </div>
-
             </div>
 
 
@@ -53,24 +49,20 @@ if (isset($_GET['id'])) {
                     <img src="img/10.png" />
                 </div>
                 <div class="heading-notify chapters d-none">
-                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> <span>
-                            <?php  ?>
-                        </span> Chapters</p>
+                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> 
+                    <span> </span> Chapters</p>
                     <button data-bs-toggle="modal" class="add_chapter" data-bs-target="#add-chapter">Add Chapter</button>
                 </div>
                 <div class="names-chapters d-none" id="chapters">
                     <ol class="list-group list-group-numbered">
-                        <?php
-
-                        include('../includes/subject.inc.php');
-
-
-                        ?>
+                        <?php include('../includes/subject.inc.php'); ?>
                     </ol>
                 </div>
 
 
             </div>
+
+            
             <!-- add chapter -->
             <div class="modal magictime vanishIn" id="add-chapter" tabindex="-1" data-bs-backdrop="static">
                 <div class="modal-dialog modal-dialog-centered">

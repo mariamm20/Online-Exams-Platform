@@ -64,19 +64,18 @@ class studentView extends studentCont
     }
 
 
-    //the part of subjects and question bank
+    //the part of subjects
     public function showStudSubjects()
     {
         $data = $this->subjectsStudCont();
         foreach($data as $subjects)
         { ?>
-            <li class="list-group-item" onclick="show()" data-sid="<?=$subjects['id'] ;?>"   value="<?=$subjects['id'] ;?>" >  <?=$subjects['subject_name'] ;?> </li>
-        <?php
-            
+            <li class="list-group-item" onclick="show()" value="<?=$subjects['id'] ;?>"> <?=$subjects['subject_name'] ;?> </li>
+        <?php   
         }
-        
     }
 
+<<<<<<< HEAD
     public function showExamName($exam_id)
     {
       $data =$this-> getExamName($exam_id);
@@ -163,4 +162,77 @@ class studentView extends studentCont
             echo $result['result'];
         }
     }
+=======
+    public function showStudChapters($sub_id)
+    {
+        $data = $this->chaptersStudCont($sub_id);
+       foreach($data as $chapters)
+       {?>      
+            <li class="list-group-item" id="chapter"><a href="stud-question-bank.php?chapter_id=<?= $chapters['id'] ?>"><?= $chapters['chapter_name'] ?> </a></li>
+        <?php }
+    }
+
+
+    // the part of question bank
+    public function showChapterName($chapter_id)
+    {
+        $data = $this->getChaptersContr($chapter_id);
+        foreach ($data as $chapters) {
+            echo $chapters['chapter_name'];
+        }
+    }
+
+    public function showQuestionsNumber($chapter_id)
+    {
+        $this->getQuestionsNumbers($chapter_id);
+    }
+
+    public function showStudQuestions($chapter_id)
+    {
+        $data = $this->getQuestionsContr($chapter_id);
+        foreach ($data as $qts) {
+            $a_data = $this->getEditedQuestionsContr($qts['id']) ?>
+            <div class="question" id="questions">
+                <p class="question-body">
+                    <?= $qts['question_text'] ?>
+                </p>
+                <input type="hidden" name="question_id" value="<?= $qts['id'] ?>">
+                <ol type="a">
+                    <?php
+                    foreach ($a_data as $answer) {
+                        $is_correct = $answer['is_correct'];
+                        if ($is_correct == "1") { ?>
+                            <li class="answer-list"><?= $answer['answer'] ?><i class="fa fa-check-square correct" aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top" title="Correct Answer"><?php $answer['is_correct'] ?></i></li>
+                        <?php } else if ($is_correct == "0") { ?>
+                            <li class="answer-list"><?= $answer['answer'] ?></li> <?php }
+                    }?>
+                </ol>
+
+                <p class="question-difficutly">Difficulty:
+                <?php
+                $difficulty = $qts['difficulty'];
+                if($difficulty == "Easy")
+                {?>
+                <span class="easy"><?= $qts['difficulty']?></span>
+                <?php }
+                
+                else if($difficulty=="Medium")
+                {?>
+                    <span class="medium"><?= $qts['difficulty']?></span>
+                <?php }
+
+                else if($difficulty=="Hard")
+                {?>
+                    <span class="hard"><?= $qts['difficulty']?></span>
+                    <?php }
+                ?>
+                </p>
+
+
+            </div>
+            <?php
+        }
+    }
+
+>>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
 }

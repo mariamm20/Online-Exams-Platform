@@ -25,7 +25,7 @@
 
 <body>
   <div id="app">
-    <?php include('../includes/header_stud.inc.php') ?>
+    <?php include('../includes/header_prof_stud.inc.php'); ?>
 
     <section class="container" data-aos="fade-up">
       <div class="middle">

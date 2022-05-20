@@ -65,6 +65,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 30px;
+}
+.numbers-body{
+    margin-top: 44px;
 }
 .bottom-left{
     width: 70%;
@@ -92,7 +96,7 @@
     padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 150px;
+    height: 220px;
     
 }
 .notify-body p{

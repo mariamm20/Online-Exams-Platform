@@ -24,6 +24,7 @@
 
 <body>
     <div id="app">
+<<<<<<< HEAD
         <header class="container" data-aos="fade-down">
             <nav class="navbar navbar-expand-lg vertical">
                 <span class="fs-4 title"><a class="navbar-brand" href="../Student/student.html">
@@ -64,22 +65,29 @@
                 </div>
             </nav>
         </header>
+=======
+        <?php include('../includes/header_prof_stud.inc.php'); ?>
+>>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
         <section class="section-one">
             <div class="thanks-section">
                 <div class="inside-thanks-section">
-                <h4>Thanks For Your Efforts</h4>
-                <p>
-                    You successfully submitted <br>
-                    Your exam. Click on view <br>
-                    result to get you result, Great Job.
-                </p>
-                <button onclick="show()">View Result</button>
-                <div class="result magictime swashIn">
+                    <h4>Thanks For Your Efforts</h4>
                     <p>
+<<<<<<< HEAD
                         Your Result: <span><?php $student->showResult($_GET['exam_id'], $_SESSION['id'])?></span> / <span><?php $student->ExamMark($_GET['exam_id']) ?></span>
+=======
+                        You successfully submitted <br>
+                        Your exam. Click on view <br>
+                        result to get you result, Great Job.
+>>>>>>> 30612a6033c41dff51603a86ea3cdaf6cb7b4a41
                     </p>
+                    <button onclick="show()">View Result</button>
+                    <div class="result magictime swashIn">
+                        <p>
+                            Your Result: <span>15</span> / <span>15</span>
+                        </p>
+                    </div>
                 </div>
-            </div>
             </div>
             <div class="image-section" data-aos="fade-right">
                 <img src="img/success.png" alt="img" />
@@ -95,13 +103,13 @@
     <!--Scripts part-->
     <script>
         let x = document.querySelector('.result');
-        function show(){
-            if(x.style.display='none'){
-                x.style.display='block'
-                
-            }
-            else{
-                x.style.display='none'
+
+        function show() {
+            if (x.style.display = 'none') {
+                x.style.display = 'block'
+
+            } else {
+                x.style.display = 'none'
             }
         }
     </script>

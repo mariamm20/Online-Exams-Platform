@@ -36,11 +36,11 @@
 
                 <button
                 <?php 
-                if(isset($_SESSION['role']) == "professor"){
+                if($_SESSION['role'] == "professor"){
                     ?> onclick="location.href='../Home/first-creation-form.php'"<?php
                 } ?>
                 <?php
-                if(isset($_SESSION['role']) == "student"){
+                if($_SESSION['role'] == "student"){
                     ?> onclick="location.href='../Home/pre-register.php'"<?php
                 } ?>
                 >Get Started</button>

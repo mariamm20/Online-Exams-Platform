@@ -54,61 +54,61 @@ class professorCont extends DB
     }
 
      //question bank
-     protected function getChaptersContr($chapter_id)
-     {
-         $stmt = $this->Connection()->query("select * from chapters where id = " .$chapter_id);
-         $data = $stmt->fetchAll();
-         return $data;
-     }
- 
-     protected function getQuestionsNumbers($chapter_id)
-     {
-         $sql = "SELECT COUNT(*) FROM questions where chapter_id = ".$chapter_id;
-         $stmt = $this->Connection()->query($sql);
-         $count = $stmt->fetchColumn();
-         echo $count;
-     }
- 
-     protected function getQuestionsContr($chapter_id)
-     {
-         $stmt = $this->Connection()->query("select * from questions where chapter_id =" .$chapter_id);
-         $data = $stmt->fetchAll();
-         return $data;
-     }
- 
-     protected function getQuestionToEdit($question_id)
-     {
-         $stmt = $this->Connection()->query("select * from questions where id = " .$question_id);
-         $data = $stmt->fetchAll();
-         return $data;
-     } 
- 
-     protected function getEditedQuestionsContr($question_id)
-     {
-         $stmt = $this->Connection()->query(
-             "SELECT questions.id, questions.question_text, questions.chapter_id, questions.difficulty, questions.type,
-                     answers.answer, answers.is_correct, answers.question_id
-             FROM answers
-             INNER JOIN questions ON answers.question_id = questions.id
-             WHERE questions.id =" .$question_id
-         );
-         $data = $stmt->fetchAll();
-         return $data;
-     }
- 
-     protected function editQuestionsContr($question_text, $difficulty, $question_id)
-     {
-         $stmt = $this->Connection()->prepare("UPDATE questions SET question_text = ?, difficulty = ? WHERE id = ? ");
-         $stmt->execute(array($question_text, $difficulty, $question_id));
-         
-     }
- 
-     protected function editAnswersContr($answer, $is_correct, $question_id)
-     {
-             $stmt = $this->Connection()->prepare("UPDATE answrers SET answer = ?, is_correct = ? WHERE id = ? ");
-             $stmt->execute(array($answer, $is_correct, $question_id));
-     
-     }
+    protected function getChaptersContr($chapter_id)
+    {
+        $stmt = $this->Connection()->query("select * from chapters where id = " .$chapter_id);
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    protected function getQuestionsNumbers($chapter_id)
+    {
+        $sql = "SELECT COUNT(*) FROM questions where chapter_id = ".$chapter_id;
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+
+    protected function getQuestionsContr($chapter_id)
+    {
+        $stmt = $this->Connection()->query("select * from questions where chapter_id =" .$chapter_id);
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    protected function getQuestionToEdit($question_id)
+    {
+        $stmt = $this->Connection()->query("select * from questions where id = " .$question_id);
+        $data = $stmt->fetchAll();
+        return $data;
+    } 
+
+    protected function getEditedQuestionsContr($question_id)
+    {
+        $stmt = $this->Connection()->query(
+            "SELECT questions.id, questions.question_text, questions.chapter_id, questions.difficulty, questions.type,
+                    answers.answer, answers.is_correct, answers.question_id
+            FROM answers
+            INNER JOIN questions ON answers.question_id = questions.id
+            WHERE questions.id =" .$question_id
+        );
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    protected function editQuestionsContr($question_text, $difficulty, $question_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE questions SET question_text = ?, difficulty = ? WHERE id = ? ");
+        $stmt->execute(array($question_text, $difficulty, $question_id));
+        
+    }
+
+    protected function editAnswersContr($answer, $is_correct, $question_id)
+    {
+            $stmt = $this->Connection()->prepare("UPDATE answrers SET answer = ?, is_correct = ? WHERE id = ? ");
+            $stmt->execute(array($answer, $is_correct, $question_id));
+    
+    }
     
 }
 

@@ -37,7 +37,7 @@
 }
 .main{
     width: 75%;
-    height: 425px;
+    margin-bottom: 30px;
     text-align: left;
 }
 .question{
@@ -138,6 +138,7 @@ input {
     border: 3px solid #efefef;
     font-size: 14px;
     outline: none;
+    background-color: transparent;
   }
 .form-check-input{
     padding: 0;
@@ -203,6 +204,10 @@ select {
     top: -9px;
     color: #A5B7E9;
     font-size: 20px;
+    cursor: pointer;
+}
+.line i:hover{
+    transform: rotateZ(120deg);
 }
 .line{
     border-bottom: 3px solid #efefef;

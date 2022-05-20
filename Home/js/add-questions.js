@@ -7,14 +7,17 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 });
 
 let question = document.querySelector(".quest");
+let subQuest;
 let arr = {};
 let array = [];
 
 function createQuestion() {
+  subQuest =document.createElement('div');
   headOfQuestion();
   arr = {};
   difficulty();
   addQuestion();
+  question.appendChild(subQuest)
 }
 
 function headOfQuestion() {
@@ -33,8 +36,8 @@ function headOfQuestion() {
   head.className = "quest-input magictime swashIn ";
   head.onchange = function () {
     head.value = this.value;
-    head.setAttribute("disabled", "");
-    head.className += "bg";
+//     head.setAttribute("disabled", "");
+//     head.className += "bg";
     arr["question"] = this.value;
   };
   let menu = document.createElement("i");
@@ -83,9 +86,9 @@ function headOfQuestion() {
   questHeading.appendChild(head);
   questHeading.appendChild(menu);
   questHeading.appendChild(ul);
-  question.appendChild(questHeading);
-  question.appendChild(answer);
-  question.appendChild(dropdown);
+  subQuest.appendChild(questHeading);
+    subQuest.appendChild(answer);
+    subQuest.appendChild(dropdown);
   let x = correctchoices();
   answer.appendChild(x);
 }
@@ -133,8 +136,8 @@ function chooseAnswers() {
   textInput1.setAttribute("required", "");
   textInput1.onchange = function () {
     textInput1.value = this.value;
-    textInput1.setAttribute("disabled", "");
-    textInput1.className += "bg2";
+//     textInput1.setAttribute("disabled", "");
+//     textInput1.className += "bg2";
     arr["a"] = textInput1.value;
   };
   textInput2.type = "text";
@@ -143,8 +146,8 @@ function chooseAnswers() {
   textInput2.setAttribute("required", "");
   textInput2.onchange = function () {
     textInput2.value = this.value;
-    textInput2.setAttribute("disabled", "");
-    textInput2.className += "bg2";
+//     textInput2.setAttribute("disabled", "");
+//     textInput2.className += "bg2";
     arr["b"] = textInput2.value;
   };
   textInput3.type = "text";
@@ -153,8 +156,8 @@ function chooseAnswers() {
   textInput3.setAttribute("required", "required");
   textInput3.onchange = function () {
     textInput3.value = this.value;
-    textInput3.setAttribute("disabled", "");
-    textInput3.className += "bg2";
+//     textInput3.setAttribute("disabled", "");
+//     textInput3.className += "bg2";
     arr["c"] = textInput3.value;
   };
   textInput4.type = "text";
@@ -163,8 +166,8 @@ function chooseAnswers() {
   textInput4.setAttribute("required", "required");
   textInput4.onchange = function () {
     textInput4.value = this.value;
-    textInput4.setAttribute("disabled", "");
-    textInput4.className += "bg2";
+//     textInput4.setAttribute("disabled", "");
+//     textInput4.className += "bg2";
     arr["d"] = textInput4.value;
   };
   ans1.appendChild(textInput1);
@@ -213,8 +216,8 @@ function correctchoices() {
   select.onchange = function () {
     arr["correct"] = this.value;
     arr["questionType"] = "choose";
-    select.setAttribute("disabled", "");
-    select.className += "bg";
+//     select.setAttribute("disabled", "");
+//     select.className += "bg";
   };
 
   difficult.appendChild(p);
@@ -249,8 +252,8 @@ function correcttf() {
   select.onchange = function () {
     arr["correct"] = this.value;
     arr["questionType"] = "true&false";
-    select.setAttribute("disabled", "");
-    select.className += "bg";
+//     select.setAttribute("disabled", "");
+//     select.className += "bg";
   };
 
   difficult.appendChild(p);
@@ -285,8 +288,8 @@ function difficulty() {
   p.appendChild(select);
   select.onchange = function () {
     arr["difficulty"] = this.value;
-    select.setAttribute("disabled", "");
-    select.className += "bg";
+//     select.setAttribute("disabled", "");
+//     select.className += "bg";
   };
 
   difficult.appendChild(p);
@@ -305,7 +308,9 @@ function addQuestion() {
   button.textContent = "Save Changes";
   button.id = "save";
   btn.appendChild(button);
-
+  line.setAttribute('data-bs-toggle','tooltip');
+    line.setAttribute('data-bs-placement','top');
+    line.setAttribute('title','Add Question')
   line.onclick = function () {
     //  console.log(Object.keys(arr))
     if (arr["questionType"] === "choose" && Object.keys(arr).length == 8) {
@@ -333,7 +338,9 @@ function addQuestion() {
       });
       line.remove();
       btn.remove();
-
+subQuest.style.pointerEvents ='none';
+            subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+            subQuest.style.padding = '7px 0 0 0'
       createQuestion();
     } else if (
       arr["questionType"] === "true&false" &&
@@ -358,6 +365,9 @@ function addQuestion() {
       });
       line.remove();
       btn.remove();
+      subQuest.style.pointerEvents ='none';
+            subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+            subQuest.style.padding = '7px 0 0 0'
       createQuestion();
     } else {
       swal(

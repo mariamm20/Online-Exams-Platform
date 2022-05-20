@@ -24,7 +24,7 @@
 
 <body>
     <div id="app">
-    <?php include('../includes/header_stud.inc.php') ?>
+    <?php include('../includes/header_prof_stud.inc.php'); ?>
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
                 <div class="heading-notify chapters middle">

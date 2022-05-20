@@ -28,6 +28,7 @@
   fieldset {
     display: flex;
     flex-direction: column;
+      position: relative;
   }
   fieldset input {
     border-radius: 20px;
@@ -87,6 +88,30 @@
   .form-section a:hover{
       color: #0E1C36;
   }
+  .view-password{
+    right: 10px;
+    width: auto;
+    top: 49px;
+    position: absolute;
+    /* border-radius: 30px; */
+    border: none;
+    background-color: transparent;
+    outline: none;
+  
+  }
+  .view-password:hover{
+    background: none;
+  }
+  .view-password:active{
+    color: #0e1c36;
+  }
+  
+
+
+
+
+
+
   @media (max-width:1024px) {
     .section-one {
     flex-wrap: wrap-reverse;
@@ -125,5 +150,7 @@
   fieldset input {
     font-size: 12px;
   }
-
+  .view-password{
+    top: 44px;
+  }
   }

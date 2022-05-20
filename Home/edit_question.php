@@ -8,7 +8,7 @@ $professor = new professorView();
 if (isset($_GET['question_id'])) {
     $question_id = $_GET['question_id'];
     //echo $question_id = $_GET['question_id'];
-}  
+}
 
 
 ?>
@@ -33,7 +33,7 @@ if (isset($_GET['question_id'])) {
 <body>
     <div id="app">
 
-    <?php include('../includes/header_prof.inc.php'); ?>
+        <?php include('../includes/header_prof_stud.inc.php'); ?>
 
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
@@ -42,7 +42,7 @@ if (isset($_GET['question_id'])) {
                     <p>
                         <i class="fa fa-question-circle" aria-hidden="true"></i>
                         <span style="font-weight: bold;"> Edit Question </span>
-                        <span>(<?php echo $question_id;?>)</span>
+                        <span>(<?php echo $question_id; ?>)</span>
                     </p>
                     <!-- <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button> -->
                 </div>
@@ -65,7 +65,7 @@ if (isset($_GET['question_id'])) {
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/question-bank.js"></script>
 
-    
+
 
 </body>
 

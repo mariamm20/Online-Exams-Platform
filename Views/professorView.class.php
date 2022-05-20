@@ -5,21 +5,16 @@ class professorView extends professorCont
     {
         $data = $this->subjectsCont();
         foreach($data as $subjects)
-        { 
-            ?>
-            
+        { ?>
             <li class="list-group-item" onclick="show()" data-sid="<?=$subjects['id'] ;?>"   value="<?=$subjects['id'] ;?>" >  <?=$subjects['subject_name'] ;?> </li>
-        <?php
-            
-        }
-        
+        <?php }   
     }
+
     public function showChapters($sub_id)
     {
         $data = $this->chaptersCont($sub_id);
        foreach($data as $chapters)
        {?>
-                  
         <li class="list-group-item"  id="chapter"><a href="question-bank.php?chapter_id=<?= $chapters['id'] ?>"><?= $chapters['chapter_name'] ?> </a></li>
      <?php
        }
@@ -74,6 +69,7 @@ class professorView extends professorCont
         }
     }
 
+
     // the part of question bank
     public function showChapterName($chapter_id)
     {
@@ -88,8 +84,6 @@ class professorView extends professorCont
         $this->getQuestionsNumbers($chapter_id);
     }
 
-    
-
     public function showQuestions($chapter_id)
     {
         $data = $this->getQuestionsContr($chapter_id);
@@ -100,10 +94,7 @@ class professorView extends professorCont
                     <?= $qts['question_text'] ?>
                         <a type="button"  class="edit-btn" id="question" href="edit_question.php?question_id=<?= $qts['id'] ?>"><i class="fa fa-edit" ></i></a>                                                                                                                                                                                                                                               
                 </p>
-
                 <input type="hidden" name="question_id" value="<?= $qts['id'] ?>">
-
-
                 <ol type="a">
                     <?php
                     foreach ($a_data as $answer) {
@@ -114,13 +105,28 @@ class professorView extends professorCont
                             <li class="answer-list"><?= $answer['answer'] ?></li> <?php }
                     }?>
                 </ol>
-
                 <p class="question-difficutly">Difficulty:
-                    <span class="easy"><?= $qts['difficulty'] ?></span>
-                </p> 
+                <?php
+                $difficulty = $qts['difficulty'];
+                if($difficulty == "Easy")
+                {?>
+                <span class="easy"><?= $qts['difficulty']?></span>
+                <?php }
+                
+                else if($difficulty=="Medium")
+                {?>
+                    <span class="medium"><?= $qts['difficulty']?></span>
+                <?php }
+
+                else if($difficulty=="Hard")
+                {?>
+                    <span class="hard"><?= $qts['difficulty']?></span>
+                    <?php }
+                ?>
+                </p>
             </div>
             <?php
-                }
+        }
     }
 
     public function showQuestionToEdit($question_id)
