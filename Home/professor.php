@@ -70,15 +70,10 @@ $professor = new professorView();
             <div class="bottom">
                 <div class="bottom-left">
                     <div class="heading-notify notify">
-                        <p> <i class="fa-solid fa-bell"></i> Notifications <span>(1)</span> </p>
+                        <p> <i class="fa-solid fa-bell"></i> Notifications <span>(<?php $professor->getExams($_SESSION['id']); ?>)</span> </p>
                     </div>
                     <div class="notify-body">
-                        <p>
-                            <i class="fa-solid fa-info"></i>
-                            Physics Exam is accepted by the admin. You can follow the results in Results history, Thanks for your efforts.
-                        </p>
-
-
+                    <?php $professor->getNotifications($_SESSION['id']); ?>
                     </div>
                 </div>
                 <div class="bottom-right">
@@ -86,7 +81,7 @@ $professor = new professorView();
                         <p>Important Numbers</p>
                     </div>
                     <div class="numbers-body">
-                        <p>Created Exams <span>20</span></p>
+                        <p>Created Exams <span><?php $professor->getExams($_SESSION['id']);?></span></p>
                         <p>Success Rate <span>80%</span></p>
                         <p>Failure Rate <span>20%</span></p>
                     </div>

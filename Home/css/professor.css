@@ -2,6 +2,11 @@
     width: 55px;
     border-radius: 50%;
 }
+.exam_note{
+    display: contents;
+    color: #2dabf2;
+    text-transform: capitalize;
+}
 .nav{
     align-items: center;
 }

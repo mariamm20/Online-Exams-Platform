@@ -25,6 +25,30 @@ class professorView extends professorCont
         $this->addChapterCont($sub_id, $chapter_name);
     }
 
+
+    //the part of professor profile
+    public function getExams($prof_id)
+    {
+        $data=$this->getExamsCont($prof_id);
+        echo $data;
+    }
+
+    public function getNotifications($prof_id)
+    {
+        $data= $this->getNotificationCont($prof_id);
+        foreach($data as $note){
+            ?>
+            <p>
+                <i class="fa-solid fa-info"></i>
+                <Span class="exam_note"><?= $note['exam_name']?></Span>
+                is accepted by the admin. You can follow the results in Results history.
+                </br>Thanks for your efforts.
+            </p>
+        <?php
+        }
+        
+    }
+    
     //the part of results history
     public function showExams($sub_id)
     {
