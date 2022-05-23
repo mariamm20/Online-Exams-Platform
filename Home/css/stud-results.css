@@ -109,7 +109,7 @@ a.router-link-active {
 
 tr {
   vertical-align: middle;
-  text-transform: capitalize;
+  text-align: left;
 }
 .modal-footer button {
   border: 3px solid #efefef;

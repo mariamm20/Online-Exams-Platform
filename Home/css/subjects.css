@@ -86,7 +86,6 @@
 }
 .subjects-chapters-section li:last-child{
     border-bottom:none !important ;
-    text-transform: capitalize;
 }
 
 .chapters button:hover {

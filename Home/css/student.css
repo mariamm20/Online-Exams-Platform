@@ -115,9 +115,6 @@
 .profile-text{
     display: none;
 }
-.bottom a:hover{
-    color: #0e1c36;
-}
 
 .change-pic{
     position: absolute;
@@ -213,10 +210,11 @@ thead th{
     position: relative;
     overflow: scroll;
     width: 100%;
-    text-transform: capitalize;
   }
 
-
+.bottom a:hover{
+    color: #0e1c36;
+}
 
 
 

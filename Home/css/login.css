@@ -2,6 +2,7 @@
 .section-one {
     display: flex;
     flex-direction: row-reverse;
+    margin-top: 30px;
   }
   .section-one div {
     width: 50%;
@@ -12,8 +13,8 @@
   form {
     background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
     border-radius: 30px;
-  
-    padding: 30px 50px 30px 50px;
+    width:60%;
+    padding: 50px;
   }
   .form-section {
     display: flex;
@@ -28,12 +29,12 @@
   fieldset {
     display: flex;
     flex-direction: column;
-      position: relative;
+    position: relative;
   }
   fieldset input {
-    border-radius: 20px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 3px solid #efefef;
     font-size: 14px;
     outline: none;
@@ -42,9 +43,9 @@
     color: #b4b4b4;
   }
   fieldset select {
-    border-radius: 20px;
+    border-radius: 30px;
     border: 3px solid #efefef;
-    padding: 5px 10px;
+    padding: 10px;
     outline: none;
     font-size: 14px;
     margin-bottom: 10px;
@@ -91,7 +92,7 @@
   .view-password{
     right: 10px;
     width: auto;
-    top: 49px;
+    top: 68px;
     position: absolute;
     /* border-radius: 30px; */
     border: none;
@@ -151,6 +152,6 @@
     font-size: 12px;
   }
   .view-password{
-    top: 44px;
+    top: 63px;
   }
   }

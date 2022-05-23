@@ -93,15 +93,8 @@ ol  li{
     padding: 0 33px 15px;
     margin-bottom: 0;
 }
-
 .easy{
-    color: green;
-}
-.medium{
-    color: orange;
-}
-.hard{
-    color: red;
+    color: rgb(54, 156, 44);
 }
 .fa-edit{cursor: pointer;}
 
