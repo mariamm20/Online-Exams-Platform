@@ -15,7 +15,12 @@ class professorView extends professorCont
         $data = $this->chaptersCont($sub_id);
        foreach($data as $chapters)
        {?>
-        <li class="list-group-item"  id="chapter"><a href="question-bank.php?chapter_id=<?= $chapters['id'] ?>"><?= $chapters['chapter_name'] ?> </a></li>
+        <div class="d-flex justify-content-between subject">
+            <li class="list-group-item"  id="chapter">
+                <a href="question-bank.php?chapter_id=<?= $chapters['id'] ?>"><?= $chapters['chapter_name'] ?> </a>
+                <a href="#" data-bs-toggle="modal" class="remove_chapter" data-sid="<?= $chapters['id'] ?>" data-bs-target="#remove-chapter"><i class="fa-solid fa-x del-subj"></i></a>
+            </li>
+        </div>
      <?php
        }
     }
@@ -25,7 +30,10 @@ class professorView extends professorCont
         $this->addChapterCont($sub_id, $chapter_name);
     }
 
-    //the part of results history in professor
+    public function deleteChapter($chapter_id)
+  {
+    $this->deleteChapterCont($chapter_id);
+  }
 
     //the part of professor profile
     public function getExams($prof_id)
@@ -66,9 +74,9 @@ class professorView extends professorCont
             <div class="card card-body">
                 <div class="accordion-body numbers-body">
                     <p>Exam Date <span><?= $exams['exam_date'] ?></span></p>
-                    
                     <p>Start From <span><?= $exams['start_time'] ?></span></p>
-                    <p>Ends at <span><?= $exams['end_time'] ?></span></p>
+                    <p>Duration <span><?= $exams['duration'] ?></span></p>
+                    <p>Total Mark <span><?= $exams['total_mark'] ?></span></p>
                 </div>
             </div>
         </div>
@@ -119,9 +127,9 @@ class professorView extends professorCont
             <div class="question" id="questions">
                 <p class="question-body">
                     <?= $qts['question_text'] ?>
-                        <a type="button"  class="edit-btn" id="question" href="edit_question.php?question_id=<?= $qts['id'] ?>"><i class="fa fa-edit" ></i></a>                                                                                                                                                                                                                                               
+                    <a type="button"  class="edit-btn" id="question" href="edit_question.php?question_id=<?= $qts['id'] ?>"><i class="fa fa-edit" ></i></a>     
+                    <a href="#" data-bs-toggle="modal" class="remove_question" data-did="<?= $qts['id']; ?>" data-cid="<?= $qts['chapter_id']; ?>"  data-bs-target="#remove-question"><i class="fa-solid fa-trash-can"></i></a>                                                                                                                                                                                                               
                 </p>
-
                 <input type="hidden" name="question_id" value="<?= $qts['id'] ?>">
 
 
@@ -145,6 +153,10 @@ class professorView extends professorCont
     }
 
 
+    public function deleteQuestion($question_id)
+    {
+        $this->deleteQuestionContr($question_id);
+    }
 
 
 

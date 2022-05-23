@@ -26,6 +26,11 @@ class professorCont extends DB
         $stmt->execute(array($sub_id, $chapter_name));
     }
 
+    protected function deleteChapterCont($chapter_id)
+    {
+        $stmt = $this->Connection()->prepare("delete from chapters where id = ?");
+        $stmt->execute(array($chapter_id));
+    }
 
     //the part of professor profile
     protected function getExamsCont($prof_id)
@@ -118,6 +123,11 @@ class professorCont extends DB
         return $data;
     }
 
+    protected function deleteQuestionContr($question_id)
+    {
+        $stmt = $this->Connection()->prepare("delete from questions where id = ?");
+        $stmt->execute(array($question_id));
+    }
 
     // the part of edit questions
     protected function getQuestionToEdit($question_id)

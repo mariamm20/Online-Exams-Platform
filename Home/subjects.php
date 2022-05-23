@@ -49,8 +49,9 @@ if (isset($_GET['id'])) {
                     <img src="img/10.png" />
                 </div>
                 <div class="heading-notify chapters d-none">
-                    <p><i class="fa fa-bookmark" aria-hidden="true"></i> 
-                    <span> </span> Chapters</p>
+                    <p><i class="fa fa-bookmark" aria-hidden="true"></i>
+                        <span> </span> Chapters
+                    </p>
                     <button data-bs-toggle="modal" class="add_chapter" data-bs-target="#add-chapter">Add Chapter</button>
                 </div>
                 <div class="names-chapters d-none" id="chapters">
@@ -62,7 +63,7 @@ if (isset($_GET['id'])) {
 
             </div>
 
-            
+
             <!-- add chapter -->
             <div class="modal magictime vanishIn" id="add-chapter" tabindex="-1" data-bs-backdrop="static">
                 <div class="modal-dialog modal-dialog-centered">
@@ -85,6 +86,27 @@ if (isset($_GET['id'])) {
                 </div>
             </div>
 
+            <!-- remove chapter  -->
+            <div class="modal magictime swashIn" id="remove-chapter" tabindex="-1" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Chapter</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="../includes/deleteChapter.inc.php" method="post">
+                            <div class="modal-body">
+                                <p class="text-start fw-bolder">Are you sure to delete this chapter? </p>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="hidden" id="chapter_to_delete" name="chapter_id">
+                                <button type="submit" name="delete">Yes</button>
+                                <button type="submit" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
 
 
         </section>
@@ -126,6 +148,12 @@ if (isset($_GET['id'])) {
         });
     </script>
 
+    </script>
+    <script>
+        $(document).on('click', '.remove_chapter', function() {
+            $("#chapter_to_delete").val($(this).data('sid'));
+        });
+    </script>
 
 </body>
 

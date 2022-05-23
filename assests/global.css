@@ -4,7 +4,7 @@
     margin-right: auto;
     text-align: center;
     width: 100%;
-    
+    text-transform: capitalize;
     border-radius: 30px;
     overflow-x: hidden;
     overflow-y: auto;
