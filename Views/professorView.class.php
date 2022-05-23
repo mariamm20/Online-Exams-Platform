@@ -181,14 +181,11 @@ class professorView extends professorCont
                         foreach($a_data as $answer)
                         {?>
                         <li class="edit-list">
-                            
-                          
 
                             <input class="edit-answer" type="text" name="<?= $answer['id'] ?>" 
                             value="<?= $answer['answer'] ?>" placeholder="Type Answer" 
                             <?php if($qts['type']== 'true&false') { echo 'disabled'; }?>>
-                            
-                       
+                
                         </li>
                         <?php } ?>
                     </ol>
@@ -203,14 +200,26 @@ class professorView extends professorCont
                 <!-- correct_answer-->
                 <p class="question-select">Answer:
                     <select name="correct_answer_id" >
-                        <?php foreach ($a_data as $answer) { 
-                            $is_correct = $answer['is_correct'];
-                            if ($is_correct == "1") {?>
-                                <option value="<?= $answer['id']?>" selected><?= $answer['answer']?></option>
-                                <?php } else if ($is_correct == "0"){ ?>
-                            <option value="<?= $answer['id']?>"><?= $answer['answer']?></option>
+                        <?php 
+                        
+                        foreach (array_slice($a_data, 0, 1)  as $answer) { 
+                            ?>
+                                <option value="<?= $answer['id']?>" <?php if ($answer['is_correct'] == "1") {echo "selected"; } ?>>a</option>
                             <?php }
-                        } ?>
+                        foreach (array_slice($a_data, 1, 1)  as $answer) { 
+                            ?>
+                                <option value="<?= $answer['id']?>" <?php if ($answer['is_correct'] == "1") {echo "selected"; } ?>>b</option>
+                            <?php }
+                        foreach (array_slice($a_data, 2, 1)  as $answer) { 
+                            ?>
+                                <option value="<?= $answer['id']?>" <?php if ($answer['is_correct'] == "1") {echo "selected"; } ?>>c</option>
+                            <?php }
+                        foreach (array_slice($a_data, 3, 1)  as $answer) { 
+                            ?>
+                                <option value="<?= $answer['id']?>" <?php if ($answer['is_correct'] == "1") {echo "selected"; } ?>>d</option>
+                            <?php }
+
+                        ?>
                     </select>
                 </p>
 
