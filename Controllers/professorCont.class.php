@@ -27,6 +27,35 @@ class professorCont extends DB
     }
 
 
+    //the part of professor profile
+    protected function getExamsCont($prof_id)
+    {
+        $stmt = $this->Connection()->query(
+            "SELECT COUNT(*)
+            FROM exams 
+            INNER JOIN subjects ON exams.subject_id = subjects.id 
+            INNER JOIN professor_subjects ON subjects.id = professor_subjects.subject_id 
+            WHERE prof_id = ".$prof_id
+        );
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+
+    protected function getNotificationCont($prof_id)
+    {
+        $stmt = $this->Connection()->query(
+            "SELECT exams.exam_name, subjects.subject_name
+            FROM exams 
+            INNER JOIN subjects ON exams.subject_id = subjects.id 
+            INNER JOIN professor_subjects ON subjects.id = professor_subjects.subject_id 
+            WHERE prof_id = ".$prof_id
+        );
+        $data = $stmt->fetchAll();
+        return $data;
+        
+    }
+    
+
     //the part of results history
     protected function examsCont($sub_id)
     {

@@ -26,6 +26,31 @@ class professorView extends professorCont
     }
 
     //the part of results history in professor
+
+    //the part of professor profile
+    public function getExams($prof_id)
+    {
+        $data=$this->getExamsCont($prof_id);
+        echo $data;
+    }
+
+    public function getNotifications($prof_id)
+    {
+        $data= $this->getNotificationCont($prof_id);
+        foreach($data as $note){
+            ?>
+            <p>
+                <i class="fa-solid fa-info"></i>
+                <Span class="exam_note"><?= $note['exam_name']?></Span> &nbsp
+                had been created. You can follow the results in Results history.
+                </br>Thanks for your efforts.
+            </p>
+        <?php
+        }
+        
+    }
+    
+    //the part of results history
     public function showExams($sub_id)
     {
         $data = $this->examsCont($sub_id);
