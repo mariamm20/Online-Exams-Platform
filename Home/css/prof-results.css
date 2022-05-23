@@ -86,11 +86,9 @@
 }
 .subjects-chapters-section li{
     border-top: 1px solid #efefef !important;
-    
 }
 .subjects-chapters-section li:first-child{
     border-top:none !important ;
-    text-transform: capitalize;
 }
 
 .chapters button:hover {
@@ -156,7 +154,6 @@
     float: right;
     position: relative;
     top: 3px;
-    cursor: pointer;
 }
 
 .accordion-body {
@@ -179,9 +176,9 @@
 .card{
     border: none;
 }
-/* .card-body{
+.card-body{
     padding: 0rem 1rem 1rem 1rem ;
-} */
+}
 .details{
     position: absolute;
     left: 0px;

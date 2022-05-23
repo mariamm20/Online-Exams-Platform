@@ -1,7 +1,11 @@
 lable {
     width: fit-content;
     position: relative;
-    
+    left: 103%;
+    /* top: -40px; */
+    bottom: 40px;
+    height: 0;
+    display: none;
   }
   .happening-now {
     background-color: #efefef;
@@ -9,6 +13,7 @@ lable {
   }
   .section-one {
     display: flex;
+    margin-top: 30px;
   }
   .section-one div {
     width: 50%;
@@ -20,7 +25,7 @@ lable {
     background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
     border-radius: 30px;
     width: 65%;
-    padding: 30px 50px 30px 50px;
+    padding: 50px 50px 25px 50px;
     position: relative;
   }
   .form-section {
@@ -38,9 +43,9 @@ lable {
     flex-direction: column;
   }
   fieldset input {
-    border-radius: 20px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 3px solid #efefef;
     font-size: 14px;
     outline: none;
@@ -49,13 +54,12 @@ lable {
     color: #b4b4b4;
   }
   fieldset select {
-    border-radius: 20px;
+    border-radius: 30px;
     border: 3px solid #efefef;
-    padding: 5px 10px;
+    padding: 10px;
     outline: none;
     font-size: 14px;
     margin-bottom: 10px;
-    text-transform: capitalize;
   }
   select option {
     border-top-right-radius: 0;
@@ -99,7 +103,7 @@ font-weight: bold;
 .view-password{
   right: 55px;
   width: auto;
-  top: 210px;
+  top: 281px;
   position: absolute;
   /* border-radius: 30px; */
   border: none;
@@ -162,7 +166,7 @@ font-weight: bold;
       font-size: 12px;
     }
     .view-password{
-      top:200px;
+      top:250px;
       right: 28px;
     }
   }

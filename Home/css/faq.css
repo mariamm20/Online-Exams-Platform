@@ -1,11 +1,8 @@
-.profile-img{
-  width: 55px;
-  border-radius: 50%;
-}
 .faq-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
   }
   .faq-section article {
     width: 50%;
@@ -18,7 +15,7 @@
     padding: 35px;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 410px;
+    height: 440px;
   }
   .accordion-item {
     border-radius: 30px !important;
@@ -41,7 +38,7 @@
     text-align: justify;
     color:#797979;
   }
-  @media (max-width: 992px) {
+  @media (max-width: 768px) {
     .faq-section {
       flex-wrap: wrap;
     }
@@ -56,12 +53,11 @@
     height: auto;
   }
   .questions-section {
-    overflow-x: hidden;
-    overflow-y:auto ;
+    height: auto;
   }
   }
-  @media (max-width:768px){
-    .navbar-brand {
-      left: 18px
-  }
-  } 
+@media (max-width:768px){
+  .navbar-brand {
+    left: 18px
+}
+}

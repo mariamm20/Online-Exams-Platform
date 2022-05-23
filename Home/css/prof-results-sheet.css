@@ -50,7 +50,6 @@ a.router-link-active {
   border: 5px solid #efefef;
   border-radius: 30px;
   position: relative;
-  text-transform: capitalize;
 }
 
 .fa-trash-can {
@@ -365,6 +364,22 @@ html, body {
 }
 .table-content{
   margin-top: 30px;
+}
+.middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:15px 33px ;
+  background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
+  margin-top: 15px;
+  border-radius: 30px;
+}
+.middle p{
+  font-size: 48px;
+  color: #fff;
+  -webkit-text-stroke: 1px #b0b0b0;
+  margin: 0;
+  font-weight: bold;
 }
 @media (max-width:992px) {
   .profile-text {

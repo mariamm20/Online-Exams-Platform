@@ -44,7 +44,7 @@
                     students
                 </p>
 
-                <button onclick="location.href='../Home/pre-register.php'">Get Started</button>
+                <button class="glass" onclick="location.href='../Home/pre-register.php'">Get Started</button>
 
             </div>
         </section>

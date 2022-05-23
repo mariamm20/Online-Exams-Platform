@@ -7,7 +7,7 @@
 }
 .student{
     background:#fff;
-    padding: 107px 55px;
+    padding: 55px 55px;
     font-size: 24px;
     display: flex;
     flex-direction: column;
@@ -80,4 +80,4 @@
     .navbar-brand {
         left: 18px
     }
-} 
+}

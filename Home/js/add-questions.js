@@ -215,6 +215,7 @@ function correctchoices() {
   p.appendChild(select);
   select.onchange = function () {
     arr["correct"] = this.value;
+    arr['questionType'] = '';
     arr["questionType"] = "choose";
 //     select.setAttribute("disabled", "");
 //     select.className += "bg";
@@ -251,6 +252,8 @@ function correcttf() {
   p.appendChild(select);
   select.onchange = function () {
     arr["correct"] = this.value;
+    delete arr['c'];
+    delete arr['d'];
     arr["questionType"] = "true&false";
 //     select.setAttribute("disabled", "");
 //     select.className += "bg";
