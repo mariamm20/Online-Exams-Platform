@@ -25,7 +25,7 @@ class professorView extends professorCont
         $this->addChapterCont($sub_id, $chapter_name);
     }
 
-    //the part of results history
+    //the part of results history in professor
     public function showExams($sub_id)
     {
         $data = $this->examsCont($sub_id);
@@ -41,8 +41,9 @@ class professorView extends professorCont
             <div class="card card-body">
                 <div class="accordion-body numbers-body">
                     <p>Exam Date <span><?= $exams['exam_date'] ?></span></p>
-                    <p>Duration <span><?= $exams['duration'] ?></span></p>
+                    
                     <p>Start From <span><?= $exams['start_time'] ?></span></p>
+                    <p>Ends at <span><?= $exams['end_time'] ?></span></p>
                 </div>
             </div>
         </div>

@@ -80,7 +80,7 @@ $student = new studentView();
                                 <th scope="col">Exam Name</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Start Time</th>
-                                <th scope="col">Duration</th>
+                                <th scope="col">End Time</th>
                                 <th scope="col">Total Marks</th>
                                 <th scope="col" class="last-col">Go To Exam</th>
                             </tr>
@@ -140,6 +140,63 @@ $student = new studentView();
         })
 
         </script>
+        <?php  
+        }
+
+        if(isset($_GET['hasended']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'This exam ended!',
+            text: 'oops..',
+            icon: 'info',
+            })
+            .then(() => {
+            window.location.href = '../Home/student.php' ;
+        
+        })
+
+        </script>
+        
+        <?php  
+        }
+
+        if(isset($_GET['timenotstarted']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'This exam has not started yet!',
+            text: 'Wait...',
+            icon: 'info',
+            })
+            .then(() => {
+            window.location.href = '../Home/student.php' ;
+        
+        })
+
+        </script>
+        
+        <?php  
+        }
+
+        if(isset($_GET['timeended']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'This exam time has ended!',
+            text: 'oops...',
+            icon: 'info',
+            })
+            .then(() => {
+            window.location.href = '../Home/student.php' ;
+        
+        })
+
+        </script>
+        
         <?php  
         }
 

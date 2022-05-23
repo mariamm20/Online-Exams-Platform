@@ -99,4 +99,14 @@
     <?php   
     }
     ?> 
+    <?php
+    if (strpos($fullurl, "error=passwordlength")== true)             // error handling for password length
+    {?>
+        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
+            title="Your password must be atleast 8 characters">
+            <i class="fa-solid fa-circle-info"></i>
+         </lable>
+    <?php   
+    }
+    ?> 
     

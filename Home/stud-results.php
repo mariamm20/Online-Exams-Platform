@@ -43,7 +43,7 @@
               <td scope="col">Exam Name</td>
               <td scope="col">Date</td>
               <td scope="col">Start Time</td>
-              <td scope="col">Duration</td>
+              <td scope="col">End Time</td>
               <td scope="col">Total Marks</td>
               <td scope="col">Result</td>
 

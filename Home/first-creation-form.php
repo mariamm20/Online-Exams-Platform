@@ -49,11 +49,11 @@ $exam = new examView();
 
                         </select>
                         <input type="text" placeholder="Exam Date" onfocus="(this.type='date')" onblur="(this.type='text') ;" id="date" name="exam_date">
-
-                        <input type="number" placeholder="Duration in minutes" name="exam_duration" />
-
-
                         <input type="text" placeholder="Exam Start Time" onfocus="(this.type='time')" onblur="(this.type='text')" id="eye" name="exam_start" />
+                        <input type="text" placeholder="Exam End Time" onfocus="(this.type='time')" onblur="(this.type='text')" id="eye" name="exam_end" />
+                       
+
+                       
 
                         <input type="number" placeholder="Total Marks" name="total_mark" />
 
