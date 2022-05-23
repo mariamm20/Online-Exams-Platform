@@ -42,13 +42,18 @@ if (isset($_GET['question_id'])) {
                     <p>
                         <i class="fa fa-question-circle" aria-hidden="true"></i>
                         <span style="font-weight: bold;"> Edit Question </span>
-                        <span>(<?php echo $question_id; ?>)</span>
+                        <span>(<?php echo $_GET['question_id']; ?>)</span>
                     </p>
                     <!-- <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button> -->
                 </div>
 
                 <form action="../includes/editQts.inc.php" method="POST">
-                    <?php $professor->showQuestionToEdit($question_id); ?>
+
+                    <?php $professor->showQuestionToEdit($_GET['question_id']); ?>
+                    
+                    <div class="modal-footer">
+                        <button type="sumbit" class="" name="edit">Save Chages</button>
+                    </div>
                 </form>
 
             </div>

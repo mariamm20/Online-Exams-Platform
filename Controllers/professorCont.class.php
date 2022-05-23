@@ -98,21 +98,14 @@ class professorCont extends DB
         echo $count;
     }
 
-    protected function getQuestionsContr($chapter_id)
+    protected function showQuestionsContr($chapter_id)
     {
         $stmt = $this->Connection()->query("select * from questions where chapter_id =" .$chapter_id);
         $data = $stmt->fetchAll();
         return $data;
     }
 
-    protected function getQuestionToEdit($question_id)
-    {
-        $stmt = $this->Connection()->query("select * from questions where id = " .$question_id);
-        $data = $stmt->fetchAll();
-        return $data;
-    } 
-
-    protected function getEditedQuestionsContr($question_id)
+    protected function getQuestionsContr($question_id)
     {
         $stmt = $this->Connection()->query(
             "SELECT questions.id, questions.question_text, questions.chapter_id, questions.difficulty, questions.type,
@@ -125,6 +118,22 @@ class professorCont extends DB
         return $data;
     }
 
+
+    // the part of edit questions
+    protected function getQuestionToEdit($question_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * FROM questions WHERE questions.id = " .$question_id);
+        $data = $stmt->fetchAll();
+        return $data;
+    } 
+
+    protected function getAnswersToEdit($question_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * FROM answers WHERE question_id = " .$question_id);
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
     protected function editQuestionsContr($question_text, $difficulty, $question_id)
     {
         $stmt = $this->Connection()->prepare("UPDATE questions SET question_text = ?, difficulty = ? WHERE id = ? ");
@@ -132,13 +141,18 @@ class professorCont extends DB
         
     }
 
-    protected function editAnswersContr($answer, $is_correct, $question_id)
+    protected function editAnswersContr($answer, $answer_id)
     {
-            $stmt = $this->Connection()->prepare("UPDATE answrers SET answer = ?, is_correct = ? WHERE id = ? ");
-            $stmt->execute(array($answer, $is_correct, $question_id));
+        $stmt = $this->Connection()->prepare("UPDATE answers SET answer = ? WHERE id = ? ");
+        $stmt->execute(array($answer, $answer_id));
     
     }
 
+    /*protected function editCorrectAnswerCont($answer,$answer_id)
+    {
+        $stmt =  $this->Connection()->prepare("update answers set is_correct = 1 where answer = ? and id = ?");
+        $stmt->execute(array($answer, $answer_id ));
+    }*/
 
     // the part of setting  --->  professor
     protected function getProfDetails()
