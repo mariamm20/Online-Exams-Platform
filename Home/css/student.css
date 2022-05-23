@@ -25,6 +25,23 @@
     margin-bottom: 20px;
     width: 100%;
 }
+.prof-img{
+    /* width: 130px;
+    border-radius: 50%;
+    position: relative;
+    right: 40px; */
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    
+    border-radius: 50%;
+}
+.prof-image{
+    width: 180px;
+    height: 130px;
+    border-radius: 50%;
+    position: relative;
+    right: 40px;
+}
 
 .name{
     display: flex;

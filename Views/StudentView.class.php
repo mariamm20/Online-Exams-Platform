@@ -267,11 +267,15 @@ class studentView extends studentCont
         foreach ($data as $details) {
             if (!empty($details['image'])) {
             ?>
+            <div class="prof-image">
                 <img class="profile-picture prof-img profile-img" src="../profile-images/students/<?= $details['image'] ?>">
+            </div>
             <?php } else {
             ?>
+            <div class="prof-image">
                 <img class="profile-picture prof-img profile-img" src="../profile-images/students/<?= "student.png" ?>">
-        <?php }
+            </div>   
+       <?php }
         }
     }
 
