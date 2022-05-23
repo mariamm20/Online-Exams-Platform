@@ -33,7 +33,7 @@ if (isset($_GET['chapter_id'])) {
 <body>
     <div id="app">
 
-    <?php include('../includes/header.inc.php'); ?>
+        <?php include('../includes/header.inc.php'); ?>
 
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
@@ -48,6 +48,33 @@ if (isset($_GET['chapter_id'])) {
                 </div>
                 <?php $professor->showQuestions($chapter_id); ?>
             </div>
+
+
+            <!-- remove chapter  -->
+            <div class="modal magictime swashIn" id="remove-question" tabindex="-1" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Question</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="../includes/deleteQts.inc.php" method="post">
+                            <div class="modal-body">
+                                <p class="text-start fw-bolder">Are you sure to delete this question? </p>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="hidden" id="chapter_to_show" name="chapter_id">
+                                <input type="hidden" id="question_to_delete" name="question_id">
+                                <button type="submit" name="delete">Yes</button>
+                                <button type="submit" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+
+
         </section>
     </div>
 
@@ -61,7 +88,17 @@ if (isset($_GET['chapter_id'])) {
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/question-bank.js"></script>
 
-   
+    <script>
+        $(document).on('click', '.remove_question', function() {
+            $("#question_to_delete").val($(this).data('did'));
+        });
+    </script>
+
+    <script>
+        $(document).on('click', '.remove_question', function() {
+            $("#chapter_to_show").val($(this).data('cid'));
+        });
+    </script>
 
 </body>
 
