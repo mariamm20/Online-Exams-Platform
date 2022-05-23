@@ -50,7 +50,6 @@ a.router-link-active {
   border: 5px solid #efefef;
   border-radius: 30px;
   position: relative;
-  text-transform: capitalize;
 }
 
 .fa-trash-can {
@@ -183,11 +182,6 @@ select option {
   background-color: transparent;
 }
 
-.msg_input{ 
-  background: none;
-  border: none;
-  text-align: center;
-}
 .navbar-toggler{
   display: none;
 }
@@ -342,15 +336,6 @@ border: none;
 .table-head{
   background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
 }
-
-.accepted_td {
-  color: green;
-}
-
-.rejected_td {
-  color: red;
-}
-
 .fa-eye{
   position: relative;
   left: 20px;
@@ -452,6 +437,4 @@ html, body {
     justify-content: space-evenly;
   }
 }
-
-
 

@@ -71,6 +71,14 @@ class AdminView extends AdminCont
   {
     $this->getStudentsNumber();
   }
+  public function showFinishedExams()
+  {
+    $this->getFinishedExams();
+  }
+  public function showSuccessExams()
+  {
+    $this->getSuccessExams();
+  }
 
   public function deleteProfessor($id)
   {

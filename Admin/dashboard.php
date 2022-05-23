@@ -72,7 +72,7 @@ $adminview = new AdminView();
                         <div class="card-body">
                             <div>
                                 <p class="category text-success">Finished Exams</p>
-                                <p class="number">10</p>
+                                <p class="number"><?php $adminview->showFinishedExams(); ?></p>
                             </div>
                             <div class="icon">
                                 <i class="fa-solid fa-circle-check"></i>
@@ -83,7 +83,7 @@ $adminview = new AdminView();
                         <div class="card-body">
                             <div>
                                 <p class="category text-primary">Success</p>
-                                <p class="number">2400</p>
+                                <p class="number"><?php $adminview->showSuccessExams() ?></p>
                             </div>
                             <div class="icon">
                                 <i class="fa-solid fa-thumbs-up"></i>
@@ -94,7 +94,7 @@ $adminview = new AdminView();
                         <div class="card-body">
                             <div>
                                 <p class="category text-danger">Failure</p>
-                                <p class="number">116</p>
+                                <p class="number">0</p>
                             </div>
                             <div class="icon">
                                 <i class="fa-solid fa-thumbs-down"></i>
