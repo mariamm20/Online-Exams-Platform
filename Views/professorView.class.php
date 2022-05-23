@@ -111,9 +111,9 @@ class professorView extends professorCont
 
     public function showQuestions($chapter_id)
     {
-        $data = $this->getQuestionsContr($chapter_id);
+        $data = $this->showQuestionsContr($chapter_id);
         foreach ($data as $qts) {
-            $a_data = $this->getEditedQuestionsContr($qts['id']) ?>
+            $a_data = $this->getQuestionsContr($qts['id']) ?>
             <div class="question" id="questions">
                 <p class="question-body">
                     <?= $qts['question_text'] ?>
@@ -142,33 +142,51 @@ class professorView extends professorCont
                 }
     }
 
+
+
+
+
+
+    // the part of edit question
     public function showQuestionToEdit($question_id)
     {
-        $data = $this->getQuestionToEdit($question_id);
-        foreach ($data as $qts) {
-            $a_data = $this->getEditedQuestionsContr($qts['id']) ?>
-            <div class="question" id="questions">
+        $q_data = $this->getQuestionToEdit($question_id);
+        foreach($q_data as $qts)
+            { $a_data = $this->getAnswersToEdit($qts['id']); ?>
+                <div class="question" id="questions">
 
-                <!-- question_text -->
-                <p class="edit-question-body"><input class="edit-question-input" type="text" value="<?= $qts['question_text'] ?>" name="question_text" placeholder="Type Question Head"></p>
-                <input type="hidden" name="question_id" value="<?= $qts['id'] ?>">
-                <input type="hidden" name="type" value="<?= $qts['type'] ?>">
-                
-                <!-- answers -->
-                <ol type="a">
-                    <?php foreach ($a_data as $answer) { ?>
+                    <!-- question_text -->
+                    <p class="edit-question-body"><input class="edit-question-input" type="text" value="<?= $qts['question_text'] ?>" name="question_text" placeholder="Type Question Head"></p>
+                    <input type="hidden" name="question_id" value="<?= $qts['id'] ?>">
+                    <input type="hidden" name="chapter_id" value="<?= $qts['chapter_id'] ?>">
+                    <input type="hidden" name="question_type" value="<?= $qts['type'] ?>">
+                    
+                    <!-- answers -->
+                    <ol type="a">
+                    <?php
+                        foreach($a_data as $answer)
+                        {?>
                         <li class="edit-list">
+                            
+                            <input class="edit-answer" type="hidden" name="answer_id" 
+                            value="<?= $answer['id'] ?>" placeholder="Answer ID">
+
                             <input class="edit-answer" type="text" name="answer" 
-                            value="<?= $answer['answer'] ?>" placeholder="<?php echo "Type Answer"  ?>">
+                            value="<?= $answer['answer'] ?>" placeholder="Type Answer" 
+                            <?php if($qts['type']== 'true&false'){ echo 'disabled'; }?>>
+                            
+                       
                         </li>
-                    <?php } ?>
-                </ol>
+                        <?php } ?>
+                    </ol>
 
 
+                <!-- correct_answer & difficulty ID -->
                 <?php foreach ($a_data as $answer) { ?>
                     <input type="hidden" class="edit-answer" value="<?= $answer['is_correct'] ?>" name="is_correct" placeholder="Correct Answer">
-                    <input type="hidden" class="edit-answer" value="<?= $answer['difficulty'] ?>" name="difficulty" placeholder="Difficulty">
                 <?php } ?>
+                <input type="hidden" class="edit-answer" value="<?= $qts['difficulty'] ?>" name="difficulty" placeholder="Difficulty">
+
                 
                 <!-- correct_answer-->
                 <p class="question-select">Answer:
@@ -184,19 +202,25 @@ class professorView extends professorCont
                     </select>
                 </p>
 
+                <!--<p class="question-select">Answer:
+                    <select name="is_correct">
+                    <option value="<?php //foreach($a_data as $answer){ echo $answer['answer'];}?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>a</option>
+                    <option value="<?//= $answer['answer'] ?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>b</option>
+                    <option value="<?//= $answer['answer'] ?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>c</option>
+                    <option value="<?//= $answer['answer'] ?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>d</option>
+                    </select>
+                </p>-->
+
                 <!-- difficulty-->
                 <p class="question-select">Difficulty:
                     <select name="difficulty">
-                    <option value="easy"<?php if($answer['difficulty']== 'easy'){ echo 'selected'; }?>>Easy</option>
-                    <option value="meduim"<?php if($answer['difficulty']== 'meduim'){ echo 'selected'; }?>>Meduim</option>
-                    <option value="hard"<?php if($answer['difficulty']== 'hard'){ echo 'selected'; }?>>Hard</option>
+                    <option value="easy"<?php if($qts['difficulty']== 'easy'){ echo 'selected'; }?>>Easy</option>
+                    <option value="meduim"<?php if($qts['difficulty']== 'meduim'){ echo 'selected'; }?>>Meduim</option>
+                    <option value="hard"<?php if($qts['difficulty']== 'hard'){ echo 'selected'; }?>>Hard</option>
                     </select>
                 </p>
                 
-                <div class="modal-footer">
-                    <button type="sumbit" class="" name="edit" >Save Chages</button>
-                    <!-- <button type="sumbit" class="" name="edit">Delete</button> -->
-                </div>
+                
 
             </div>
             
@@ -210,10 +234,17 @@ class professorView extends professorCont
         $this->editQuestionsContr($question_text, $difficulty, $question_id);
     }
      
-    public function editAnswers($answer, $is_correct, $question_id)
+    public function editAnswers($answer, $answer_id)
     {
-        $this->editAnswersContr($answer, $is_correct, $question_id);
+        $this->editAnswersContr($answer, $answer_id);
     }
+
+    /* public function editCorrectAnswer($answer,$answer_id)
+    {
+        $this->editCorrectAnswerCont($answer,$answer_id);
+    } */
+
+
 
 
     // the part of setting  --->  professor
