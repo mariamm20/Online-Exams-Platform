@@ -1,20 +1,18 @@
-// used divs 
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
-
 let question = document.querySelector('.quest')
+let subQuest;
 let arr = {};
 let array = [];
 
 
 
 function createQuestion() {
+    subQuest =document.createElement('div');
+    subQuest.className="magictime swashIn "
     headOfQuestion();
     arr = {}
     difficulty();
     addQuestion();
+    question.appendChild(subQuest)
 }
 
 function headOfQuestion() {
@@ -33,8 +31,8 @@ function headOfQuestion() {
     head.className = 'quest-input magictime swashIn ';
     head.onchange = function () {
         head.value = this.value;
-        head.setAttribute('disabled', '');
-        head.className +='bg'
+        // head.setAttribute('disabled', '');
+        // head.className +='bg'   
         arr['question'] = this.value
     }
     let menu = document.createElement('i');
@@ -42,12 +40,16 @@ function headOfQuestion() {
     let ul = document.createElement('ul');
     let tf = document.createElement('li');
     let choose = document.createElement('li');
-    let multi = document.createElement('li')
+    let multi = document.createElement('li');
+    let tool = document.createElement('span')
     //icon
+    
     menu.className = 'fa fa-ellipsis-v';
-    // menu.setAttribute('data-bs-toggle','tooltip');
-    menu.setAttribute('data-bs-placement','top');
-    menu.setAttribute('title','Answers Options')
+    tool.className='toolspan';
+    tool.setAttribute('data-bs-toggle','tooltip');
+    tool.setAttribute('data-bs-placement','top');
+    tool.setAttribute('title','Answers Options')
+    menu.append(tool)
     menu.id = 'dropdownMenuLink';
     menu.setAttribute('data-bs-toggle', 'dropdown')
     menu.setAttribute('role', 'button');
@@ -84,11 +86,12 @@ function headOfQuestion() {
     questHeading.appendChild(head)
     questHeading.appendChild(menu)
     questHeading.appendChild(ul)
-    question.appendChild(questHeading);
-    question.appendChild(answer);
-    question.appendChild(dropdown);
+    subQuest.appendChild(questHeading);
+    subQuest.appendChild(answer);
+    subQuest.appendChild(dropdown);
     let x = correctchoices();
-        answer.appendChild(x)
+        answer.appendChild(x);
+        
     
 
 }
@@ -139,8 +142,8 @@ function chooseAnswers() {
     textInput1.setAttribute('required', '')
     textInput1.onchange = function () {
         textInput1.value = this.value;
-        textInput1.setAttribute('disabled', '');
-        textInput1.className +='bg2'
+        // textInput1.setAttribute('disabled', '');
+        // textInput1.className +='bg2'
         arr['a'] = textInput1.value
     }
     textInput2.type = 'text';
@@ -149,8 +152,8 @@ function chooseAnswers() {
     textInput2.setAttribute('required', '');
     textInput2.onchange = function () {
         textInput2.value = this.value;
-        textInput2.setAttribute('disabled', '');
-        textInput2.className +='bg2'
+        // textInput2.setAttribute('disabled', '');
+        // textInput2.className +='bg2'
         arr['b'] = textInput2.value
 
     }
@@ -160,8 +163,8 @@ function chooseAnswers() {
     textInput3.setAttribute('required', 'required');
     textInput3.onchange = function () {
         textInput3.value = this.value;
-        textInput3.setAttribute('disabled', '');
-        textInput3.className +='bg2'
+        // textInput3.setAttribute('disabled', '');
+        // textInput3.className +='bg2'
         arr['c'] = textInput3.value
     }
     textInput4.type = 'text';
@@ -170,8 +173,8 @@ function chooseAnswers() {
     textInput4.setAttribute('required', 'required');
     textInput4.onchange = function () {
         textInput4.value = this.value;
-        textInput4.setAttribute('disabled', '');
-        textInput4.className +='bg2'
+        // textInput4.setAttribute('disabled', '');
+        // textInput4.className +='bg2'
         arr['d'] = textInput4.value
     }
     ans1.appendChild(textInput1);
@@ -182,7 +185,7 @@ function chooseAnswers() {
     ol.appendChild(ans2)
     ol.appendChild(ans3)
     ol.appendChild(ans4)
-
+    
     
     return ol;
     
@@ -222,8 +225,8 @@ function correctchoices() {
     select.onchange = function () {
         arr['correct'] = this.value;
         arr['questionType'] = 'choose'
-        select.setAttribute('disabled','')
-        select.className +='bg'
+        // select.setAttribute('disabled','')
+        // select.className +='bg'
     }
 
 
@@ -258,10 +261,13 @@ function correcttf() {
     select.appendChild(b);
     p.appendChild(select);
     select.onchange = function () {
+        delete arr['c'];
+        delete arr['d'];
         arr['correct'] = this.value;
+        arr['questionType'] = '';
         arr['questionType'] = 'true&false';
-        select.setAttribute('disabled','');
-        select.className +='bg'
+        // select.setAttribute('disabled','');
+        // select.className +='bg'
     }
 
 
@@ -298,13 +304,13 @@ function difficulty() {
     p.appendChild(select);
     select.onchange = function () {
         arr['difficulty'] = this.value;
-        select.setAttribute('disabled','')
-        select.className +='bg'
+        // select.setAttribute('disabled','')
+        // select.className +='bg'
     }
 
 
     difficult.appendChild(p);
-    question.appendChild(difficult);
+    subQuest.appendChild(difficult);
 }
 function addQuestion() {
     let add = document.createElement('div');
@@ -316,23 +322,30 @@ function addQuestion() {
     button.type = 'submit';
     btn.id = 'btn-div';
     button.textContent = 'Save Changes';
+    line.title="Add Question"
     btn.appendChild(button);
-
+    
     line.onclick = function () {
-        console.log(Object.keys(arr))
+        console.log(arr)
+        
         if (arr['questionType'] === 'choose' && Object.keys(arr).length == 8) {
-            
-            array.push(arr);
-            let mydata = JSON.stringify(array)
-            console.log(mydata)
-            line.remove()
-            btn.remove()
-            createQuestion();
-        }else if (arr['questionType'] === 'true&false' && Object.keys(arr).length == 6) {
             array.push(arr);
             console.log(array)
             line.remove()
             btn.remove()
+            subQuest.style.pointerEvents ='none';
+            subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+            subQuest.style.padding = '7px 0 0 0'
+            
+            createQuestion();
+        }else if ((arr['questionType'] === 'true&false' && Object.keys(arr).length == 6) ) {
+            array.push(arr);
+            console.log(array)
+            line.remove()
+            btn.remove()
+            subQuest.style.pointerEvents ='none';
+            subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+            subQuest.style.padding = '7px 0 0 0'
             createQuestion();
         } 
                
@@ -362,13 +375,17 @@ window.location.href = '/Question-Bank/question-bank.html';
        
      }
     add.appendChild(line);
-    question.appendChild(add);
-    question.appendChild(btn)
+    subQuest.appendChild(add);
+    subQuest.appendChild(btn)
 }
 
 (function load() {
     createQuestion();
 })();
 
-
+// used divs 
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 

@@ -50,14 +50,10 @@
     text-align: left;
 }
 .prof-img{
-    /* width: 130px;
+    width: 130px;
     border-radius: 50%;
     position: relative;
-    right: 40px; */
-    height: -webkit-fill-available;
-    width: -webkit-fill-available;
-    
-    border-radius: 50%;
+    right: 40px;
 }
 .email{
     font-size: 14px;
@@ -69,23 +65,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 30px;
 }
-.numbers-body{
-    margin-top: 44px;
-}
-.bottom-left{
-    width: 70%;
-    text-align: left;
-    border-radius: 30px;
-    border: 5px solid #efefef;
-    
-}
-.bottom-right{
-    width: 20%;
-    border-radius: 30px;
-    border: 5px solid #efefef;
-}
+
 .heading-notify{
     background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff) ;
     border-radius: 23px 23px 0 0;
@@ -100,7 +81,7 @@
     padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 220px;
+    height: 150px;
     
 }
 .notify-body p{
@@ -168,18 +149,6 @@
 .notify p {
     animation: animatep 1s linear;
 }
-.prof-image{
-    width: 180px;
-    height: 130px;
-    border-radius: 50%;
-    position: relative;
-    right: 40px;
-}
-
-
-
-
-
 @keyframes animatep {
     
     18.1%,20.1%,50%,60.1%,65%,80.1%,90%,92.1%,100% 
@@ -190,6 +159,88 @@
     
     
 }
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:15px 33px ;
+    background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
+    margin-top: 15px;
+    border-radius: 30px;
+}
+.middle p{
+    font-size: 48px;
+    color: #fff;
+    -webkit-text-stroke: 1px #b0b0b0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.bottom{
+    margin-top: 30px;
+    border-radius: 30px !important;
+}
+thead th{
+    padding: 15px !important;
+}
+.first-col{
+    border-radius: 15px 0 0 0;
+}
+.last-col{
+    border-radius: 0 15px 0 0;
+}
+.bottom button{
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    color: #0e1c36;
+    padding: 0px 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    border: 1px solid #efefef;
+    
+}
+.bottom button:hover{
+    background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
+    
+}
+.table-content {
+    border: 5px solid #efefef;
+    border-radius: 30px;
+    position: relative;
+    overflow: scroll;
+    width: 100%;
+  }
+
+.bottom a:hover{
+    color: #0e1c36;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

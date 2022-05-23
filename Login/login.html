@@ -63,7 +63,8 @@
                     <h4>Log In</h4>
                     <fieldset class="inputs">
                         <input type="email" placeholder="Email" required />
-                        <input type="password" placeholder="Password" required />
+                        <input type="password" placeholder="Password" id="eye" required />
+                        <button onclick="event.preventDefault(),myFunction()"  class="view-password"><i class="fa-solid fa-eye"></i></button>
                         <div id="btn-div">
                             <button onclick="window.location.href('../Professor/professor.html')">Log In</button>
                         </div>
@@ -81,6 +82,7 @@
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

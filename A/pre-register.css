@@ -1,0 +1,83 @@
+.section-one{
+    display: flex;
+}
+.section-one div{
+    width:50%;
+    
+}
+.student{
+    background:#fff;
+    padding: 55px 55px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-one img{
+    width: 100%;
+}
+.cat{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.cat button{
+    background-color: #fff;
+    border: 3px solid #efefef;
+    border-radius: 30px;
+    color: #0e1c36;
+}
+.cat button:hover{
+    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    color: #0e1c36;
+    font-weight: bold;
+}
+.btn-student{
+    padding: 50px 43px;
+}
+.btn-professor{
+    padding: 50px 30px;
+}
+.student p{
+    color: #0e1c36;
+    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    padding: 15px;
+    width: 78%;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width:1300px) {
+    .section-one{
+        flex-wrap: wrap-reverse;
+        align-items: center;
+    }
+    .section-one div{
+        width: 100%;
+    }
+}
+@media (max-width:740px){
+    .cat{
+        flex-direction: column;
+    }
+    .student p{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .btn-professor{
+        margin-bottom: 10px;
+        padding:20px 30px;
+    }
+    .student{
+        padding: 20px 30px;
+    }
+    .btn-student{
+        padding:20px 43px;
+    }
+}
+@media (max-width:768px) {
+    .navbar-brand {
+        left: 18px
+    }
+}
