@@ -7,7 +7,8 @@ if(isset($_POST['edit']))
     $difficulty = $_POST['difficulty'];
     //$is_correct = $_POST['is_correct'];
     //$answer = $_POST['answer'];
-    //$answer_id = $_POST['answer_id'];
+    echo $correct_answer_id = $_POST['correct_answer_id'];
+    
     
     include('../Controllers/dbconnection.class.php');
     include('../Controllers/professorCont.class.php');
@@ -16,15 +17,16 @@ if(isset($_POST['edit']))
 
     $proffesor->editQuestions($question_text, $difficulty, $question_id);
     
-    //$proffesor->editCorrectAnswer($answer,$answer_id);
-
-    foreach ($_POST['answer_id'] as $key => $answer_id) {
-        $answer_id = $_POST['answer_id'];
-        $answer = $_POST['ansewer'][$key];
-    
-        $proffesor->editAnswers($answer, $answer_id);
+  
+   
+    //print_r($_POST);
+    foreach($_POST as $id => $answer)
+    {
+        echo $id . " => " . $answer . "</br>";
+        $proffesor->editAnswers($answer, $id);
     }
 
+    $proffesor->editCorrectAnswer($correct_answer_id);
     header('location:../Home/question-bank.php?chapter_id='.$chapter_id );
 } 
 else{ echo "failed";}

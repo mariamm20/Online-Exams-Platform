@@ -137,6 +137,8 @@ class professorCont extends DB
     protected function editQuestionsContr($question_text, $difficulty, $question_id)
     {
         $stmt = $this->Connection()->prepare("UPDATE questions SET question_text = ?, difficulty = ? WHERE id = ? ");
+        $stmt2 = $this->Connection()->prepare("UPDATE answers set is_correct = 0 where question_id = ?  ");
+        $stmt2->execute(array($question_id));
         $stmt->execute(array($question_text, $difficulty, $question_id));
         
     }
@@ -148,11 +150,11 @@ class professorCont extends DB
     
     }
 
-    /*protected function editCorrectAnswerCont($answer,$answer_id)
+    protected function editCorrectAnswerCont($answer_id)
     {
-        $stmt =  $this->Connection()->prepare("update answers set is_correct = 1 where answer = ? and id = ?");
-        $stmt->execute(array($answer, $answer_id ));
-    }*/
+        $stmt =  $this->Connection()->prepare("update answers set is_correct = 1 where id = ?");
+        $stmt->execute(array($answer_id ));
+    }
 
     // the part of setting  --->  professor
     protected function getProfDetails()

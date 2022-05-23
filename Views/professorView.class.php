@@ -170,12 +170,11 @@ class professorView extends professorCont
                         {?>
                         <li class="edit-list">
                             
-                            <input class="edit-answer" type="hidden" name="answer_id" 
-                            value="<?= $answer['id'] ?>" placeholder="Answer ID">
+                          
 
-                            <input class="edit-answer" type="text" name="answer" 
+                            <input class="edit-answer" type="text" name="<?= $answer['id'] ?>" 
                             value="<?= $answer['answer'] ?>" placeholder="Type Answer" 
-                            <?php if($qts['type']== 'true&false'){ echo 'disabled'; }?>>
+                            <?php if($qts['type']== 'true&false') { echo 'disabled'; }?>>
                             
                        
                         </li>
@@ -185,33 +184,25 @@ class professorView extends professorCont
 
                 <!-- correct_answer & difficulty ID -->
                 <?php foreach ($a_data as $answer) { ?>
-                    <input type="hidden" class="edit-answer" value="<?= $answer['is_correct'] ?>" name="is_correct" placeholder="Correct Answer">
                 <?php } ?>
                 <input type="hidden" class="edit-answer" value="<?= $qts['difficulty'] ?>" name="difficulty" placeholder="Difficulty">
 
                 
                 <!-- correct_answer-->
                 <p class="question-select">Answer:
-                    <select name="is_correct">
+                    <select name="correct_answer_id" >
                         <?php foreach ($a_data as $answer) { 
                             $is_correct = $answer['is_correct'];
                             if ($is_correct == "1") {?>
-                                <option value="<?= $answer['answer']?>" selected><?= $answer['answer']?></option>
+                                <option value="<?= $answer['id']?>" selected><?= $answer['answer']?></option>
                                 <?php } else if ($is_correct == "0"){ ?>
-                            <option value="<?= $answer['answer']?>"><?= $answer['answer']?></option>
+                            <option value="<?= $answer['id']?>"><?= $answer['answer']?></option>
                             <?php }
                         } ?>
                     </select>
                 </p>
 
-                <!--<p class="question-select">Answer:
-                    <select name="is_correct">
-                    <option value="<?php //foreach($a_data as $answer){ echo $answer['answer'];}?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>a</option>
-                    <option value="<?//= $answer['answer'] ?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>b</option>
-                    <option value="<?//= $answer['answer'] ?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>c</option>
-                    <option value="<?//= $answer['answer'] ?>"<?php //if($answer['is_correct']== '1'){ echo 'selected'; }?>>d</option>
-                    </select>
-                </p>-->
+              
 
                 <!-- difficulty-->
                 <p class="question-select">Difficulty:
@@ -241,10 +232,10 @@ class professorView extends professorCont
         $this->editAnswersContr($answer, $answer_id);
     }
 
-    /* public function editCorrectAnswer($answer,$answer_id)
+     public function editCorrectAnswer($answer_id)
     {
-        $this->editCorrectAnswerCont($answer,$answer_id);
-    } */
+        $this->editCorrectAnswerCont($answer_id);
+    } 
 
 
 
