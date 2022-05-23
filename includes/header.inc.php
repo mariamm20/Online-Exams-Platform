@@ -7,7 +7,14 @@
 
 <header class="container" data-aos="fade-down">
     <nav class="navbar navbar-expand-lg vertical">
-        <span class="fs-4 title"><a class="navbar-brand" href="#">
+        <span class="fs-4 title"><a class="navbar-brand" <?php if($_SESSION['role'] == "student"){?>
+            href="student.php" <?php
+        }
+        else {?>
+        href="professor.php"
+        <?php } ?>
+
+             ?>>
                 Online Exams <br />
                 <span class="platform-word">Platform </a>
         </span>

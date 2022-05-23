@@ -42,7 +42,7 @@ $exam = new examView();
                     <fieldset class="inputs chap">
                         <input type="hidden" value="<?= $_GET['subject_id'] ?>" name="subject_id">
                         <input type="hidden" value="<?= $_GET['exam_name'] ?>" name="exam_name">
-                        <select name="chapter_id">
+                        <select name="chapter_id" required>
                             <option selected disabled>Choose Chapter</option>
                             <?php
                             $exam->showChapters($_GET['subject_id']);

@@ -39,23 +39,23 @@ $exam = new examView();
                         <h4 id="role">Creation Exam Form</h4>
                     </div>
                     <fieldset class="inputs">
-                        <input type="text" placeholder="Exam  Name" name="exam_name" />
+                        <input type="text" placeholder="Exam  Name" name="exam_name" required/>
 
-                        <select name="sub_name">
+                        <select name="sub_name" required>
                             <option selected disabled>Choose Subject</option>
                             <?php
                             $exam->professorSubjects();
                             ?>
 
                         </select>
-                        <input type="text" placeholder="Exam Date" onfocus="(this.type='date')" onblur="(this.type='text') ;" id="date" name="exam_date">
-                        <input type="text" placeholder="Exam Start Time" onfocus="(this.type='time')" onblur="(this.type='text')" id="eye" name="exam_start" />
-                        <input type="text" placeholder="Exam End Time" onfocus="(this.type='time')" onblur="(this.type='text')" id="eye" name="exam_end" />
+                        <input type="text" placeholder="Exam Date" onfocus="(this.type='date')" onblur="(this.type='text') ;" id="date" name="exam_date" required>
+                        <input type="text" placeholder="Exam Start Time" onfocus="(this.type='time')" onblur="(this.type='text')" id="eye" name="exam_start" required/>
+                        <input type="text" placeholder="Exam End Time" onfocus="(this.type='time')" onblur="(this.type='text')" id="eye" name="exam_end" required/>
                        
 
                        
 
-                        <input type="number" placeholder="Total Marks" name="total_mark" />
+                        <input type="number" placeholder="Total Marks" name="total_mark" required />
 
 
 
