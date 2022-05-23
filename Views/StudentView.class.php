@@ -34,11 +34,11 @@ class studentView extends studentCont
                 <td><?= $exam['exam_name'] ?></td>
                 <td><?= $exam['exam_date'] ?></td>
                 <td><?= $exam['start_time'] ?></td>
-                <td><?= $exam['duration'] . " min" ?></td>
+                <td><?= $exam['end_time']  ?></td>
                 <td><?= $exam['total_mark'] ?></td>
                
                 <td>
-                    <button > <a class="start" href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>&exam_date=<?= $exam['exam_date'] ?>" > Start </a> </button>
+                    <button > <a class="start" href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>&exam_date=<?= $exam['exam_date'] ?>&exam_time=<?= $exam['start_time'] ?>&exam_end=<?= $exam['end_time'] ?>" > Start </a> </button>
                 </td>
               
             </tr>
@@ -58,7 +58,7 @@ class studentView extends studentCont
                 <td><?= $sheet['exam_name'] ?></td>
                 <td><?= $sheet['exam_date'] ?></td>
                 <td><?= $sheet['start_time'] ?></td>
-                <td><?= $sheet['duration'] ?></td>
+                <td><?= $sheet['end_time'] ?></td>
                 <td><?= $sheet['total_mark'] ?></td>
                 <td><?= $sheet['result'] ?></td>
             </tr>

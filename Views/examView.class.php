@@ -11,9 +11,9 @@ class examView extends examCont
         }
     }
 
-    public function createExam($subject_id, $exam_name,$exam_date, $exam_start,$exam_duration, $total_mark)
+    public function createExam($subject_id, $exam_name,$exam_date, $exam_start,$exam_end, $total_mark)
     {
-        $this->createExamCont($subject_id, $exam_name,$exam_date, $exam_start,$exam_duration, $total_mark);
+        $this->createExamCont($subject_id, $exam_name,$exam_date, $exam_start,$exam_end, $total_mark);
     }
    
 

@@ -85,7 +85,7 @@ class StudRegisterCont extends DB
 {
     protected function userSetUP($user_name, $email, $password,$academic_id, $level, $department)
     {
-        $query = "INSERT into students (user_name, email, password,academic_id,level, department,role, created_at, level_id, dept_id) values (?, ?, ?, ?,?,?,'student', now(),  (SELECT id from levels where level_name = '$level'), (SELECT id from departments where dept_name = '$department' ))";
+        $query = "INSERT into students (user_name, email, password,academic_id,level, department,role, created_at, level_id, dept_id) values (?, ?, ?, ?,?,?,'student', now(),  (SELECT id from levels where level_name = '$level'), (SELECT id from departments where dept_name = '$department'  and level_id = (SELECT id from levels where level_name = '$level')))";
         $stmt = $this->Connection()->prepare($query);
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 

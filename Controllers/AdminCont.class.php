@@ -49,6 +49,21 @@ class AdminCont extends DB
         $count = $stmt->fetchColumn();
         echo $count;
     }
+    protected function getFinishedExams()
+    {
+        $sql = "SELECT COUNT(*) FROM results ";
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+    protected function getSuccessExams()
+    {
+        $sql = "SELECT COUNT(*) FROM exams ";
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+
 
     protected function getStudentsNumber()
     {

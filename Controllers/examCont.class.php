@@ -1,11 +1,11 @@
 <?php
 class examCont extends DB
 {
-    protected function createExamCont($subject_name, $exam_name,$exam_date, $exam_start,$exam_duration, $total_mark  )
+    protected function createExamCont($subject_name, $exam_name,$exam_date, $exam_start,$exam_end, $total_mark  )
     {
-        $sql = "INSERT into exams(subject_id, exam_name, exam_date, start_time, duration, total_mark) values ( ?, ?,?,?,?,?)";
+        $sql = "INSERT into exams(subject_id, exam_name, exam_date, start_time, end_time, total_mark) values ( ?, ?,?,?,?,?)";
         $stmt = $this->Connection()->prepare($sql);
-        $stmt->execute(array($subject_name, $exam_name,$exam_date, $exam_start,$exam_duration, $total_mark));
+        $stmt->execute(array($subject_name, $exam_name,$exam_date, $exam_start,$exam_end, $total_mark));
     }
 
     protected function getProfessorSubjects()

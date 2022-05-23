@@ -65,6 +65,12 @@ class ProfRegisterView extends RegisterCont
                 header("location: ../Home/prof-register.php?error=InvalidEmail");
                 exit();
             }  
+            if($this->password() == false)  
+            {
+                //echo "Invalid Phone Number";
+                header("location: ../Home/prof-register.php?error=passwordlength");
+                exit();
+            }  
             // if($this->verifyID() == false)  
             // {
             //     //echo "Invalid Phone Number";
@@ -165,6 +171,21 @@ class ProfRegisterView extends RegisterCont
         }
         return $result;
     }
+    private function password()
+    {
+        
+        $result = false;
+        if(strlen($this->password) < 8)
+        {
+        
+            $result = false;
+        }
+        else
+        {
+            $result = true;
+        }
+        return $result;
+    }
 
     private function verifyID()
     {
@@ -182,6 +203,7 @@ class ProfRegisterView extends RegisterCont
 
 
 }
+/////////////////////////////////////////////////////////////////////////////////////////////
 class StudRegisterView extends StudRegisterCont
 {
     private $user_name;  
@@ -211,6 +233,12 @@ class StudRegisterView extends StudRegisterCont
                 header("location: ../Home/stud-register.php?error=emptyinput");
                 exit();
             }
+            if($this->password() == false)  
+            {
+                //echo "Invalid Phone Number";
+                header("location: ../Home/prof-register.php?error=passwordlength");
+                exit();
+            }  
 
             if($this->validateUserName() == false)  
             {
@@ -306,6 +334,21 @@ class StudRegisterView extends StudRegisterCont
         }
         return $result;
 
+    }
+    private function password()
+    {
+        
+        $result = false;
+        if(strlen($this->password) < 8)
+        {
+        
+            $result = false;
+        }
+        else
+        {
+            $result = true;
+        }
+        return $result;
     }
    
     private function validateEmail()
