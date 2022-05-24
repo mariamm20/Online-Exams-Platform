@@ -63,6 +63,7 @@
     width: 75%;
     text-transform: capitalize;
     text-align: left;
+    margin-bottom: 30px;
 }
 .question{
     border: 5px solid #efefef;
