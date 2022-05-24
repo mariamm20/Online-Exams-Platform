@@ -109,4 +109,14 @@
     <?php   
     }
     ?> 
+    <?php
+    if (strpos($fullurl, "error=idnotfound")== true)             // error handling for password length
+    {?>
+        <lable  data-bs-toggle="tooltip" data-bs-placement="top"
+            title="This Academic Id is not found">
+            <i class="fa-solid fa-circle-info"></i>
+         </lable>
+    <?php   
+    }
+    ?> 
     

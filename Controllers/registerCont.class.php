@@ -78,6 +78,31 @@ class RegisterCont extends DB
         return $resultCheck;
         
     }
+    protected function checkAcademicID($academic_id)
+    {
+        $stmt = $this->Connection()->prepare('SELECT * FROM ids WHERE  academic_id = ? ;');
+        // check if it failed 
+        if (!  $stmt->execute(array($academic_id))){
+            $stmt = null;  // if it faild the statement will be closed
+            header("location: ../Home/stud-register.php?error=stmt2failed");
+            exit();
+        }
+        
+        
+        $resultCheck = false;
+        if($stmt->rowCount() > 0) // number of rows  
+        {
+            
+            
+            $resultCheck = true;
+        }
+        else{
+            $resultCheck = false;
+        }
+        return $resultCheck;
+        
+    }
+
 
 }
 
@@ -157,6 +182,30 @@ class StudRegisterCont extends DB
         }
         else{
             $resultCheck = true;
+        }
+        return $resultCheck;
+        
+    }
+    protected function checkAcademicID($academic_id)
+    {
+        $stmt = $this->Connection()->prepare('SELECT * FROM ids WHERE  academic_id = ? ;');
+        // check if it failed 
+        if (!  $stmt->execute(array($academic_id))){
+            $stmt = null;  // if it faild the statement will be closed
+            header("location: ../Home/stud-register.php?error=stmt2failed");
+            exit();
+        }
+        
+        
+        $resultCheck = false;
+        if($stmt->rowCount() > 0) // number of rows  
+        {
+            
+            
+            $resultCheck = true;
+        }
+        else{
+            $resultCheck = false;
         }
         return $resultCheck;
         

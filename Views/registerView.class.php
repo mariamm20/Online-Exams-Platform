@@ -41,7 +41,13 @@ class ProfRegisterView extends RegisterCont
                 header("location: ../Home/prof-register.php?error=invalidAcademicId");
                 exit();
             }  
-
+            if($this->checkUserAcademicId() == false)  
+            {
+               
+                echo "This Academic id is not found!";
+                header("location: ../Home/prof-register.php?error=idnotfound");
+                exit();
+            }  
             
             
             if($this->checkUserEmeil() == false)  
@@ -159,6 +165,19 @@ class ProfRegisterView extends RegisterCont
         }
         return $result;
     }
+    private function checkUserAcademicId()
+    {
+        $result = false;
+        if($this->checkAcademicID($this->academic_id))
+        {       
+            $result = true;
+        }
+        else
+        {
+            $result = false;
+        }
+        return $result;
+    }
     private function checkUserID(){
         $result = false;
         if(!$this->checkID($this->academic_id))
@@ -271,6 +290,14 @@ class StudRegisterView extends StudRegisterCont
                 header("location: ../Home/stud-register.php?error=takenID");
                 exit();
             }  
+            if($this->checkUserAcademicId() == false)  
+            {
+               
+                echo "This Academic id is not found!";
+                header("location: ../Home/stud-register.php?error=idnotfound");
+                exit();
+            }  
+
 
             if($this->validateEmail() == false)  
             {
@@ -390,6 +417,19 @@ class StudRegisterView extends StudRegisterCont
         else
         {
             $result = true;
+        }
+        return $result;
+    }
+    private function checkUserAcademicId()
+    {
+        $result = false;
+        if($this->checkAcademicID($this->academic_id))
+        {       
+            $result = true;
+        }
+        else
+        {
+            $result = false;
         }
         return $result;
     }

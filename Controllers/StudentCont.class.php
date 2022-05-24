@@ -19,7 +19,7 @@ class studentCont extends DB
 
     protected function getExams()
     {
-        $query = "select exams.id, exams.exam_name, exams.end_time, exams.start_time, exams.exam_date, exams.total_mark from exams join subjects 
+        $query = "select exams.id, exams.exam_name, exams.duration, exams.start_time, exams.exam_date, exams.total_mark from exams join subjects 
         on exams.subject_id = subjects.id where subjects.level_id =" . $_SESSION['level_id'] .
         " and subjects.dept_id =" . $_SESSION['dept_id'];
         $stmt = $this->Connection()->query($query);
@@ -34,7 +34,7 @@ class studentCont extends DB
         $stmt = $this->Connection()->query(
             "SELECT results.id, results.student_id, results.exam_id, results.result, 
                     students.id, 
-                    exams.id, exams.exam_name, exams.exam_date, exams.start_time, exams.end_time, exams.total_mark
+                    exams.id, exams.exam_name, exams.exam_date, exams.start_time, exams.duration, exams.total_mark
             FROM results
             INNER JOIN students ON results.student_id = students.id
             INNER JOIN exams ON results.exam_id = exams.id

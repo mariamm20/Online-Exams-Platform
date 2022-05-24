@@ -24,14 +24,11 @@ elseif($_GET['exam_time'] > date("G:i:s"))
 {
     header('location: ../Home/student.php?timenotstarted');
 }
-elseif($_GET['exam_end'] < date("G:i:s"))
-{
-    header('location: ../Home/student.php?timeended');
-}
+
 
 else
 {
-    header('location: ../Home/stud-exam.php?exam_id='.$_GET['exam_id']);
+    header('location: ../Home/stud-exam.php?exam_id='.$_GET['exam_id'] . '&duration=' . $_GET['exam_duration'] . '&start_time=' . $_GET['exam_time']);
 }
 
 

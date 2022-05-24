@@ -31,9 +31,29 @@
                     <p><span><?php $student->showExamName($_GET['exam_id']); ?></span> Exam</p>
                 </div>
                 <div class="timer">
-                    Timer : <span>1:44</span>
+                    Timer : <span id="counter"> <?= $_GET['duration']  ?> . ':00'</span>
+                    <script>
+                        const params = new URLSearchParams(window.location.search);
+                        const duration = params.get("duration");
+                        const id = params.get("exam_id");
+                        const startinminitus = duration;
+                        let time = startinminitus * 60;
+                        const countdown = document.getElementById('counter');
+                        setInterval(updateCountDown, 1000);
+                        function updateCountDown(){
+                            const minitus = Math.floor(time/60);
+                            let seconds = time % 60;
+                            seconds = seconds < 10 ? "0" + seconds : seconds;
+                            countdown.innerHTML = `${minitus} : ${seconds}`;
+                            time --;
+                            if (time == 0) {
+                                window.location.href = "../includes/stud-answers.inc.php?submit&exam_id=" + id;
+                                
+                            }
+                        }
+                    </script>
                 </div>
-                <form action="../includes/stud-answers.inc.php?exam_id=<?= $_GET['exam_id'] ?>" method="post">
+                <form action="../includes/stud-answers.inc.php?exam_id=<?= $_GET['exam_id']?> " method="post">
                
                     <?php
                         $student->showQuestions($_GET['exam_id']);

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['submit']))
+if(isset($_POST['submit']) || isset($_GET['submit']))
 {
     echo $student_id = $_SESSION['id'];
     echo $exam_id = $_GET['exam_id'];

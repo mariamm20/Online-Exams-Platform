@@ -75,7 +75,7 @@ class professorView extends professorCont
                 <div class="accordion-body numbers-body">
                     <p>Exam Date <span><?= $exams['exam_date'] ?></span></p>
                     <p>Start From <span><?= $exams['start_time'] ?></span></p>
-                   <p>End Time <span><?= $exams['end_time'] ?></span></p>
+                   <p>Duration <span><?= $exams['duration'] ?></span></p>
                    
                     <p>Total Mark <span><?= $exams['total_mark'] ?></span></p>
                 </div>
