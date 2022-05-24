@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2022 at 09:28 PM
+-- Generation Time: May 24, 2022 at 09:56 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -39,36 +39,66 @@ CREATE TABLE `answers` (
 --
 
 INSERT INTO `answers` (`id`, `question_id`, `answer`, `is_correct`) VALUES
-(375, 158, '5', 0),
-(376, 158, '2', 1),
-(377, 158, '3', 0),
-(378, 158, '4', 0),
-(379, 159, 'supportives', 0),
-(380, 159, 'disinterested', 0),
-(381, 159, 'cvbnm,', 0),
-(382, 159, 'process oriented', 1),
-(383, 160, 'connective', 0),
-(384, 160, 'contemplative', 0),
-(385, 160, 'collaborative', 1),
-(386, 160, 'connectivity', 0),
-(387, 161, 'True', 1),
-(388, 161, 'False', 0),
-(389, 162, 'True', 1),
-(390, 162, 'False', 0),
-(391, 163, 'True', 0),
-(392, 163, 'False', 1),
-(393, 164, 'True', 0),
-(394, 164, 'False', 1),
-(395, 165, 'True', 1),
-(396, 165, 'False', 0),
-(397, 166, 'True', 0),
-(398, 166, 'False', 1),
-(399, 167, 'True', 0),
-(400, 167, 'False', 1),
-(401, 168, 'plan driven', 0),
-(402, 168, 'structured', 0),
-(403, 168, 'agile', 0),
-(404, 168, 'both a and b', 1);
+(437, 179, ' set of programs, documentation & configuration of data', 1),
+(438, 179, 'set of programs', 0),
+(439, 179, 'documentation and configuration of data', 0),
+(440, 179, 'None of the mentioned', 0),
+(441, 180, 'Designing a software', 0),
+(442, 180, 'Testing a software', 0),
+(443, 180, 'Application of engineering principles to the design a software', 1),
+(444, 180, 'None of the above', 0),
+(445, 181, 'Margaret Hamilton', 0),
+(446, 181, 'Watts S. Humphrey', 1),
+(447, 181, 'Alan Turing', 0),
+(448, 181, 'Boris Beizer', 0),
+(449, 182, 'Simplicity', 0),
+(450, 182, 'Accessibility', 0),
+(451, 182, 'Modularity', 0),
+(452, 182, ' All of the above', 1),
+(453, 183, 'Validation', 0),
+(454, 183, 'Specification', 0),
+(455, 183, 'Development', 0),
+(456, 183, 'Dependence', 1),
+(457, 184, 'project management that emphasizes incremental progress', 1),
+(458, 184, 'project management that emphasizes decremental progress', 0),
+(459, 184, 'project management that emphasizes neutral progress', 0),
+(460, 184, 'project management that emphasizes no progress', 0),
+(461, 185, 'True', 1),
+(462, 185, 'False', 0),
+(463, 186, 'True', 0),
+(464, 186, 'False', 1),
+(465, 187, 'True', 0),
+(466, 187, 'False', 1),
+(467, 188, 'True', 1),
+(468, 188, 'False', 0),
+(469, 189, 'True', 0),
+(470, 189, 'False', 1),
+(471, 190, 'True', 0),
+(472, 190, 'False', 1),
+(473, 191, 'An Algorithm', 1),
+(474, 191, 'A Plan', 0),
+(475, 191, 'A List', 0),
+(476, 191, 'Sequential Structure', 0),
+(477, 192, 'Quality', 1),
+(478, 192, 'Complexity', 0),
+(479, 192, 'Efficiency', 0),
+(480, 192, 'Accuracy', 0),
+(481, 193, 'Transformation of a textual problem description into a graphic model', 0),
+(482, 193, 'Functional decomposition', 0),
+(483, 193, 'All the functions represented in the DFD are mapped to a module structure', 1),
+(484, 193, ' All of the mentioned', 0),
+(485, 194, 'For strategic purposes', 0),
+(486, 194, 'To minimize the development schedule.', 0),
+(487, 194, 'To evaluate the ongoing project\'s quality on a daily basis', 0),
+(488, 194, 'To minimize the development schedule and evaluate the ongoing project\'s quality on a daily basis', 1),
+(489, 195, 'Function point analysis', 0),
+(490, 195, 'Control Chart', 0),
+(491, 195, 'DRE (Defect Removal Efficiency)', 1),
+(492, 195, 'None of the above', 0),
+(493, 196, 'Change management', 0),
+(494, 196, 'System management', 0),
+(495, 196, 'Internship management', 1),
+(496, 196, 'Version management', 0);
 
 -- --------------------------------------------------------
 
@@ -87,8 +117,9 @@ CREATE TABLE `chapters` (
 --
 
 INSERT INTO `chapters` (`id`, `subject_id`, `chapter_name`) VALUES
-(17, 18, 'chapter one'),
-(18, 18, 'chapter two');
+(21, 20, 'chapter one'),
+(22, 20, 'chapter two'),
+(23, 20, 'chapter three');
 
 -- --------------------------------------------------------
 
@@ -110,8 +141,12 @@ CREATE TABLE `contact` (
 
 INSERT INTO `contact` (`id`, `name`, `email`, `msg`, `state`) VALUES
 (8, 'amr abohany', 'amr@gmail.com', 'this site is beautiful', 'Accepted'),
-(9, 'alaa attia', 'alaaattia147@gmail.com', 'i have a problem in my life', NULL),
-(10, 'alaa attia', 'alaaattia147@gmail.com', 'dfghjkl', NULL);
+(9, 'alaa attia', 'alaaattia147@gmail.com', 'i have a problem in my life', 'Rejected'),
+(10, 'alaa attia', 'alaaattia147@gmail.com', 'dfghjkl', 'Rejected'),
+(11, 'amr ali', 'amr@gmail.com', 'cgjvhkbjlnkml/', NULL),
+(12, 'amr ali', 'amr@gmail.com', 'cgjvhkbjlnkml/', NULL),
+(13, 'alaa attia', 'alaaattia147@gmail.com', 'thgjfvhkjblkn;lm', NULL),
+(14, 'heba nasser', 'heba@gmail.com', 'srdtfyguhlij;o', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,7 +169,8 @@ INSERT INTO `departments` (`id`, `dept_name`, `level_id`) VALUES
 (19, 'General', 14),
 (20, 'SE', 15),
 (21, 'CS', 15),
-(22, 'IS', 15);
+(22, 'IS', 15),
+(23, 'IT', 15);
 
 -- --------------------------------------------------------
 
@@ -148,17 +184,9 @@ CREATE TABLE `exams` (
   `exam_name` varchar(255) NOT NULL,
   `exam_date` date DEFAULT NULL,
   `start_time` time NOT NULL,
-  `end_time` time NOT NULL,
+  `duration` int(3) NOT NULL,
   `total_mark` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `exams`
---
-
-INSERT INTO `exams` (`id`, `subject_id`, `exam_name`, `exam_date`, `start_time`, `end_time`, `total_mark`) VALUES
-(24, 18, 'CS', '2022-05-21', '21:58:00', '00:00:00', 6),
-(25, 18, 'exam 3', '2022-05-23', '11:00:00', '11:30:00', 6);
 
 -- --------------------------------------------------------
 
@@ -175,17 +203,22 @@ CREATE TABLE `exam_structure` (
   `difficulty` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `exam_structure`
+-- Table structure for table `ids`
 --
 
-INSERT INTO `exam_structure` (`id`, `exam_id`, `chapter_id`, `num_of_questions`, `type`, `difficulty`) VALUES
-(184, 24, 17, 1, 'true&false', 'easy'),
-(185, 24, 17, 1, 'true&false', 'medium'),
-(186, 24, 17, 1, 'true&false', 'hard'),
-(187, 25, 17, 1, 'true&false', 'easy'),
-(188, 25, 17, 1, 'true&false', 'medium'),
-(189, 25, 17, 1, 'true&false', 'hard');
+CREATE TABLE `ids` (
+  `academic_id` varchar(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ids`
+--
+
+INSERT INTO `ids` (`academic_id`) VALUES
+('1618120190100097');
 
 -- --------------------------------------------------------
 
@@ -231,8 +264,10 @@ CREATE TABLE `professors` (
 --
 
 INSERT INTO `professors` (`id`, `user_name`, `academic_id`, `email`, `password`, `role`, `state`, `created_at`, `login_at`, `image`) VALUES
-(10, 'amr ali', '1618151416121454', 'amr@gmail.com', '$2y$10$/fe0rxhpRN0Rh1Z6XznTRuxIErUyrJrIJudQJjr9/10pU8WIFoZsC', 'professor', 1, '2022-05-16 15:47:37', '2022-05-23 18:50:53', 'R.jpg'),
-(11, 'reda mabrouk', '1618129105487968', 'reda@gmail.com', '$2y$10$bt4HX8r2Bw/VIeXDOc15A./Fbk3miur1bLMxo5gzvOFrl6JukuzFu', 'professor', 1, '2022-05-23 09:39:27', '2022-05-23 09:41:18', '');
+(10, 'amr ali', '1618151416121454', 'amr@gmail.com', '$2y$10$/fe0rxhpRN0Rh1Z6XznTRuxIErUyrJrIJudQJjr9/10pU8WIFoZsC', 'professor', 1, '2022-05-16 15:47:37', '2022-05-24 19:54:44', 'IMG_0471.JPG'),
+(11, 'reda mabrouk', '1618129105487968', 'reda@gmail.com', '$2y$10$bt4HX8r2Bw/VIeXDOc15A./Fbk3miur1bLMxo5gzvOFrl6JukuzFu', 'professor', 1, '2022-05-23 09:39:27', '2022-05-23 09:41:18', ''),
+(12, 'admin', '1618129105487941', 'admin@gmail.com', '$2y$10$P8ENR/p/FHF910Vk06ibBeigT94LWtUHcSGZfk6cBCeUcLVrvftC.', 'admin', 1, '2022-05-24 09:14:15', '2022-05-24 19:54:12', ''),
+(13, 'mai ramadan', '1618129105487988', 'mai@gmail.com', '$2y$10$OLArXhtGbRcVHrUJHGtJo.vwgkKtV.piG/GNlspVGa2u1GBhk/IhG', 'professor', NULL, '2022-05-24 12:30:01', '2022-05-24 12:30:01', '');
 
 -- --------------------------------------------------------
 
@@ -250,7 +285,7 @@ CREATE TABLE `professor_subjects` (
 --
 
 INSERT INTO `professor_subjects` (`prof_id`, `subject_id`) VALUES
-(10, 18);
+(10, 20);
 
 -- --------------------------------------------------------
 
@@ -260,7 +295,6 @@ INSERT INTO `professor_subjects` (`prof_id`, `subject_id`) VALUES
 
 CREATE TABLE `questions` (
   `id` int(11) NOT NULL,
-  `subject_id` int(11) DEFAULT NULL,
   `chapter_id` int(11) NOT NULL,
   `question_text` text NOT NULL,
   `type` varchar(20) NOT NULL,
@@ -272,18 +306,25 @@ CREATE TABLE `questions` (
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`id`, `subject_id`, `chapter_id`, `question_text`, `type`, `difficulty`, `created_at`) VALUES
-(158, NULL, 17, 'how many types of requirements?', 'choice', 'easy', '2022-05-16 16:12:39'),
-(159, NULL, 17, 'is a charachteristic of an agile leader?', 'choice', 'meduim', '2022-05-16 16:16:07'),
-(160, NULL, 17, 'which of the following is the working calture of an agile method?', 'choice', 'hard', '2022-05-16 16:18:05'),
-(161, NULL, 17, 'is there any difference betweem incremental and iterative development?', 'true&false', 'meduim', '2022-05-16 16:19:14'),
-(162, NULL, 17, 'waterfall model is useful in large projects?', 'true&false', 'medium', '2022-05-16 16:19:55'),
-(163, NULL, 17, 'code and fix is an agile development model?', 'true&false', 'hard', '2022-05-16 16:21:10'),
-(164, NULL, 17, 'is agile useless in large projects?', 'true&false', 'medium', '2022-05-18 06:45:33'),
-(165, NULL, 18, 'does sc refer to softwre construction?', 'true&false', 'easy', '2022-05-20 05:41:22'),
-(166, NULL, 17, 'is it write for your code to be not clean?', 'true&false', 'medium', '2022-05-20 06:06:35'),
-(167, NULL, 17, 'waterfall methodology is good for small projects?', 'true&false', 'easy', '2022-05-23 09:00:50'),
-(168, NULL, 17, 'waterfall methodology is a ......?', 'choice', 'medium', '2022-05-23 09:02:30');
+INSERT INTO `questions` (`id`, `chapter_id`, `question_text`, `type`, `difficulty`, `created_at`) VALUES
+(179, 21, 'Software is defined as ___________', 'choice', 'easy', '2022-05-24 11:08:10'),
+(180, 21, 'What is Software Engineering?', 'choice', 'medium', '2022-05-24 11:09:08'),
+(181, 21, 'Who is the father of Software Engineering?', 'choice', 'hard', '2022-05-24 11:10:20'),
+(182, 21, 'What are the features of Software Code?', 'choice', 'easy', '2022-05-24 11:11:14'),
+(183, 21, '_________ is a software development activity that is not a part of software processes.', 'choice', 'medium', '2022-05-24 11:12:19'),
+(184, 21, 'Define Agile scrum methodology.', 'choice', 'hard', '2022-05-24 11:13:30'),
+(185, 21, 'Utility software is system software designed to help analyze, configure, optimize or maintain a computer.', 'true&false', 'easy', '2022-05-24 11:28:06'),
+(186, 21, 'Application software focuses on how the computer operates.', 'true&false', 'medium', '2022-05-24 11:28:29'),
+(187, 21, 'The productivity of a software engineer can be reduced by using a 4GT.', 'true&false', 'hard', '2022-05-24 11:29:52'),
+(188, 21, 'Software maintenance costs are expensive in contrast to software development.', 'true&false', 'easy', '2022-05-24 11:30:21'),
+(189, 21, 'Model-driven engineering is nothing but a theoretical concept. It can never be transmuted into a working/executable code', 'true&false', 'medium', '2022-05-24 11:30:53'),
+(190, 21, 'code and fix is an agile method?', 'true&false', 'hard', '2022-05-24 11:32:23'),
+(191, 22, 'What is the name of the approach that follows step-by-step instructions for solving a problem?', 'choice', 'easy', '2022-05-24 11:35:39'),
+(192, 22, 'Which of the following word correctly summarized the importance of software design?', 'choice', 'medium', '2022-05-24 11:36:54'),
+(193, 22, ' __________ is not considered as an activity of Structured Analysis (SA).', 'choice', 'hard', '2022-05-24 11:37:52'),
+(194, 22, ' What is the main intent of project metrics?', 'choice', 'hard', '2022-05-24 11:39:04'),
+(195, 22, 'Name the graphical practice that depicts the meaningful changes that occurred in metrics data.', 'choice', 'easy', '2022-05-24 11:40:04'),
+(196, 22, 'Which of the following is an incorrect activity for the configuration management of a software system?', 'choice', 'medium', '2022-05-24 11:41:24');
 
 -- --------------------------------------------------------
 
@@ -297,14 +338,6 @@ CREATE TABLE `results` (
   `exam_id` int(11) NOT NULL,
   `result` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `results`
---
-
-INSERT INTO `results` (`id`, `student_id`, `exam_id`, `result`) VALUES
-(27, 11, 24, 6),
-(28, 11, 25, 0);
 
 -- --------------------------------------------------------
 
@@ -333,8 +366,9 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `user_name`, `academic_id`, `email`, `password`, `level`, `department`, `role`, `created_at`, `login_at`, `level_id`, `dept_id`, `image`) VALUES
-(11, 'alaa attia', '1618129105487965', 'alaaattia147@gmail.com', '$2y$10$zaLAYl8.oK/kyqJAMvG5HuuezNscl92XJiTNe9.Q/WLYOnXOEIk0y', 'three', 'SE', 'student', '2022-05-16 15:40:39', '2022-05-23 18:49:06', 15, 20, 'OIP.jpg'),
-(12, 'mariem mohamed', '1618129105487961', 'mero@gmail.com', '$2y$10$d0.wXMmfunfpjlAHGrmEBuAXF1EeER/y.9Am39losQ3rV7aZlBkLa', 'one', 'General', 'student', '2022-05-23 11:52:28', '2022-05-23 11:52:28', 13, 18, 'student.png');
+(11, 'alaa attia', '1618129105487965', 'alaaattia147@gmail.com', '$2y$10$zaLAYl8.oK/kyqJAMvG5HuuezNscl92XJiTNe9.Q/WLYOnXOEIk0y', 'three', 'SE', 'student', '2022-05-16 15:40:39', '2022-05-24 19:30:02', 15, 20, 'lolla2.jpg'),
+(12, 'mariem mohamed', '1618129105487961', 'mero@gmail.com', '$2y$10$d0.wXMmfunfpjlAHGrmEBuAXF1EeER/y.9Am39losQ3rV7aZlBkLa', 'one', 'General', 'student', '2022-05-23 11:52:28', '2022-05-23 11:52:28', 13, 18, 'student.png'),
+(13, 'heba nasser', '1618129105487985', 'heba@gmail.com', '$2y$10$l0nCjiwlf2RgwXaEzhQYTOVQOW8AWbLx52ZDYvGKu7O7Kqm/QtWeG', 'three', 'SE', 'student', '2022-05-24 12:02:21', '2022-05-24 12:06:47', 15, 20, 'IMG_0462.JPG');
 
 -- --------------------------------------------------------
 
@@ -349,15 +383,6 @@ CREATE TABLE `student_answers` (
   `question_id` int(11) NOT NULL,
   `answer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `student_answers`
---
-
-INSERT INTO `student_answers` (`id`, `student_id`, `exam_id`, `question_id`, `answer_id`) VALUES
-(148, 11, 24, 161, 387),
-(149, 11, 24, 166, 398),
-(150, 11, 24, 163, 392);
 
 -- --------------------------------------------------------
 
@@ -379,8 +404,7 @@ CREATE TABLE `subjects` (
 INSERT INTO `subjects` (`id`, `subject_name`, `level_id`, `dept_id`) VALUES
 (16, 'privacy', 13, 18),
 (17, 'data base', 14, 19),
-(18, 'software construction', 15, 20),
-(19, 'software requirements', 15, 20);
+(20, 'Software Engineering', 15, 20);
 
 --
 -- Indexes for dumped tables
@@ -452,7 +476,6 @@ ALTER TABLE `professor_subjects`
 --
 ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `subject_id` (`subject_id`),
   ADD KEY `chapter_id` (`chapter_id`);
 
 --
@@ -497,37 +520,37 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=497;
 
 --
 -- AUTO_INCREMENT for table `chapters`
 --
 ALTER TABLE `chapters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `exam_structure`
 --
 ALTER TABLE `exam_structure`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=190;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
 
 --
 -- AUTO_INCREMENT for table `levels`
@@ -539,37 +562,37 @@ ALTER TABLE `levels`
 -- AUTO_INCREMENT for table `professors`
 --
 ALTER TABLE `professors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `student_answers`
 --
 ALTER TABLE `student_answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
@@ -617,7 +640,6 @@ ALTER TABLE `professor_subjects`
 -- Constraints for table `questions`
 --
 ALTER TABLE `questions`
-  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `questions_ibfk_2` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`id`) ON DELETE CASCADE;
 
 --
