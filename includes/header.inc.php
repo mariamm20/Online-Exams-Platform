@@ -1,26 +1,17 @@
-<?php
-
-
-
-
-?>
 
 <header class="container" data-aos="fade-down">
     <nav class="navbar navbar-expand-lg vertical">
-        
-        <span class="fs-4 title"><a class="navbar-brand" <?php if($_SESSION['role'] == "student"){?>
-            href="student.php" <?php
-        }
-        else {?>
-        href="professor.php"
+        <?php if(isset($_SESSION['image'])){ ?>  
+
+            <span class="fs-4 title"><a class="navbar-brand" 
+            <?php 
+            if($_SESSION['role'] == "student"){?>href="student.php" <?php }
+            else {?> href="professor.php" <?php } 
+            ?> > Online Exams <br/>
+            <span class="platform-word">Platform </a>
+            </span>
         <?php } ?>
-
-             ?>
-                Online Exams <br />
-                <span class="platform-word">Platform </a>
-        </span>
-
-        </a></span>
+            
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>
         </button>

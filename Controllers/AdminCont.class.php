@@ -157,6 +157,12 @@ class AdminCont extends DB
         $stmt->execute(array($id));
     }
 
+    protected function deleteLevelCont($level_id)
+    {
+        $stmt = $this->Connection()->prepare("delete from levels where id = ?");
+        $stmt->execute(array($level_id));
+    }
+
 
     // the part of contact us
     protected function getContact()

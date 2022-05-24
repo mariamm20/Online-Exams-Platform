@@ -118,7 +118,10 @@ class AdminView extends AdminCont
 
       <tr class="lvl">
         <td colspan="2" class="lvl-name"><?= "Level " . $level['level_name'] ?> </td>
-        <td colspan="2" class="second-row"><button type="button" data-bs-toggle="modal" data-bs-target="#add-dept" class="add_department" data-lid="<?= $level['id'] ?>">Add Dept</button></td>
+        <td colspan="2" class="second-row">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#add-dept" class="add_department" data-lid="<?= $level['id'] ?>">Add Dept</button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#delete-level" class="delete_level" data-lid="<?= $level['id'] ?>">Delete Level</button>
+        </td>
       </tr>
       <tr class="lvl-head">
         <td>Dept&nbsp;Name</td>
@@ -179,6 +182,10 @@ class AdminView extends AdminCont
     $this->addDepartmentCont($name, $level_id);
   }
 
+  public function deleteLevel($level_id)
+  {
+    $this->deleteLevelCont($level_id);
+  }
 
   // the part of contact us
   public function showContact()
