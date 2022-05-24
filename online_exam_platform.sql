@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2022 at 09:56 PM
+-- Generation Time: May 24, 2022 at 11:59 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -165,7 +165,6 @@ CREATE TABLE `departments` (
 --
 
 INSERT INTO `departments` (`id`, `dept_name`, `level_id`) VALUES
-(18, 'General', 13),
 (19, 'General', 14),
 (20, 'SE', 15),
 (21, 'CS', 15),
@@ -188,6 +187,13 @@ CREATE TABLE `exams` (
   `total_mark` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`id`, `subject_id`, `exam_name`, `exam_date`, `start_time`, `duration`, `total_mark`) VALUES
+(31, 20, 'Exam 1', '2022-05-24', '22:14:00', 3, 6);
+
 -- --------------------------------------------------------
 
 --
@@ -202,6 +208,15 @@ CREATE TABLE `exam_structure` (
   `type` varchar(25) NOT NULL,
   `difficulty` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam_structure`
+--
+
+INSERT INTO `exam_structure` (`id`, `exam_id`, `chapter_id`, `num_of_questions`, `type`, `difficulty`) VALUES
+(217, 31, 21, 1, 'choice', 'easy'),
+(218, 31, 21, 1, 'choice', 'medium'),
+(219, 31, 21, 1, 'choice', 'hard');
 
 -- --------------------------------------------------------
 
@@ -218,7 +233,25 @@ CREATE TABLE `ids` (
 --
 
 INSERT INTO `ids` (`academic_id`) VALUES
-('1618120190100097');
+('1618120190100097'),
+('1618120190100091'),
+('1618120190100092'),
+('1618120190100093'),
+('1618120190100094'),
+('1618120190100095'),
+('1618120190100096'),
+('1618120190100098'),
+('1618120190100099'),
+('1618120190100080'),
+('1618120190100081'),
+('1618120190100082'),
+('1618120190100083'),
+('1618120190100084'),
+('1618120190100085'),
+('1618120190100086'),
+('1618120190100087'),
+('1618120190100088'),
+('1618120190100089');
 
 -- --------------------------------------------------------
 
@@ -236,7 +269,6 @@ CREATE TABLE `levels` (
 --
 
 INSERT INTO `levels` (`id`, `level_name`) VALUES
-(13, 'one'),
 (14, 'two'),
 (15, 'three');
 
@@ -264,10 +296,10 @@ CREATE TABLE `professors` (
 --
 
 INSERT INTO `professors` (`id`, `user_name`, `academic_id`, `email`, `password`, `role`, `state`, `created_at`, `login_at`, `image`) VALUES
-(10, 'amr ali', '1618151416121454', 'amr@gmail.com', '$2y$10$/fe0rxhpRN0Rh1Z6XznTRuxIErUyrJrIJudQJjr9/10pU8WIFoZsC', 'professor', 1, '2022-05-16 15:47:37', '2022-05-24 19:54:44', 'IMG_0471.JPG'),
-(11, 'reda mabrouk', '1618129105487968', 'reda@gmail.com', '$2y$10$bt4HX8r2Bw/VIeXDOc15A./Fbk3miur1bLMxo5gzvOFrl6JukuzFu', 'professor', 1, '2022-05-23 09:39:27', '2022-05-23 09:41:18', ''),
-(12, 'admin', '1618129105487941', 'admin@gmail.com', '$2y$10$P8ENR/p/FHF910Vk06ibBeigT94LWtUHcSGZfk6cBCeUcLVrvftC.', 'admin', 1, '2022-05-24 09:14:15', '2022-05-24 19:54:12', ''),
-(13, 'mai ramadan', '1618129105487988', 'mai@gmail.com', '$2y$10$OLArXhtGbRcVHrUJHGtJo.vwgkKtV.piG/GNlspVGa2u1GBhk/IhG', 'professor', NULL, '2022-05-24 12:30:01', '2022-05-24 12:30:01', '');
+(10, 'amr ali', '1618120190100093', 'amr@gmail.com', '$2y$10$/fe0rxhpRN0Rh1Z6XznTRuxIErUyrJrIJudQJjr9/10pU8WIFoZsC', 'professor', 1, '2022-05-16 15:47:37', '2022-05-24 20:22:54', 'IMG_0471.JPG'),
+(11, 'reda mabrouk', '1618120190100094', 'reda@gmail.com', '$2y$10$bt4HX8r2Bw/VIeXDOc15A./Fbk3miur1bLMxo5gzvOFrl6JukuzFu', 'professor', 1, '2022-05-23 09:39:27', '2022-05-23 09:41:18', ''),
+(12, 'admin', '1618120190100095', 'admin@gmail.com', '$2y$10$P8ENR/p/FHF910Vk06ibBeigT94LWtUHcSGZfk6cBCeUcLVrvftC.', 'admin', 1, '2022-05-24 09:14:15', '2022-05-24 21:47:56', ''),
+(13, 'mai ramadan', '1618120190100096', 'mai@gmail.com', '$2y$10$OLArXhtGbRcVHrUJHGtJo.vwgkKtV.piG/GNlspVGa2u1GBhk/IhG', 'professor', NULL, '2022-05-24 12:30:01', '2022-05-24 12:30:01', '');
 
 -- --------------------------------------------------------
 
@@ -309,7 +341,7 @@ CREATE TABLE `questions` (
 INSERT INTO `questions` (`id`, `chapter_id`, `question_text`, `type`, `difficulty`, `created_at`) VALUES
 (179, 21, 'Software is defined as ___________', 'choice', 'easy', '2022-05-24 11:08:10'),
 (180, 21, 'What is Software Engineering?', 'choice', 'medium', '2022-05-24 11:09:08'),
-(181, 21, 'Who is the father of Software Engineering?', 'choice', 'hard', '2022-05-24 11:10:20'),
+(181, 21, 'Who is the father of Software Engineering?', 'choice', 'medium', '2022-05-24 11:10:20'),
 (182, 21, 'What are the features of Software Code?', 'choice', 'easy', '2022-05-24 11:11:14'),
 (183, 21, '_________ is a software development activity that is not a part of software processes.', 'choice', 'medium', '2022-05-24 11:12:19'),
 (184, 21, 'Define Agile scrum methodology.', 'choice', 'hard', '2022-05-24 11:13:30'),
@@ -339,6 +371,13 @@ CREATE TABLE `results` (
   `result` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `results`
+--
+
+INSERT INTO `results` (`id`, `student_id`, `exam_id`, `result`) VALUES
+(34, 11, 31, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -366,9 +405,8 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `user_name`, `academic_id`, `email`, `password`, `level`, `department`, `role`, `created_at`, `login_at`, `level_id`, `dept_id`, `image`) VALUES
-(11, 'alaa attia', '1618129105487965', 'alaaattia147@gmail.com', '$2y$10$zaLAYl8.oK/kyqJAMvG5HuuezNscl92XJiTNe9.Q/WLYOnXOEIk0y', 'three', 'SE', 'student', '2022-05-16 15:40:39', '2022-05-24 19:30:02', 15, 20, 'lolla2.jpg'),
-(12, 'mariem mohamed', '1618129105487961', 'mero@gmail.com', '$2y$10$d0.wXMmfunfpjlAHGrmEBuAXF1EeER/y.9Am39losQ3rV7aZlBkLa', 'one', 'General', 'student', '2022-05-23 11:52:28', '2022-05-23 11:52:28', 13, 18, 'student.png'),
-(13, 'heba nasser', '1618129105487985', 'heba@gmail.com', '$2y$10$l0nCjiwlf2RgwXaEzhQYTOVQOW8AWbLx52ZDYvGKu7O7Kqm/QtWeG', 'three', 'SE', 'student', '2022-05-24 12:02:21', '2022-05-24 12:06:47', 15, 20, 'IMG_0462.JPG');
+(11, 'alaa attia', '1618120190100091', 'alaaattia147@gmail.com', '$2y$10$zaLAYl8.oK/kyqJAMvG5HuuezNscl92XJiTNe9.Q/WLYOnXOEIk0y', 'three', 'SE', 'student', '2022-05-16 15:40:39', '2022-05-24 20:37:33', 15, 20, 'lolla2.jpg'),
+(13, 'heba nasser', '1618120190100092', 'heba@gmail.com', '$2y$10$l0nCjiwlf2RgwXaEzhQYTOVQOW8AWbLx52ZDYvGKu7O7Kqm/QtWeG', 'three', 'SE', 'student', '2022-05-24 12:02:21', '2022-05-24 12:06:47', 15, 20, 'IMG_0462.JPG');
 
 -- --------------------------------------------------------
 
@@ -383,6 +421,15 @@ CREATE TABLE `student_answers` (
   `question_id` int(11) NOT NULL,
   `answer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student_answers`
+--
+
+INSERT INTO `student_answers` (`id`, `student_id`, `exam_id`, `question_id`, `answer_id`) VALUES
+(169, 11, 31, 182, 452),
+(170, 11, 31, 181, 446),
+(171, 11, 31, 184, 460);
 
 -- --------------------------------------------------------
 
@@ -402,7 +449,6 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `subject_name`, `level_id`, `dept_id`) VALUES
-(16, 'privacy', 13, 18),
 (17, 'data base', 14, 19),
 (20, 'Software Engineering', 15, 20);
 
@@ -544,13 +590,13 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `exam_structure`
 --
 ALTER TABLE `exam_structure`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
 
 --
 -- AUTO_INCREMENT for table `levels`
@@ -574,7 +620,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `students`
@@ -586,7 +632,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `student_answers`
 --
 ALTER TABLE `student_answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 
 --
 -- AUTO_INCREMENT for table `subjects`
