@@ -10,7 +10,14 @@
             ?> > Online Exams <br/>
             <span class="platform-word">Platform </a>
             </span>
-        <?php } ?>
+        <?php } else { ?>
+              <span class="fs-4 title"><a class="navbar-brand" 
+              href="student.php" > 
+              Online Exams <br/>
+              <span class="platform-word">Platform </a>
+              </span>
+              <?php }
+        ?>
             
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>

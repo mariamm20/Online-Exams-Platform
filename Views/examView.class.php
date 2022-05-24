@@ -6,7 +6,7 @@ class examView extends examCont
        $data = $this->getProfessorSubjects();
         foreach($data as $subjects)
         {?>
-            <option value="<?= $subjects['id'] ?>"><?= $subjects['subject_name'] ?></option>
+            <option value="<?= $subjects['id'] ?> " required><?= $subjects['subject_name'] ?></option>
         <?php                
         }
     }

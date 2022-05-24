@@ -13,6 +13,10 @@ if(isset($_POST['create_exam']))
         include('../Controllers/examCont.class.php');
         include('../Views/examView.class.php');
         $exam = new examView();
+        if($subject_id == "")
+        {
+            header('location: ../Home/first-creation-form.php?subject_id='.$subject_id.'&exam_name='.$exam_name);
+        }
         $exam->createExam($subject_id, $exam_name,$exam_date, $exam_start,$duration, $total_mark);
         header('location: ../Home/second-creation-form.php?subject_id='.$subject_id.'&exam_name='.$exam_name);
     }
