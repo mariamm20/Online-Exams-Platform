@@ -12,7 +12,7 @@
             </span>
         <?php } else { ?>
               <span class="fs-4 title"><a class="navbar-brand" 
-              href="student.php" > 
+              href="home.php" > 
               Online Exams <br/>
               <span class="platform-word">Platform </a>
               </span>

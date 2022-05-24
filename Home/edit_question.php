@@ -43,7 +43,7 @@ if (isset($_GET['question_id'])) {
                     <p>
                         <i class="fa fa-question-circle" aria-hidden="true"></i>
                         <span style="font-weight: bold;"> Edit Question </span>
-                        <span>(<?php echo $_GET['question_id']; ?>)</span>
+                        <span></span>
                     </p>
                     <!-- <button data-bs-toggle="modal" data-bs-target="#add-chapter" onclick=" window.location.href = 'add-questions.php'">Add Questions</button> -->
                 </div>

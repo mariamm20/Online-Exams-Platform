@@ -28,7 +28,7 @@
         <section class="container question-bank-section" data-aos="fade-up">
             <div class="main">
                 <div class="heading-notify chapters middle">
-                    <p><span><?php $student->showExamName($_GET['exam_id']); ?></span> Exam</p>
+                    <p><span><?php $student->showExamName($_GET['exam_id']); ?></span> </p>
                 </div>
                 <div class="timer">
                     Timer : <span id="counter"> <?= $_GET['duration']  ?> . ':00'</span>
