@@ -32,7 +32,7 @@ $exam = new examView();
         <?php include('../includes/header.inc.php'); ?>
         <section class="section-one">
 
-            <img src="img/1.png" alt="img" />
+            <img src="img/12.png" alt="img" />
 
             <div class="form-section" data-aos="fade-left">
                 <form action="../includes/exam_structure.inc.php" method="Post">

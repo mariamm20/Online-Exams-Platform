@@ -31,7 +31,7 @@ $exam = new examView();
         <?php include('../includes/header.inc.php'); ?>
         <section class="section-one">
 
-            <img src="img/1.png" alt="img" />
+            <img src="img/12.png" alt="img" />
 
             <div class="form-section">
                 <form action="../includes/create_exam.inc.php" method="Post">
@@ -62,7 +62,7 @@ $exam = new examView();
                         <div id="btn-div">
                             <button name="create_exam">Next</button>
                         </div>
-                        <p>How to create exam >> <a href="../Login/login.html"> Tutorial</a></p>
+                       
                     </fieldset>
                 </form>
             </div>

@@ -95,6 +95,11 @@ $student = new studentView();
 
 
         </section>
+        <div class="setting-img">
+            <img src="img/13.jpg" alt="setting"/>
+        </div>
+        
+        
     </div>
 
 

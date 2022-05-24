@@ -127,6 +127,7 @@ class professorView extends professorCont
             <div class="question" id="questions">
                 <p class="question-body">
                     <?= $qts['question_text'] ?>
+                    
                     <a type="button"  class="edit-btn" id="question" href="edit_question.php?question_id=<?= $qts['id'] ?>"><i class="fa fa-edit" ></i></a>     
                     <a href="#" data-bs-toggle="modal" class="remove_question" data-did="<?= $qts['id']; ?>" data-cid="<?= $qts['chapter_id']; ?>"  data-bs-target="#remove-question"><i class="fa-solid fa-trash-can"></i></a>                                                                                                                                                                                                               
                 </p>

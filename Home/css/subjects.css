@@ -1,3 +1,16 @@
+#chapter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.remove_chapter{
+    font-size: 14px;
+    color: rgba(250, 54, 54,0.3);
+}
+.list-group-item:hover .remove_chapter{
+    color: rgba(250, 54, 54.1);
+}
 .profile-text {
     display: none;
 }
@@ -26,10 +39,13 @@
     display: flex;
     text-align: left;
     justify-content: space-around;
-    height: 400px;
+    height: 500px;
     margin-top: 30px;
 }
+.sub{
+    padding: 26.5px 33px;
 
+}
 .left {
     width: 45%;
     border: 5px solid #efefef;
@@ -63,11 +79,11 @@
 
 .chapters button {
     border: 3px solid rgb(239, 239, 239);
-    padding: 0px 5px;
+    padding: 10px 5px;
     background-color: #fff;
     width: 120px;
     border-radius: 22px;
-    font-size: 12px;
+    font-size: 14px;
     color: #1eaaf1;
 }
 .list-group-item {
@@ -84,9 +100,7 @@
 .subjects-chapters-section li{
     border-bottom: 1px solid #efefef !important;
 }
-.subjects-chapters-section li:last-child{
-    border-bottom:none !important ;
-}
+
 
 .chapters button:hover {
     background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
@@ -141,6 +155,9 @@
   }
 
 @media (max-width:992px) {
+    .subjects-chapters-section{
+        margin-top: 30px;
+    }
     .profile-text {
         display: inline-block;
     }
@@ -152,7 +169,7 @@
     .subjects-chapters-section{
         flex-wrap: wrap;
         height: auto;
-        margin-top: 0;
+        
     }
     .left{
         width: 100%;

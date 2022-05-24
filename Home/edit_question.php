@@ -28,6 +28,7 @@ if (isset($_GET['question_id'])) {
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assests/global.css" />
     <link rel="stylesheet" href="css/question-bank.css" />
+    <link rel="stylesheet" href="css/edit-question.css" />
 </head>
 
 <body>

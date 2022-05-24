@@ -1,3 +1,18 @@
+.profile-img{
+  width: 55px;
+  border-radius: 50%;
+}
+.profile-text{
+  display: none;
+}
+@media (max-width:992px) {
+  .profile-text{
+    display: inline-block;
+}
+.profile-img{
+    width: 30px;
+}
+}
 .faq-section {
     display: flex;
     justify-content: center;
@@ -38,6 +53,7 @@
     text-align: justify;
     color:#797979;
   }
+
   @media (max-width: 768px) {
     .faq-section {
       flex-wrap: wrap;

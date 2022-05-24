@@ -26,7 +26,7 @@
     display: flex;
     text-align: left;
     justify-content: space-around;
-    height: 400px;
+    height: 500px;
     margin-top: 30px;
 }
 
@@ -86,11 +86,9 @@
     cursor: auto;
 }
 .subjects-chapters-section li{
-    border-top: 1px solid #efefef !important;
+    border-bottom: 1px solid #efefef !important;
 }
-.subjects-chapters-section li:first-child{
-    border-top:none !important ;
-}
+
 
 .chapters button:hover {
     background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
@@ -179,7 +177,7 @@
     border: none;
 }
 .card-body{
-    padding: 0rem 1rem 1rem 1rem ;
+    padding: 1rem 1rem 1rem 1rem ;
 }
 .details{
     position: absolute;
@@ -213,7 +211,7 @@
     .subjects-chapters-section{
         flex-wrap: wrap;
         height: auto;
-        margin-top: 0;
+        
     }
     .left{
         width: 100%;

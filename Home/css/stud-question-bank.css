@@ -4,6 +4,7 @@
 
 .profile-img {
     width: 55px;
+    height: 55px;
     border-radius: 50%;
 }
 
@@ -58,7 +59,6 @@
 }
 .main{
     width: 75%;
-    height: 425px;
     text-align: left;
 }
 .question{
@@ -221,6 +221,9 @@ select {
     .profile-img {
         width: 30px;
     }
+    .main{
+        width: 100%;
+    }
 }
 
 @media (max-width:768px) {
@@ -251,7 +254,7 @@ select {
         padding: 15px 5px;
     }
     .question-body{
-        padding: 15px 5px ;
+        padding: 15px ;
     }
     .main{
         width: 100%;

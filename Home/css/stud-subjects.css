@@ -26,7 +26,7 @@
     display: flex;
     text-align: left;
     justify-content: space-around;
-    height: 400px;
+    height: 500px;
     margin-top: 30px;
 }
 
@@ -35,6 +35,7 @@
     border: 5px solid #efefef;
     border-radius: 30px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .right {
@@ -42,6 +43,7 @@
     border: 5px solid #efefef;
     border-radius: 30px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .img-right{
     display: flex;
@@ -74,11 +76,14 @@
     background-color: transparent;
     cursor: pointer;
 }
+
+.list-group-item:hover{
+    transform: scaleX(1.01);
+    box-shadow: 2px 2px 5px #ccc;
+    color: #1eaaf1;
+}
 .subjects-chapters-section li{
     border-bottom: 1px solid #efefef !important;
-}
-.subjects-chapters-section li:last-child{
-    border-bottom:none !important ;
 }
 
 .chapters button:hover {
@@ -145,7 +150,7 @@
     .subjects-chapters-section{
         flex-wrap: wrap;
         height: auto;
-        margin-top: 0;
+        
     }
     .left{
         width: 100%;

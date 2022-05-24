@@ -82,6 +82,9 @@ li a {
 .nav-link {
     cursor: pointer;
 }
+.profile-img{
+    height: 55px;
+}
 @media (max-width:768px) {
     #app {
         flex-wrap: wrap;
@@ -123,6 +126,9 @@ li a {
 
     .nav button {
         box-shadow: none;
+    }
+    .navbar-brand{
+        left: 0;
     }
 }
 

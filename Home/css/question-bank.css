@@ -1,3 +1,6 @@
+.alter-btn{
+    display: flex;
+}
 .profile-text {
     display: none;
 }
@@ -66,14 +69,12 @@
     border-radius: 30px;
     margin: 15px 33px ;
     margin-top: 30px;
-    padding: 15px;
+    
 }
 .question-body{
     background-color: #efefef;
     padding: 15px 33px ;
     border-radius: 23px 23px 0 0 ;
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 0;
 }
 
@@ -207,8 +208,13 @@ select {
 .modal-body{
     padding-bottom: 0;
 }
-
-
+.remove_question{
+    float: right;
+    margin-right: 10px;
+}
+.edit-btn{
+    float: right;
+}
 
 
 
@@ -223,6 +229,9 @@ select {
     }
     .profile-img {
         width: 30px;
+    }
+    .main{
+        width: 100%;
     }
 }
 
@@ -272,5 +281,13 @@ select {
     }
     .modal input{
         width: 80%;
+    }
+    .question-body{
+        display: flex;
+        justify-content: space-between;
+    }
+    .remove_question{
+        position: relative;
+        left:10px
     }
 }

@@ -5,6 +5,9 @@
 .profile-text{
     display: none;
 }
+.prof-image{
+  z-index: 2;
+}
 .header-bg{
     background-color: #fff;
     border-radius: 30px;
@@ -93,6 +96,8 @@ font-weight: bold;
 .section-two{
     display: flex;
     margin-top: 30px;
+    align-items: center;
+    height: 400px;
 }
 .profile-picture{
     border-radius: 50%;
@@ -193,10 +198,12 @@ font-weight: bold;
 .add-image{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .add-image p{
     width: 100%;
     padding: 0;
+    text-align: left;
 }
 .add-image label{
     padding: 0 5px 0 0;
@@ -232,6 +239,7 @@ font-weight: bold;
   }
 .modal-body{
     padding-bottom: 0;
+    padding-top: 0;
 }
 
 .view-password{
@@ -253,8 +261,15 @@ font-weight: bold;
     color: #0e1c36;
   }
   
-
-
+  .setting-img{
+    width: 200px;
+    position: absolute;
+    right: 15px;
+    bottom: 40px;
+  }
+.setting-img img{
+  width: 100%;
+}
 
 
 
@@ -286,12 +301,13 @@ font-weight: bold;
 
 
 @media (max-width:992px) {
+  .setting-img{
+    display: none;
+  }
     .profile-text{
         display: inline-block;
     }
-    .profile-img{
-        width: 30px;
-    }
+    
     .left{
         width: 100%;
     }
@@ -300,6 +316,8 @@ font-weight: bold;
     }
     .section-two{
         flex-wrap: wrap;
+        height: auto;
+        margin-bottom: 30px;
     }
     fieldset{
         justify-content:center;
@@ -311,6 +329,7 @@ font-weight: bold;
     }
     #btn-div{
         width: auto;
+        text-align: center;
     }
     .view-password{
         right: 21%;
@@ -332,10 +351,16 @@ font-weight: bold;
     .view-password{
         right: 10%;
     }
+    .section-two{
+      height: auto;
+    }
 }
 @media (max-width:550px) {
     .header-bg h4{
         position: unset;
         text-align: center;
+    }
+    #btn-div{
+      
     }
 }

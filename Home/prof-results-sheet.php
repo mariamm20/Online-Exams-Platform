@@ -21,7 +21,7 @@ $professor = new professorView();
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assests/global.css" />
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/prof-results-sheet.css" />
 </head>
 
 <body>
@@ -29,6 +29,11 @@ $professor = new professorView();
         <?php include('../includes/header-prof.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
+        <div class="middle">
+        <p>
+          Results History
+        </p>
+      </div>
             <div class="table-content">
 
                 <table class="table  table-responsive ">

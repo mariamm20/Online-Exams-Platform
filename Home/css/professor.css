@@ -223,9 +223,7 @@
     .profile-text{
         display: inline-block;
     }
-    .profile-img{
-        width: 30px;
-    }
+   
 }
 @media (max-width:768px) {
     .top-left{
@@ -238,7 +236,7 @@
         flex-wrap: wrap-reverse;
         justify-content: center;
     }
-    .prof-img{
+    .prof-image{
     right: 0;
     top: 20px;
     }

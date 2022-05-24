@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
 
             <div class="left">
 
-                <div class="heading-notify">
+                <div class="heading-notify sub">
                     <p> <i class="fa fa-book" aria-hidden="true"></i> Your Subjects</p>
                 </div>
                 <div>

@@ -36,7 +36,7 @@
     border-radius: 50%;
 }
 .prof-image{
-    width: 180px;
+    width: 130px;
     height: 130px;
     border-radius: 50%;
     position: relative;
@@ -66,12 +66,7 @@
     width: 100%;
     text-align: left;
 }
-.prof-img{
-    width: 130px;
-    border-radius: 50%;
-    position: relative;
-    right: 40px;
-}
+
 .email{
     font-size: 14px;
 }
