@@ -16,6 +16,6 @@ if(isset($_POST['register']))
     $register = new ProfRegisterView($user_name,$email,$password,$academic_id);
     $register->userRegisteration();
 
-    header('location: ../Home/prof-login.php?error=none');
+    header('location: ../Home/after-register.php?error=none');
 
 }

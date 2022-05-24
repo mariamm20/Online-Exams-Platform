@@ -16,4 +16,10 @@ if(isset($_SESSION['id']))
        
         header('location:../Home/prof-login.php');
     }
+    elseif($_SESSION['role'] == 'admin')
+    {   session_unset();
+        session_destroy();
+       
+        header('location:../Home/prof-login.php');
+    }
 }

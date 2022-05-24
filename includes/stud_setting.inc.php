@@ -16,7 +16,7 @@ if(isset($_POST['stud_edit']))
     $student = new studentView();
 
     $student->editStudDetails($user_name, $academic_id, $email, $hashedPassword, $level, $department, $stud_id);
-    header('location:../Home/stud_setting.php?EditedSuccessfullyid='.$stud_id );
+    header('location:../Home/student.php?EditedSuccessfullyid='.$stud_id );
 
     if(empty($this->user_name) || empty($this->academic_id)  || empty($this->email) ||empty($this->password) ||empty($this->level) ||empty($this->department) )
         {
@@ -40,5 +40,5 @@ if(isset($_POST['upload']))
     $student = new studentView();
     $student->uploadImage($image, $stud_id);
     
-    header('location:../Home/stud_setting.php?ImageUploaded_id='.$stud_id );
+    header('location:../Home/student.php?ImageUploaded_id='.$stud_id );
 }

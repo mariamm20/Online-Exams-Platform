@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="nav">
                         <li class="nav-item register-color">
-                            <a class="nav-link" href="#bottom">
+                            <a class="nav-link" href="student.php#bottom">
                                 Avialable Exams
                             </a>
                         </li>

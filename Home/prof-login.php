@@ -85,6 +85,27 @@
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/login.js"></script>
+    <script src="../assests/sweetalert/dist/sweetalert.min.js"></script>
+    <?php
+    if(isset($_GET['loginfirst']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'Please Login First',
+            text: 'Thanks...',
+            icon: 'error',
+            timer: 3000,
+            buttons: false,
+            })
+            .then(() => {
+            window.location.href = '../Home/prof-login.php' ;
+            
+            })
+            </script>
+        <?php  
+        }
+        ?>
 </body>
 
 </html>

@@ -42,7 +42,7 @@
                             </a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="../FAQ/fqa.php">
+                            <a class="nav-link" href="fqa.php">
                                 FAQ
                             </a>
                         </li>

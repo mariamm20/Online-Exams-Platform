@@ -26,7 +26,7 @@ $professor = new professorView();
 
 <body>
     <div id="app">
-        <?php include('../includes/header-prof.inc.php'); ?>
+        <?php include('../includes/header.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
         <div class="middle">

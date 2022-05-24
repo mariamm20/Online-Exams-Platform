@@ -16,6 +16,12 @@ if(isset($_POST['login']))
         header("location: ../Home/professor.php?error=none0");
 
     }
+    elseif($_SESSION['role'] == 'admin')
+    {
+        header("location: ../Admin/dashboard.php");
+    }
+
+
 
     
 

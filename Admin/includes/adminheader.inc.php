@@ -1,3 +1,13 @@
+<?php
+if(!isset($_SESSION['id'])){
+  header("location:../Home/prof-login.php?loginfirst");
+}else{
+   if($_SESSION['role'] !="admin"){
+      header("location: ../Home/home.php?admisonlyareallowed");
+
+   }
+  }
+?>
 <div class=" divs-container">
         <a class="d-flex col align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <svg class="bi" width="40" height="32">
@@ -48,7 +58,7 @@
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link" aria-current="page" href="../Home/home.php">
+            <a class="nav-link" aria-current="page" href="../includes/logout.inc.php?">
               <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign
               out
             </a>

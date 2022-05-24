@@ -105,7 +105,7 @@ class professorCont extends DB
 
     protected function showQuestionsContr($chapter_id)
     {
-        $stmt = $this->Connection()->query("select * from questions where chapter_id = $chapter_id order by rand()");
+        $stmt = $this->Connection()->query("select * from questions where chapter_id = $chapter_id ");
         $data = $stmt->fetchAll();
         return $data;
     }
