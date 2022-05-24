@@ -94,7 +94,13 @@ ol  li{
     margin-bottom: 0;
 }
 .easy{
-    color: rgb(54, 156, 44);
+    color: green;
+}
+.medium{
+    color: orange;
+}
+.hard{
+    color: red;
 }
 .fa-edit{cursor: pointer;}
 

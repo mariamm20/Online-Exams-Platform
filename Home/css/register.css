@@ -60,6 +60,7 @@ lable {
     outline: none;
     font-size: 14px;
     margin-bottom: 10px;
+    text-transform: capitalize;
   }
   select option {
     border-top-right-radius: 0;

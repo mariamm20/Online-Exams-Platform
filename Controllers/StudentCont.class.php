@@ -128,7 +128,7 @@ class studentCont extends DB
 
     protected function getQuestionsContr($chapter_id)
     {
-        $stmt = $this->Connection()->query("select * from questions where chapter_id =" .$chapter_id);
+        $stmt = $this->Connection()->query("select * from questions where chapter_id = $chapter_id order by rand()");
         $data = $stmt->fetchAll();
         return $data;
     }

@@ -210,8 +210,17 @@ class studentView extends studentCont
                 </ol>
 
                 <p class="question-difficutly">Difficulty:
-                    <span class="easy"><?= $qts['difficulty'] ?></span>
-                </p> 
+                    <?php
+                    $difficulty = $qts['difficulty'];
+                    if ($difficulty == "easy" || $difficulty == "Easy") { ?>
+                        <span class="easy"><?= $qts['difficulty'] ?></span>
+                    <?php } else if ($difficulty == "medium" || $difficulty == "Medium") { ?>
+                        <span class="medium"><?= $qts['difficulty'] ?></span>
+                    <?php } else if ($difficulty == "hard" || $difficulty == "Hard") { ?>
+                        <span class="hard"><?= $qts['difficulty'] ?></span>
+                    <?php }
+                    ?>
+                </p>
               
 
             </div>

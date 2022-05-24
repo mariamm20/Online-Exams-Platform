@@ -49,7 +49,7 @@ class professorView extends professorCont
             ?>
             <p>
                 <i class="fa-solid fa-info"></i>
-                <Span class="exam_note"><?= $note['exam_name']?></Span> &nbsp
+                <Span class="exam_note"><?= $note['exam_name']?></Span>
                 had been created. You can follow the results in Results history.
                 </br>Thanks for your efforts.
             </p>
@@ -75,7 +75,8 @@ class professorView extends professorCont
                 <div class="accordion-body numbers-body">
                     <p>Exam Date <span><?= $exams['exam_date'] ?></span></p>
                     <p>Start From <span><?= $exams['start_time'] ?></span></p>
-                    <p>End Time <span><?= $exams['end_time'] ?></span></p>
+                    <!--<p>End Time <span><?//= $exams['end_time'] ?></span></p>-->
+                    <p>Duration <span><?= $exams['duration'] ?></span></p>
                     <p>Total Mark <span><?= $exams['total_mark'] ?></span></p>
                 </div>
             </div>
@@ -146,8 +147,18 @@ class professorView extends professorCont
                 </ol>
 
                 <p class="question-difficutly">Difficulty:
-                    <span class="easy"><?= $qts['difficulty'] ?></span>
-                </p> 
+                    <?php
+                    $difficulty = $qts['difficulty'];
+                    if ($difficulty == "easy" || $difficulty == "Easy") { ?>
+                        <span class="easy"><?= $qts['difficulty'] ?></span>
+                    <?php } else if ($difficulty == "medium" || $difficulty == "Medium") { ?>
+                        <span class="medium"><?= $qts['difficulty'] ?></span>
+                    <?php } else if ($difficulty == "hard" || $difficulty == "Hard") { ?>
+                        <span class="hard"><?= $qts['difficulty'] ?></span>
+                    <?php }
+                    ?>
+                </p>
+                
             </div>
             <?php
                 }
