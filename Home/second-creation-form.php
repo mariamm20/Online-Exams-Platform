@@ -19,7 +19,7 @@ $exam = new examView();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Exams Platform </title>
     <link href="../assests/magic-master/dist/magic.min.css" rel="stylesheet" />
-    <link rel="icon" href="../assests/cartoon.ico" />
+    <link rel="icon" href="../assests/head.ico" />
     <link rel="stylesheet" href="../assests/node_modules/aos/dist/aos.css" />
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />

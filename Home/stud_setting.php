@@ -19,7 +19,7 @@ $student = new studentView();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Exams Platform </title>
-    <link rel="icon" href="../assests/cartoon.ico" />
+    <link rel="icon" href="../assests/head.ico" />
     <link rel="stylesheet" href="../assests/node_modules/aos/dist/aos.css" />
     <link href="../assests/fontawesome/css/all.css" rel="stylesheet">
     <link href="../assests/bootstrap.min.css" rel="stylesheet" />
