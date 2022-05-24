@@ -143,6 +143,27 @@
     <script src="../assests/node_modules/aos/dist/aos.js"></script>
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
+    <script src="../assests/sweetalert/dist/sweetalert.min.js"></script>
+    <?php
+    if(isset($_GET['admisonlyareallowed']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'Admins Only Are allowed ',
+            text: 'Thanks...',
+            icon: 'error',
+            timer: 3000,
+            buttons: false,
+            })
+            .then(() => {
+            window.location.href = '../Home/home.php' ;
+            
+            })
+            </script>
+        <?php  
+        }
+        ?>
 </body>
 
 </html>

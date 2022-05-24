@@ -3,6 +3,8 @@ include('../Controllers/dbconnection.class.php');
 include('../Controllers/AdminCont.class.php');
 include('../Views/AdminView.class.php');
 $adminview = new AdminView();
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

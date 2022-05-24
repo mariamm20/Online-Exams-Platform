@@ -75,8 +75,8 @@ class professorView extends professorCont
                 <div class="accordion-body numbers-body">
                     <p>Exam Date <span><?= $exams['exam_date'] ?></span></p>
                     <p>Start From <span><?= $exams['start_time'] ?></span></p>
-                    <!--<p>End Time <span><?//= $exams['end_time'] ?></span></p>-->
-                    <p>Duration <span><?= $exams['duration'] ?></span></p>
+                   <p>End Time <span><?= $exams['end_time'] ?></span></p>
+                   
                     <p>Total Mark <span><?= $exams['total_mark'] ?></span></p>
                 </div>
             </div>
@@ -151,7 +151,7 @@ class professorView extends professorCont
                     $difficulty = $qts['difficulty'];
                     if ($difficulty == "easy" || $difficulty == "Easy") { ?>
                         <span class="easy"><?= $qts['difficulty'] ?></span>
-                    <?php } else if ($difficulty == "medium" || $difficulty == "Medium") { ?>
+                    <?php } else if ($difficulty == "medium" || $difficulty == "Medium" ) { ?>
                         <span class="medium"><?= $qts['difficulty'] ?></span>
                     <?php } else if ($difficulty == "hard" || $difficulty == "Hard") { ?>
                         <span class="hard"><?= $qts['difficulty'] ?></span>
@@ -241,7 +241,7 @@ class professorView extends professorCont
                 <p class="question-select">Difficulty:
                     <select name="difficulty">
                     <option value="easy"<?php if($qts['difficulty']== 'easy'){ echo 'selected'; }?>>Easy</option>
-                    <option value="meduim"<?php if($qts['difficulty']== 'meduim'){ echo 'selected'; }?>>Meduim</option>
+                    <option value="medium"<?php if($qts['difficulty']== 'medium'){ echo 'selected'; }?>>Medium</option>
                     <option value="hard"<?php if($qts['difficulty']== 'hard'){ echo 'selected'; }?>>Hard</option>
                     </select>
                 </p>
