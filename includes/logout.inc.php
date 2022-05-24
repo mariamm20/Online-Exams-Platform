@@ -20,6 +20,6 @@ if(isset($_SESSION['id']))
     {   session_unset();
         session_destroy();
        
-        header('location:../Home/prof-login.php');
+        header('location:../Home/home.php');
     }
 }

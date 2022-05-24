@@ -15,7 +15,7 @@ if(!isset($_SESSION['id'])){
           </svg>
           </a>
             <div class="d-flex justify-content-around">
-              <a class="navbar-brand" href="../Home/home.php">
+              <a class="navbar-brand" href="dashboard.php">
                 Online Exams <br />
                 <span class="platform-word">Platform </span>
 

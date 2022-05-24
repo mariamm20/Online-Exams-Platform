@@ -112,6 +112,9 @@ font-weight: bold;
   outline: none;
 
 }
+.view-password i{
+  color: #0e1c36;
+}
 .view-password:hover{
   background: none;
 }
