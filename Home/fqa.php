@@ -79,13 +79,13 @@ $student = new studentView();
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                What is the code of the exam?
+                                Where can a student find the exam?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                Code of the Exam is a code generated when the exam accepted from the admin.
+                                He will find the exam in his profile after logining inn the 'Available Exams' Section.
                             </div>
                         </div>
                     </div>
@@ -93,13 +93,13 @@ $student = new studentView();
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                how to get the code of the exam?
+                                Is the results of the exam are saved?
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                You will recieve it in the notifications in your profile, Good Luck!
+                                Yes, All the results of the exams are safed in the 'Results History' Page for professor or student.
                             </div>
                         </div>
                     </div>
@@ -107,13 +107,13 @@ $student = new studentView();
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Where am I find my results?
+                                How a professor can add a question in Question Bank?
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                You will find it in 'Profile > Results History '.
+                                From button 'Add Question' in Question Bank Page.
                             </div>
                         </div>
                     </div>
@@ -121,13 +121,13 @@ $student = new studentView();
                         <h2 class="accordion-header" id="headingFour">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                How am I find the aviable exams?
+                                After Adding a question in question bank can't be edit?
                             </button>
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                You will find it in ' Profile > Aviable Exams'.
+                                Save the changes then go to the question in Question Bank Page and click on edit button to edit it. We Are sorry for this, We are working on this problem in the new release. 
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@ $student = new studentView();
                         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                It is okay your answers will automatically submitted, Don't Worry.
+                                We are sorry for that but you will get 0 as a degree. You should click on submitbutton before the timer ends. 
                             </div>
                         </div>
                     </div>

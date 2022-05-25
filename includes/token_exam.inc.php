@@ -20,7 +20,7 @@ elseif($_GET['exam_date'] < date("Y-m-d"))
 {
     header('location: ../Home/student.php?hasended');
 }
-elseif($_GET['exam_time'] > date("G:i:s"))
+elseif($_GET['exam_time'] > date("G:i:s") ||$_GET['exam_time'] > date("H:i:s") )
 {
     header('location: ../Home/student.php?timenotstarted');
 }

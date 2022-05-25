@@ -65,8 +65,8 @@
                 <p>
                     You successfully Registered in  <br>
                     our plateform. The admin will <br>
-                    approve your request as soon <br>
-                    as possible.
+                    approve your request within<br>
+                    the next 24 hours.
                 </p>
                 <button onclick="location.href='../Home/home.php'">Return Home</button>
                 
