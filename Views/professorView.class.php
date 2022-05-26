@@ -46,7 +46,22 @@ class professorView extends professorCont
     {
         $data= $this->getNotificationCont($prof_id);
         foreach($data as $note){
-            ?>
+            if(!$this->emptyExamCont($note['id'])) 
+            {
+               $this->deleteexam($note['id']);
+               ?>
+                <p>
+                <i class="fa-solid fa-info"></i>
+                <Span class="exam_note"><?= $note['exam_name']?></Span>
+                had been created. it will be deleted that it doesn't have any questions
+                </br>Thanks for your efforts.
+            </p>
+            <?php
+            }
+            else{?>
+
+           
+        
             <p>
                 <i class="fa-solid fa-info"></i>
                 <Span class="exam_note"><?= $note['exam_name']?></Span>
@@ -54,6 +69,7 @@ class professorView extends professorCont
                 </br>Thanks for your efforts.
             </p>
         <?php
+            }
         }
         
     }

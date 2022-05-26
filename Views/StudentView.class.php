@@ -28,7 +28,14 @@ class studentView extends studentCont
     {
         $data = $this->getExams();
         foreach($data as $exam)
-        {?>
+        {
+            
+            if(!$this->emptyExamCont($exam['id'])) 
+            {
+               $this->deleteexam($exam['id']);
+            }?>
+           
+
             <tr>
                 <th scope="row"><?= $exam['id'] ?></th>
                 <td><?= $exam['exam_name'] ?></td>

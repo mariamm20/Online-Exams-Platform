@@ -9,6 +9,8 @@ if(isset($_POST['add']))
     $exam_name = $_POST['exam_name'];
     $chapter_id = $_POST['chapter_id'];
 
+   
+
     if(isset($_POST['mcq_check']))
     {
         
@@ -34,12 +36,15 @@ if(isset($_POST['add']))
             $type = "choice" ;
             $array3 = array($exam_name, $chapter_id,$num_of_questions, $difficulty, $type);
         }
+        
         $array = array($array1, $array2, $array3);
         echo "<pre>";
         print_r($array);
         echo "</pre>";
         
        
+        
+
         foreach($array as $strucutres)
         {
           
@@ -89,10 +94,17 @@ if(isset($_POST['add']))
          
             
         }
+        
+    }
+    if(isset($_POST['TF_check']) == false and isset($_POST['mcq_check']) == false)
+       {
+        header('location: ../Home/second-creation-form.php?noquestions&subject_id='.$subject_id.'&exam_name='.$exam_name);
+       }else
+       {
+    
+     header('location: ../Home/second-creation-form.php?subject_id='.$subject_id.'&exam_name='.$exam_name);
 
     }
-    header('location: ../Home/second-creation-form.php?subject_id='.$subject_id.'&exam_name='.$exam_name);
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -181,8 +193,19 @@ if(isset($_POST['create']))
           
             $exam->addStrucure($strucutres[0],$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
         }
+       
 
     }
-    header('location: ../Home/after-creation.php');
+    if(isset($_POST['TF_check']) == false and isset($_POST['mcq_check']) == false)
+       {
+        header('location: ../Home/second-creation-form.php?noquestions&subject_id='.$subject_id.'&exam_name='.$exam_name);
+       }else
+       {
+        header('location: ../Home/after-creation.php');
+
+       }
+    
+
+    
 
 }

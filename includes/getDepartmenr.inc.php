@@ -5,7 +5,8 @@ if(isset($_POST['levelId']))
     include('../Controllers/StudentCont.class.php');
     include('../Views/StudentView.class.php');
     $student = new studentView();
-    $student->showDept($_POST['levelId']);
+    echo $_POST['levelId'];
+        $student->showDept($_POST['levelId']);
 
 }
 

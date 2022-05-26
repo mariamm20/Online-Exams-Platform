@@ -9,6 +9,8 @@ include('../Controllers/examCont.class.php');
 include('../Views/examView.class.php');
 $exam = new examView();
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +45,7 @@ $exam = new examView();
                         <input type="hidden" value="<?= $_GET['subject_id'] ?>" name="subject_id">
                         <input type="hidden" value="<?= $_GET['exam_name'] ?>" name="exam_name">
                         <select name="chapter_id" required>
-                            <option selected disabled>Choose Chapter</option>
+                            <option selected disabled value="">Choose Chapter</option>
                             <?php
                             $exam->showChapters($_GET['subject_id']);
                             ?>
@@ -105,6 +107,30 @@ $exam = new examView();
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/creation-form.js"></script>
+    <script src="../assests/sweetalert/dist/sweetalert.min.js"></script>
+    <?php
+    if(isset($_GET['noquestions']))
+        {?>
+            <script>
+             const params = new URLSearchParams(window.location.search);
+            const exam_name= params.get("exam_name");
+            const subject_id = params.get("subject_id");
+
+            swal({
+            title: 'you did not enter any question! ',
+            text: 'Thanks...',
+            icon: 'error',
+            timer: 3000,
+            buttons: false,
+            })
+            .then(() => {
+            window.location.href = '../Home/second-creation-form.php?subject_id='+subject_id +'&exam_name=' + exam_name ;
+            
+            })
+            </script>
+        <?php  
+        }
+        ?>
 </body>
 
 </html>

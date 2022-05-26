@@ -42,7 +42,7 @@ $exam = new examView();
                         <input type="text" placeholder="Exam  Name" name="exam_name" required/>
 
                         <select name="sub_name" required>
-                            <option selected disabled>Choose Subject</option>
+                            <option selected disabled value="">Choose Subject</option>
                             <?php
                             $exam->professorSubjects();
                             ?>
@@ -79,6 +79,7 @@ $exam = new examView();
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/creation-form.js"></script>
+    
 </body>
 
 </html>

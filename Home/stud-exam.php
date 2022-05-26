@@ -31,7 +31,7 @@
                     <p><span><?php $student->showExamName($_GET['exam_id']); ?></span> </p>
                 </div>
                 <div class="timer">
-                    Timer : <span id="counter"> <?= $_GET['duration']  ?> . ':00'</span>
+                    Timer : <span id="counter"> <?= $_GET['duration']  ?> . :00</span>
                     <script>
                         const params = new URLSearchParams(window.location.search);
                         const duration = params.get("duration");
@@ -47,7 +47,7 @@
                             countdown.innerHTML = `${minitus} : ${seconds}`;
                             time --;
                             if (time == 0) {
-                                window.location.href = "../includes/stud-answers.inc.php?submit&exam_id=" + id;
+                                document.getElementById("sub").click();
                                 
                             }
                         }
@@ -60,7 +60,7 @@
                     ?>
                
                 <div id="btn-div" >
-                <button type="submit" name="submit">Submit</button>
+                <button type="submit" name="submit" id="sub">Submit</button>
             </div>
             </form>
     </div>

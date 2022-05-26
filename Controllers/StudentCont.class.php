@@ -210,6 +210,30 @@ class studentCont extends DB
         $stmt->execute(array($image, $stud_id));
     }
 
+    // empty exams
+    protected function emptyExamCont($exam_id)
+    {
+        $sql= "SELECT * from exam_structure where num_of_questions > 0 and exam_id = ?";
+        $stmt = $this->Connection()->prepare($sql);
+        $stmt->execute(array($exam_id));
+        $resultCheck = false;
+        if($stmt->rowCount() == 0) // number of errors  
+        {
+           
+            $resultCheck = false;
+        }
+        else{
+            $resultCheck = true;
+        }
+        return $resultCheck;
+
+    }
+    protected function deleteexam($exam_id)
+    {
+        $stmt = $this->Connection()->prepare("DELETE  from exams where id = ?");
+        $stmt->execute(array($exam_id));
+    }
+
 
 
 }

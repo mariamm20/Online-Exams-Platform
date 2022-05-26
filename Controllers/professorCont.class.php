@@ -49,7 +49,7 @@ class professorCont extends DB
     protected function getNotificationCont($prof_id)
     {
         $stmt = $this->Connection()->query(
-            "SELECT exams.exam_name, subjects.subject_name
+            "SELECT exams.exam_name, subjects.subject_name, exams.id
             FROM exams 
             INNER JOIN subjects ON exams.subject_id = subjects.id 
             INNER JOIN professor_subjects ON subjects.id = professor_subjects.subject_id 
@@ -185,6 +185,30 @@ class professorCont extends DB
         $stmt = $this->Connection()->prepare("UPDATE professors SET image = ? WHERE id = ?");
         $stmt->execute(array($image, $prof_id));
     }
+    // empty exams
+    protected function emptyExamCont($exam_id)
+    {
+        $sql= "SELECT * from exam_structure where num_of_questions > 0 and exam_id = ?";
+        $stmt = $this->Connection()->prepare($sql);
+        $stmt->execute(array($exam_id));
+        $resultCheck = false;
+        if($stmt->rowCount() == 0) // number of errors  
+        {
+           
+            $resultCheck = false;
+        }
+        else{
+            $resultCheck = true;
+        }
+        return $resultCheck;
+
+    }
+    protected function deleteexam($exam_id)
+    {
+        $stmt = $this->Connection()->prepare("DELETE  from exams where id = ?");
+        $stmt->execute(array($exam_id));
+    }
+
     
 }
 
