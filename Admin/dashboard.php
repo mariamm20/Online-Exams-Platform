@@ -74,7 +74,7 @@ session_start();
                         <div class="card-body">
                             <div>
                                 <p class="category text-success">Finished Exams</p>
-                                <p class="number"><?php $adminview->showFinishedExams(); ?></p>
+                                <p class="number"><?php $adminview->showFinishedExamsNum(); ?></p>
                             </div>
                             <div class="icon">
                                 <i class="fa-solid fa-circle-check"></i>
@@ -85,7 +85,7 @@ session_start();
                         <div class="card-body">
                             <div>
                                 <p class="category text-primary">Success</p>
-                                <p class="number"><?php $adminview->showSuccessExams() ?></p>
+                                <p class="number"><?php $adminview->showSuccessExamsNum() ?></p>
                             </div>
                             <div class="icon">
                                 <i class="fa-solid fa-thumbs-up"></i>

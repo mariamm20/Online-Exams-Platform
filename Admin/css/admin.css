@@ -1,6 +1,7 @@
 #app{
   overflow-x: initial;
   overflow-y: unset;
+  text-transform: capitalize;
 }
 div {
   text-align: center;
@@ -48,7 +49,7 @@ a.router-link-active {
 }
 
 .elements li {
-  padding: 29px 15px 10px 15px;
+  padding: 20px 15px 0;
   padding-left: 30px;
 }
 
@@ -62,6 +63,12 @@ a.router-link-active {
   color: rgb(250, 54, 54);
 }
 
+.fa-edit {
+  color: rgb(48, 168, 228);
+}
+.modal .fa-edit{
+  color: black;
+}
 .fa-eye {
   color: rgb(48, 168, 228);
 }
@@ -84,9 +91,9 @@ a.router-link-active {
   cursor: pointer;
 }
 
-.subject a{
+/*.subject a{
   display: none;
-}
+}*/
 
 .add-subj i:hover {
   opacity: 0.8;
@@ -163,6 +170,8 @@ select {
   outline: none;
   font-size: 14px;
   width: 100%;
+  margin: 6px 0;
+  text-transform: capitalize;
 }
 select option {
   border-top-right-radius: 0;
@@ -381,7 +390,9 @@ html, body {
 .model-title{
   text-align: left;
 }
-
+.table-inside{
+  width: 150%;
+}
 
 
 
@@ -421,11 +432,7 @@ html, body {
     left: 10px;
   
   }
-  .elements li {
-    padding: 5px 15px;
-    padding-left: 60px;
-  
-  }
+ 
   .subject{
     width: 143.56px;
   }

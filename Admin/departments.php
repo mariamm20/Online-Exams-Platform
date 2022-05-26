@@ -33,35 +33,35 @@ session_start();
       <?php include('includes/adminheader.inc.php'); ?>
 
       <section class="container content">
-
-        <div class="title border-gradient-rounded">Levels</div>
+        <div class="title border-gradient-rounded">Departments</div>
         <div class="table-content">
+
           <table class="table table-responsive levels ">
             <tbody>
               <tr class="first-rows">
-                <td colspan="4"><button type="button" data-bs-toggle="modal" data-bs-target="#add-level">Add Level</button></td>
+                <td colspan="5">
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#add-dept" class="add_department">Add Dept</button>
+                </td>
               </tr>
-              <tr class="table-head">
-                <td scope="col">#</td>
-                <td scope="col" style="width: 75%;">Level&nbsp;Name</td>
-                <td scope="col">Edit</td>
-                <td scope="col">Delete</td>
-              </tr>
-              <?php $adminview->showLevels(); ?>
+              <?php $adminview->showDepts(); ?>
             </tbody>
           </table>
 
-          <!-- add level modal ------------------------------- -->
-          <div class="modal magictime vanishIn" id="add-level" tabindex="-1" data-bs-backdrop="static">
+          <!-- add department ------------>
+          <div class="modal magictime vanishIn" id="add-dept" tabindex="-1" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title"><i class="fa-solid fa-layer-group"></i> Add Level</h5>
+                  <h5 class="modal-title"><i class="fa-solid fa-puzzle-piece"></i> Add Department</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="includes/levels.inc.php" method="post">
+                <form action="includes/departments.inc.php" method="post">
                   <div class="modal-body">
-                    <input type="text" name="level_name" id="level" placeholder="Level Name">
+                    <input type="text" name="dept_name" id="dept" placeholder="Department Name">
+                    <select name="level_id">
+                      <option selected disabled>choose Level</option>
+                      <?php $adminview->showAllLevels(); ?>
+                    </select>
                   </div>
                   <div class="modal-footer">
                     <button type="submit" class="" name="save">Save changes</button>
@@ -71,20 +71,20 @@ session_start();
             </div>
           </div>
 
-          <!-- edit level ------------------------------- -->
-          <div class="modal magictime vanishIn" id="edit-level" tabindex="-1" data-bs-backdrop="static">
+          <!-- edit department ------------------------------- -->
+          <div class="modal magictime vanishIn" id="edit-dept" tabindex="-1" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title"><i class="fa-solid fa-edit"></i> Edit Level</h5>
+                  <h5 class="modal-title"><i class="fa-solid fa-edit"></i> Edit Department</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="includes/levels.inc.php" method="post">
+                <form action="includes/departments.inc.php" method="post">
                   <div class="modal-body">
-                    <input type="text" name="level_name" id="level_name_to_show" placeholder="Change Level Name">
+                    <input type="text" name="dept_name" id="dept_name_to_show" placeholder="Change Department Name">
                   </div>
                   <div class="modal-footer">
-                    <input type="hidden" name="level_id" id="id_of_edited_level" placeholder="Level ID">
+                    <input type="hidden" name="dept_id" id="id_of_edited_dept" placeholder="Department ID">
                     <button type="submit" class="" name="edit">Save changes</button>
                   </div>
               </div>
@@ -92,20 +92,20 @@ session_start();
             </div>
           </div>
 
-          <!-- delete level modal ------------------------------- -->
-          <div class="modal magictime swashIn" id="delete-level" tabindex="-1" data-bs-backdrop="static">
+          <!-- delete department -->
+          <div class="modal magictime swashIn" id="delete-dept" tabindex="-1" data-bs-backdrop="static">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Level</h5>
+                  <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Delete Department</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="includes/levels.inc.php" method="post">
+                <form action="includes/departments.inc.php" method="post">
                   <div class="modal-body">
-                    <p class="text-start fw-bolder">Are you sure to delete this level? </p>
+                    <p class="text-start fw-bolder">Are you sure to delete this department? </p>
                   </div>
                   <div class="modal-footer">
-                    <input type="hidden" name="level_id" id="id_of_deleted_level" placeholder="Level ID">
+                    <input type="hidden" name="dept_id" id="id_of_deleted_dept" placeholder="Department ID">
                     <button type="submit" class="" name="delete">Yes</button>
                     <button type="button" data-bs-dismiss="model">Cancel</button>
                   </div>
@@ -113,13 +113,12 @@ session_start();
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </section>
 
     </div>
   </div>
-
   <!--Scripts part-->
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
   <script src="../assests/node_modules/jquery/dist/jquery.min.js"></script>
@@ -127,24 +126,25 @@ session_start();
   <script src="../assests/node_modules/aos/dist/aos.js"></script>
   <script src="../assests/global.js"></script>
   <script src="../assests/bootstrap.bundle.min.js"></script>
-  
+
   <script>
-    $(document).on('click', '.delete_level', function() {
-      $("#id_of_deleted_level").val($(this).data('lid'));
+    $(document).on('click', '.edit_dept', function() {
+      $("#id_of_edited_dept").val($(this).data('did'));
     });
   </script>
 
   <script>
-    $(document).on('click', '.edit_level', function() {
-      $("#id_of_edited_level").val($(this).data('lid'));
+    $(document).on('click', '.edit_dept', function() {
+      $("#dept_name_to_show").val($(this).data('nid'));
     });
   </script>
 
   <script>
-    $(document).on('click', '.edit_level', function() {
-      $("#level_name_to_show").val($(this).data('nid'));
+    $(document).on('click', '.delete_dept', function() {
+      $("#id_of_deleted_dept").val($(this).data('did'));
     });
   </script>
-  
+
 </body>
+
 </html>

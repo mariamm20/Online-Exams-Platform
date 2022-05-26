@@ -59,8 +59,8 @@
     position: relative;
     right: 40px; */
     height: -webkit-fill-available;
-    width: -webkit-fill-available;
-    
+    width: inherit;
+    /*width: -webkit-fill-available;*/
     border-radius: 50%;
 }
 .email{

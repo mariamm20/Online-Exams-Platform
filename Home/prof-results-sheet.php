@@ -53,9 +53,10 @@ $professor = new professorView();
 
                     </tbody>
                 </table>
+            </div>
 
-
-
+            <div class="btn-div">
+                <button type="button" onClick="window.print()" class="print" >Print</button>
             </div>
         </section>
 

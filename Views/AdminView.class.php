@@ -2,6 +2,34 @@
 class AdminView extends AdminCont
 {
 
+  //the part of dashboard
+  public function showRequestsNumber()
+  {
+    $this->getRequestsNumber();
+  }
+
+  public function showProfessorsNumber()
+  {
+    $this->getProfessorsNumber();
+  }
+
+  public function showStudentsNumber()
+  {
+    $this->getStudentsNumber();
+  }
+
+  public function showFinishedExamsNum()
+  {
+    $this->getFinishedExamsNum();
+  }
+
+  public function showSuccessExamsNum()
+  {
+    $this->getSuccessExamsNum();
+  }
+
+
+  //the part of professors
   public function showProfessors()
   {
     $Prof_data = $this->getProfessors();
@@ -31,6 +59,35 @@ class AdminView extends AdminCont
     }
   }
 
+  public function deleteProfessor($id)
+  {
+    $this->deleteProf($id);
+  }
+
+  public function addSubject($id, $subject_name)
+  {
+    $this->addSubjectCont($id, $subject_name);
+  }
+
+  // show them when adding a subject to the professor
+  public function showAllSubjects()
+  {
+    $data = $this->getAllSubjects();
+    foreach ($data as $subject) {
+    ?>
+      <option value="<?= $subject['id'] ?>"> <?= $subject['subject_name'] ?></option>
+    <?php
+    }
+  }
+
+  public function deleteSubject($sub_id, $prof_id)
+  {
+    $this->deleteSubjectCont($sub_id, $prof_id);
+  }
+
+
+
+  //the part of requests
   public function showProfessorRequests()
   {
     $data = $this->getProfessorRequests();
@@ -57,98 +114,153 @@ class AdminView extends AdminCont
     }
   }
 
-  public function showRequestsNumber()
-  {
-    $this->getRequestsNumber();
-  }
-
-  public function showProfessorsNumber()
-  {
-    $this->getProfessorsNumber();
-  }
-
-  public function showStudentsNumber()
-  {
-    $this->getStudentsNumber();
-  }
-  public function showFinishedExams()
-  {
-    $this->getFinishedExams();
-  }
-  public function showSuccessExams()
-  {
-    $this->getSuccessExams();
-  }
-
-  public function deleteProfessor($id)
-  {
-    $this->deleteProf($id);
-  }
-
-  public function addSubject($id, $subject_name)
-  {
-    $this->addSubjectCont($id, $subject_name);
-  }
-
-
-  // show them when adding a subject to the professor
-  public function showAllSubjects()
-  {
-    $data = $this->getAllSubjects();
-    foreach ($data as $subject) {
-    ?>
-      <option value="<?= $subject['id'] ?>"> <?= $subject['subject_name'] ?></option>
-    <?php
-    }
-  }
-
-  public function deleteSubject($sub_id, $prof_id)
-  {
-    $this->deleteSubjectCont($sub_id, $prof_id);
-  }
-
 
   //  the part of levels
   public function showLevels()
   {
     $l_data = $this->getLevels();
     foreach ($l_data as $level) {
+      ?>
+        <tr>
+          <td><?= $level['id'] ?> </td>
+          <td ><?= "Level " . $level['level_name'] ?> </td>
+          <td class="edit">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#edit-level" class="edit_level" data-lid="<?= $level['id'] ?>" data-nid="<?= $level['level_name'] ?>"><i class="fa-solid fa-edit"></i></a>
+          </td>
+          <td class="del">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#delete-level" class="delete_level" data-lid="<?= $level['id'] ?>"><i class="fa-solid fa-trash-can"></i></a></td>
+        </tr>
+      <?php
+      }
+    
+  }
+  
+  public function addLevel($level_name)
+  {
+    $this->addLevelContr($level_name);
+  }
+
+  public function deleteLevel($level_id)
+  {
+    $this->deleteLevelCont($level_id);
+  }
+
+  public function editLevel($level_name, $level_id)
+  {
+    $this->editLevelCont($level_name, $level_id);
+  }
+
+
+  //the part of departments
+  public function showAllLevels()
+  {
+    $data = $this->getLevels();
+    foreach ($data as $level) {
+    ?>
+      <option value="<?= $level['id'] ?>"> <?= $level['level_name'] ?></option>
+    <?php
+    }
+  }
+
+  public function showDepts()
+  {
+    $l_data = $this->getLevels();
+    foreach ($l_data as $level) {
       $d_data = $this->getDepartments($level['id']);
     ?>
-
       <tr class="lvl">
-        <td colspan="2" class="lvl-name"><?= "Level " . $level['level_name'] ?> </td>
-        <td colspan="2" class="second-row">
-          <button type="button" data-bs-toggle="modal" data-bs-target="#add-dept" class="add_department" data-lid="<?= $level['id'] ?>">Add Dept</button>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#delete-level" class="delete_level" data-lid="<?= $level['id'] ?>">Delete Level</button>
-        </td>
+        <td colspan="4" class="lvl-name"><?= "Level " . $level['level_name'] ?> </td>
       </tr>
       <tr class="lvl-head">
+        <td>#</td>
+        <td>Dept&nbsp;Name</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+      <?php
+      foreach ($d_data as $department) {
+      ?>
+        <tr>
+          <td></td>
+          <td style="width: 75%;"><?= $department['dept_name'] ?> </td>
+          <td class="edit">
+            <a href="#" data-bs-toggle="modal" class="edit_dept" data-did="<?= $department['id']; ?>" data-nid="<?= $department['dept_name']; ?>" data-bs-target="#edit-dept"><i class="fa-solid fa-edit"></i></a>
+          </td>
+          <td class="del">
+            <a href="#" data-bs-toggle="modal" class="delete_dept" data-did="<?= $department['id']; ?>" data-bs-target="#delete-dept"><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+      <?php
+      }
+    }
+  }
+
+  public function addDepartment($dept_name, $level_id)
+  {
+    $this->addDepartmentCont($dept_name, $level_id);
+  }
+
+  public function editDept($dept_name, $dept_id)
+  {
+    $this->editDeptCont($dept_name, $dept_id);
+  }
+  
+  public function deleteDepartment($dept_id)
+  {
+    $this->deleteDepartmentCont($dept_id);
+  }
+  
+
+  
+  //the part of subjects
+  public function showDeptName($level_name)
+  {
+    ?><option selected disabled>Choose Department</option><?php
+    $data = $this->getDeptName($level_name);
+    foreach($data as $department)
+    {?>
+        <option value="<?= $department['id'] ?>"><?= $department['dept_name'] ?> </option>
+    <?php    
+    }
+  }
+
+  public function showSubjects()
+  {
+    $l_data = $this->getLevels();
+    foreach ($l_data as $level) {
+      $d_data = $this->getDepartments($level['id']);
+    ?>
+      <tr class="lvl">
+        <td colspan="7" class="lvl-name"><?= "Level " . $level['level_name'] ?> </td>
+      </tr>
+      <tr class="lvl-head">
+        <td>#</td>
         <td>Dept&nbsp;Name</td>
         <td>Subjects</td>
-        <td>Add&nbsp;Subjects</td>
+        <td>Edit</td>
         <td>Delete</td>
+       
       </tr>
       <?php
       foreach ($d_data as $department) {
         $sub_data = $this->getDepartmentSubjects($level['id'], $department['id']);
       ?>
         <tr>
-          <td style="width: 220px;"><?= $department['dept_name'] ?> </td>
-          <td style="width:478.56px">
+          <td><?= $department['id'] ?></td>
+          <td><?= $department['dept_name'] ?> </td>
+          <td>
             <?php
             foreach ($sub_data as $subject) {
             ?>
-              <div class="d-flex justify-content-between subject">
-                <p><?= $subject['subject_name'] ?> </p>
-                <a href="#" data-bs-toggle="modal" class="remove_subject" data-sid="<?= $subject['id'] ?>" data-bs-target="#remove-subj"><i class="fa-solid fa-x del-subj"></i></a>
-              </div>
+              <table  class="table-inside" >
+                <tr>
+                  <td><p><?= $subject['subject_name']?></p></td>
+                  <td><a href="#" data-bs-toggle="modal" class="edit_subject" data-sid="<?= $subject['id']; ?>" data-nid="<?= $subject['subject_name']; ?>" data-bs-target="#edit-subject"><i class="fa-solid fa-edit"></i></a></td>
+                  <td><a href="#" data-bs-toggle="modal" class="delete_subject" data-sid="<?= $subject['id'] ?>" data-bs-target="#delete-subject"><i class="fa-solid fa-trash-can"></i></a></td>
+                </tr>
+              </table>
             <?php } ?>
           </td>
-          <td class="edit">
-            <a href="#" data-bs-toggle="modal" class="add_subject" data-did="<?= $department['id']; ?>" data-lid="<?= $level['id']; ?>" data-bs-target="#add-subject"><i class="fa-solid fa-square-plus"></i></a>
-          </td>
-          <td class="del"><a href="#" data-bs-toggle="modal" class="remove_dept" data-fid="<?= $department['id']; ?>" data-bs-target="#remove-dept"><i class="fa-solid fa-trash-can"></i></a></td>
         </tr>
 
 
@@ -156,36 +268,24 @@ class AdminView extends AdminCont
       }
     }
   }
-
-  public function addLevel($level_name)
+  
+  public function addDeptSubject($subject_name, $level_id, $dept_id)
   {
-    $this->addLevelContr($level_name);
+    $this->addDeptSubjectCont($subject_name, $level_id, $dept_id);
   }
 
-  public function addDeptSubject($name, $level_id, $dept_id)
+  public function editSubject($subject_name, $subject_id)
   {
-    $this->addDeptSubjectCont($name, $level_id, $dept_id);
+    $this->editSubjectCont($subject_name, $subject_id);
   }
 
-  public function deleteTheSubject($id)
+  public function deleteDeptSubject($subject_id)
   {
-    $this->deleteSub($id);
+    $this->deleteDeptSubjectCont($subject_id);
   }
 
-  public function deleteDepartment($id)
-  {
-    $this->deleteDepartmentCont($id);
-  }
 
-  public function addDepartment($name, $level_id)
-  {
-    $this->addDepartmentCont($name, $level_id);
-  }
-
-  public function deleteLevel($level_id)
-  {
-    $this->deleteLevelCont($level_id);
-  }
+  
 
   // the part of contact us
   public function showContact()

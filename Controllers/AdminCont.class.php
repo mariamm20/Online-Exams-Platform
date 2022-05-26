@@ -2,6 +2,47 @@
 
 class AdminCont extends DB
 {
+    // the part of dashboard
+    protected function getRequestsNumber()
+    {
+        $sql = "SELECT COUNT(*) FROM professors where state is Null";
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+
+    protected function getProfessorsNumber()
+    {
+        $sql = "SELECT COUNT(*) FROM professors where state = 1 ";
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+    protected function getFinishedExamsNum()
+    {
+        $sql = "SELECT COUNT(*) FROM results ";
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+    protected function getSuccessExamsNum()
+    {
+        $sql = "SELECT COUNT(*) FROM exams ";
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+
+    protected function getStudentsNumber()
+    {
+        $sql = "SELECT COUNT(*) FROM students ";
+        $stmt = $this->Connection()->query($sql);
+        $count = $stmt->fetchColumn();
+        echo $count;
+    }
+
+
+    // the part of professors
     protected function getProfessors()
     {
         $stmt = $this->Connection()->query("select * from professors where state = 1 ");
@@ -18,59 +59,6 @@ class AdminCont extends DB
         join professors on professor_subjects.prof_id = " . $id);
         $s_data = $stmt->fetchAll();
         return $s_data;
-    }
-
-    protected function getProfessorRequests()
-    {
-        $stmt = $this->Connection()->query("select id, user_name, academic_id, email from professors where state is null ");
-        $data = $stmt->fetchAll();
-        return $data;
-    }
-
-    protected function acceptRequest()
-    {
-        $state = $_GET["state"];
-        $id = $_GET["id"];
-        $this->Connection()->query("UPDATE professors SET state = $state WHERE id = $id ");
-    }
-
-    protected function getRequestsNumber()
-    {
-        $sql = "SELECT COUNT(*) FROM professors where state is Null";
-        $stmt = $this->Connection()->query($sql);
-        $count = $stmt->fetchColumn();
-        echo $count;
-    }
-
-    protected function getProfessorsNumber()
-    {
-        $sql = "SELECT COUNT(*) FROM professors where state = 1 ";
-        $stmt = $this->Connection()->query($sql);
-        $count = $stmt->fetchColumn();
-        echo $count;
-    }
-    protected function getFinishedExams()
-    {
-        $sql = "SELECT COUNT(*) FROM results ";
-        $stmt = $this->Connection()->query($sql);
-        $count = $stmt->fetchColumn();
-        echo $count;
-    }
-    protected function getSuccessExams()
-    {
-        $sql = "SELECT COUNT(*) FROM exams ";
-        $stmt = $this->Connection()->query($sql);
-        $count = $stmt->fetchColumn();
-        echo $count;
-    }
-
-
-    protected function getStudentsNumber()
-    {
-        $sql = "SELECT COUNT(*) FROM students ";
-        $stmt = $this->Connection()->query($sql);
-        $count = $stmt->fetchColumn();
-        echo $count;
     }
 
     protected function deleteProf($id)
@@ -101,6 +89,23 @@ class AdminCont extends DB
     }
 
 
+
+    // the part of requests
+    protected function getProfessorRequests()
+    {
+        $stmt = $this->Connection()->query("select id, user_name, academic_id, email from professors where state is null ");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    protected function acceptRequest()
+    {
+        $state = $_GET["state"];
+        $id = $_GET["id"];
+        $this->Connection()->query("UPDATE professors SET state = $state WHERE id = $id ");
+    }
+
+    
     // the part of levels 
     protected function addLevelContr($level_name)
     {
@@ -116,6 +121,20 @@ class AdminCont extends DB
 
     }
 
+    protected function deleteLevelCont($level_id)
+    {
+        $stmt = $this->Connection()->prepare("delete from levels where id = ?");
+        $stmt->execute(array($level_id));
+    }
+
+    protected function editLevelCont($level_name, $level_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE levels SET level_name = ? WHERE id = ? ");
+        $stmt->execute(array($level_name, $level_id));
+    }
+
+    
+    // the part of departments
     protected function getDepartments($level_id)
     {
         $stmt = $this->Connection()->query("select * from departments where level_id = $level_id ");
@@ -130,40 +149,52 @@ class AdminCont extends DB
         return $data;
     }
 
-    protected function addDepartmentCont($name, $level_id)
+    protected function getDeptName($level_id)
+    {  
+        $stmt = $this->Connection()->query("select * from departments where level_id = $level_id" );
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    protected function addDepartmentCont($dept_name, $level_id)
     {
         $stmt =$this->Connection()->prepare("INSERT into departments (dept_name, level_id) values (?,?)");
-        $stmt->execute(array($name, $level_id));
+        $stmt->execute(array($dept_name, $level_id));
     }
 
-    protected function addDeptSubjectCont($name, $level_id, $dept_id)
+    protected function deleteDepartmentCont($dept_id)
     {
-        
+        $stmt = $this->Connection()->prepare("delete from departments where id = ?");
+        $stmt->execute(array($dept_id));
+    }
+
+    protected function editDeptCont($dept_name, $dept_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE departments SET dept_name = ? WHERE id = ? ");
+        $stmt->execute(array($dept_name, $dept_id));
+    }
+
+
+    // the part of subjects
+    protected function addDeptSubjectCont($subject_name, $level_id, $dept_id)
+    {
         $stmt = $this->Connection()->prepare("INSERT into subjects (subject_name, level_id,dept_id) values (?,?,?)");
-        $stmt->execute(array($name, $level_id, $dept_id));
+        $stmt->execute(array($subject_name, $level_id, $dept_id));
     }
     
-    protected function deleteSub($id)
+    protected function deleteDeptSubjectCont($subject_id)
     {
-        $sql = "delete from subjects where id = ?";
-        $stmt = $this->Connection()->prepare($sql);
-        $stmt->execute(array($id));
+        $stmt = $this->Connection()->prepare("delete from subjects where id = ?");
+        $stmt->execute(array($subject_id));
     }
 
-    protected function deleteDepartmentCont($id)
+    protected function editSubjectCont($subject_name, $subject_id)
     {
-        $sql = "delete from departments where id = ?";
-        $stmt = $this->Connection()->prepare($sql);
-        $stmt->execute(array($id));
+        $stmt = $this->Connection()->prepare("UPDATE subjects SET subject_name = ? WHERE id = ? ");
+        $stmt->execute(array($subject_name, $subject_id));
     }
 
-    protected function deleteLevelCont($level_id)
-    {
-        $stmt = $this->Connection()->prepare("delete from levels where id = ?");
-        $stmt->execute(array($level_id));
-    }
-
-
+    
     // the part of contact us
     protected function getContact()
     {

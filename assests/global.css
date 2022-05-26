@@ -84,6 +84,8 @@ li a {
 }
 .profile-img{
     height: 55px;
+    width: 55px;
+    border-radius: 50% ;
 }
 @media (max-width:768px) {
     #app {

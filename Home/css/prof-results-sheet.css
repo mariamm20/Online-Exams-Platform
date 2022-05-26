@@ -240,7 +240,7 @@ select option {
   border: 5px solid #efefef;
   border-radius: 30px;
   overflow: scroll;
-  height: 425px;
+  height: 383px;
 }
 
 .container {
@@ -381,7 +381,33 @@ html, body {
   margin: 0;
   font-weight: bold;
 }
-
+.btn-div {
+  width: 100%;
+  text-align: right;
+  margin: 20px 0;
+}
+section button{
+  border: 3px solid #efefef;
+  padding: 8px 6px;
+  background-color: #fff;
+  width: 160px;
+  border-radius: 22px;
+  font-size: 14px;
+  color: #1eaaf1;
+}
+section button:hover {
+  background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+  color: #0E1C36;
+  font-weight: bold;
+}
+@media print {
+  header, button {
+    display: none;
+  }
+  body{
+    -webkit-print-color-adjust: exact !important;
+  }
+}
 @media (max-width:992px) {
   .profile-text {
       display: inline-block;
@@ -390,8 +416,6 @@ html, body {
       width: 30px;
   }
 }
-
-
 @media (max-width:580px) {
   .modal{
     position: fixed;

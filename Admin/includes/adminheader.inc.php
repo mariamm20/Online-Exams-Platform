@@ -51,6 +51,16 @@ if(!isset($_SESSION['id'])){
             </a>
           </li>
           <li class="nav-item dropdown">
+            <a class="nav-link" aria-current="page" href="departments.php">
+              <i class="fa-solid fa-puzzle-piece"></i> Departments
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" aria-current="page" href="subjects.php">
+              <i class="fa-solid fa-book"></i> Subjects
+            </a>
+          </li>
+          <li class="nav-item dropdown">
             <a class="nav-link" aria-current="page" href="contactus.php">
               <i class="fa fa-paper-plane" aria-hidden="true"></i>
               Contact Us
