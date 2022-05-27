@@ -81,7 +81,7 @@ $student = new studentView();
                                 <th scope="col">Date</th>
                                 <th scope="col">Start Time</th>
                                 <th scope="col">Duration</th>
-                                <th scope="col">Total Marks</th>
+                               
                                 <th scope="col" class="last-col">Go To Exam</th>
                             </tr>
                         </thead>

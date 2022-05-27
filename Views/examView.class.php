@@ -11,9 +11,9 @@ class examView extends examCont
         }
     }
 
-    public function createExam($subject_id, $exam_name,$exam_date, $exam_start,$duration, $total_mark)
+    public function createExam($subject_id, $exam_name,$exam_date, $exam_start,$duration)
     {
-        $this->createExamCont($subject_id, $exam_name,$exam_date, $exam_start,$duration, $total_mark);
+        $this->createExamCont($subject_id, $exam_name,$exam_date, $exam_start,$duration);
     }
    
 
@@ -32,6 +32,10 @@ class examView extends examCont
     public function addStrucure($exam_id, $chapter_id, $num_of_questions, $difficulty, $type)
     {
         $this->addStructureCont($exam_id, $chapter_id, $num_of_questions, $difficulty, $type);
+    }
+    public function setMark($exam_id, $total)
+    {
+        $this->getMark($exam_id, $total);
     }
 
 }

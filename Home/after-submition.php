@@ -37,7 +37,7 @@ $student = new studentView();
                     <button onclick="show()">View Result</button>
                     <div class="result magictime swashIn">
                         <p>
-                            Your Result: <span><?php $student->showResult($_GET['exam_id'], $_SESSION['id']) ?></span> / <span><?php $student->ExamMark($_GET['exam_id']) ?></span>
+                            Your Result: <span><?php echo $_GET['result'] ?></span> / <span><?php echo $_GET['total'] ?></span>
                         </p>
                     </div>
                 </div>

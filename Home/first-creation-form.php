@@ -55,7 +55,7 @@ $exam = new examView();
 
                        
 
-                        <input type="number" placeholder="Total Marks" name="total_mark" required />
+                        <!-- <input type="number" placeholder="Total Marks" name="total_mark" required /> -->
 
 
 

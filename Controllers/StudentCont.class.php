@@ -140,13 +140,13 @@ class studentCont extends DB
       
         $stmt->execute(array($student_id, $exam_id, $question_id, $answer_id));
     }
-    protected function addResultCont($student_id,$exam_id)
+    protected function addResultCont($student_id,$exam_id, $total)
     {
-        $query = "SELECT * from student_answers join answers on 
-        student_answers.answer_id = answers.id where student_answers.exam_id = $exam_id and student_answers.student_id = $student_id and answers.is_correct =1 ";
-        $stmt = $this->Connection()->query($query);
-        $result =  $stmt->rowCount();
-        $total = 2* $result;
+        // $query = "SELECT * from student_answers join answers on 
+        // student_answers.answer_id = answers.id where student_answers.exam_id = $exam_id and student_answers.student_id = $student_id and answers.is_correct =1 ";
+        // $stmt = $this->Connection()->query($query);
+        // $result =  $stmt->rowCount();
+        // $total = 2* $result;
         $stmt2 = $this->Connection()->prepare("INSERT into results(student_id, exam_id, result) values (?,?,?)");
         $stmt2->execute(array($student_id , $exam_id , $total));
     }
@@ -233,7 +233,23 @@ class studentCont extends DB
         $stmt = $this->Connection()->prepare("DELETE  from exams where id = ?");
         $stmt->execute(array($exam_id));
     }
+    protected function getQuestionMark($ques_id, $exam_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * from student_answers join answers
+         on student_answers.answer_id = answers.id join questions on answers.question_id = questions.id 
+        where answers.is_correct =1 and questions.id =$ques_id and student_answers.exam_id = $exam_id; ");
+        $data = $stmt->fetchAll();
+        return $data;
+    }
 
+    protected function getTotalMark($ques_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * from questions where id = $ques_id ");
+       $data = $stmt->fetchAll();
+       return $data;
+    }
+    /// 
+    
 
 
 }

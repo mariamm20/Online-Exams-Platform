@@ -1,9 +1,9 @@
 <?php
 class questionView extends questionCont
 {
-    public function addQuestion($chapter_id,$question, $difficulty, $type)
+    public function addQuestion($chapter_id,$question, $difficulty, $type,$mark)
     {
-        $this->addQuestionCont($chapter_id, $question, $difficulty, $type);
+        $this->addQuestionCont($chapter_id, $question, $difficulty, $type,$mark);
     }
 
     public function addAnswer($ques_name, $answer)

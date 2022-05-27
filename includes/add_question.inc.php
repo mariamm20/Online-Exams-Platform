@@ -26,8 +26,9 @@ session_start();
 
                 echo $correct =  $data['correct'];
                 echo $difficulty =  $data['difficulty'];
+                echo $mark = $data['mark'];
               
-                $ques->addQuestion($chapter_id, $question, $difficulty, $type);
+                $ques->addQuestion($chapter_id, $question, $difficulty, $type,$mark);
 
                 $array = array($ans1, $ans2, $ans3, $ans4);
                 foreach($array as $answers)
@@ -61,8 +62,9 @@ session_start();
                 echo $ans2 =  $data['b'];
                 echo $correct =  $data['correct'];
                 echo $difficulty =  $data['difficulty'];
+                echo $mark = $data['mark'];
 
-                $ques->addQuestion($chapter_id, $question, $difficulty, $type);
+                $ques->addQuestion($chapter_id, $question, $difficulty, $type,$mark);
 
                 $array = array($ans1, $ans2);
                 foreach($array as $answers)

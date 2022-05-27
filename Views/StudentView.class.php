@@ -42,7 +42,7 @@ class studentView extends studentCont
                 <td><?= $exam['exam_date'] ?></td>
                 <td><?= $exam['start_time'] ?></td>
                 <td><?= $exam['duration']  ?></td>
-                <td><?= $exam['total_mark'] ?></td>
+               
                
                 <td>
                     <button > <a class="start" href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>&exam_date=<?= $exam['exam_date'] ?>&exam_time=<?= $exam['start_time'] ?>&exam_duration=<?= $exam['duration'] ?>" > Start </a> </button>
@@ -117,6 +117,7 @@ class studentView extends studentCont
                 
                 <p class="question-body">
                         <?= $question['question_text'] ?>
+                        <!-- <input type="text" value="<?= $question['id'] ?>" name="<?= $question['question_text'] ?>"> -->
                     </p>
                     <ol type="a">
                    
@@ -144,9 +145,9 @@ class studentView extends studentCont
         $this->addstudentAnswers($student_id, $exam_id, $question_id, $answer_id);
     }
 
-    public function addResult($student_id, $exam_id)
+    public function addResult($student_id, $exam_id, $total)
     {
-        $this->addResultCont($student_id, $exam_id);
+        $this->addResultCont($student_id, $exam_id , $total);
     }
 
     public function takenExams($exam_id, $student_id)
@@ -303,6 +304,25 @@ class studentView extends studentCont
     public function uploadImage($image, $stud_id)
     {
         $this->uploadImageCont($image, $stud_id);
+    }
+    public function questionMark($ques_id, $exam_id)
+    {
+        $data = $this->getQuestionMark($ques_id, $exam_id);
+        foreach($data as $mark)
+        {
+           return  $mark['mark'];
+          
+        }
+    }
+
+    public function showMark($ques_id)
+    {
+        $data = $this->getTotalMark($ques_id);
+        foreach($data as $mark)
+        {
+           return  $mark['mark'];
+          
+        }
     }
 
 }
