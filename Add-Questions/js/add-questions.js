@@ -9,7 +9,8 @@ function createQuestion() {
     subQuest =document.createElement('div');
     subQuest.className="magictime swashIn "
     headOfQuestion();
-    arr = {}
+    arr = {};
+    mark();
     difficulty();
     addQuestion();
     question.appendChild(subQuest)
@@ -276,6 +277,28 @@ function correcttf() {
     
 }
 
+function mark() {
+    let difficult = document.createElement('div');
+    difficult.className = 'difficulty';
+    let p = document.createElement('p');
+    let mark = document.createElement('input');
+    mark.type ='number';
+    mark.className="degree";
+    mark.placeholder = "Write Mark";
+    p.className = 'question-difficutly';
+    p.textContent = 'Mark Of Question: ';
+    p.appendChild(mark)
+    mark.value = '';
+    mark.onchange = function () {
+        mark.value = this.value;
+        arr['mark'] = this.value
+    }
+
+
+    difficult.appendChild(p);
+    subQuest.appendChild(difficult);
+}
+
 function difficulty() {
     let difficult = document.createElement('div');
     difficult.className = 'difficulty'
@@ -328,7 +351,7 @@ function addQuestion() {
     line.onclick = function () {
         console.log(arr)
         
-        if (arr['questionType'] === 'choose' && Object.keys(arr).length == 8) {
+        if (arr['questionType'] === 'choose' && Object.keys(arr).length == 9) {
             array.push(arr);
             console.log(array)
             line.remove()
@@ -338,7 +361,7 @@ function addQuestion() {
             subQuest.style.padding = '7px 0 0 0'
             
             createQuestion();
-        }else if ((arr['questionType'] === 'true&false' && Object.keys(arr).length == 6) ) {
+        }else if ((arr['questionType'] === 'true&false' && Object.keys(arr).length == 7) ) {
             array.push(arr);
             console.log(array)
             line.remove()
