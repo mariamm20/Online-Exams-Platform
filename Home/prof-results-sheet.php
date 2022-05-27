@@ -29,11 +29,14 @@ $professor = new professorView();
         <?php include('../includes/header.inc.php'); ?>
 
         <section class="container" data-aos="fade-up">
-        <div class="middle">
-        <p>
-          Results History
-        </p>
-      </div>
+            <div class="middle">
+                <p>
+                    Results History
+                </p>
+            </div>
+            <div class="btn-div">
+                <button type="button" onClick="window.print()" class="print"> <i class="fa-solid fa-print"></i> Print & Download</button>
+            </div>
             <div class="table-content">
 
                 <table class="table  table-responsive ">
@@ -55,9 +58,7 @@ $professor = new professorView();
                 </table>
             </div>
 
-            <div class="btn-div">
-                <button type="button" onClick="window.print()" class="print" >Print</button>
-            </div>
+
         </section>
 
 

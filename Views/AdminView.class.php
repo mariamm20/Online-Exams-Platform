@@ -254,9 +254,9 @@ class AdminView extends AdminCont
             ?>
               <table  class="table-inside" >
                 <tr>
-                  <td><p><?= $subject['subject_name']?></p></td>
-                  <td><a href="#" data-bs-toggle="modal" class="edit_subject" data-sid="<?= $subject['id']; ?>" data-nid="<?= $subject['subject_name']; ?>" data-bs-target="#edit-subject"><i class="fa-solid fa-edit"></i></a></td>
-                  <td><a href="#" data-bs-toggle="modal" class="delete_subject" data-sid="<?= $subject['id'] ?>" data-bs-target="#delete-subject"><i class="fa-solid fa-trash-can"></i></a></td>
+                  <td class="sub-name"><p><?= $subject['subject_name']?></p></td>
+                  <td class="edit-icon" ><a href="#" data-bs-toggle="modal" class="edit_subject" data-sid="<?= $subject['id']; ?>" data-nid="<?= $subject['subject_name']; ?>" data-bs-target="#edit-subject"><i class="fa-solid fa-edit"></i></a></td>
+                  <td class="del-icon"><a href="#" data-bs-toggle="modal" class="delete_subject" data-sid="<?= $subject['id'] ?>" data-bs-target="#delete-subject"><i class="fa-solid fa-trash-can"></i></a></td>
                 </tr>
               </table>
             <?php } ?>

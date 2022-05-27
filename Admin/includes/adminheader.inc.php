@@ -69,8 +69,7 @@ if(!isset($_SESSION['id'])){
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" aria-current="page" href="../includes/logout.inc.php?">
-              <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign
-              out
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
             </a>
           </li>
         </ul>

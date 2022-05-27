@@ -12,9 +12,10 @@ let arr = {};
 let array = [];
 
 function createQuestion() {
-  subQuest =document.createElement('div');
+  subQuest = document.createElement('div');
   headOfQuestion();
   arr = {};
+  mark();
   difficulty();
   addQuestion();
   question.appendChild(subQuest)
@@ -36,8 +37,8 @@ function headOfQuestion() {
   head.className = "quest-input magictime swashIn ";
   head.onchange = function () {
     head.value = this.value;
-//     head.setAttribute("disabled", "");
-//     head.className += "bg";
+    //     head.setAttribute("disabled", "");
+    //     head.className += "bg";
     arr["question"] = this.value;
   };
   let menu = document.createElement("i");
@@ -87,8 +88,8 @@ function headOfQuestion() {
   questHeading.appendChild(menu);
   questHeading.appendChild(ul);
   subQuest.appendChild(questHeading);
-    subQuest.appendChild(answer);
-    subQuest.appendChild(dropdown);
+  subQuest.appendChild(answer);
+  subQuest.appendChild(dropdown);
   let x = correctchoices();
   answer.appendChild(x);
 }
@@ -136,8 +137,8 @@ function chooseAnswers() {
   textInput1.setAttribute("required", "");
   textInput1.onchange = function () {
     textInput1.value = this.value;
-//     textInput1.setAttribute("disabled", "");
-//     textInput1.className += "bg2";
+    //     textInput1.setAttribute("disabled", "");
+    //     textInput1.className += "bg2";
     arr["a"] = textInput1.value;
   };
   textInput2.type = "text";
@@ -146,8 +147,8 @@ function chooseAnswers() {
   textInput2.setAttribute("required", "");
   textInput2.onchange = function () {
     textInput2.value = this.value;
-//     textInput2.setAttribute("disabled", "");
-//     textInput2.className += "bg2";
+    //     textInput2.setAttribute("disabled", "");
+    //     textInput2.className += "bg2";
     arr["b"] = textInput2.value;
   };
   textInput3.type = "text";
@@ -156,8 +157,8 @@ function chooseAnswers() {
   textInput3.setAttribute("required", "required");
   textInput3.onchange = function () {
     textInput3.value = this.value;
-//     textInput3.setAttribute("disabled", "");
-//     textInput3.className += "bg2";
+    //     textInput3.setAttribute("disabled", "");
+    //     textInput3.className += "bg2";
     arr["c"] = textInput3.value;
   };
   textInput4.type = "text";
@@ -166,8 +167,8 @@ function chooseAnswers() {
   textInput4.setAttribute("required", "required");
   textInput4.onchange = function () {
     textInput4.value = this.value;
-//     textInput4.setAttribute("disabled", "");
-//     textInput4.className += "bg2";
+    //     textInput4.setAttribute("disabled", "");
+    //     textInput4.className += "bg2";
     arr["d"] = textInput4.value;
   };
   ans1.appendChild(textInput1);
@@ -217,8 +218,8 @@ function correctchoices() {
     arr["correct"] = this.value;
     arr['questionType'] = '';
     arr["questionType"] = "choose";
-//     select.setAttribute("disabled", "");
-//     select.className += "bg";
+    //     select.setAttribute("disabled", "");
+    //     select.className += "bg";
   };
 
   difficult.appendChild(p);
@@ -255,12 +256,34 @@ function correcttf() {
     delete arr['c'];
     delete arr['d'];
     arr["questionType"] = "true&false";
-//     select.setAttribute("disabled", "");
-//     select.className += "bg";
+    //     select.setAttribute("disabled", "");
+    //     select.className += "bg";
   };
 
   difficult.appendChild(p);
   return difficult;
+}
+
+function mark() {
+  let difficult = document.createElement('div');
+  difficult.className = 'difficulty';
+  let p = document.createElement('p');
+  let mark = document.createElement('input');
+  mark.type = 'number';
+  mark.className = "degree";
+  mark.placeholder = "Write Mark";
+  p.className = 'question-difficutly';
+  p.textContent = 'Mark Of Question: ';
+  p.appendChild(mark)
+  mark.value = '';
+  mark.onchange = function () {
+    mark.value = this.value;
+    arr['mark'] = this.value
+  }
+
+
+  difficult.appendChild(p);
+  subQuest.appendChild(difficult);
 }
 
 function difficulty() {
@@ -291,8 +314,8 @@ function difficulty() {
   p.appendChild(select);
   select.onchange = function () {
     arr["difficulty"] = this.value;
-//     select.setAttribute("disabled", "");
-//     select.className += "bg";
+    //     select.setAttribute("disabled", "");
+    //     select.className += "bg";
   };
 
   difficult.appendChild(p);
@@ -311,15 +334,15 @@ function addQuestion() {
   button.textContent = "Save Changes";
   button.id = "save";
   btn.appendChild(button);
-  line.setAttribute('data-bs-toggle','tooltip');
-    line.setAttribute('data-bs-placement','top');
-    line.setAttribute('title','Add Question')
+  line.setAttribute('data-bs-toggle', 'tooltip');
+  line.setAttribute('data-bs-placement', 'top');
+  line.setAttribute('title', 'Add Question')
   line.onclick = function () {
     //  console.log(Object.keys(arr))
-    if (arr["questionType"] === "choose" && Object.keys(arr).length == 8) {
+    if (arr["questionType"] === "choose" && Object.keys(arr).length == 9) {
       //console.log(arr)
       // $('.line').click(function () {
-      //     console.log(arr)
+          console.log(arr)
 
       // });
 
@@ -341,13 +364,13 @@ function addQuestion() {
       });
       line.remove();
       btn.remove();
-subQuest.style.pointerEvents ='none';
-            subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
-            subQuest.style.padding = '7px 0 0 0'
+      subQuest.style.pointerEvents = 'none';
+      subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+      subQuest.style.padding = '7px 0 0 0'
       createQuestion();
     } else if (
       arr["questionType"] === "true&false" &&
-      Object.keys(arr).length == 6
+      Object.keys(arr).length == 7
     ) {
       var action = "action";
       const params = new URLSearchParams(window.location.search);
@@ -368,9 +391,9 @@ subQuest.style.pointerEvents ='none';
       });
       line.remove();
       btn.remove();
-      subQuest.style.pointerEvents ='none';
-            subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
-            subQuest.style.padding = '7px 0 0 0'
+      subQuest.style.pointerEvents = 'none';
+      subQuest.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+      subQuest.style.padding = '7px 0 0 0'
       createQuestion();
     } else {
       swal(
@@ -381,7 +404,7 @@ subQuest.style.pointerEvents ='none';
     }
   };
   button.onclick = function () {
-    if (arr["questionType"] === "choose" && Object.keys(arr).length == 8) {
+    if (arr["questionType"] === "choose" && Object.keys(arr).length == 9) {
       var action = "action";
       const params = new URLSearchParams(window.location.search);
       const id = params.get("ch_id");
@@ -398,12 +421,12 @@ subQuest.style.pointerEvents ='none';
             icon: 'success',
             timer: 5000,
             buttons: false,
-        })
-        .then(() => {
-          window.location.href = "../Home/question-bank.php?chapter_id=" + id ;
-            // dispatch(redirect('/'));
-        })
-         
+          })
+            .then(() => {
+              window.location.href = "../Home/question-bank.php?chapter_id=" + id;
+              // dispatch(redirect('/'));
+            })
+
         },
         error: function (error) {
           console.log("error");
@@ -411,7 +434,7 @@ subQuest.style.pointerEvents ='none';
       });
     } else if (
       arr["questionType"] === "true&false" &&
-      Object.keys(arr).length == 6
+      Object.keys(arr).length == 7
     ) {
       var action = "action";
       const params = new URLSearchParams(window.location.search);
@@ -429,11 +452,11 @@ subQuest.style.pointerEvents ='none';
             icon: 'success',
             timer: 5000,
             buttons: false,
-        })
-        .then(() => {
-          window.location.href = "../Home/question-bank.php?chapter_id=" + id ;
-            // dispatch(redirect('/'));
-        })
+          })
+            .then(() => {
+              window.location.href = "../Home/question-bank.php?chapter_id=" + id;
+              // dispatch(redirect('/'));
+            })
         },
         error: function (error) {
           console.log("error");
