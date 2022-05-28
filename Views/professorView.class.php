@@ -19,6 +19,7 @@ class professorView extends professorCont
             <li class="list-group-item"  id="chapter">
                 <a href="question-bank.php?chapter_id=<?= $chapters['id'] ?>"><?= $chapters['chapter_name'] ?> </a>
                 <a href="#" data-bs-toggle="modal" class="remove_chapter" data-sid="<?= $chapters['id'] ?>" data-bs-target="#remove-chapter"><i class="fa-solid fa-x del-subj"></i></a>
+                <a href="#" data-bs-toggle="modal" class="edit_chapter" data-cid="<?= $chapters['id'] ?>" data-nid="<?= $chapters['chapter_name'] ?>" data-bs-target="#edit-chapter"><i class="fa-solid fa-edit del-subj"></i></a>
             </li>
         </div>
      <?php
@@ -34,6 +35,12 @@ class professorView extends professorCont
   {
     $this->deleteChapterCont($chapter_id);
   }
+
+  public function editChapter($chapter_name, $chapter_id)
+  {
+    $this->editChapterCont($chapter_name, $chapter_id);
+  }
+
 
     //the part of professor profile
     public function getExams($prof_id)
@@ -120,6 +127,61 @@ class professorView extends professorCont
         <?php
         }
     }
+
+
+
+    //the part of all eaxms & edit them
+    public function showAllExams($prof_id)
+    {
+        $data = $this->getAllExamsCont($prof_id);
+        foreach ($data as $exam) {
+        ?>
+            <tr>
+                <td><?= $exam['id'] ?></td>
+                <td><?= $exam['exam_name'] ?></td>
+                <td><?= $exam['subject_name'] ?></td>
+                <td><?= $exam['exam_date'] ?></td>
+                <td><?= $exam['start_time'] ?></td>
+                <td><?= $exam['duration'] ?></td>
+
+                <td>
+                    <?php 
+                    if($exam['exam_date'] > date("Y-m-d"))
+                    {
+                       ?><p class="coming">Forthcoming</p><?php
+                    }
+                    elseif($exam['exam_date'] < date("Y-m-d"))
+                    {
+                       ?><p class="ended">Ended</p><?php
+                    }
+                    elseif($exam['start_time'] > date("G:i:s") || $exam['start_time'] > date("H:i:s"))
+                    {
+                        ?><p class="coming">Forthcoming</p><?php
+                    }
+                    elseif($exam['start_time'] < date("G:i:s") || $exam['start_time'] < date("H:i:s"))
+                    {
+                        ?><p class="ended">Ended</p><?php
+                    }
+                    ?>
+                </td>
+
+                <td>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#edit-exam" class="edit_exam" 
+                        data-id="<?= $exam['id'] ?>" data-eid="<?= $exam['exam_name'] ?>" 
+                        data-did="<?= $exam['exam_date'] ?>" data-uid="<?= $exam['duration'] ?>" 
+                        data-sid="<?= $exam['start_time'] ?>">
+                    <i class="fa fa-edit"></i> </a>
+                </td>
+            </tr>
+        <?php
+        }
+    }
+
+    public function editAllExams($exam_name, $exam_date, $exam_duration, $start_time, $exam_id)
+    {
+        $this->editAllExamsCont($exam_name, $exam_date, $exam_duration, $start_time, $exam_id);
+    }
+
 
 
     // the part of question bank

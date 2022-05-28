@@ -72,14 +72,35 @@ if (isset($_GET['id'])) {
                             <h5 class="modal-title"><i class="fa fa-bookmark" aria-hidden="true"></i> Add Chapter</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="../includes/add_chpter.inc.php" method="post">
+                        <form action="../includes/chapters.inc.php" method="post">
                             <div class="modal-body">
                                 <input type="hidden" id="id_of_subject" name="sub_id">
-                                <input type="text" placeholder="Chapter Name" name="name">
+                                <input type="text" placeholder="Chapter Name" name="chapter_name">
                             </div>
                             <div class="modal-footer">
 
                                 <button type="submit" class="" name="save">Save changes</button>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- edit chapter ------->
+            <div class="modal magictime vanishIn" id="edit-chapter" tabindex="-1" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><i class="fa-solid fa-edit"></i> Edit Chapter</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="../includes/chapters.inc.php" method="post">
+                            <div class="modal-body">
+                                <input type="text" name="chapter_name" id="chapter_name_to_show" placeholder="Change Chapter Name">
+                            </div>
+                            <div class="modal-footer">
+                                <input type="hidden" name="chapter_id" id="id_of_edited_chapter" placeholder="Chapter ID">
+                                <button type="submit" class="" name="edit">Save changes</button>
                             </div>
                     </div>
                     </form>
@@ -94,7 +115,7 @@ if (isset($_GET['id'])) {
                             <h5 class="modal-title"><i class="fa-solid fa-trash-alt"></i> Remove Chapter</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="../includes/deleteChapter.inc.php" method="post">
+                        <form action="../includes/chapters.inc.php" method="post">
                             <div class="modal-body">
                                 <p class="text-start fw-bolder">Are you sure to delete this chapter? </p>
                             </div>
@@ -146,12 +167,14 @@ if (isset($_GET['id'])) {
         $(document).on('click', '.list-group-item', function() {
             $("#id_of_subject").val($(this).data('sid'));
         });
-    </script>
 
-    </script>
-    <script>
         $(document).on('click', '.remove_chapter', function() {
             $("#chapter_to_delete").val($(this).data('sid'));
+        });
+
+        $(document).on('click', '.edit_chapter', function() {
+            $("#id_of_edited_chapter").val($(this).data('cid'));
+            $("#chapter_name_to_show").val($(this).data('nid'));
         });
     </script>
 

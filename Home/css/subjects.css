@@ -7,6 +7,7 @@
 .remove_chapter{
     font-size: 14px;
     color: rgba(250, 54, 54,0.3);
+    margin-left: 65%;
 }
 .list-group-item:hover .remove_chapter{
     color: rgba(250, 54, 54.1);

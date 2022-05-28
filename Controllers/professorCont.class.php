@@ -31,6 +31,11 @@ class professorCont extends DB
         $stmt->execute(array($chapter_id));
     }
 
+    protected function editChapterCont($chapter_name, $chapter_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE chapters SET chapter_name = ? WHERE id = ? ");
+        $stmt->execute(array($chapter_name, $chapter_id));
+    }
     //the part of professor profile
     protected function getExamsCont($prof_id)
     {
@@ -84,6 +89,28 @@ class professorCont extends DB
         $data = $stmt->fetchAll();
         return $data;
     }
+
+    //all exams
+    protected function getAllExamsCont($prof_id)
+    {
+        $stmt = $this->Connection()->query(
+            "SELECT DISTINCT exams.exam_name, exams.id, exams.exam_date, exams.start_time, exams.duration,
+                    subjects.subject_name
+            FROM exams 
+            INNER JOIN subjects ON exams.subject_id = subjects.id 
+            INNER JOIN professor_subjects ON subjects.id = professor_subjects.subject_id 
+            WHERE prof_id = " . $prof_id
+        );
+        $data = $stmt->fetchAll();
+        return $data;
+    }
+
+    protected function editAllExamsCont($exam_name, $exam_date, $exam_duration, $start_time, $exam_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE exams SET exam_name = ?, exam_date = ?, duration = ?, start_time = ? WHERE id = ? ");
+        $stmt->execute(array($exam_name, $exam_date, $exam_duration, $start_time, $exam_id));
+    }
+
 
     //question bank
     protected function getChaptersContr($chapter_id)
