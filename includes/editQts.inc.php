@@ -5,6 +5,7 @@ if(isset($_POST['edit']))
     $question_id = $_POST['question_id'];
     $question_text = $_POST['question_text'];
     $difficulty = $_POST['difficulty'];
+    $mark = $_POST['mark'];
     //$is_correct = $_POST['is_correct'];
     //$answer = $_POST['answer'];
     echo $correct_answer_id = $_POST['correct_answer_id'];
@@ -15,7 +16,7 @@ if(isset($_POST['edit']))
     include('../Views/professorView.class.php');
     $proffesor = new ProfessorView();
 
-    $proffesor->editQuestions($question_text, $difficulty, $question_id);
+    $proffesor->editQuestions($question_text, $difficulty, $mark, $question_id);
     
   
    

@@ -1,8 +1,15 @@
-.alter-btn{
+.alter-btn {
     display: flex;
 }
+
 .profile-text {
     display: none;
+}
+
+.markoo {
+    margin-bottom: 0%;
+    padding: 0 33px 15px;
+
 }
 
 .profile-img {
@@ -19,6 +26,7 @@
 .heading-notify p {
     margin: 0;
 }
+
 .chapters {
     display: flex;
     align-items: center;
@@ -35,83 +43,100 @@
     font-size: 14px;
     color: #1eaaf1;
 }
+
 .chapters button:hover {
     background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
     color: #0E1C36;
     font-weight: bold;
 }
-.main{
+
+.main {
     border: 5px solid #efefef;
     border-radius: 30px;
     overflow-y: auto;
 }
+
 .list-group-item {
     padding: 15px 33px;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
-.question li{
+
+.question li {
     border-bottom: 1px solid #efefef !important;
 }
-.question-bank-section{
+
+.question-bank-section {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
-.main{
+
+.main {
     width: 75%;
     text-transform: capitalize;
     text-align: left;
     margin-bottom: 30px;
 }
-.question{
+
+.question {
     border: 5px solid #efefef;
     border-radius: 30px;
-    margin: 15px 33px ;
+    margin: 15px 33px;
     margin-top: 30px;
-    
+
 }
-.question-body{
+
+.question-body {
     background-color: #efefef;
-    padding: 15px 33px ;
-    border-radius: 23px 23px 0 0 ;
+    padding: 15px 33px;
+    border-radius: 23px 23px 0 0;
     margin-bottom: 0;
 }
 
-ol{
+ol {
     padding: 0;
 }
-ol  li{
+
+ol li {
     list-style-position: inside;
     padding: 15px 33px;
 }
+
 .correct {
     float: right;
     color: rgb(54, 156, 44);
     position: relative;
-    top:5px;
+    top: 5px;
 }
-.question-difficutly{
+
+.question-difficutly {
     padding: 0 33px 15px;
     margin-bottom: 0;
 }
-.easy{
+
+.easy {
     color: green;
 }
-.medium{
+
+.medium {
     color: orange;
 }
-.hard{
+
+.hard {
     color: red;
 }
-.fa-edit{cursor: pointer;}
 
-.modal-content{
+.fa-edit {
+    cursor: pointer;
+}
+
+.modal-content {
     background: linear-gradient(90deg, #ffede1 12%, #afcbff, #d7f9ff);
-  }
-  
-  .modal{
+}
+
+.modal {
     position: absolute;
     top: 0;
     left: 0;
@@ -122,13 +147,15 @@ ol  li{
     overflow-x: hidden;
     overflow-y: auto;
     outline: 0;
-    background-color: rgba(0,0,0,0.5);
-  }
-  .modal-backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-backdrop {
     z-index: -1;
     background-color: transparent;
-  }
-  input {
+}
+
+input {
     border-radius: 20px;
     padding: 5px 10px;
     margin-bottom: 10px;
@@ -136,9 +163,10 @@ ol  li{
     font-size: 14px;
     outline: none;
     width: 100%;
-  
-  }
-  .modal-footer button {
+
+}
+
+.modal-footer button {
     border: 3px solid #efefef;
     padding: 8px 6px;
     background-color: #fff;
@@ -146,41 +174,48 @@ ol  li{
     border-radius: 22px;
     font-size: 14px;
     color: #1eaaf1;
-  }
-  .modal-footer button:hover {
+}
+
+.modal-footer button:hover {
     background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
     color: #0e1c36;
     font-weight: bold;
-  }
-.modal-body{
-    text-align: left;
- /* background-color: #fff; */
-}
-.modal .heading{
-    padding: 15px 15px;
-    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
-    border-radius: 23px 23px 0 0 ;
 }
 
-.modal input{
-    width: 85%;
-    
-    
+.modal-body {
+    text-align: left;
+    /* background-color: #fff; */
 }
-.modal .quest-edit{
+
+.modal .heading {
+    padding: 15px 15px;
+    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    border-radius: 23px 23px 0 0;
+}
+
+.modal input {
+    width: 85%;
+
+
+}
+
+.modal .quest-edit {
     position: relative;
     left: 26.4px;
 }
+
 .modal ol li {
     padding: 0;
     border-bottom: none !important;
-    
+
 }
-.modal .question{
+
+.modal .question {
     border: none;
     padding: 15px;
 }
-.modal .form-check-input{
+
+.modal .form-check-input {
     width: auto;
     padding: 6px;
     position: relative;
@@ -192,9 +227,11 @@ ol  li{
     background-color: rgb(54, 156, 44) !important;
     border-color: rgb(79, 195, 69) !important;
 }
+
 .form-check-input:focus {
     box-shadow: 0 0 0 0.25rem rgb(201, 255, 198);
 }
+
 select {
     border-radius: 20px;
     border: 3px solid #efefef;
@@ -202,24 +239,28 @@ select {
     outline: none;
     font-size: 14px;
     margin-bottom: 10px;
-  }
-  select option {
+}
+
+select option {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
     color: #0e1c36;
-  }
+}
 
-.modal .question-difficutly{
+.modal .question-difficutly {
     padding-bottom: 0;
 }
-.modal-body{
+
+.modal-body {
     padding-bottom: 0;
 }
-.remove_question{
+
+.remove_question {
     float: right;
     margin-right: 10px;
 }
-.edit-btn{
+
+.edit-btn {
     float: right;
 }
 
@@ -234,10 +275,12 @@ select {
     .profile-text {
         display: inline-block;
     }
+
     .profile-img {
         width: 30px;
     }
-    .main{
+
+    .main {
         width: 100%;
     }
 }
@@ -246,55 +289,68 @@ select {
     .heading-notify {
         padding: 15px 15px;
     }
-    .question-body{
-        padding: 15px 15px ;
+
+    .question-body {
+        padding: 15px 15px;
     }
-    .main{
+
+    .main {
         width: 100%;
         height: auto;
         text-align: left;
     }
+
     .question {
         margin: 15px 15px;
     }
-    ol li{
+
+    ol li {
         padding: 15px 15px;
     }
-    .question-difficutly{
+
+    .question-difficutly {
         padding: 0 15px 15px;
         margin-bottom: 0;
     }
 }
+
 @media (max-width:425px) {
     .heading-notify {
         padding: 15px 5px;
     }
-    .question-body{
-        padding: 15px 5px ;
+
+    .question-body {
+        padding: 15px 5px;
     }
-    .main{
+
+    .main {
         width: 100%;
         height: auto;
         text-align: left;
     }
+
     .question {
         margin: 15px 5px;
-        
+
     }
+
     .correct {
         float: right;
         color: rgb(54, 156, 44);
-        
+
     }
-    .modal input{
+
+    .modal input {
         width: 80%;
     }
-    .question-body{
+
+    .question-body {
         display: flex;
         justify-content: space-between;
     }
-    .remove_question{
+
+    .remove_question {
         position: relative;
-        left:10px
+        left: 10px
     }
 }

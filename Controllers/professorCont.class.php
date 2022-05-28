@@ -169,12 +169,12 @@ class professorCont extends DB
         return $data;
     }
 
-    protected function editQuestionsContr($question_text, $difficulty, $question_id)
+    protected function editQuestionsContr($question_text, $difficulty, $mark, $question_id)
     {
-        $stmt = $this->Connection()->prepare("UPDATE questions SET question_text = ?, difficulty = ? WHERE id = ? ");
+        $stmt = $this->Connection()->prepare("UPDATE questions SET question_text = ?, difficulty = ?, mark = ? WHERE id = ? ");
         $stmt2 = $this->Connection()->prepare("UPDATE answers set is_correct = 0 where question_id = ?  ");
+        $stmt->execute(array($question_text, $difficulty, $mark, $question_id));
         $stmt2->execute(array($question_id));
-        $stmt->execute(array($question_text, $difficulty, $question_id));
     }
 
     protected function editAnswersContr($answer, $answer_id)

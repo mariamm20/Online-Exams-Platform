@@ -50,7 +50,7 @@ if (isset($_GET['chapter_id'])) {
             </div>
 
 
-            <!-- remove chapter  -->
+            <!-- remove question  -->
             <div class="modal magictime swashIn" id="remove-question" tabindex="-1" data-bs-backdrop="static">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">

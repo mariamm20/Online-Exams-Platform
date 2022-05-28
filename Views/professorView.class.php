@@ -237,6 +237,7 @@ class professorView extends professorCont
                     ?>
                 </p>
                 
+                <p class="question-difficutly">Mark: <?= $qts['mark'] ?></p>
             </div>
             <?php
                 }
@@ -314,6 +315,11 @@ class professorView extends professorCont
                 </p>
 
               
+                <!-- mark -->
+                <p class="question-select">Mark:
+                <input type="number" name="mark" style="width: 20%;" value="<?= $qts['mark']?>"/>
+                </p>
+
 
                 <!-- difficulty-->
                 <p class="question-select">Difficulty:
@@ -323,7 +329,7 @@ class professorView extends professorCont
                     <option value="hard"<?php if($qts['difficulty']== 'hard'){ echo 'selected'; }?>>Hard</option>
                     </select>
                 </p>
-                
+
                 
 
             </div>
@@ -332,10 +338,10 @@ class professorView extends professorCont
             }
     }
 
-    public function editQuestions($question_text, $difficulty, $question_id)
+    public function editQuestions($question_text, $difficulty, $mark, $question_id)
     {
         
-        $this->editQuestionsContr($question_text, $difficulty, $question_id);
+        $this->editQuestionsContr($question_text, $difficulty, $mark, $question_id);
     }
      
     public function editAnswers($answer, $answer_id)

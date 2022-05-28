@@ -11,6 +11,10 @@
 ol li{
     padding:0 33px
 }
+.question_mark{
+    width: 20%;
+}
+
 .question-select{
     padding: 0 120px;
     text-align: left;
