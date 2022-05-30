@@ -48,7 +48,7 @@ if(isset($_POST['add']))
         foreach($array as $strucutres)
         {
           
-            $exam->addStrucure($strucutres[0],$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
+            $exam->addStrucure($strucutres[0],$subject_id,$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
          
             
         }
@@ -90,7 +90,7 @@ if(isset($_POST['add']))
         foreach($array as $strucutres)
         {
           
-            $exam->addStrucure($strucutres[0],$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
+            $exam->addStrucure($strucutres[0],$subject_id,$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
          
             
         }
@@ -152,7 +152,7 @@ if(isset($_POST['create']))
         foreach($array as $strucutres)
         {
           
-            $exam->addStrucure($strucutres[0],$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
+            $exam->addStrucure($strucutres[0],$subject_id,$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
          
             
         }
@@ -191,7 +191,7 @@ if(isset($_POST['create']))
         foreach($array as $strucutres)
         {
           
-            $exam->addStrucure($strucutres[0],$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
+            $exam->addStrucure($strucutres[0],$subject_id,$strucutres[1],$strucutres[2],$strucutres[3], $strucutres[4]  );
         }
        
 

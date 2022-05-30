@@ -1,6 +1,22 @@
 <?php
 class questionCont extends DB
 {
+    protected function repeatedQuesCont($question)
+    {
+        $stmt = $this->Connection()->prepare("select * from questions where question_text= ?");
+        $stmt->execute(array($question));
+        $result = false;
+        if($stmt->rowCount() > 0)
+        {
+            $result= false;
+        }
+        else{
+            $result = true;
+        }
+        return $result;
+
+
+    }
     protected function addQuestionCont($chapter_id, $question, $difficulty, $type,$mark)
     {
        

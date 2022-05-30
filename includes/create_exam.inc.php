@@ -14,6 +14,13 @@ if(isset($_POST['create_exam']))
         include('../Views/examView.class.php');
         $exam = new examView();
        
-        $exam->createExam($subject_id, $exam_name,$exam_date, $exam_start,$duration);
+        
+        if($exam->repeatedExam($exam_name, $subject_id)==true)
+        {
+            $exam->createExam($subject_id, $exam_name,$exam_date, $exam_start,$duration);
         header('location: ../Home/second-creation-form.php?subject_id='.$subject_id.'&exam_name='.$exam_name);
+        }
+        else{
+            header('location: ../Home/first-creation-form.php?existedexamname');
+        }
     }

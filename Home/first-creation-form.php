@@ -79,6 +79,28 @@ $exam = new examView();
     <script src="../assests/global.js"></script>
     <script src="../assests/bootstrap.bundle.min.js"></script>
     <script src="js/creation-form.js"></script>
+    <script src="../assests/sweetalert/dist/sweetalert.min.js"></script>
+    <?php
+    if(isset($_GET['existedexamname']))
+        {?>
+            <script>
+            
+            swal({
+            title: 'You have already created an exam with the same name ',
+            text: 'Ooops...',
+            icon: 'error',
+           
+            
+            showOkButton: true,
+            })
+            .then(() => {
+            window.location.href = '../Home/first-creation-form.php' ;
+            
+            })
+            </script>
+        <?php  
+        }
+        ?>
     
 </body>
 

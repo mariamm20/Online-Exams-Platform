@@ -1,6 +1,22 @@
 <?php
 class examCont extends DB
 {
+    protected function repeatedExamCont($exam_name, $subject_id)
+    {
+        $stmt = $this->Connection()->prepare("select * from exams where exam_name= ? and subject_id=?");
+        $stmt->execute(array($exam_name, $subject_id));
+        $result = false;
+        if($stmt->rowCount() > 0)
+        {
+            $result= false;
+        }
+        else{
+            $result = true;
+        }
+        return $result;
+
+    }
+
     protected function createExamCont($subject_name, $exam_name, $exam_date, $exam_start, $duration)
     {
         $sql = "INSERT into exams(subject_id, exam_name, exam_date, start_time, duration) values ( ?, ?,?,?,?)";
@@ -29,11 +45,11 @@ class examCont extends DB
     //     $data = $stmt->fetchAll();
     //     return $data;   
     // }
-    protected function addStructureCont($exam_name, $chapter_id, $num_of_questions, $difficulty, $type)
+    protected function addStructureCont($exam_name,$subject_id, $chapter_id, $num_of_questions, $difficulty, $type)
     {
-        $sql = "INSERT into exam_structure(exam_id, chapter_id, num_of_questions, difficulty,type) values ((select id from exams where exam_name =?), ?, ?,?,?);";
+        $sql = "INSERT into exam_structure(exam_id, chapter_id, num_of_questions, difficulty,type) values ((select id from exams where exam_name =? and subject_id =?), ?, ?,?,?);";
         $stmt = $this->Connection()->prepare($sql);
-        $stmt->execute(array($exam_name, $chapter_id, $num_of_questions, $difficulty, $type));
+        $stmt->execute(array($exam_name,$subject_id, $chapter_id, $num_of_questions, $difficulty, $type));
     }
 
     protected function getMark($exam_id, $total)

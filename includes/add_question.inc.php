@@ -28,29 +28,36 @@ session_start();
                 echo $difficulty =  $data['difficulty'];
                 echo $mark = $data['mark'];
               
-                $ques->addQuestion($chapter_id, $question, $difficulty, $type,$mark);
-
-                $array = array($ans1, $ans2, $ans3, $ans4);
-                foreach($array as $answers)
-                {       
-                   
-                    $ques->addAnswer($question,$answers);
-                   
-                }
-                if($correct == "a")
+                if($ques->repeatedQuestion($question) == true)
                 {
-                    echo $correctAns =  $ans1;
-                }
-                else if($correct == "b"){
-                    echo $correctAns = $ans2;
-                }
-                else if($correct == "c"){
-                    echo $correctAns = $ans3;
+                    $ques->addQuestion($chapter_id, $question, $difficulty, $type,$mark);
+
+                    $array = array($ans1, $ans2, $ans3, $ans4);
+                    foreach($array as $answers)
+                    {       
+                    
+                        $ques->addAnswer($question,$answers);
+                    
+                    }
+                    if($correct == "a")
+                    {
+                        echo $correctAns =  $ans1;
+                    }
+                    else if($correct == "b"){
+                        echo $correctAns = $ans2;
+                    }
+                    else if($correct == "c"){
+                        echo $correctAns = $ans3;
+                    }
+                    else{
+                        $correctAns= $ans4;
+                    }
+                    $ques->correctAnswer($correctAns,$question );
                 }
                 else{
-                    $correctAns= $ans4;
+                    echo "failed1";
+                   // header('location:../Home/add-questions.php?existed_question&ch_id=' . $chapter_id);
                 }
-                $ques->correctAnswer($correctAns,$question );
             }
 // in case the question is true and false            
             if($data['questionType'] == "true&false")
@@ -64,7 +71,9 @@ session_start();
                 echo $difficulty =  $data['difficulty'];
                 echo $mark = $data['mark'];
 
-                $ques->addQuestion($chapter_id, $question, $difficulty, $type,$mark);
+                if($ques->repeatedQuestion($question) == true)
+                {
+                    $ques->addQuestion($chapter_id, $question, $difficulty, $type,$mark);
 
                 $array = array($ans1, $ans2);
                 foreach($array as $answers)
@@ -82,15 +91,20 @@ session_start();
                     echo $correctAns = $ans2;
                 }
                 $ques->correctAnswer($correctAns,$question );
+                }
+                else{
+                    echo "failed2";
+                }
             }
 
            
-            echo "done";
+         //   echo "done";
          //   header('../Home/question-bank.php');
 
 
     }
-    else{
-        echo "failed";
+    else
+    {
+        echo "adding failed";
     }
 
