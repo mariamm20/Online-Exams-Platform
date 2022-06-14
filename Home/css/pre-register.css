@@ -29,15 +29,16 @@
     color: #0e1c36;
 }
 .cat button:hover{
-    background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff);
+    /* background: linear-gradient(90deg, #ffede1, #afcbff, #d7f9ff); */
     color: #0e1c36;
     font-weight: bold;
+    background-color:  #d6e1ff8f;
 }
 .btn-student{
-    padding: 50px 43px;
+    padding: 30px 43px;
 }
 .btn-professor{
-    padding: 50px 30px;
+    padding: 30px 30px;
 }
 .student p{
     color: #0e1c36;
