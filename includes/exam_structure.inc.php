@@ -10,11 +10,9 @@ if(isset($_POST['add']))
     $chapter_id = $_POST['chapter_id'];
 
    
-
+    // in case the question is mcq
     if(isset($_POST['mcq_check']))
     {
-        
-       
         if(isset($_POST['num_of_easy_questions']))
         {
             $num_of_questions = $_POST['num_of_easy_questions']  ;
