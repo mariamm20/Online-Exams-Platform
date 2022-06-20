@@ -9,7 +9,7 @@ if(isset($_POST['add']))
     $exam_name = $_POST['exam_name'];
     $chapter_id = $_POST['chapter_id'];
 
-   
+   // in case the question is mcq
 
     if(isset($_POST['mcq_check']))
     {
@@ -42,9 +42,7 @@ if(isset($_POST['add']))
         print_r($array);
         echo "</pre>";
         
-       
-        
-
+    
         foreach($array as $strucutres)
         {
           
