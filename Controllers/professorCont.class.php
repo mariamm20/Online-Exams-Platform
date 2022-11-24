@@ -197,10 +197,18 @@ class professorCont extends DB
         return $data;
     }
 
+    protected function getProf($prof_id)
+    {
+        $stmt = $this->Connection()->query("select * from professors where id = " . $prof_id);
+        $data = $stmt->fetch();
+        return $data;
+    }
+
     protected function editProfDetailsCont($user_name, $academic_id, $email, $password, $prof_id)
     {
         $stmt = $this->Connection()->prepare("UPDATE professors SET user_name = ?, academic_id = ?, email = ?, password = ? WHERE id = ? ");
         $stmt->execute(array($user_name, $academic_id, $email, $password, $prof_id));
+        
     }
 
     protected function uploadImageCont($image, $prof_id)

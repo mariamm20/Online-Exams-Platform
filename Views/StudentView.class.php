@@ -254,12 +254,12 @@ class studentView extends studentCont
                 <button onclick="event.preventDefault(),myFunction()" aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top" title="Show Password" class="view-password"><i class="fa-solid fa-eye"></i></button>
 
                 <select name="level" class="level_name" id="nameoflevel">
-                    <option selected disabled>Choose Level</option>
+                    <option selected ><?= $details['level'] ?></option>
                     <?php $this->showLevels(); ?>
                 </select>
 
-                <select name="department" id="department">
-                    <option selected disabled>Choose Department</option>
+                <select name="department" id="department"> 
+                    <option selected ><?= $details['department'] ?></option>
                     <?php include('../includes/getDepartmenr.inc.php'); ?>
 
                 </select>
@@ -323,6 +323,28 @@ class studentView extends studentCont
            return  $mark['mark'];
           
         }
+    }
+
+    public function student($student_id)
+    {
+        $data = $this->getStudent($student_id);
+        ?>
+        <div class="details">
+            <div class="data">
+                <p class="name">
+                    <?= $data['user_name'] ?>
+                    <a href="../Home/stud_setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
+                </p>
+                <p class="email">
+                    <?= $data['email'] ?>
+                </p>
+                <p class="role">
+                    <?= "Level " . $data['level'] ?> <?=  $data['department'] . " Department " ?>
+                </p>
+                
+                
+            </div>
+        <?php
     }
 
 }

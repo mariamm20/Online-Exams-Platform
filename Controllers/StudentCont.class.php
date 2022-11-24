@@ -248,7 +248,13 @@ class studentCont extends DB
        $data = $stmt->fetchAll();
        return $data;
     }
-    /// 
+    protected function getStudent($student_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * from students where id = $student_id ");
+        $data = $stmt->fetch();
+        return $data;
+    }
+    
     
 
 

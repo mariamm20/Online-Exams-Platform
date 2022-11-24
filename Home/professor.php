@@ -27,7 +27,9 @@ $professor = new professorView();
 </head>
 
 <body>
-    <div id="app">
+    <?php
+
+ ?>   <div id="app">
 
         <?php include('../includes/header-prof.inc.php'); ?>
 
@@ -41,18 +43,7 @@ $professor = new professorView();
                 </div>
                 <div class="top-right">
                     <div class="details">
-                        <div class="data">
-                            <p class="name">
-                                <?= $_SESSION['user_name'] ?>
-                                <a href="../Home/prof_setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
-                            </p>
-                            <p class="email">
-                                <?= $_SESSION['email'] ?>
-                            </p>
-                            <p class="role">
-                                <?= $_SESSION['role'] ?>
-                            </p>
-                        </div>
+                       <?php $professor->professor($_SESSION['id']) ?>
                         <?php $professor->uploadImageView();?>   
                         <!--<img src="img/prof.png" class="prof-img" />-->
                         <!-- <div class="change-pic">

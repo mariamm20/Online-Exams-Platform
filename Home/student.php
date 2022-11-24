@@ -35,21 +35,7 @@ $student = new studentView();
                     </div>
                 </div>
                 <div class="top-right">
-                    <div class="details">
-                        <div class="data">
-                            <p class="name">
-                                <?= $_SESSION['user_name'] ?>
-                                <a href="../Home/stud_setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
-                            </p>
-                            <p class="email">
-                                <?= $_SESSION['email'] ?>
-                            </p>
-                            <p class="role">
-                                <?= "Level " . $_SESSION['level'] ?> <?=  $_SESSION['department'] . " Department " ?>
-                            </p>
-                            
-                            
-                        </div>
+                    <?php $student->student($_SESSION['id'])?>
                         <?php $student->uploadImageView();?>
                         <!--<img src="img/student.png" class="prof-img" />-->
                         <!-- <div class="change-pic">

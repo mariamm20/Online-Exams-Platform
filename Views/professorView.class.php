@@ -383,6 +383,28 @@ class professorView extends professorCont
         }
     }
 
+    public function professor($prof_id)
+    {
+      $professor=   $this->getProf($prof_id);
+      ?>
+      <div class="data">
+                            <p class="name">
+                                <?= $professor['user_name'] ?>
+                                <a href="../Home/prof_setting.php"><i class="fa fa-cog " aria-hidden="true"></i></a>
+                            </p>
+                            <p class="email">
+                                <?= $professor['email'] ?>
+                            </p>
+                            <p class="role">
+                                <?= $professor['role'] ?>
+                            </p>
+                        </div>
+                        <?php
+
+    }
+
+
+
     public function uploadImageView()
     {
         $data = $this->getProfDetails();
