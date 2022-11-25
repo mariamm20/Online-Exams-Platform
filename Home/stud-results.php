@@ -40,8 +40,8 @@
           <tbody>
             <tr class="table-head">
               <td scope="col">#</td>
+              <td scope="col">Subject Name</td>
               <td scope="col">Exam Name</td>
-              
               <td scope="col">Date</td>
               <td scope="col">Start Time</td>
               <td scope="col">Duration</td>

@@ -34,10 +34,12 @@ class studentCont extends DB
         $stmt = $this->Connection()->query(
             "SELECT results.id, results.student_id, results.exam_id, results.result, 
                     students.id, 
-                    exams.id, exams.exam_name, exams.exam_date, exams.start_time, exams.duration, exams.total_mark
+                    exams.id, exams.exam_name, exams.exam_date, exams.start_time, exams.duration, exams.total_mark,
+                    subjects.id, subjects.subject_name
             FROM results
             INNER JOIN students ON results.student_id = students.id
             INNER JOIN exams ON results.exam_id = exams.id
+            INNER JOIN subjects ON exams.subject_id = subjects.id
             WHERE results.exam_id =exams.id AND students.id = ".$_SESSION['id']
         );
         $data = $stmt->fetchAll();

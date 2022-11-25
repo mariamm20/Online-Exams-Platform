@@ -29,7 +29,7 @@ $professor = new professorView();
 <body>
     <?php
 
- ?>   <div id="app">
+    ?> <div id="app">
 
         <?php include('../includes/header-prof.inc.php'); ?>
 
@@ -43,8 +43,8 @@ $professor = new professorView();
                 </div>
                 <div class="top-right">
                     <div class="details">
-                       <?php $professor->professor($_SESSION['id']) ?>
-                        <?php $professor->uploadImageView();?>   
+                        <?php $professor->professor($_SESSION['id']) ?>
+                        <?php $professor->uploadImageView(); ?>
                         <!--<img src="img/prof.png" class="prof-img" />-->
                         <!-- <div class="change-pic">
                             <p>
@@ -64,7 +64,7 @@ $professor = new professorView();
                         <p> <i class="fa-solid fa-bell"></i> Notifications <span>(<?php $professor->getExams($_SESSION['id']); ?>)</span> </p>
                     </div>
                     <div class="notify-body">
-                    <?php $professor->getNotifications($_SESSION['id']); ?>
+                        <?php $professor->getNotifications($_SESSION['id']); ?>
                     </div>
                 </div>
                 <div class="bottom-right">
@@ -72,7 +72,7 @@ $professor = new professorView();
                         <p>Important Numbers</p>
                     </div>
                     <div class="numbers-body">
-                        <p>Created Exams <span><?php $professor->getExams($_SESSION['id']);?></span></p>
+                        <p>Created Exams <span><?php $professor->getExams($_SESSION['id']); ?></span></p>
                         <p>Success Rate <span>80%</span></p>
                         <p>Failure Rate <span>20%</span></p>
                     </div>

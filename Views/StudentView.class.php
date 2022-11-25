@@ -64,8 +64,8 @@ class studentView extends studentCont
         ?>
             <tr>
                 <td><?= $sheet['id'] ?></td>
+                <td><?= $sheet['subject_name'] ?></td>
                 <td><?= $sheet['exam_name'] ?></td>
-                
                 <td><?= $sheet['exam_date'] ?></td>
                 <td><?= $sheet['start_time'] ?></td>
                 <td><?= $sheet['duration'] ?></td>
