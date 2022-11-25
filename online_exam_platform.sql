@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 09:49 PM
+-- Generation Time: Nov 25, 2022 at 08:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -207,20 +207,6 @@ INSERT INTO `answers` (`id`, `question_id`, `answer`, `is_correct`) VALUES
 (608, 233, '40', 0),
 (609, 234, 'True', 1),
 (610, 234, 'False', 0),
-(615, 236, 'kjlhj', 0),
-(616, 236, 'jihug', 1),
-(617, 236, 'ojihu', 0),
-(618, 236, 'lk;jh', 0),
-(621, 238, 'True', 1),
-(622, 238, 'False', 0),
-(623, 239, '1', 1),
-(624, 239, '1', 1),
-(625, 239, '1', 1),
-(626, 239, '1', 1),
-(627, 245, '5', 0),
-(628, 245, '5', 0),
-(629, 245, '53', 1),
-(630, 245, '3', 0),
 (631, 246, '1', 1),
 (632, 246, '5', 0),
 (633, 246, '2', 0),
@@ -232,7 +218,13 @@ INSERT INTO `answers` (`id`, `question_id`, `answer`, `is_correct`) VALUES
 (639, 248, '7', 1),
 (640, 248, '8', 0),
 (641, 248, '1', 0),
-(642, 248, '2', 0);
+(642, 248, '2', 0),
+(647, 251, 'alaa', 0),
+(648, 251, 'lolla', 1),
+(649, 251, 'lolo', 0),
+(650, 251, 'lala', 0),
+(651, 252, 'True', 1),
+(652, 252, 'False', 0);
 
 -- --------------------------------------------------------
 
@@ -257,7 +249,10 @@ INSERT INTO `chapters` (`id`, `subject_id`, `chapter_name`) VALUES
 (24, 21, 'Chapter one'),
 (25, 21, 'Chapter Two'),
 (27, 20, 'Chapter four'),
-(28, 21, 'chapter 3');
+(28, 21, 'chapter 3'),
+(30, 20, 'chapter 7'),
+(31, 20, 'chapter 20'),
+(32, 17, 'chapter 1');
 
 -- --------------------------------------------------------
 
@@ -281,9 +276,9 @@ INSERT INTO `contact` (`id`, `name`, `email`, `msg`, `state`) VALUES
 (8, 'amr abohany', 'amr@gmail.com', 'this site is beautiful', 'Accepted'),
 (9, 'alaa attia', 'alaaattia147@gmail.com', 'i have a problem in my life', 'Rejected'),
 (10, 'alaa attia', 'alaaattia147@gmail.com', 'dfghjkl', 'Rejected'),
-(11, 'amr ali', 'amr@gmail.com', 'cgjvhkbjlnkml/', NULL),
-(12, 'amr ali', 'amr@gmail.com', 'cgjvhkbjlnkml/', NULL),
-(13, 'alaa attia', 'alaaattia147@gmail.com', 'thgjfvhkjblkn;lm', NULL),
+(11, 'amr ali', 'amr@gmail.com', 'cgjvhkbjlnkml/', 'Rejected'),
+(12, 'amr ali', 'amr@gmail.com', 'cgjvhkbjlnkml/', 'Accepted'),
+(13, 'alaa attia', 'alaaattia147@gmail.com', 'thgjfvhkjblkn;lm', 'Rejected'),
 (14, 'heba nasser', 'heba@gmail.com', 'srdtfyguhlij;o', NULL),
 (15, 'alaa attia', 'alaaattia147@gmail.com', 'I didn\'t submit at the time, Is here any solution ?', 'Rejected');
 
@@ -308,8 +303,8 @@ INSERT INTO `departments` (`id`, `dept_name`, `level_id`) VALUES
 (20, 'SE', 15),
 (21, 'CS', 15),
 (22, 'IS', 15),
-(23, 'IT', 15),
-(25, 'cyber sec', 15);
+(23, 'it', 15),
+(27, 'software ', 20);
 
 -- --------------------------------------------------------
 
@@ -332,8 +327,17 @@ CREATE TABLE `exams` (
 --
 
 INSERT INTO `exams` (`id`, `subject_id`, `exam_name`, `exam_date`, `start_time`, `duration`, `total_mark`) VALUES
-(46, 20, 'exam 1', '2022-05-27', '21:18:00', 3, 4),
-(47, 20, 'exam 2', '2022-05-27', '21:24:00', 2, 3);
+(46, 20, 'exam 1', '2022-06-15', '21:18:00', 3, 4),
+(47, 20, 'exam 2', '2022-05-27', '21:24:00', 2, 3),
+(48, 21, 'Exam 1', '2022-05-30', '23:09:00', 4, NULL),
+(49, 20, 'first exam', '2022-06-14', '20:05:00', 1, 4),
+(50, 20, 'sw engineering', '2022-11-17', '14:46:00', 12, 4),
+(51, 20, 'sw exam', '2022-11-17', '14:52:00', 2, NULL),
+(52, 20, 'exam10', '2022-11-21', '15:00:00', 2, 3),
+(53, 20, 'test', '2022-11-21', '18:18:00', 2, 4),
+(54, 20, 'testtt', '2022-11-21', '18:41:00', 1, 3),
+(55, 20, 'exam 100', '2022-11-24', '20:04:00', 1, 6),
+(56, 20, 'exam22', '2022-11-25', '18:30:00', 2, 9);
 
 -- --------------------------------------------------------
 
@@ -360,7 +364,43 @@ INSERT INTO `exam_structure` (`id`, `exam_id`, `chapter_id`, `num_of_questions`,
 (291, 46, 21, 1, 'choice', 'hard'),
 (292, 47, 21, 1, 'choice', 'easy'),
 (293, 47, 21, 1, 'choice', 'medium'),
-(294, 47, 21, 1, 'choice', 'hard');
+(294, 47, 21, 1, 'choice', 'hard'),
+(295, 48, 24, 1, 'choice', 'easy'),
+(296, 48, 24, 1, 'choice', 'medium'),
+(297, 48, 24, 1, 'choice', 'hard'),
+(298, 49, 21, 1, 'choice', 'easy'),
+(299, 49, 21, 1, 'choice', 'medium'),
+(300, 49, 21, 1, 'choice', 'hard'),
+(301, 50, 21, 1, 'choice', 'easy'),
+(302, 50, 21, 1, 'choice', 'medium'),
+(303, 50, 21, 1, 'choice', 'hard'),
+(304, 50, 21, 1, 'true&false', 'easy'),
+(305, 50, 21, 0, 'true&false', 'medium'),
+(306, 50, 21, 0, 'true&false', 'hard'),
+(307, 51, 21, 1, 'choice', 'easy'),
+(308, 51, 21, 1, 'choice', 'medium'),
+(309, 51, 21, 1, 'choice', 'hard'),
+(310, 52, 21, 1, 'choice', 'easy'),
+(311, 52, 21, 1, 'choice', 'medium'),
+(312, 52, 21, 1, 'choice', 'hard'),
+(313, 53, 21, 1, 'choice', 'easy'),
+(314, 53, 21, 2, 'choice', 'medium'),
+(315, 53, 21, 0, 'choice', 'hard'),
+(316, 53, 22, 1, 'true&false', 'easy'),
+(317, 53, 22, 1, 'true&false', 'medium'),
+(318, 53, 22, 0, 'true&false', 'hard'),
+(319, 54, 21, 1, 'true&false', 'easy'),
+(320, 54, 21, 1, 'true&false', 'medium'),
+(321, 54, 21, 1, 'true&false', 'hard'),
+(322, 55, 21, 1, 'choice', 'easy'),
+(323, 55, 21, 1, 'choice', 'medium'),
+(324, 55, 21, 1, 'choice', 'hard'),
+(325, 56, 21, 1, 'choice', 'easy'),
+(326, 56, 21, 1, 'choice', 'medium'),
+(327, 56, 21, 1, 'choice', 'hard'),
+(328, 56, 21, 1, 'true&false', 'easy'),
+(329, 56, 21, 1, 'true&false', 'medium'),
+(330, 56, 21, 1, 'true&false', 'hard');
 
 -- --------------------------------------------------------
 
@@ -414,7 +454,8 @@ CREATE TABLE `levels` (
 
 INSERT INTO `levels` (`id`, `level_name`) VALUES
 (14, 'two'),
-(15, 'three');
+(15, 'three'),
+(20, 'four');
 
 -- --------------------------------------------------------
 
@@ -440,10 +481,9 @@ CREATE TABLE `professors` (
 --
 
 INSERT INTO `professors` (`id`, `user_name`, `academic_id`, `email`, `password`, `role`, `state`, `created_at`, `login_at`, `image`) VALUES
-(10, 'amr ali', '1618120190100093', 'amr@gmail.com', '$2y$10$/fe0rxhpRN0Rh1Z6XznTRuxIErUyrJrIJudQJjr9/10pU8WIFoZsC', 'professor', 1, '2022-05-16 15:47:37', '2022-05-27 19:29:34', 'dr.jpg'),
-(11, 'reda mabrouk', '1618120190100094', 'reda@gmail.com', '$2y$10$bt4HX8r2Bw/VIeXDOc15A./Fbk3miur1bLMxo5gzvOFrl6JukuzFu', 'professor', 1, '2022-05-23 09:39:27', '2022-05-23 09:41:18', ''),
-(13, 'mai ramadan', '1618120190100096', 'mai@gmail.com', '$2y$10$OLArXhtGbRcVHrUJHGtJo.vwgkKtV.piG/GNlspVGa2u1GBhk/IhG', 'professor', NULL, '2022-05-24 12:30:01', '2022-05-24 12:30:01', ''),
-(14, 'Admin', '1618120190100097', 'admin@gmail.com', '$2y$10$D5X5fTVZUtzug8g8Zs8m/OG7TisdgfhXiKJBgnJafkgOJV38dc75i', 'admin', 1, '2022-05-25 07:08:37', '2022-05-25 08:28:57', '');
+(15, 'admin2', '1618120190100092', 'admin2@gmail.com', '$2y$10$1e9Vs3Mi8oSr78dmMpeunupogtrs1fk6YVrjJvr/oZvd/U2Ph8BNa', 'admin', 1, '2022-11-17 12:29:31', '2022-11-25 14:10:28', ''),
+(17, 'reda mabroak', '1618120190100083', 'reda@gmail.com', '$2y$10$wPR/pznPm/Knhf1hK2wFqeMQhldxCUPoYq3n6463.RGS61r83jp1i', 'professor', NULL, '2022-11-24 17:31:56', '2022-11-24 17:31:56', ''),
+(18, 'amr abohany', '1618120190100082', 'amr@gmail.com', '$2y$10$KQ/GEGFXe3nwQ7IJFeQ6LuvXc/n2uO2KPE6Fstv3WHZQiMXsGQjqi', 'professor', 1, '2022-11-25 14:09:09', '2022-11-25 14:29:22', '');
 
 -- --------------------------------------------------------
 
@@ -461,8 +501,8 @@ CREATE TABLE `professor_subjects` (
 --
 
 INSERT INTO `professor_subjects` (`prof_id`, `subject_id`) VALUES
-(10, 20),
-(10, 21);
+(18, 20),
+(18, 21);
 
 -- --------------------------------------------------------
 
@@ -485,12 +525,12 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`id`, `chapter_id`, `question_text`, `type`, `difficulty`, `mark`, `created_at`) VALUES
-(179, 21, 'Software is defined as ___________', 'choice', 'easy', 1, '2022-05-24 11:08:10'),
-(180, 21, 'What is Software Engineering?', 'choice', 'medium', 1, '2022-05-24 11:09:08'),
-(181, 21, 'Who is the father of Software Engineering?', 'choice', 'medium', 1, '2022-05-24 11:10:20'),
-(182, 21, 'What are the features of Software Code?', 'choice', 'easy', 1, '2022-05-24 11:11:14'),
-(183, 21, '_________ is a software development activity that is not a part of software processes.', 'choice', 'medium', 1, '2022-05-24 11:12:19'),
-(184, 21, 'Define Agile scrum methodology.', 'choice', 'hard', 1, '2022-05-24 11:13:30'),
+(179, 21, 'Software is defined as ___________', 'choice', 'medium', 2, '2022-05-24 11:08:10'),
+(180, 21, 'What is Software Engineering?', 'choice', 'medium', 2, '2022-05-24 11:09:08'),
+(181, 21, 'Who is the father of Software Engineering?', 'choice', 'medium', 2, '2022-05-24 11:10:20'),
+(182, 21, 'What are the features of Software Code?', 'choice', 'easy', 2, '2022-05-24 11:11:14'),
+(183, 21, '_________ is a software development activity that is not a part of software processes.', 'choice', 'medium', 2, '2022-05-24 11:12:19'),
+(184, 21, 'Define Agile scrum methodology.', 'choice', 'hard', 2, '2022-05-24 11:13:30'),
 (185, 21, 'Utility software is system software designed to help analyze, configure, optimize or maintain a computer.', 'true&false', 'easy', 1, '2022-05-24 11:28:06'),
 (186, 21, 'Application software focuses on how the computer operates.', 'true&false', 'medium', 1, '2022-05-24 11:28:29'),
 (187, 21, 'The productivity of a software engineer can be reduced by using a 4GT.', 'true&false', 'hard', 1, '2022-05-24 11:29:52'),
@@ -539,13 +579,11 @@ INSERT INTO `questions` (`id`, `chapter_id`, `question_text`, `type`, `difficult
 (230, 22, 'Product line software development depends the reuse of existing software components to provide software engineering leverage.', 'true&false', 'easy', 0, '2022-05-25 02:02:31'),
 (233, 27, 'what is your ages', 'choice', 'medium', 0, '2022-05-25 08:37:11'),
 (234, 27, 'true false', 'true&false', 'medium', 0, '2022-05-25 08:37:53'),
-(236, 21, 'knp;kouf', 'choice', 'easy', 0, '2022-05-25 09:39:25'),
-(238, 21, 'alaaaaaaaaaaaaaaa', 'true&false', 'easy', 2, '2022-05-27 12:10:44'),
-(239, 21, 'alaaaaaaaaaaaaaa', 'choice', 'easy', 2, '2022-05-27 12:12:07'),
-(245, 21, 'ghkjk', 'choice', 'medium', 2, '2022-05-27 14:18:34'),
 (246, 28, 'a', 'choice', 'easy', 2, '2022-05-27 17:17:48'),
 (247, 28, 'b', 'choice', 'medium', 2, '2022-05-27 17:18:10'),
-(248, 28, 'c', 'choice', 'hard', 2, '2022-05-27 17:19:16');
+(248, 28, 'c', 'choice', 'hard', 2, '2022-05-27 17:19:16'),
+(251, 28, 'what is your name?', 'choice', 'easy', 3, '2022-06-14 17:50:12'),
+(252, 21, 'is a software a set of programs?', 'true&false', 'easy', 2, '2022-11-17 12:42:17');
 
 -- --------------------------------------------------------
 
@@ -565,10 +603,9 @@ CREATE TABLE `results` (
 --
 
 INSERT INTO `results` (`id`, `student_id`, `exam_id`, `result`) VALUES
-(47, 11, 46, 2),
 (48, 13, 46, 3),
-(49, 11, 47, 3),
-(50, 13, 47, 2);
+(50, 13, 47, 2),
+(67, 16, 56, 0);
 
 -- --------------------------------------------------------
 
@@ -597,8 +634,8 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `user_name`, `academic_id`, `email`, `password`, `level`, `department`, `role`, `created_at`, `login_at`, `level_id`, `dept_id`, `image`) VALUES
-(11, 'alaa attia', '1618120190100091', 'alaaattia147@gmail.com', '$2y$10$zaLAYl8.oK/kyqJAMvG5HuuezNscl92XJiTNe9.Q/WLYOnXOEIk0y', 'three', 'SE', 'student', '2022-05-16 15:40:39', '2022-05-27 19:25:10', 15, 20, 'lola.jpg'),
-(13, 'heba nasser', '1618120190100092', 'heba@gmail.com', '$2y$10$l0nCjiwlf2RgwXaEzhQYTOVQOW8AWbLx52ZDYvGKu7O7Kqm/QtWeG', 'three', 'SE', 'student', '2022-05-24 12:02:21', '2022-05-27 19:28:56', 15, 20, 'IMG_0462.JPG');
+(13, 'heba nasser', '1618120190100092', 'heba@gmail.com', '$2y$10$l0nCjiwlf2RgwXaEzhQYTOVQOW8AWbLx52ZDYvGKu7O7Kqm/QtWeG', 'three', 'SE', 'student', '2022-05-24 12:02:21', '2022-05-27 19:28:56', 15, 20, 'IMG_0462.JPG'),
+(16, 'alaa nasser attia', '1618120190100085', 'alaaattia147@gmail.com', '$2y$10$4Cz0pEALKp6Nd3LUap0bkOkGi9iUqxx/Ti1ealOtyMxbcbpAJmlqK', 'three', 'SE', 'student', '2022-11-25 16:35:17', '2022-11-25 18:27:50', 15, 20, 'alaa.jpg');
 
 -- --------------------------------------------------------
 
@@ -619,17 +656,41 @@ CREATE TABLE `student_answers` (
 --
 
 INSERT INTO `student_answers` (`id`, `student_id`, `exam_id`, `question_id`, `answer_id`) VALUES
-(228, 11, 46, 239, 626),
-(229, 11, 46, 180, 444),
-(230, 11, 46, 184, 458),
-(231, 13, 46, 239, 625),
 (232, 13, 46, 183, 456),
 (233, 13, 46, 184, 459),
-(234, 11, 47, 182, 452),
-(235, 11, 47, 245, 629),
 (236, 13, 47, 182, 452),
 (237, 13, 47, 183, 456),
-(238, 13, 47, 184, 459);
+(238, 13, 47, 184, 459),
+(260, 16, 56, 182, 452),
+(261, 16, 56, 183, 455),
+(262, 16, 56, 184, 460),
+(263, 16, 56, 252, 652),
+(264, 16, 56, 189, 469),
+(265, 16, 56, 187, 466),
+(266, 16, 56, 182, 452),
+(267, 16, 56, 181, 446),
+(268, 16, 56, 184, 458),
+(269, 16, 56, 252, 651),
+(270, 16, 56, 189, 469),
+(271, 16, 56, 187, 465),
+(272, 16, 56, 182, 452),
+(273, 16, 56, 182, 452),
+(274, 16, 56, 180, 444),
+(275, 16, 56, 184, 458),
+(276, 16, 56, 185, 461),
+(277, 16, 56, 186, 463),
+(278, 16, 56, 190, 471),
+(279, 16, 56, 182, 452),
+(280, 16, 56, 181, 448),
+(285, 16, 56, 182, 452),
+(286, 16, 56, 183, 454),
+(287, 16, 56, 185, 461),
+(288, 16, 56, 187, 465),
+(289, 16, 56, 182, 452),
+(290, 16, 56, 181, 446),
+(291, 16, 56, 184, 460),
+(292, 16, 56, 252, 651),
+(293, 16, 56, 186, 463);
 
 -- --------------------------------------------------------
 
@@ -652,7 +713,8 @@ INSERT INTO `subjects` (`id`, `subject_name`, `level_id`, `dept_id`) VALUES
 (17, 'data base', 14, 19),
 (20, 'Software Engineering', 15, 20),
 (21, 'Design Patterns', 15, 20),
-(22, 'Operating System', 15, 20);
+(24, 'software construction', 15, 22),
+(25, 'machine learning', 15, 21);
 
 --
 -- Indexes for dumped tables
@@ -768,13 +830,13 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=643;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=655;
 
 --
 -- AUTO_INCREMENT for table `chapters`
 --
 ALTER TABLE `chapters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -786,61 +848,61 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `exam_structure`
 --
 ALTER TABLE `exam_structure`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=331;
 
 --
 -- AUTO_INCREMENT for table `levels`
 --
 ALTER TABLE `levels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `professors`
 --
 ALTER TABLE `professors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
 
 --
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `student_answers`
 --
 ALTER TABLE `student_answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=294;
 
 --
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
