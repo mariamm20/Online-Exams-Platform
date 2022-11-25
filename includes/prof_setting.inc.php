@@ -13,7 +13,14 @@ if(isset($_POST['prof_edit']))
     include('../Views/professorView.class.php');
     $professor = new professorView();
     
-    $professor->editProfDetails($user_name, $academic_id, $email, $hashedPassword, $prof_id);
+    if($password == "")
+    {
+        $professor->editProfDetails2($user_name, $academic_id, $email,$prof_id);
+    }
+    else{
+        $professor->editProfDetails($user_name, $academic_id, $email, $hashedPassword, $prof_id);
+
+    }
     header('location:../Home/professor.php?EditedSuccessfullyid='.$prof_id );
 }
 

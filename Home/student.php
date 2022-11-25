@@ -64,6 +64,7 @@ $student = new studentView();
                             <tr>
                                 <th scope="col" class="first-col">#</th>
                                 <th scope="col">Exam Name</th>
+                                <th scope="col">Subject Name</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Start Time</th>
                                 <th scope="col">Duration</th>

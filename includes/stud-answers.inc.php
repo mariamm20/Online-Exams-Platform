@@ -13,13 +13,14 @@ if (isset($_POST['submit']) || isset($_GET['submit'])) {
 
     $student = new studentView();
     $counter = 0;
-    $totalMark = 0;
+    $totalMark = $_POST['total'];
+    
 
     foreach ($_POST as $key => $value) {
         echo $key . " => " . $value . "</br>";
 
         echo "</br>";
-        if ($key == 'submit') {
+        if ($key == 'submit' || $key == "total") {
             break;
         }
        
@@ -31,11 +32,11 @@ if (isset($_POST['submit']) || isset($_GET['submit'])) {
             $counter += $result;
         }
 
-        $totalarray = array($student->showMark($key));
-        foreach ($totalarray as $total) {
-            echo intval($total);
-            $totalMark += $total;
-        }
+        // $totalarray = array($student->showMark($key));
+        // foreach ($totalarray as $total) {
+        //     echo intval($total);
+        //     $totalMark += $total;
+        // }
 
     }
     echo $counter;
@@ -43,5 +44,5 @@ if (isset($_POST['submit']) || isset($_GET['submit'])) {
     $exam->setMark($exam_id, $totalMark);
     // student result
     $student->addResult($student_id, $exam_id, $counter);
-    header('location: ../Home/after-submition.php?exam_id=' . $exam_id . '&result=' . $counter . '&total='. $totalMark);
+    header('location: ../Home/after-submition.php?exam_id=' . $exam_id );
 }

@@ -19,7 +19,7 @@ class studentCont extends DB
 
     protected function getExams()
     {
-        $query = "select exams.id, exams.exam_name, exams.duration, exams.start_time, exams.exam_date, exams.total_mark from exams join subjects 
+        $query = "select exams.id, exams.exam_name, exams.duration, exams.start_time, exams.exam_date, exams.total_mark , subjects.subject_name from exams join subjects 
         on exams.subject_id = subjects.id where subjects.level_id =" . $_SESSION['level_id'] .
         " and subjects.dept_id =" . $_SESSION['dept_id'];
         $stmt = $this->Connection()->query($query);
@@ -64,7 +64,7 @@ class studentCont extends DB
     /// first/ get exam structure 
     protected function getExamName($exam_id)
     {
-        $stmt = $this->Connection()->query("select exam_name from exams where id = $exam_id ");
+        $stmt = $this->Connection()->query("select exam_name, duration from exams where id = $exam_id ");
         $data = $stmt->fetchAll();
         return $data;
     }
@@ -105,7 +105,7 @@ class studentCont extends DB
 
     protected function getQuestions($type, $difficulty, $limit, $chapter_id)
     {
-        $stmt = $this->Connection()->query("SELECT distinct questions.question_text , questions.id from questions inner join exam_structure
+        $stmt = $this->Connection()->query("SELECT distinct questions.question_text , questions.id, questions.mark from questions inner join exam_structure
          on exam_structure.chapter_id = questions.chapter_id  where exam_structure.chapter_id = $chapter_id and questions.type = '$type'
          and questions.difficulty = '$difficulty' ORDER BY RAND() limit $limit ");
         $data = $stmt->fetchAll();
@@ -203,6 +203,11 @@ class studentCont extends DB
         $stmt = $this->Connection()->prepare("UPDATE students SET user_name = ?, academic_id = ?, email = ?, password = ?, level = ?, department = ?, level_id = (SELECT id from levels where level_name = '$level'), dept_id =  (SELECT id from departments where dept_name = '$department' ) WHERE id = ? ");
         $stmt->execute(array($user_name, $academic_id, $email, $password, $level, $department, $stud_id));
     }
+    protected function editStudDetailsControll($user_name, $academic_id, $email, $level, $department, $stud_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE students SET user_name = ?, academic_id = ?, email = ?, level = ?, department = ?, level_id = (SELECT id from levels where level_name = '$level'), dept_id =  (SELECT id from departments where dept_name = '$department' ) WHERE id = ? ");
+        $stmt->execute(array($user_name, $academic_id, $email, $level, $department, $stud_id));
+    }
 
     protected function uploadImageCont($image, $stud_id)
     {
@@ -254,7 +259,26 @@ class studentCont extends DB
         $data = $stmt->fetch();
         return $data;
     }
+    protected function getExam($exam_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * from exams where id = $exam_id ");
+        $data = $stmt->fetch();
+        return $data;
+    }
     
+
+    protected function getResultCont($exam_id, $student_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * from results where exam_id = $exam_id and student_id = $student_id ");
+        $data = $stmt->fetch();
+        return $data;
+    }
+    protected function getTotalCont($exam_id)
+    {
+        $stmt = $this->Connection()->query("SELECT * from exams where id = $exam_id ");
+        $data = $stmt->fetch();
+        return $data;
+    }
     
 
 

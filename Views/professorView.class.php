@@ -370,7 +370,7 @@ class professorView extends professorCont
                 <input type="text" name="academic_id" value="<?= $details['academic_id'] ?>" placeholder="Change Acadimic ID" />
                 <input type="email" name="email" value="<?= $details['email'] ?>" placeholder="Change Email" />
 
-                <input type="password" name="password" placeholder="Change Password" id="eye" />
+                <input type="password" name="password" placeholder="Change Password" id="eye"  />
                 <button onclick="event.preventDefault(),myFunction()" aria-hidden="true" data-bs-toggle="tooltip" data-bs-placement="top" title="Show Password" class="view-password"><i class="fa-solid fa-eye"></i></button>
 
             </fieldset>
@@ -428,6 +428,10 @@ class professorView extends professorCont
     public function editProfDetails($user_name, $academic_id, $email, $password, $prof_id)
     {
         $this->editProfDetailsCont($user_name, $academic_id, $email, $password, $prof_id);
+    }
+    public function editProfDetails2($user_name, $academic_id, $email, $prof_id)
+    {
+        $this->editProfDetailsControll($user_name, $academic_id, $email,$prof_id);
     }
 
     public function uploadImage($image, $prof_id)

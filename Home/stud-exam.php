@@ -4,7 +4,11 @@
     include('../Controllers/StudentCont.class.php');
     include('../Views/StudentView.class.php');
     $student = new studentView();
+
+    $dur = $student->showExam($_GET["exam_id"]) ;
 ?>
+
+<?php  $student->showExam($_GET['exam_id']); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +27,7 @@
 </head>
 
 <body>
+
     <div id="app">
     <?php include('../includes/header.inc.php'); ?>
         <section class="container question-bank-section" data-aos="fade-up">
@@ -31,10 +36,10 @@
                     <p><span><?php $student->showExamName($_GET['exam_id']); ?></span> </p>
                 </div>
                 <div class="timer">
-                    Timer : <span id="counter"> <?= $_GET['duration']  ?> . :00</span>
+                    Timer : <span id="counter"> <?=  $student->showExam($_GET['exam_id']) . " "; ?>  :00</span>
                     <script>
                         const params = new URLSearchParams(window.location.search);
-                        const duration = params.get("duration");
+                        const duration = "<?php echo $dur; ?>";
                         const id = params.get("exam_id");
                         const startinminitus = duration;
                         let time = startinminitus * 60;

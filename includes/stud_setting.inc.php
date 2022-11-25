@@ -15,7 +15,15 @@ if(isset($_POST['stud_edit']))
     include('../Views/StudentView.class.php');
     $student = new studentView();
 
-    $student->editStudDetails($user_name, $academic_id, $email, $hashedPassword, $level, $department, $stud_id);
+    if($password=="")
+    {
+        $student->editStudDetails2($user_name, $academic_id, $email, $level, $department, $stud_id);
+    }
+    else
+    {
+        $student->editStudDetails($user_name, $academic_id, $email, $hashedPassword, $level, $department, $stud_id);
+
+    }
     header('location:../Home/student.php?EditedSuccessfullyid='.$stud_id );
 
     if(empty($this->user_name) || empty($this->academic_id)  || empty($this->email) ||empty($this->password) ||empty($this->level) ||empty($this->department) )

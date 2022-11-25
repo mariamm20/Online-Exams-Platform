@@ -210,6 +210,12 @@ class professorCont extends DB
         $stmt->execute(array($user_name, $academic_id, $email, $password, $prof_id));
         
     }
+    protected function editProfDetailsControll($user_name, $academic_id, $email,$prof_id)
+    {
+        $stmt = $this->Connection()->prepare("UPDATE professors SET user_name = ?, academic_id = ?, email = ? WHERE id = ? ");
+        $stmt->execute(array($user_name, $academic_id, $email, $prof_id));
+        
+    }
 
     protected function uploadImageCont($image, $prof_id)
     {

@@ -29,7 +29,7 @@ elseif($_GET['exam_time'] > date("G:i:s") )
 
 else
 {
-    header('location: ../Home/stud-exam.php?exam_id='.$_GET['exam_id'] . '&duration=' . $_GET['exam_duration'] . '&start_time=' . $_GET['exam_time']);
+    header('location: ../Home/stud-exam.php?exam_id='.$_GET['exam_id']);
 }
 
 

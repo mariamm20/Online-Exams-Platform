@@ -1,6 +1,7 @@
 <?php 
 class studentView extends studentCont
 {
+    public $total;
     public function showLevels()
     {
         $data =$this->getLevels();
@@ -39,13 +40,14 @@ class studentView extends studentCont
             <tr>
                 <th scope="row"><?= $exam['id'] ?></th>
                 <td><?= $exam['exam_name'] ?></td>
+                <td><?= $exam['subject_name'] ?></td>
                 <td><?= $exam['exam_date'] ?></td>
                 <td><?= $exam['start_time'] ?></td>
                 <td><?= $exam['duration']  ?></td>
                
                
                 <td>
-                    <button > <a class="start" href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>&exam_date=<?= $exam['exam_date'] ?>&exam_time=<?= $exam['start_time'] ?>&exam_duration=<?= $exam['duration'] ?>" > Start </a> </button>
+                    <button > <a class="start" href="../includes/token_exam.inc.php?exam_id=<?= $exam['id'] ?>&exam_date=<?= $exam['exam_date'] ?>&exam_time=<?= $exam['start_time'] ?>" > Start </a> </button>
                 </td>
               
             </tr>
@@ -63,6 +65,7 @@ class studentView extends studentCont
             <tr>
                 <td><?= $sheet['id'] ?></td>
                 <td><?= $sheet['exam_name'] ?></td>
+                
                 <td><?= $sheet['exam_date'] ?></td>
                 <td><?= $sheet['start_time'] ?></td>
                 <td><?= $sheet['duration'] ?></td>
@@ -110,11 +113,22 @@ class studentView extends studentCont
         foreach($s_data as $structures)
         {
             $q_data = $this->getQuestions($structures['type'], $structures['difficulty'],$structures['num_of_questions'], $structures['chapter_id']);
+           
             foreach($q_data as $question)
-            { $a_data = $this->getAnswers($question['id']);
+           
+           
+            
+            
+            {  
+               
+                
+                $this->total += $question['mark'];
+
+                $a_data = $this->getAnswers($question['id']);
                 ?>
              <div class="question" >
-                
+             
+            
                 <p class="question-body">
                         <?= $question['question_text'] ?>
                         <!-- <input type="text" value="<?= $question['id'] ?>" name="<?= $question['question_text'] ?>"> -->
@@ -137,7 +151,11 @@ class studentView extends studentCont
                     </div>
             <?php
             }
+
         }
+        ?>
+        <input type="hidden" name="total" id="" value="<?= $this->total?>">
+        <?php
     }
 
     public function addAnswers($student_id, $exam_id, $question_id, $answer_id)
@@ -300,6 +318,10 @@ class studentView extends studentCont
     {
         $this->editStudDetailsCont($user_name, $academic_id, $email, $password, $level, $department, $stud_id);
     }
+    public function editStudDetails2($user_name, $academic_id, $email, $level, $department, $stud_id)
+    {
+        $this->editStudDetailsControll($user_name, $academic_id, $email, $level, $department, $stud_id);
+    }
 
     public function uploadImage($image, $stud_id)
     {
@@ -346,5 +368,31 @@ class studentView extends studentCont
             </div>
         <?php
     }
+
+    public function showExam($exam_id)
+    {
+        $e_data = $this->getExam($exam_id);
+       
+            return $e_data['duration'];
+        
+    }
+    public function showTotal($exam_id)
+    {
+        $e_data = $this->getTotalCont($exam_id);
+       
+            return $e_data['total_mark'];
+        
+    }
+
+    public function showResultView($exam_id, $student_id)
+    {
+        $e_data = $this->getResultCont($exam_id, $student_id);
+       
+            return $e_data['result'];
+        
+    }
+
+
+    
 
 }
